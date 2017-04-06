@@ -1,0 +1,2 @@
+samplename,description,validate,validate_regions
+NA12878-platinum-chr20.bam,NA12878-chr20,hg38/validation/giab-NA12878/truth_small_variants.vcf.gz,hg38/validation/giab-NA12878/truth_regions.bed

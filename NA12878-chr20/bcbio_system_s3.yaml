@@ -1,0 +1,10 @@
+s3:
+  region: us-east-1
+  folders:
+    - biodata/giab/na12878
+    - biodata/collections
+resources:
+  default: {cores: 8, memory: 2G}
+  bwa: {cores: 8, memory: 2G}
+  gatk:
+    jvm_opts: [-Xms750m, -Xmx2500m]

@@ -180,6 +180,8 @@ outputs:
   type:
   - File
   - 'null'
+  - items: File
+    type: array
 - id: work_bam_plus__disc
   secondaryFiles:
   - .bai

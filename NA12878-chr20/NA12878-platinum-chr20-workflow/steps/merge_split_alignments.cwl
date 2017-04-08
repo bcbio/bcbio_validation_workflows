@@ -93,6 +93,8 @@ inputs:
     items:
     - File
     - 'null'
+    - items: File
+      type: array
     type: array
 - id: description
   inputBinding:
@@ -122,3 +124,5 @@ outputs:
   type:
   - File
   - 'null'
+  - items: File
+    type: array

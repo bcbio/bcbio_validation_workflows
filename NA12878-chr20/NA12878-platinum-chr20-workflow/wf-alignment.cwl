@@ -58,6 +58,8 @@ outputs:
   type:
   - File
   - 'null'
+  - items: File
+    type: array
 requirements:
 - class: EnvVarRequirement
   envDef:

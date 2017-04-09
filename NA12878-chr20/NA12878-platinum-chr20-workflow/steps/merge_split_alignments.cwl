@@ -12,7 +12,7 @@ hints:
 - class: ResourceRequirement
   coresMin: 8
   outdirMin: 9465
-  ramMin: 16384
+  ramMin: 24576
   tmpdirMin: 8441
 - class: SoftwareRequirement
   packages:

@@ -10,9 +10,9 @@ class: CommandLineTool
 cwlVersion: v1.0
 hints:
 - class: ResourceRequirement
-  coresMin: 8
+  coresMin: 1
   outdirMin: 1024
-  ramMin: 16384
+  ramMin: 3072
 - class: SoftwareRequirement
   packages:
   - package: htslib

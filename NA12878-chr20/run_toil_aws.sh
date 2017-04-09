@@ -5,8 +5,8 @@ set -eu -o pipefail
 PROJECT=NA12878-platinum-chr20
 LEADER_PRIVATE_IP=10.0.0.XX
 JOB_STORE=aws:us-east-1:bcbio-na12878-chr20-jobstore
-NODE_TYPE=m4.4xlarge
-SPOT_BID=0.8
+NODE_TYPE=m4.2xlarge
+SPOT_BID=0.4
 MAX_NODES=2
 
 cwltoil \

@@ -12,7 +12,7 @@ hints:
 - class: ResourceRequirement
   coresMin: 8
   outdirMin: 1024
-  ramMin: 16384
+  ramMin: 24576
 inputs:
 - default: batch-single
   id: sentinel_parallel

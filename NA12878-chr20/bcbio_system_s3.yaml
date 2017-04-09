@@ -4,7 +4,4 @@ s3:
     - biodata/giab/na12878
     - biodata/collections
 resources:
-  default: {cores: 8, memory: 2G}
-  bwa: {cores: 8, memory: 2G}
-  gatk:
-    jvm_opts: [-Xms750m, -Xmx2500m]
+  default: {cores: 8, memory: 3G, jvm_opts: [-Xms750m, -Xmx3000m]}

@@ -1,0 +1,5 @@
+arvados:
+  reference: 5657a3361158afad0969ac25a2529ac1+78613
+  input: [aff0b18d056d9bac4db9b87d4d600714+1979]
+resources:
+  default: {cores: 8, memory: 3G, jvm_opts: [-Xms750m, -Xmx3000m]}

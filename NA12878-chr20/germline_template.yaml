@@ -3,8 +3,6 @@
 details:
   - algorithm:
       aligner: bwa
-      recalibrate: false
-      realign: false
       variantcaller: [freebayes, platypus, samtools]
       tools_off: [gemini]
       effects: false

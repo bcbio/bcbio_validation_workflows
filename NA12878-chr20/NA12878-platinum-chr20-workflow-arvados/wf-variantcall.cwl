@@ -334,14 +334,14 @@ steps:
     source: regions__callable
   - id: config__algorithm__callable_regions
     source: config__algorithm__callable_regions
-  - id: region
+  - id: region_toolinput
     source: get_parallel_regions/region
   out:
   - id: vrn_file_region
   - id: region
   run: steps/variantcall_batch_region.cwl
   scatter:
-  - region
+  - region_toolinput
   scatterMethod: dotproduct
 - id: concat_batch_variantcalls
   in:
@@ -434,7 +434,7 @@ steps:
     source: regions__callable
   - id: config__algorithm__callable_regions
     source: config__algorithm__callable_regions
-  - id: vrn_file
+  - id: vrn_file_toolinput
     source: concat_batch_variantcalls/vrn_file
   out:
   - id: vrn_file

@@ -218,7 +218,7 @@ inputs:
       separate: false
     items: File
     type: array
-- id: vrn_file
+- id: vrn_file_toolinput
   inputBinding:
     itemSeparator: ;;
     position: 22

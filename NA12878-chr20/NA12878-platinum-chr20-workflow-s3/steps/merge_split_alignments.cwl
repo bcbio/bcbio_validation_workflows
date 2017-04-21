@@ -48,7 +48,7 @@ inputs:
   type:
     items: File
     type: array
-- id: align_bam
+- id: align_bam_toolinput
   inputBinding:
     itemSeparator: ;;
     position: 3
@@ -57,7 +57,7 @@ inputs:
   type:
     items: File
     type: array
-- id: work_bam_plus__disc
+- id: work_bam_plus__disc_toolinput
   inputBinding:
     itemSeparator: ;;
     position: 4
@@ -70,7 +70,7 @@ inputs:
     - File
     - 'null'
     type: array
-- id: work_bam_plus__sr
+- id: work_bam_plus__sr_toolinput
   inputBinding:
     itemSeparator: ;;
     position: 5
@@ -83,7 +83,7 @@ inputs:
     - File
     - 'null'
     type: array
-- id: hla__fastq
+- id: hla__fastq_toolinput
   inputBinding:
     itemSeparator: ;;
     position: 6

@@ -152,13 +152,13 @@ steps:
   in:
   - id: work_bam
     source: process_alignment/work_bam
-  - id: align_bam
+  - id: align_bam_toolinput
     source: process_alignment/align_bam
-  - id: work_bam_plus__disc
+  - id: work_bam_plus__disc_toolinput
     source: process_alignment/work_bam_plus__disc
-  - id: work_bam_plus__sr
+  - id: work_bam_plus__sr_toolinput
     source: process_alignment/work_bam_plus__sr
-  - id: hla__fastq
+  - id: hla__fastq_toolinput
     source: process_alignment/hla__fastq
   - id: description
     source: description

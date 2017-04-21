@@ -372,7 +372,7 @@ steps:
   - id: reference__fasta__base
     source: prep_samples_to_rec/prep_samples_rec
     valueFrom: $(self['reference__fasta__base'])
-  - id: config__algorithm__variant_regions
+  - id: config__algorithm__variant_regions_toolinput
     source: prep_samples_to_rec/prep_samples_rec
     valueFrom: $(self['config__algorithm__variant_regions'])
   out:
@@ -387,7 +387,7 @@ steps:
   scatter:
   - description
   - reference__fasta__base
-  - config__algorithm__variant_regions
+  - config__algorithm__variant_regions_toolinput
   scatterMethod: dotproduct
 - id: postprocess_alignment_to_rec
   in:
@@ -426,34 +426,34 @@ steps:
   - id: reference__fasta__base
     source: postprocess_alignment_to_rec/postprocess_alignment_rec
     valueFrom: $(self['reference__fasta__base'])
-  - id: config__algorithm__coverage_interval
+  - id: config__algorithm__coverage_interval_toolinput
     source: postprocess_alignment_to_rec/postprocess_alignment_rec
     valueFrom: $(self['config__algorithm__coverage_interval'])
   - id: config__algorithm__recalibrate
     source: postprocess_alignment_to_rec/postprocess_alignment_rec
     valueFrom: $(self['config__algorithm__recalibrate'])
-  - id: config__algorithm__variant_regions
+  - id: config__algorithm__variant_regions_toolinput
     source: postprocess_alignment_to_rec/postprocess_alignment_rec
     valueFrom: $(self['config__algorithm__variant_regions'])
   - id: align_bam
     source: postprocess_alignment_to_rec/postprocess_alignment_rec
     valueFrom: $(self['align_bam'])
-  - id: config__algorithm__variant_regions_merged
+  - id: config__algorithm__variant_regions_merged_toolinput
     source: postprocess_alignment_to_rec/postprocess_alignment_rec
     valueFrom: $(self['config__algorithm__variant_regions_merged'])
-  - id: config__algorithm__variant_regions_orig
+  - id: config__algorithm__variant_regions_orig_toolinput
     source: postprocess_alignment_to_rec/postprocess_alignment_rec
     valueFrom: $(self['config__algorithm__variant_regions_orig'])
-  - id: config__algorithm__coverage
+  - id: config__algorithm__coverage_toolinput
     source: postprocess_alignment_to_rec/postprocess_alignment_rec
     valueFrom: $(self['config__algorithm__coverage'])
-  - id: config__algorithm__coverage_merged
+  - id: config__algorithm__coverage_merged_toolinput
     source: postprocess_alignment_to_rec/postprocess_alignment_rec
     valueFrom: $(self['config__algorithm__coverage_merged'])
-  - id: config__algorithm__coverage_orig
+  - id: config__algorithm__coverage_orig_toolinput
     source: postprocess_alignment_to_rec/postprocess_alignment_rec
     valueFrom: $(self['config__algorithm__coverage_orig'])
-  - id: config__algorithm__seq2c_bed_ready
+  - id: config__algorithm__seq2c_bed_ready_toolinput
     source: postprocess_alignment_to_rec/postprocess_alignment_rec
     valueFrom: $(self['config__algorithm__seq2c_bed_ready'])
   out:
@@ -473,16 +473,16 @@ steps:
   scatter:
   - description
   - reference__fasta__base
-  - config__algorithm__coverage_interval
+  - config__algorithm__coverage_interval_toolinput
   - config__algorithm__recalibrate
-  - config__algorithm__variant_regions
+  - config__algorithm__variant_regions_toolinput
   - align_bam
-  - config__algorithm__variant_regions_merged
-  - config__algorithm__variant_regions_orig
-  - config__algorithm__coverage
-  - config__algorithm__coverage_merged
-  - config__algorithm__coverage_orig
-  - config__algorithm__seq2c_bed_ready
+  - config__algorithm__variant_regions_merged_toolinput
+  - config__algorithm__variant_regions_orig_toolinput
+  - config__algorithm__coverage_toolinput
+  - config__algorithm__coverage_merged_toolinput
+  - config__algorithm__coverage_orig_toolinput
+  - config__algorithm__seq2c_bed_ready_toolinput
   scatterMethod: dotproduct
 - id: combine_sample_regions
   in:

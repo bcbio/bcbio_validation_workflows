@@ -62,7 +62,7 @@ inputs:
   type:
     items: File
     type: array
-- id: config__algorithm__coverage_interval
+- id: config__algorithm__coverage_interval_toolinput
   inputBinding:
     itemSeparator: ;;
     position: 4
@@ -80,7 +80,7 @@ inputs:
   type:
     items: string
     type: array
-- id: config__algorithm__variant_regions
+- id: config__algorithm__variant_regions_toolinput
   inputBinding:
     itemSeparator: ;;
     position: 6
@@ -100,7 +100,7 @@ inputs:
   type:
     items: File
     type: array
-- id: config__algorithm__variant_regions_merged
+- id: config__algorithm__variant_regions_merged_toolinput
   inputBinding:
     itemSeparator: ;;
     position: 8
@@ -111,7 +111,7 @@ inputs:
     - File
     - 'null'
     type: array
-- id: config__algorithm__variant_regions_orig
+- id: config__algorithm__variant_regions_orig_toolinput
   inputBinding:
     itemSeparator: ;;
     position: 9
@@ -122,7 +122,7 @@ inputs:
     - File
     - 'null'
     type: array
-- id: config__algorithm__coverage
+- id: config__algorithm__coverage_toolinput
   inputBinding:
     itemSeparator: ;;
     position: 10
@@ -133,7 +133,7 @@ inputs:
     - File
     - 'null'
     type: array
-- id: config__algorithm__coverage_merged
+- id: config__algorithm__coverage_merged_toolinput
   inputBinding:
     itemSeparator: ;;
     position: 11
@@ -144,7 +144,7 @@ inputs:
     - File
     - 'null'
     type: array
-- id: config__algorithm__coverage_orig
+- id: config__algorithm__coverage_orig_toolinput
   inputBinding:
     itemSeparator: ;;
     position: 12
@@ -155,7 +155,7 @@ inputs:
     - File
     - 'null'
     type: array
-- id: config__algorithm__seq2c_bed_ready
+- id: config__algorithm__seq2c_bed_ready_toolinput
   inputBinding:
     itemSeparator: ;;
     position: 13

@@ -14,6 +14,6 @@ cwltoil \
   --provisioner aws \
   --defaultPreemptable  --preemptableNodeType $NODE_TYPE:$SPOT_BID --maxPreemptableNodes $MAX_NODES \
   --nodeType $NODE_TYPE --maxNodes $MAX_NODES \
-  --jobStore $JOB_STORE \
-  $PROJECT-workflow/main-$PROJECT.cwl \
-  $PROJECT-workflow/main-$PROJECT-samples.json
+  --jobStore $JOB_STORE --logFile $PROJECT-awstoil.log \
+  $PROJECT-workflow-s3/main-$PROJECT.cwl \
+  $PROJECT-workflow-s3/main-$PROJECT-samples.json

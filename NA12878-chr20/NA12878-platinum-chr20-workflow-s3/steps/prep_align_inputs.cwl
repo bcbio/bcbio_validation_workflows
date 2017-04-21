@@ -16,9 +16,6 @@ hints:
   tmpdirMin: 4220
 - class: SoftwareRequirement
   packages:
-  - package: pbgzip
-    specs:
-    - https://anaconda.org/bioconda/pbgzip
   - package: grabix
     specs:
     - https://anaconda.org/bioconda/grabix

@@ -18,9 +18,6 @@ hints:
   - package: htslib
     specs:
     - https://anaconda.org/bioconda/htslib
-  - package: pbgzip
-    specs:
-    - https://anaconda.org/bioconda/pbgzip
   - package: bedtools
     specs:
     - https://anaconda.org/bioconda/bedtools
@@ -59,7 +56,7 @@ inputs:
   type:
     items: File
     type: array
-- id: config__algorithm__variant_regions
+- id: config__algorithm__variant_regions_toolinput
   inputBinding:
     itemSeparator: ;;
     position: 4

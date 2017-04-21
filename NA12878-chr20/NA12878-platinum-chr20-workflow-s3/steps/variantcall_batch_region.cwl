@@ -218,7 +218,7 @@ inputs:
       separate: false
     items: File
     type: array
-- id: region
+- id: region_toolinput
   inputBinding:
     itemSeparator: ;;
     position: 22

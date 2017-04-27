@@ -9,10 +9,21 @@ baseCommand:
 class: CommandLineTool
 cwlVersion: v1.0
 hints:
+- class: DockerRequirement
+  dockerImageId: quay.io/bcbio/bcbio-qc
+  dockerPull: quay.io/bcbio/bcbio-qc
 - class: ResourceRequirement
   coresMin: 1
   outdirMin: 1024
   ramMin: 3072
+- class: SoftwareRequirement
+  packages:
+  - package: multiqc
+    specs:
+    - https://anaconda.org/bioconda/multiqc
+  - package: multiqc-bcbio
+    specs:
+    - https://anaconda.org/bioconda/multiqc-bcbio
 inputs:
 - default: multi-combined
   id: sentinel_parallel

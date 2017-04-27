@@ -9,6 +9,9 @@ baseCommand:
 class: CommandLineTool
 cwlVersion: v1.0
 hints:
+- class: DockerRequirement
+  dockerImageId: quay.io/bcbio/bcbio-align
+  dockerPull: quay.io/bcbio/bcbio-align
 - class: ResourceRequirement
   coresMin: 1
   outdirMin: 1024
@@ -21,6 +24,9 @@ hints:
   - package: bedtools
     specs:
     - https://anaconda.org/bioconda/bedtools
+  - package: pythonpy
+    specs:
+    - https://anaconda.org/bioconda/pythonpy
 inputs:
 - default: multi-parallel
   id: sentinel_parallel

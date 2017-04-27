@@ -9,6 +9,9 @@ baseCommand:
 class: CommandLineTool
 cwlVersion: v1.0
 hints:
+- class: DockerRequirement
+  dockerImageId: quay.io/bcbio/bcbio-align
+  dockerPull: quay.io/bcbio/bcbio-align
 - class: ResourceRequirement
   coresMin: 8
   outdirMin: 5244
@@ -22,6 +25,9 @@ hints:
   - package: bwakit
     specs:
     - https://anaconda.org/bioconda/bwakit
+  - package: grabix
+    specs:
+    - https://anaconda.org/bioconda/grabix
   - package: novoalign
     specs:
     - https://anaconda.org/bioconda/novoalign
@@ -30,6 +36,9 @@ hints:
     - https://anaconda.org/bioconda/snap-aligner
     version:
     - 1.0dev.97
+  - package: sentieon
+    specs:
+    - https://anaconda.org/bioconda/sentieon
   - package: samtools
     specs:
     - https://anaconda.org/bioconda/samtools
@@ -45,6 +54,12 @@ hints:
   - package: biobambam
     specs:
     - https://anaconda.org/bioconda/biobambam
+  - package: seqtk
+    specs:
+    - https://anaconda.org/bioconda/seqtk
+  - package: samblaster
+    specs:
+    - https://anaconda.org/bioconda/samblaster
 inputs:
 - default: single-parallel
   id: sentinel_parallel

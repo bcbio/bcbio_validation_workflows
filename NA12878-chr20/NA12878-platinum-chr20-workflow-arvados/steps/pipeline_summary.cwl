@@ -9,10 +9,45 @@ baseCommand:
 class: CommandLineTool
 cwlVersion: v1.0
 hints:
+- class: DockerRequirement
+  dockerImageId: quay.io/bcbio/bcbio-qc
+  dockerPull: quay.io/bcbio/bcbio-qc
 - class: ResourceRequirement
   coresMin: 8
   outdirMin: 1024
   ramMin: 24576
+- class: SoftwareRequirement
+  packages:
+  - package: bcftools
+    specs:
+    - https://anaconda.org/bioconda/bcftools
+  - package: bedtools
+    specs:
+    - https://anaconda.org/bioconda/bedtools
+  - package: fastqc
+    specs:
+    - https://anaconda.org/bioconda/fastqc
+  - package: goleft
+    specs:
+    - https://anaconda.org/bioconda/goleft
+  - package: picard
+    specs:
+    - https://anaconda.org/bioconda/picard
+  - package: pythonpy
+    specs:
+    - https://anaconda.org/bioconda/pythonpy
+  - package: qsignature
+    specs:
+    - https://anaconda.org/bioconda/qsignature
+  - package: qualimap
+    specs:
+    - https://anaconda.org/bioconda/qualimap
+  - package: sambamba
+    specs:
+    - https://anaconda.org/bioconda/sambamba
+  - package: samtools
+    specs:
+    - https://anaconda.org/bioconda/samtools
 inputs:
 - default: multi-parallel
   id: sentinel_parallel

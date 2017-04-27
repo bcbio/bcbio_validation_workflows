@@ -9,10 +9,36 @@ baseCommand:
 class: CommandLineTool
 cwlVersion: v1.0
 hints:
+- class: DockerRequirement
+  dockerImageId: quay.io/bcbio/bcbio-vc
+  dockerPull: quay.io/bcbio/bcbio-vc
 - class: ResourceRequirement
   coresMin: 8
   outdirMin: 1024
   ramMin: 24576
+- class: SoftwareRequirement
+  packages:
+  - package: bcftools
+    specs:
+    - https://anaconda.org/bioconda/bcftools
+  - package: bedtools
+    specs:
+    - https://anaconda.org/bioconda/bedtools
+  - package: pythonpy
+    specs:
+    - https://anaconda.org/bioconda/pythonpy
+  - package: gvcf-regions
+    specs:
+    - https://anaconda.org/bioconda/gvcf-regions
+  - package: htslib
+    specs:
+    - https://anaconda.org/bioconda/htslib
+  - package: rtg-tools
+    specs:
+    - https://anaconda.org/bioconda/rtg-tools
+  - package: vcfanno
+    specs:
+    - https://anaconda.org/bioconda/vcfanno
 inputs:
 - default: batch-single
   id: sentinel_parallel

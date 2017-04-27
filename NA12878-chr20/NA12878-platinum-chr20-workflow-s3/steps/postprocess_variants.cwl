@@ -9,10 +9,20 @@ baseCommand:
 class: CommandLineTool
 cwlVersion: v1.0
 hints:
+- class: DockerRequirement
+  dockerImageId: quay.io/bcbio/bcbio-vc
+  dockerPull: quay.io/bcbio/bcbio-vc
 - class: ResourceRequirement
   coresMin: 8
   outdirMin: 1024
   ramMin: 24576
+- class: SoftwareRequirement
+  packages:
+  - package: snpeff
+    specs:
+    - https://anaconda.org/bioconda/snpeff
+    version:
+    - 4.3i
 inputs:
 - default: batch-single
   id: sentinel_parallel

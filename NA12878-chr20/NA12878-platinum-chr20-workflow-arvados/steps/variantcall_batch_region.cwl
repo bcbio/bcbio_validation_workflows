@@ -9,10 +9,73 @@ baseCommand:
 class: CommandLineTool
 cwlVersion: v1.0
 hints:
+- class: DockerRequirement
+  dockerImageId: quay.io/bcbio/bcbio-vc
+  dockerPull: quay.io/bcbio/bcbio-vc
 - class: ResourceRequirement
   coresMin: 1
   outdirMin: 1024
   ramMin: 3072
+- class: SoftwareRequirement
+  packages:
+  - package: bcftools
+    specs:
+    - https://anaconda.org/bioconda/bcftools
+  - package: bedtools
+    specs:
+    - https://anaconda.org/bioconda/bedtools
+  - package: freebayes
+    specs:
+    - https://anaconda.org/bioconda/freebayes
+    version:
+    - 1.1.0
+  - package: gatk
+    specs:
+    - https://anaconda.org/bioconda/gatk
+  - package: gatk-framework
+    specs:
+    - https://anaconda.org/bioconda/gatk-framework
+  - package: htslib
+    specs:
+    - https://anaconda.org/bioconda/htslib
+  - package: picard
+    specs:
+    - https://anaconda.org/bioconda/picard
+  - package: platypus-variant
+    specs:
+    - https://anaconda.org/bioconda/platypus-variant
+  - package: pythonpy
+    specs:
+    - https://anaconda.org/bioconda/pythonpy
+  - package: samtools
+    specs:
+    - https://anaconda.org/bioconda/samtools
+  - package: vardict
+    specs:
+    - https://anaconda.org/bioconda/vardict
+  - package: vardict-java
+    specs:
+    - https://anaconda.org/bioconda/vardict-java
+  - package: varscan
+    specs:
+    - https://anaconda.org/bioconda/varscan
+  - package: vcfanno
+    specs:
+    - https://anaconda.org/bioconda/vcfanno
+  - package: vcflib
+    specs:
+    - https://anaconda.org/bioconda/vcflib
+  - package: vt
+    specs:
+    - https://anaconda.org/bioconda/vt
+  - package: r
+    specs:
+    - https://anaconda.org/bioconda/r
+    version:
+    - 3.2.2
+  - package: perl
+    specs:
+    - https://anaconda.org/bioconda/perl
 inputs:
 - default: batch-parallel
   id: sentinel_parallel

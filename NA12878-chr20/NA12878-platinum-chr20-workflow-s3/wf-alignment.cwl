@@ -1,9 +1,6 @@
 class: Workflow
 cwlVersion: v1.0
-hints:
-- class: DockerRequirement
-  dockerImageId: bcbio/bcbio
-  dockerPull: bcbio/bcbio
+hints: []
 inputs:
 - id: description
   type: string

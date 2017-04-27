@@ -1,9 +1,6 @@
 class: Workflow
 cwlVersion: v1.0
-hints:
-- class: DockerRequirement
-  dockerImageId: bcbio/bcbio
-  dockerPull: bcbio/bcbio
+hints: []
 inputs:
 - id: config__algorithm__align_split_size
   type:
@@ -245,6 +242,13 @@ outputs:
     type: array
 - id: summary__multiqc
   outputSource: multiqc_summary/summary__multiqc
+  type:
+    items:
+    - File
+    - 'null'
+    type: array
+- id: validate__grading_summary
+  outputSource: summarize_grading_vc/validate__grading_summary
   type:
     items:
     - File

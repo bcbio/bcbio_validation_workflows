@@ -9,6 +9,9 @@ baseCommand:
 class: CommandLineTool
 cwlVersion: v1.0
 hints:
+- class: DockerRequirement
+  dockerImageId: quay.io/bcbio/bcbio-base
+  dockerPull: quay.io/bcbio/bcbio-base
 - class: ResourceRequirement
   coresMin: 1
   outdirMin: 1024

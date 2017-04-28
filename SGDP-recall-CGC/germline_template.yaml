@@ -1,0 +1,12 @@
+---
+details:
+  - analysis: variant2
+    genome_build: hg38
+    algorithm:
+      aligner: bwa
+      variantcaller: [gatk-haplotype, freebayes, platypus]
+      ensemble:
+        numpass: 2
+      svcaller: [lumpy, manta, cnvkit]
+      tools_off: [gemini]
+      effects: false

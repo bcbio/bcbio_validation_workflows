@@ -1,0 +1,401 @@
+{
+    "analysis": [
+        "variant2"
+    ],
+    "config__algorithm__align_split_size": [
+        null
+    ],
+    "config__algorithm__aligner": [
+        "bwa"
+    ],
+    "config__algorithm__archive": [
+        []
+    ],
+    "config__algorithm__coverage_interval": [
+        null
+    ],
+    "config__algorithm__effects": [
+        "False"
+    ],
+    "config__algorithm__ensemble__numpass": [
+        2
+    ],
+    "config__algorithm__mark_duplicates": [
+        "True"
+    ],
+    "config__algorithm__nomap_split_size": [
+        250
+    ],
+    "config__algorithm__nomap_split_targets": [
+        200
+    ],
+    "config__algorithm__qc": [
+        [
+            "fastqc",
+            "samtools",
+            "qsignature",
+            "coverage",
+            "variants",
+            "picard"
+        ]
+    ],
+    "config__algorithm__realign": [
+        "False"
+    ],
+    "config__algorithm__recalibrate": [
+        "False"
+    ],
+    "config__algorithm__svcaller": [
+        [
+            "lumpy",
+            "manta",
+            "cnvkit"
+        ]
+    ],
+    "config__algorithm__tools_off": [
+        [
+            "gemini"
+        ]
+    ],
+    "config__algorithm__tools_on": [
+        []
+    ],
+    "config__algorithm__validate": [
+        null
+    ],
+    "config__algorithm__validate_regions": [
+        null
+    ],
+    "config__algorithm__variant_regions": [
+        null
+    ],
+    "config__algorithm__variantcaller": [
+        [
+            "gatk-haplotype",
+            "freebayes",
+            "platypus"
+        ]
+    ],
+    "description": [
+        "S_Dinka-1"
+    ],
+    "files": [
+        [
+            {
+                "class": "File",
+                "path": "58ee2a76e4b0edbfd71e9fc4",
+                "secondaryFiles": [
+                    {
+                        "class": "File",
+                        "path": "58ee2a76e4b0edbfd71e9fc4"
+                    }
+                ]
+            }
+        ]
+    ],
+    "genome_build": [
+        "hg38"
+    ],
+    "genome_resources__aliases__ensembl": [
+        "homo_sapiens_vep_87_GRCh38"
+    ],
+    "genome_resources__aliases__human": [
+        "True"
+    ],
+    "genome_resources__aliases__snpeff": [
+        "GRCh38.86"
+    ],
+    "genome_resources__rnaseq__dexseq": [
+        {
+            "class": "File",
+            "path": "5901fcb2e4b05e29bde24489"
+        }
+    ],
+    "genome_resources__rnaseq__refflat": [
+        {
+            "class": "File",
+            "path": "5901fc92e4b05e29bde24468"
+        }
+    ],
+    "genome_resources__rnaseq__transcriptome_index__tophat": [
+        "../rnaseq/tophat/hg38_transcriptome.ver"
+    ],
+    "genome_resources__rnaseq__transcripts": [
+        {
+            "class": "File",
+            "path": "5901fcb7e4b05e29bde24492"
+        }
+    ],
+    "genome_resources__rnaseq__transcripts_mask": [
+        {
+            "class": "File",
+            "path": "5901fcb5e4b05e29bde2448f"
+        }
+    ],
+    "genome_resources__variation__cosmic": [
+        null
+    ],
+    "genome_resources__variation__dbsnp": [
+        {
+            "class": "File",
+            "path": "5901fbd7e4b05e29bde243d5",
+            "secondaryFiles": [
+                {
+                    "class": "File",
+                    "path": "5901fbd7e4b05e29bde243d5"
+                }
+            ]
+        }
+    ],
+    "genome_resources__variation__lcr": [
+        {
+            "class": "File",
+            "path": "5901fa14e4b05e29bde24338",
+            "secondaryFiles": [
+                {
+                    "class": "File",
+                    "path": "5901fa14e4b05e29bde24338"
+                }
+            ]
+        }
+    ],
+    "genome_resources__variation__qsignature": [
+        {
+            "class": "File",
+            "path": "5901fc49e4b05e29bde24447"
+        }
+    ],
+    "genome_resources__variation__sv_repeat": [
+        {
+            "class": "File",
+            "path": "5901fa13e4b05e29bde24335"
+        }
+    ],
+    "genome_resources__variation__train_1000g": [
+        {
+            "class": "File",
+            "path": "5901fc4ae4b05e29bde2444a",
+            "secondaryFiles": [
+                {
+                    "class": "File",
+                    "path": "5901fc4ae4b05e29bde2444a"
+                }
+            ]
+        }
+    ],
+    "genome_resources__variation__train_hapmap": [
+        {
+            "class": "File",
+            "path": "5901fb6ae4b05e29bde243c3",
+            "secondaryFiles": [
+                {
+                    "class": "File",
+                    "path": "5901fb6ae4b05e29bde243c3"
+                }
+            ]
+        }
+    ],
+    "genome_resources__variation__train_indels": [
+        {
+            "class": "File",
+            "path": "5901fb6ce4b05e29bde243c9",
+            "secondaryFiles": [
+                {
+                    "class": "File",
+                    "path": "5901fb6ce4b05e29bde243c9"
+                }
+            ]
+        }
+    ],
+    "genome_resources__variation__train_omni": [
+        {
+            "class": "File",
+            "path": "5901fb68e4b05e29bde243bd",
+            "secondaryFiles": [
+                {
+                    "class": "File",
+                    "path": "5901fb68e4b05e29bde243bd"
+                }
+            ]
+        }
+    ],
+    "genome_resources__version": [
+        17
+    ],
+    "metadata__batch": [
+        null
+    ],
+    "metadata__phenotype": [
+        ""
+    ],
+    "metadata__sex": [
+        "male"
+    ],
+    "reference__bwa__indexes": [
+        {
+            "class": "File",
+            "path": "5901fa16e4b05e29bde24341",
+            "secondaryFiles": [
+                {
+                    "class": "File",
+                    "path": "5901fa6ee4b05e29bde24347"
+                },
+                {
+                    "class": "File",
+                    "path": "5901fa15e4b05e29bde2433e"
+                },
+                {
+                    "class": "File",
+                    "path": "5901fa7ee4b05e29bde2434d"
+                },
+                {
+                    "class": "File",
+                    "path": "5901fa6ee4b05e29bde2434a"
+                },
+                {
+                    "class": "File",
+                    "path": "5901fa16e4b05e29bde24344"
+                }
+            ]
+        }
+    ],
+    "reference__fasta__base": [
+        {
+            "class": "File",
+            "path": "5901faeee4b05e29bde2435f",
+            "secondaryFiles": [
+                {
+                    "class": "File",
+                    "path": "5901fb64e4b05e29bde243ad"
+                },
+                {
+                    "class": "File",
+                    "path": "5901fb63e4b05e29bde243a7"
+                },
+                {
+                    "class": "File",
+                    "path": "5901fb64e4b05e29bde243aa"
+                },
+                {
+                    "class": "File",
+                    "path": "5901fb63e4b05e29bde243a4"
+                },
+                {
+                    "class": "File",
+                    "path": "5901faeee4b05e29bde2435c"
+                }
+            ]
+        }
+    ],
+    "reference__genome_context": [
+        []
+    ],
+    "reference__rtg": [
+        {
+            "class": "File",
+            "path": "5901fb50e4b05e29bde2437d",
+            "secondaryFiles": [
+                {
+                    "class": "File",
+                    "path": "5901fb51e4b05e29bde24383"
+                },
+                {
+                    "class": "File",
+                    "path": "5901fb51e4b05e29bde24386"
+                },
+                {
+                    "class": "File",
+                    "path": "5901fb49e4b05e29bde24371"
+                },
+                {
+                    "class": "File",
+                    "path": "5901fb49e4b05e29bde2436e"
+                },
+                {
+                    "class": "File",
+                    "path": "5901fb48e4b05e29bde2436b"
+                },
+                {
+                    "class": "File",
+                    "path": "5901fb54e4b05e29bde24392"
+                },
+                {
+                    "class": "File",
+                    "path": "5901fb54e4b05e29bde24395"
+                },
+                {
+                    "class": "File",
+                    "path": "5901fb5be4b05e29bde2439e"
+                },
+                {
+                    "class": "File",
+                    "path": "5901fb4ae4b05e29bde2437a"
+                },
+                {
+                    "class": "File",
+                    "path": "5901fb52e4b05e29bde2438f"
+                },
+                {
+                    "class": "File",
+                    "path": "5901fb50e4b05e29bde24380"
+                },
+                {
+                    "class": "File",
+                    "path": "5901fb49e4b05e29bde24374"
+                },
+                {
+                    "class": "File",
+                    "path": "5901fb5ae4b05e29bde24398"
+                },
+                {
+                    "class": "File",
+                    "path": "5901fb48e4b05e29bde24368"
+                },
+                {
+                    "class": "File",
+                    "path": "5901fb4ae4b05e29bde24377"
+                },
+                {
+                    "class": "File",
+                    "path": "5901fb52e4b05e29bde2438c"
+                },
+                {
+                    "class": "File",
+                    "path": "5901fb5ae4b05e29bde2439b"
+                },
+                {
+                    "class": "File",
+                    "path": "5901fb63e4b05e29bde243a1"
+                },
+                {
+                    "class": "File",
+                    "path": "5901fb51e4b05e29bde24389"
+                }
+            ]
+        }
+    ],
+    "reference__viral": [
+        []
+    ],
+    "rgnames__lane": [
+        "1_2017-04-27_SGDP-recall"
+    ],
+    "rgnames__lb": [
+        null
+    ],
+    "rgnames__pl": [
+        "illumina"
+    ],
+    "rgnames__pu": [
+        "1_2017-04-27_SGDP-recall"
+    ],
+    "rgnames__rg": [
+        "S_Dinka-1"
+    ],
+    "rgnames__sample": [
+        "S_Dinka-1"
+    ],
+    "vrn_file": [
+        null
+    ]
+}

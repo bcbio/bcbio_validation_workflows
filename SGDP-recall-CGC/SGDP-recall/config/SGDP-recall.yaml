@@ -1,0 +1,27 @@
+details:
+- algorithm:
+    aligner: bwa
+    effects: false
+    ensemble:
+      numpass: 2
+    svcaller:
+    - lumpy
+    - manta
+    - cnvkit
+    tools_off:
+    - gemini
+    variantcaller:
+    - gatk-haplotype
+    - freebayes
+    - platypus
+  analysis: variant2
+  description: S_Dinka-1
+  files:
+  - sbg:58ee2a76e4b0edbfd71e9fc4/LP6005443-DNA_H08.srt.aln.bam
+  genome_build: hg38
+  metadata:
+    sex: male
+fc_date: '2017-04-27'
+fc_name: SGDP-recall
+upload:
+  dir: ../final

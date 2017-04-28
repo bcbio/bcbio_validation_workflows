@@ -1,0 +1,5 @@
+sbgenomics:
+  project: bchapman/sgdp-recalling
+  reference: bchapman/biodata-hg38
+resources:
+  default: {cores: 8, memory: 3G, jvm_opts: [-Xms750m, -Xmx3000m]}

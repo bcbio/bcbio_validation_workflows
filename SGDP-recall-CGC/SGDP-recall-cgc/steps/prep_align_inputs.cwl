@@ -37,7 +37,7 @@ inputs:
     prefix: sentinel_parallel=
     separate: false
   type: string
-- default: process_alignment_rec
+- default: process_alignment_rec:files;config__algorithm__quality_format;align_split
   id: sentinel_outputs
   inputBinding:
     itemSeparator: ;;
@@ -45,114 +45,68 @@ inputs:
     prefix: sentinel_outputs=
     separate: false
   type: string
-- id: description
+- default: alignment_rec:record
+  id: sentinel_inputs
   inputBinding:
     itemSeparator: ;;
     position: 2
-    prefix: description=
+    prefix: sentinel_inputs=
     separate: false
   type: string
-- id: config__algorithm__align_split_size
-  inputBinding:
-    itemSeparator: ;;
-    position: 3
-    prefix: config__algorithm__align_split_size=
-    separate: false
-  type: 'null'
-- id: reference__fasta__base
-  inputBinding:
-    itemSeparator: ;;
-    position: 4
-    prefix: reference__fasta__base=
-    separate: false
-  type: File
-- id: rgnames__lb
-  inputBinding:
-    itemSeparator: ;;
-    position: 5
-    prefix: rgnames__lb=
-    separate: false
-  type: 'null'
-- id: rgnames__rg
-  inputBinding:
-    itemSeparator: ;;
-    position: 6
-    prefix: rgnames__rg=
-    separate: false
-  type: string
-- id: rgnames__lane
-  inputBinding:
-    itemSeparator: ;;
-    position: 7
-    prefix: rgnames__lane=
-    separate: false
-  type: string
-- id: reference__bwa__indexes
-  inputBinding:
-    itemSeparator: ;;
-    position: 8
-    prefix: reference__bwa__indexes=
-    separate: false
-  type: File
-- id: files
-  inputBinding:
-    itemSeparator: ;;
-    position: 9
-    prefix: files=
-    separate: false
+- id: alignment_rec
   type:
-    items: File
-    type: array
-- id: config__algorithm__aligner
-  inputBinding:
-    itemSeparator: ;;
-    position: 10
-    prefix: config__algorithm__aligner=
-    separate: false
-  type: string
-- id: config__algorithm__mark_duplicates
-  inputBinding:
-    itemSeparator: ;;
-    position: 11
-    prefix: config__algorithm__mark_duplicates=
-    separate: false
-  type: string
-- id: rgnames__pu
-  inputBinding:
-    itemSeparator: ;;
-    position: 12
-    prefix: rgnames__pu=
-    separate: false
-  type: string
-- id: rgnames__pl
-  inputBinding:
-    itemSeparator: ;;
-    position: 13
-    prefix: rgnames__pl=
-    separate: false
-  type: string
-- id: rgnames__sample
-  inputBinding:
-    itemSeparator: ;;
-    position: 14
-    prefix: rgnames__sample=
-    separate: false
-  type: string
+    fields:
+    - name: description
+      type: string
+    - name: config__algorithm__align_split_size
+      type: 'null'
+    - name: reference__fasta__base
+      type: File
+    - name: rgnames__lb
+      type: 'null'
+    - name: rgnames__rg
+      type: string
+    - name: rgnames__lane
+      type: string
+    - name: reference__bwa__indexes
+      type: File
+    - name: files
+      type:
+        items: File
+        type: array
+    - name: config__algorithm__aligner
+      type: string
+    - name: config__algorithm__mark_duplicates
+      type: string
+    - name: rgnames__pu
+      type: string
+    - name: rgnames__pl
+      type: string
+    - name: rgnames__sample
+      type: string
+    name: alignment_rec
+    type: record
 outputs:
 - id: process_alignment_rec
   type:
     items:
       fields:
+      - name: files
+        type:
+          items: File
+          type: array
       - name: config__algorithm__quality_format
         type: string
       - name: align_split
         type:
         - string
         - 'null'
-      - name: files
-        type:
-          items: File
-          type: array
       name: process_alignment_rec
       type: record
     type: array
+requirements:
+- class: InlineJavascriptRequirement
+- class: InitialWorkDirRequirement
+  listing:
+  - entry: $(JSON.stringify(inputs))
+    entryname: cwl.inputs.json

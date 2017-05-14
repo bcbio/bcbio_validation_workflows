@@ -42,30 +42,56 @@ inputs:
     prefix: sentinel_outputs=
     separate: false
   type: string
-- id: work_bam
+- default: alignment_rec:record,work_bam:var,align_bam:var,work_bam_plus__disc:var,work_bam_plus__sr:var,hla__fastq:var
+  id: sentinel_inputs
   inputBinding:
     itemSeparator: ;;
     position: 2
-    prefix: work_bam=
+    prefix: sentinel_inputs=
     separate: false
+  type: string
+- id: alignment_rec
+  type:
+    fields:
+    - name: description
+      type: string
+    - name: config__algorithm__align_split_size
+      type: 'null'
+    - name: reference__fasta__base
+      type: File
+    - name: rgnames__lb
+      type: 'null'
+    - name: rgnames__rg
+      type: string
+    - name: rgnames__lane
+      type: string
+    - name: reference__bwa__indexes
+      type: File
+    - name: files
+      type:
+        items: File
+        type: array
+    - name: config__algorithm__aligner
+      type: string
+    - name: config__algorithm__mark_duplicates
+      type: string
+    - name: rgnames__pu
+      type: string
+    - name: rgnames__pl
+      type: string
+    - name: rgnames__sample
+      type: string
+    name: alignment_rec
+    type: record
+- id: work_bam
   type:
     items: File
     type: array
 - id: align_bam_toolinput
-  inputBinding:
-    itemSeparator: ;;
-    position: 3
-    prefix: align_bam=
-    separate: false
   type:
     items: File
     type: array
 - id: work_bam_plus__disc_toolinput
-  inputBinding:
-    itemSeparator: ;;
-    position: 4
-    prefix: work_bam_plus__disc=
-    separate: false
   secondaryFiles:
   - .bai
   type:
@@ -74,11 +100,6 @@ inputs:
     - 'null'
     type: array
 - id: work_bam_plus__sr_toolinput
-  inputBinding:
-    itemSeparator: ;;
-    position: 5
-    prefix: work_bam_plus__sr=
-    separate: false
   secondaryFiles:
   - .bai
   type:
@@ -87,11 +108,6 @@ inputs:
     - 'null'
     type: array
 - id: hla__fastq_toolinput
-  inputBinding:
-    itemSeparator: ;;
-    position: 6
-    prefix: hla__fastq=
-    separate: false
   type:
     items:
     - File
@@ -99,13 +115,6 @@ inputs:
     - items: File
       type: array
     type: array
-- id: description
-  inputBinding:
-    itemSeparator: ;;
-    position: 7
-    prefix: description=
-    separate: false
-  type: string
 outputs:
 - id: align_bam
   secondaryFiles:
@@ -129,3 +138,9 @@ outputs:
   - 'null'
   - items: File
     type: array
+requirements:
+- class: InlineJavascriptRequirement
+- class: InitialWorkDirRequirement
+  listing:
+  - entry: $(JSON.stringify(inputs))
+    entryname: cwl.inputs.json

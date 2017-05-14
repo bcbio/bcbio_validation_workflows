@@ -21,7 +21,7 @@ details:
   genome_build: hg38
   metadata:
     sex: male
-fc_date: '2017-04-27'
+fc_date: '2017-05-13'
 fc_name: SGDP-recall
 upload:
   dir: ../final

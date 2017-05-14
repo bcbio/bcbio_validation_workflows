@@ -33,295 +33,85 @@ inputs:
     prefix: sentinel_outputs=
     separate: false
   type: string
-- id: description
+- default: vc_rec:record
+  id: sentinel_inputs
+  inputBinding:
+    itemSeparator: ;;
+    position: 2
+    prefix: sentinel_inputs=
+    separate: false
+  type: string
+- id: vc_rec
   type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 2
-      prefix: description=
-      separate: false
-    items:
-      items: string
-      type: array
-    type: array
-- id: vrn_file
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 3
-      prefix: vrn_file=
-      separate: false
-    items:
-      items: File
-      type: array
-    type: array
-- id: config__algorithm__validate
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 4
-      prefix: config__algorithm__validate=
-      separate: false
-    items:
-      items: 'null'
-      type: array
-    type: array
-- id: reference__fasta__base
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 5
-      prefix: reference__fasta__base=
-      separate: false
-    items:
-      items: File
-      type: array
-    type: array
-- id: config__algorithm__variantcaller
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 6
-      prefix: config__algorithm__variantcaller=
-      separate: false
-    items:
-      items: string
-      type: array
-    type: array
-- id: config__algorithm__coverage_interval
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 7
-      prefix: config__algorithm__coverage_interval=
-      separate: false
-    items:
-      items: string
-      type: array
-    type: array
-- id: metadata__batch
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 8
-      prefix: metadata__batch=
-      separate: false
-    items:
-      items: 'null'
-      type: array
-    type: array
-- id: config__algorithm__validate_regions
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 9
-      prefix: config__algorithm__validate_regions=
-      separate: false
-    items:
-      items: 'null'
-      type: array
-    type: array
-- id: genome_build
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 10
-      prefix: genome_build=
-      separate: false
-    items:
-      items: string
-      type: array
-    type: array
-- id: reference__rtg
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 11
-      prefix: reference__rtg=
-      separate: false
-    items:
-      items: File
-      type: array
-    type: array
-- id: metadata__phenotype
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 12
-      prefix: metadata__phenotype=
-      separate: false
-    items:
-      items: string
-      type: array
-    type: array
-- id: config__algorithm__tools_off
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 13
-      prefix: config__algorithm__tools_off=
-      separate: false
     items:
       items:
-        items: string
-        type: array
-      type: array
-    type: array
-- id: genome_resources__variation__dbsnp
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 14
-      prefix: genome_resources__variation__dbsnp=
-      separate: false
-    items:
-      items: File
-      type: array
-    type: array
-- id: genome_resources__variation__cosmic
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 15
-      prefix: genome_resources__variation__cosmic=
-      separate: false
-    items:
-      items: 'null'
-      type: array
-    type: array
-- id: reference__genome_context
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 16
-      prefix: reference__genome_context=
-      separate: false
-    items:
-      items:
-        items: 'null'
-        type: array
-      type: array
-    type: array
-- id: analysis
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 17
-      prefix: analysis=
-      separate: false
-    items:
-      items: string
-      type: array
-    type: array
-- id: config__algorithm__tools_on
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 18
-      prefix: config__algorithm__tools_on=
-      separate: false
-    items:
-      items:
-        items: 'null'
-        type: array
-      type: array
-    type: array
-- id: config__algorithm__variant_regions
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 19
-      prefix: config__algorithm__variant_regions=
-      separate: false
-    items:
-      items:
-      - File
-      - 'null'
-      type: array
-    type: array
-- id: align_bam
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 20
-      prefix: align_bam=
-      separate: false
-    items:
-      items: File
-      type: array
-    type: array
-- id: regions__callable
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 21
-      prefix: regions__callable=
-      separate: false
-    items:
-      items: File
-      type: array
-    type: array
-- id: config__algorithm__callable_regions
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 22
-      prefix: config__algorithm__callable_regions=
-      separate: false
-    items:
-      items: File
-      type: array
-    type: array
-- id: validate__summary
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 23
-      prefix: validate__summary=
-      separate: false
-    items:
-      items:
-      - File
-      - 'null'
-      type: array
-    type: array
-- id: validate__tp
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 24
-      prefix: validate__tp=
-      separate: false
-    items:
-      items:
-      - File
-      - 'null'
-      type: array
-    type: array
-- id: validate__fp
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 25
-      prefix: validate__fp=
-      separate: false
-    items:
-      items:
-      - File
-      - 'null'
-      type: array
-    type: array
-- id: validate__fn
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 26
-      prefix: validate__fn=
-      separate: false
-    items:
-      items:
-      - File
-      - 'null'
+        fields:
+        - name: validate__summary
+          type:
+          - File
+          - 'null'
+        - name: validate__tp
+          type:
+          - File
+          - 'null'
+        - name: validate__fp
+          type:
+          - File
+          - 'null'
+        - name: validate__fn
+          type:
+          - File
+          - 'null'
+        - name: description
+          type: string
+        - name: vrn_file
+          type: File
+        - name: config__algorithm__validate
+          type: 'null'
+        - name: reference__fasta__base
+          type: File
+        - name: config__algorithm__variantcaller
+          type: string
+        - name: config__algorithm__coverage_interval
+          type: string
+        - name: metadata__batch
+          type: 'null'
+        - name: config__algorithm__validate_regions
+          type: 'null'
+        - name: genome_build
+          type: string
+        - name: reference__rtg
+          type: File
+        - name: metadata__phenotype
+          type: string
+        - name: config__algorithm__tools_off
+          type:
+            items: string
+            type: array
+        - name: genome_resources__variation__dbsnp
+          type: File
+        - name: genome_resources__variation__cosmic
+          type: 'null'
+        - name: reference__genome_context
+          type:
+            items: 'null'
+            type: array
+        - name: analysis
+          type: string
+        - name: config__algorithm__tools_on
+          type:
+            items: 'null'
+            type: array
+        - name: config__algorithm__variant_regions
+          type: File
+        - name: align_bam
+          type: File
+        - name: regions__callable
+          type: File
+        - name: config__algorithm__callable_regions
+          type: File
+        name: vc_rec
+        type: record
       type: array
     type: array
 outputs:
@@ -339,3 +129,9 @@ outputs:
       - 'null'
       type: array
     type: array
+requirements:
+- class: InlineJavascriptRequirement
+- class: InitialWorkDirRequirement
+  listing:
+  - entry: $(JSON.stringify(inputs))
+    entryname: cwl.inputs.json

@@ -7,4 +7,4 @@ bcbio_vm.py template --systemconfig $SYSTEM_YAML germline_template.yaml $PROJECT
 bcbio_vm.py cwl --systemconfig $SYSTEM_YAML $PROJECT/config/$PROJECT.yaml
 rm -rf $PROJECT-cgc
 mv $PROJECT-workflow $PROJECT-cgc
-cwltool --pack SGDP-recall-cgc/main-SGDP-recall.cwl > SGDP-recall-standalone.cwl
+rabix --resolve-app SGDP-recall-cgc/main-SGDP-recall.cwl > SGDP-recall-standalone.cwl

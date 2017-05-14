@@ -15,10 +15,11 @@ def main(project_name, cwl_file, sample_file):
     api = sbg.Api(os.environ["CGC_API_URL"], os.environ["CGC_AUTH_TOKEN"])
     project = [p for p in api.projects.query(limit=None).all() if p.id == project_name][0]
     version = 0
-    app_id = "%s/%s/%s" % (project_name, os.path.splitext(os.path.basename(cwl_file))[0].replace("-standalone", ""), version)
+    app_id = "%s/%s/%s" % (project_name, os.path.splitext(os.path.basename(cwl_file))[0].replace("-standalone", ""),
+                           version)
     with open(cwl_file) as in_handle:
         cwl = json.load(in_handle)
-    _debug()
+    # _debug()
     with advance_access(api):
         app = api.apps.install_app(id=app_id, raw=cwl)
 
@@ -51,10 +52,3 @@ def _raw_post(app_id, cwl):
 
 if __name__ == "__main__":
     main(*sys.argv[1:])
-
-
-
-files = list(api.files.query(project).all())
-
-for api_file in files:
-    print(api_file.name, api_file.id)

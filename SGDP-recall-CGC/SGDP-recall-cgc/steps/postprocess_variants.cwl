@@ -40,200 +40,68 @@ inputs:
     prefix: sentinel_outputs=
     separate: false
   type: string
-- id: description
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 2
-      prefix: description=
-      separate: false
-    items: string
-    type: array
-- id: config__algorithm__validate
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 3
-      prefix: config__algorithm__validate=
-      separate: false
-    items: 'null'
-    type: array
-- id: reference__fasta__base
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 4
-      prefix: reference__fasta__base=
-      separate: false
-    items: File
-    type: array
-- id: config__algorithm__variantcaller
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 5
-      prefix: config__algorithm__variantcaller=
-      separate: false
-    items: string
-    type: array
-- id: config__algorithm__coverage_interval
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 6
-      prefix: config__algorithm__coverage_interval=
-      separate: false
-    items: string
-    type: array
-- id: metadata__batch
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 7
-      prefix: metadata__batch=
-      separate: false
-    items: 'null'
-    type: array
-- id: config__algorithm__validate_regions
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 8
-      prefix: config__algorithm__validate_regions=
-      separate: false
-    items: 'null'
-    type: array
-- id: genome_build
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 9
-      prefix: genome_build=
-      separate: false
-    items: string
-    type: array
-- id: reference__rtg
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 10
-      prefix: reference__rtg=
-      separate: false
-    items: File
-    type: array
-- id: metadata__phenotype
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 11
-      prefix: metadata__phenotype=
-      separate: false
-    items: string
-    type: array
-- id: config__algorithm__tools_off
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 12
-      prefix: config__algorithm__tools_off=
-      separate: false
-    items:
-      items: string
-      type: array
-    type: array
-- id: genome_resources__variation__dbsnp
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 13
-      prefix: genome_resources__variation__dbsnp=
-      separate: false
-    items: File
-    type: array
-- id: genome_resources__variation__cosmic
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 14
-      prefix: genome_resources__variation__cosmic=
-      separate: false
-    items: 'null'
-    type: array
-- id: reference__genome_context
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 15
-      prefix: reference__genome_context=
-      separate: false
-    items:
-      items: 'null'
-      type: array
-    type: array
-- id: analysis
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 16
-      prefix: analysis=
-      separate: false
-    items: string
-    type: array
-- id: config__algorithm__tools_on
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 17
-      prefix: config__algorithm__tools_on=
-      separate: false
-    items:
-      items: 'null'
-      type: array
-    type: array
-- id: config__algorithm__variant_regions
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 18
-      prefix: config__algorithm__variant_regions=
-      separate: false
-    items:
-    - File
-    - 'null'
-    type: array
-- id: align_bam
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 19
-      prefix: align_bam=
-      separate: false
-    items: File
-    type: array
-- id: regions__callable
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 20
-      prefix: regions__callable=
-      separate: false
-    items: File
-    type: array
-- id: config__algorithm__callable_regions
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 21
-      prefix: config__algorithm__callable_regions=
-      separate: false
-    items: File
-    type: array
-- id: vrn_file_toolinput
+- default: batch_rec:record,vrn_file:var
+  id: sentinel_inputs
   inputBinding:
     itemSeparator: ;;
-    position: 22
-    prefix: vrn_file=
+    position: 2
+    prefix: sentinel_inputs=
     separate: false
+  type: string
+- id: batch_rec
+  type:
+    items:
+      fields:
+      - name: description
+        type: string
+      - name: config__algorithm__validate
+        type: 'null'
+      - name: reference__fasta__base
+        type: File
+      - name: config__algorithm__variantcaller
+        type: string
+      - name: config__algorithm__coverage_interval
+        type: string
+      - name: metadata__batch
+        type: 'null'
+      - name: config__algorithm__validate_regions
+        type: 'null'
+      - name: genome_build
+        type: string
+      - name: reference__rtg
+        type: File
+      - name: metadata__phenotype
+        type: string
+      - name: config__algorithm__tools_off
+        type:
+          items: string
+          type: array
+      - name: genome_resources__variation__dbsnp
+        type: File
+      - name: genome_resources__variation__cosmic
+        type: 'null'
+      - name: reference__genome_context
+        type:
+          items: 'null'
+          type: array
+      - name: analysis
+        type: string
+      - name: config__algorithm__tools_on
+        type:
+          items: 'null'
+          type: array
+      - name: config__algorithm__variant_regions
+        type: File
+      - name: align_bam
+        type: File
+      - name: regions__callable
+        type: File
+      - name: config__algorithm__callable_regions
+        type: File
+      name: batch_rec
+      type: record
+    type: array
+- id: vrn_file_toolinput
   secondaryFiles:
   - .tbi
   type: File
@@ -242,3 +110,9 @@ outputs:
   secondaryFiles:
   - .tbi
   type: File
+requirements:
+- class: InlineJavascriptRequirement
+- class: InitialWorkDirRequirement
+  listing:
+  - entry: $(JSON.stringify(inputs))
+    entryname: cwl.inputs.json

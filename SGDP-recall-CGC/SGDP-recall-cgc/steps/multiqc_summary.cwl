@@ -41,182 +41,62 @@ inputs:
     prefix: sentinel_outputs=
     separate: false
   type: string
-- id: description
+- default: qcout_rec:record
+  id: sentinel_inputs
+  inputBinding:
+    itemSeparator: ;;
+    position: 2
+    prefix: sentinel_inputs=
+    separate: false
+  type: string
+- id: qcout_rec
   type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 2
-      prefix: description=
-      separate: false
     items:
-      items: string
-      type: array
-    type: array
-- id: reference__fasta__base
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 3
-      prefix: reference__fasta__base=
-      separate: false
-    items:
-      items: File
-      type: array
-    type: array
-- id: config__algorithm__coverage_interval
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 4
-      prefix: config__algorithm__coverage_interval=
-      separate: false
-    items:
-      items: string
-      type: array
-    type: array
-- id: genome_build
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 5
-      prefix: genome_build=
-      separate: false
-    items:
-      items: string
-      type: array
-    type: array
-- id: config__algorithm__tools_off
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 6
-      prefix: config__algorithm__tools_off=
-      separate: false
-    items:
-      items:
-        items: string
-        type: array
-      type: array
-    type: array
-- id: config__algorithm__qc
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 7
-      prefix: config__algorithm__qc=
-      separate: false
-    items:
-      items:
-        items: string
-        type: array
-      type: array
-    type: array
-- id: analysis
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 8
-      prefix: analysis=
-      separate: false
-    items:
-      items: string
-      type: array
-    type: array
-- id: config__algorithm__tools_on
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 9
-      prefix: config__algorithm__tools_on=
-      separate: false
-    items:
-      items:
-        items: 'null'
-        type: array
-      type: array
-    type: array
-- id: config__algorithm__variant_regions
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 10
-      prefix: config__algorithm__variant_regions=
-      separate: false
-    items:
-      items:
-      - File
-      - 'null'
-      type: array
-    type: array
-- id: align_bam
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 11
-      prefix: align_bam=
-      separate: false
-    items:
-      items: File
-      type: array
-    type: array
-- id: config__algorithm__variant_regions_merged
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 12
-      prefix: config__algorithm__variant_regions_merged=
-      separate: false
-    items:
-      items:
-      - File
-      - 'null'
-      type: array
-    type: array
-- id: config__algorithm__coverage
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 13
-      prefix: config__algorithm__coverage=
-      separate: false
-    items:
-      items:
-      - File
-      - 'null'
-      type: array
-    type: array
-- id: config__algorithm__coverage_merged
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 14
-      prefix: config__algorithm__coverage_merged=
-      separate: false
-    items:
-      items:
-      - File
-      - 'null'
-      type: array
-    type: array
-- id: summary__qc
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 15
-      prefix: summary__qc=
-      separate: false
-    items:
-    - File
-    - 'null'
-    type: array
-- id: summary__metrics
-  type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 16
-      prefix: summary__metrics=
-      separate: false
-    items: string
+      fields:
+      - name: summary__qc
+        type:
+        - File
+        - 'null'
+      - name: summary__metrics
+        type: string
+      - name: description
+        type: string
+      - name: reference__fasta__base
+        type: File
+      - name: config__algorithm__coverage_interval
+        type: string
+      - name: genome_build
+        type: string
+      - name: config__algorithm__tools_off
+        type:
+          items: string
+          type: array
+      - name: config__algorithm__qc
+        type:
+          items: string
+          type: array
+      - name: analysis
+        type: string
+      - name: config__algorithm__tools_on
+        type:
+          items: 'null'
+          type: array
+      - name: config__algorithm__variant_regions
+        type: File
+      - name: align_bam
+        type: File
+      - name: config__algorithm__variant_regions_merged
+        type: File
+      - name: config__algorithm__coverage
+        type:
+        - File
+        - 'null'
+      - name: config__algorithm__coverage_merged
+        type:
+        - File
+        - 'null'
+      name: qcout_rec
+      type: record
     type: array
 outputs:
 - id: summary__multiqc
@@ -225,3 +105,9 @@ outputs:
     - File
     - 'null'
     type: array
+requirements:
+- class: InlineJavascriptRequirement
+- class: InitialWorkDirRequirement
+  listing:
+  - entry: $(JSON.stringify(inputs))
+    entryname: cwl.inputs.json

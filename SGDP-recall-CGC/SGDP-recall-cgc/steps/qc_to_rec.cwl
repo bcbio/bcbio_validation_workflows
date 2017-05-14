@@ -17,7 +17,7 @@ hints:
   outdirMin: 1024
   ramMin: 3072
 inputs:
-- default: multi-batch
+- default: multi-combined
   id: sentinel_parallel
   inputBinding:
     itemSeparator: ;;
@@ -25,7 +25,7 @@ inputs:
     prefix: sentinel_parallel=
     separate: false
   type: string
-- default: qc_rec
+- default: qc_rec:description;reference__fasta__base;config__algorithm__coverage_interval;genome_build;config__algorithm__tools_off;config__algorithm__qc;analysis;config__algorithm__tools_on;config__algorithm__variant_regions;align_bam;config__algorithm__variant_regions_merged;config__algorithm__coverage;config__algorithm__coverage_merged
   id: sentinel_outputs
   inputBinding:
     itemSeparator: ;;
@@ -33,137 +33,76 @@ inputs:
     prefix: sentinel_outputs=
     separate: false
   type: string
+- default: align_bam:var,analysis:var,reference__fasta__base:var,genome_build:var,config__algorithm__coverage_interval:var,config__algorithm__tools_on:var,config__algorithm__tools_off:var,config__algorithm__qc:var,config__algorithm__variant_regions:var,config__algorithm__variant_regions_merged:var,config__algorithm__coverage:var,config__algorithm__coverage_merged:var,description:var
+  id: sentinel_inputs
+  inputBinding:
+    itemSeparator: ;;
+    position: 2
+    prefix: sentinel_inputs=
+    separate: false
+  type: string
 - id: align_bam
   secondaryFiles:
   - .bai
   type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 2
-      prefix: align_bam=
-      separate: false
     items: File
     type: array
 - id: analysis
   type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 3
-      prefix: analysis=
-      separate: false
     items: string
     type: array
 - id: reference__fasta__base
   type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 4
-      prefix: reference__fasta__base=
-      separate: false
     items: File
     type: array
 - id: genome_build
   type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 5
-      prefix: genome_build=
-      separate: false
     items: string
     type: array
 - id: config__algorithm__coverage_interval
   type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 6
-      prefix: config__algorithm__coverage_interval=
-      separate: false
     items: string
     type: array
 - id: config__algorithm__tools_on
   type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 7
-      prefix: config__algorithm__tools_on=
-      separate: false
     items:
       items: 'null'
       type: array
     type: array
 - id: config__algorithm__tools_off
   type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 8
-      prefix: config__algorithm__tools_off=
-      separate: false
     items:
       items: string
       type: array
     type: array
 - id: config__algorithm__qc
   type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 9
-      prefix: config__algorithm__qc=
-      separate: false
     items:
       items: string
       type: array
     type: array
 - id: config__algorithm__variant_regions
   type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 10
-      prefix: config__algorithm__variant_regions=
-      separate: false
-    items:
-    - File
-    - 'null'
+    items: File
     type: array
 - id: config__algorithm__variant_regions_merged
   type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 11
-      prefix: config__algorithm__variant_regions_merged=
-      separate: false
-    items:
-    - File
-    - 'null'
+    items: File
     type: array
 - id: config__algorithm__coverage
   type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 12
-      prefix: config__algorithm__coverage=
-      separate: false
     items:
     - File
     - 'null'
     type: array
 - id: config__algorithm__coverage_merged
   type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 13
-      prefix: config__algorithm__coverage_merged=
-      separate: false
     items:
     - File
     - 'null'
     type: array
 - id: description
   type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 14
-      prefix: description=
-      separate: false
     items: string
     type: array
 outputs:
@@ -172,71 +111,47 @@ outputs:
     items:
       fields:
       - name: description
-        type:
-          items: string
-          type: array
+        type: string
       - name: reference__fasta__base
-        type:
-          items: File
-          type: array
+        type: File
       - name: config__algorithm__coverage_interval
-        type:
-          items: string
-          type: array
+        type: string
       - name: genome_build
-        type:
-          items: string
-          type: array
+        type: string
       - name: config__algorithm__tools_off
         type:
-          items:
-            items: string
-            type: array
+          items: string
           type: array
       - name: config__algorithm__qc
         type:
-          items:
-            items: string
-            type: array
-          type: array
-      - name: analysis
-        type:
           items: string
           type: array
+      - name: analysis
+        type: string
       - name: config__algorithm__tools_on
         type:
-          items:
-            items: 'null'
-            type: array
+          items: 'null'
           type: array
       - name: config__algorithm__variant_regions
-        type:
-          items:
-          - File
-          - 'null'
-          type: array
+        type: File
       - name: align_bam
-        type:
-          items: File
-          type: array
+        type: File
       - name: config__algorithm__variant_regions_merged
-        type:
-          items:
-          - File
-          - 'null'
-          type: array
+        type: File
       - name: config__algorithm__coverage
         type:
-          items:
-          - File
-          - 'null'
-          type: array
+        - File
+        - 'null'
       - name: config__algorithm__coverage_merged
         type:
-          items:
-          - File
-          - 'null'
-          type: array
+        - File
+        - 'null'
       name: qc_rec
       type: record
     type: array
+requirements:
+- class: InlineJavascriptRequirement
+- class: InitialWorkDirRequirement
+  listing:
+  - entry: $(JSON.stringify(inputs))
+    entryname: cwl.inputs.json

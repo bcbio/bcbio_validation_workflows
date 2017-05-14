@@ -25,7 +25,7 @@ inputs:
     prefix: sentinel_parallel=
     separate: false
   type: string
-- default: alignment_rec
+- default: alignment_rec:description;config__algorithm__align_split_size;reference__fasta__base;rgnames__lb;rgnames__rg;rgnames__lane;reference__bwa__indexes;files;config__algorithm__aligner;rgnames__pl;config__algorithm__mark_duplicates;rgnames__pu;rgnames__sample
   id: sentinel_outputs
   inputBinding:
     itemSeparator: ;;
@@ -33,123 +33,66 @@ inputs:
     prefix: sentinel_outputs=
     separate: false
   type: string
+- default: files:var,config__algorithm__align_split_size:var,reference__fasta__base:var,rgnames__pl:var,rgnames__sample:var,rgnames__pu:var,rgnames__lane:var,rgnames__rg:var,rgnames__lb:var,reference__bwa__indexes:var,config__algorithm__aligner:var,config__algorithm__mark_duplicates:var,description:var
+  id: sentinel_inputs
+  inputBinding:
+    itemSeparator: ;;
+    position: 2
+    prefix: sentinel_inputs=
+    separate: false
+  type: string
 - id: files
   type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 2
-      prefix: files=
-      separate: false
     items:
       items: File
       type: array
     type: array
 - id: config__algorithm__align_split_size
   type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 3
-      prefix: config__algorithm__align_split_size=
-      separate: false
     items: 'null'
     type: array
 - id: reference__fasta__base
   type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 4
-      prefix: reference__fasta__base=
-      separate: false
     items: File
     type: array
 - id: rgnames__pl
   type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 5
-      prefix: rgnames__pl=
-      separate: false
     items: string
     type: array
 - id: rgnames__sample
   type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 6
-      prefix: rgnames__sample=
-      separate: false
     items: string
     type: array
 - id: rgnames__pu
   type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 7
-      prefix: rgnames__pu=
-      separate: false
     items: string
     type: array
 - id: rgnames__lane
   type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 8
-      prefix: rgnames__lane=
-      separate: false
     items: string
     type: array
 - id: rgnames__rg
   type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 9
-      prefix: rgnames__rg=
-      separate: false
     items: string
     type: array
 - id: rgnames__lb
   type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 10
-      prefix: rgnames__lb=
-      separate: false
     items: 'null'
     type: array
 - id: reference__bwa__indexes
   type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 11
-      prefix: reference__bwa__indexes=
-      separate: false
     items: File
     type: array
 - id: config__algorithm__aligner
   type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 12
-      prefix: config__algorithm__aligner=
-      separate: false
     items: string
     type: array
 - id: config__algorithm__mark_duplicates
   type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 13
-      prefix: config__algorithm__mark_duplicates=
-      separate: false
     items: string
     type: array
 - id: description
   type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 14
-      prefix: description=
-      separate: false
     items: string
     type: array
 outputs:
@@ -188,3 +131,9 @@ outputs:
       name: alignment_rec
       type: record
     type: array
+requirements:
+- class: InlineJavascriptRequirement
+- class: InitialWorkDirRequirement
+  listing:
+  - entry: $(JSON.stringify(inputs))
+    entryname: cwl.inputs.json

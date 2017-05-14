@@ -41,58 +41,36 @@ inputs:
     prefix: sentinel_outputs=
     separate: false
   type: string
+- default: regions__callable:var,regions__nblock:var,config__algorithm__nomap_split_size:var,config__algorithm__nomap_split_targets:var,reference__fasta__base:var,description:var
+  id: sentinel_inputs
+  inputBinding:
+    itemSeparator: ;;
+    position: 2
+    prefix: sentinel_inputs=
+    separate: false
+  type: string
 - id: regions__callable
   type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 2
-      prefix: regions__callable=
-      separate: false
     items: File
     type: array
 - id: regions__nblock
   type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 3
-      prefix: regions__nblock=
-      separate: false
     items: File
     type: array
 - id: config__algorithm__nomap_split_size
   type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 4
-      prefix: config__algorithm__nomap_split_size=
-      separate: false
     items: long
     type: array
 - id: config__algorithm__nomap_split_targets
   type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 5
-      prefix: config__algorithm__nomap_split_targets=
-      separate: false
     items: long
     type: array
 - id: reference__fasta__base
   type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 6
-      prefix: reference__fasta__base=
-      separate: false
     items: File
     type: array
 - id: description
   type:
-    inputBinding:
-      itemSeparator: ;;
-      position: 7
-      prefix: description=
-      separate: false
     items: string
     type: array
 outputs:
@@ -108,3 +86,9 @@ outputs:
   type:
     items: int
     type: array
+requirements:
+- class: InlineJavascriptRequirement
+- class: InitialWorkDirRequirement
+  listing:
+  - entry: $(JSON.stringify(inputs))
+    entryname: cwl.inputs.json

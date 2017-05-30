@@ -402,69 +402,6 @@ steps:
   - id: config__algorithm__non_callable_regions
   - id: config__algorithm__callable_count
   run: steps/combine_sample_regions.cwl
-- id: batch_for_variantcall
-  in:
-  - id: analysis
-    source: analysis
-  - id: genome_build
-    source: genome_build
-  - id: align_bam
-    source: alignment/align_bam
-  - id: config__algorithm__callable_regions
-    source: combine_sample_regions/config__algorithm__callable_regions
-  - id: metadata__batch
-    source: metadata__batch
-  - id: metadata__phenotype
-    source: metadata__phenotype
-  - id: regions__callable
-    source: postprocess_alignment/regions__callable
-  - id: config__algorithm__variantcaller
-    source: config__algorithm__variantcaller
-  - id: config__algorithm__coverage_interval
-    source: postprocess_alignment/config__algorithm__coverage_interval
-  - id: config__algorithm__variant_regions
-    source: postprocess_alignment/config__algorithm__variant_regions
-  - id: config__algorithm__validate
-    source: config__algorithm__validate
-  - id: config__algorithm__validate_regions
-    source: config__algorithm__validate_regions
-  - id: config__algorithm__tools_on
-    source: config__algorithm__tools_on
-  - id: config__algorithm__tools_off
-    source: config__algorithm__tools_off
-  - id: reference__fasta__base
-    source: reference__fasta__base
-  - id: reference__rtg
-    source: reference__rtg
-  - id: reference__genome_context
-    source: reference__genome_context
-  - id: genome_resources__variation__cosmic
-    source: genome_resources__variation__cosmic
-  - id: genome_resources__variation__dbsnp
-    source: genome_resources__variation__dbsnp
-  - id: description
-    source: description
-  out:
-  - id: batch_rec
-  run: steps/batch_for_variantcall.cwl
-- id: variantcall
-  in:
-  - id: batch_rec
-    source: batch_for_variantcall/batch_rec
-  out:
-  - id: vc_rec
-  run: wf-variantcall.cwl
-  scatter:
-  - batch_rec
-  scatterMethod: dotproduct
-- id: summarize_grading_vc
-  in:
-  - id: vc_rec
-    source: variantcall/vc_rec
-  out:
-  - id: validate__grading_summary
-  - id: validate__grading_plots
-  run: steps/summarize_grading_vc.cwl
 - id: qc_to_rec
   in:
   - id: align_bam
@@ -513,3 +450,66 @@ steps:
   out:
   - id: summary__multiqc
   run: steps/multiqc_summary.cwl
+- id: batch_for_variantcall
+  in:
+  - id: analysis
+    source: analysis
+  - id: genome_build
+    source: genome_build
+  - id: align_bam
+    source: alignment/align_bam
+  - id: config__algorithm__callable_regions
+    source: combine_sample_regions/config__algorithm__callable_regions
+  - id: metadata__batch
+    source: metadata__batch
+  - id: metadata__phenotype
+    source: metadata__phenotype
+  - id: regions__sample_callable
+    source: postprocess_alignment/regions__sample_callable
+  - id: config__algorithm__variantcaller
+    source: config__algorithm__variantcaller
+  - id: config__algorithm__coverage_interval
+    source: postprocess_alignment/config__algorithm__coverage_interval
+  - id: config__algorithm__variant_regions
+    source: postprocess_alignment/config__algorithm__variant_regions
+  - id: config__algorithm__validate
+    source: config__algorithm__validate
+  - id: config__algorithm__validate_regions
+    source: config__algorithm__validate_regions
+  - id: config__algorithm__tools_on
+    source: config__algorithm__tools_on
+  - id: config__algorithm__tools_off
+    source: config__algorithm__tools_off
+  - id: reference__fasta__base
+    source: reference__fasta__base
+  - id: reference__rtg
+    source: reference__rtg
+  - id: reference__genome_context
+    source: reference__genome_context
+  - id: genome_resources__variation__cosmic
+    source: genome_resources__variation__cosmic
+  - id: genome_resources__variation__dbsnp
+    source: genome_resources__variation__dbsnp
+  - id: description
+    source: description
+  out:
+  - id: batch_rec
+  run: steps/batch_for_variantcall.cwl
+- id: variantcall
+  in:
+  - id: batch_rec
+    source: batch_for_variantcall/batch_rec
+  out:
+  - id: vc_rec
+  run: wf-variantcall.cwl
+  scatter:
+  - batch_rec
+  scatterMethod: dotproduct
+- id: summarize_grading_vc
+  in:
+  - id: vc_rec
+    source: variantcall/vc_rec
+  out:
+  - id: validate__grading_summary
+  - id: validate__grading_plots
+  run: steps/summarize_grading_vc.cwl

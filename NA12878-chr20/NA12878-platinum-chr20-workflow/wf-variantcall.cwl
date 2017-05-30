@@ -48,7 +48,7 @@ inputs:
         type: File
       - name: align_bam
         type: File
-      - name: regions__callable
+      - name: regions__sample_callable
         type: File
       - name: config__algorithm__callable_regions
         type: File
@@ -121,7 +121,7 @@ outputs:
         type: File
       - name: align_bam
         type: File
-      - name: regions__callable
+      - name: regions__sample_callable
         type: File
       - name: config__algorithm__callable_regions
         type: File

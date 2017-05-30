@@ -48,7 +48,7 @@ inputs:
     prefix: sentinel_parallel=
     separate: false
   type: string
-- default: vc_rec:validate__summary;validate__tp;validate__fp;validate__fn;description;vrn_file;config__algorithm__validate;reference__fasta__base;config__algorithm__variantcaller;config__algorithm__coverage_interval;metadata__batch;config__algorithm__validate_regions;genome_build;metadata__phenotype;config__algorithm__tools_off;genome_resources__variation__dbsnp;genome_resources__variation__cosmic;reference__genome_context;analysis;config__algorithm__tools_on;config__algorithm__variant_regions;reference__rtg;align_bam;regions__callable;config__algorithm__callable_regions
+- default: vc_rec:validate__summary;validate__tp;validate__fp;validate__fn;description;vrn_file;config__algorithm__validate;reference__fasta__base;config__algorithm__variantcaller;config__algorithm__coverage_interval;metadata__batch;config__algorithm__validate_regions;genome_build;metadata__phenotype;config__algorithm__tools_off;genome_resources__variation__dbsnp;genome_resources__variation__cosmic;reference__genome_context;analysis;config__algorithm__tools_on;config__algorithm__variant_regions;reference__rtg;align_bam;regions__sample_callable;config__algorithm__callable_regions
   id: sentinel_outputs
   inputBinding:
     itemSeparator: ;;
@@ -110,7 +110,7 @@ inputs:
         type: File
       - name: align_bam
         type: File
-      - name: regions__callable
+      - name: regions__sample_callable
         type: File
       - name: config__algorithm__callable_regions
         type: File
@@ -186,7 +186,7 @@ outputs:
         type: File
       - name: align_bam
         type: File
-      - name: regions__callable
+      - name: regions__sample_callable
         type: File
       - name: config__algorithm__callable_regions
         type: File

@@ -25,7 +25,7 @@ inputs:
     prefix: sentinel_parallel=
     separate: false
   type: string
-- default: batch_rec:description;config__algorithm__validate;reference__fasta__base;config__algorithm__variantcaller;config__algorithm__coverage_interval;metadata__batch;config__algorithm__validate_regions;genome_build;metadata__phenotype;config__algorithm__tools_off;genome_resources__variation__dbsnp;genome_resources__variation__cosmic;reference__genome_context;analysis;config__algorithm__tools_on;config__algorithm__variant_regions;reference__rtg;align_bam;regions__callable;config__algorithm__callable_regions
+- default: batch_rec:description;config__algorithm__validate;reference__fasta__base;config__algorithm__variantcaller;config__algorithm__coverage_interval;metadata__batch;config__algorithm__validate_regions;genome_build;metadata__phenotype;config__algorithm__tools_off;genome_resources__variation__dbsnp;genome_resources__variation__cosmic;reference__genome_context;analysis;config__algorithm__tools_on;config__algorithm__variant_regions;reference__rtg;align_bam;regions__sample_callable;config__algorithm__callable_regions
   id: sentinel_outputs
   inputBinding:
     itemSeparator: ;;
@@ -33,7 +33,7 @@ inputs:
     prefix: sentinel_outputs=
     separate: false
   type: string
-- default: analysis:var,genome_build:var,align_bam:var,config__algorithm__callable_regions:var,metadata__batch:var,metadata__phenotype:var,regions__callable:var,config__algorithm__variantcaller:var,config__algorithm__coverage_interval:var,config__algorithm__variant_regions:var,config__algorithm__validate:var,config__algorithm__validate_regions:var,config__algorithm__tools_on:var,config__algorithm__tools_off:var,reference__fasta__base:var,reference__rtg:var,reference__genome_context:var,genome_resources__variation__cosmic:var,genome_resources__variation__dbsnp:var,description:var
+- default: analysis:var,genome_build:var,align_bam:var,config__algorithm__callable_regions:var,metadata__batch:var,metadata__phenotype:var,regions__sample_callable:var,config__algorithm__variantcaller:var,config__algorithm__coverage_interval:var,config__algorithm__variant_regions:var,config__algorithm__validate:var,config__algorithm__validate_regions:var,config__algorithm__tools_on:var,config__algorithm__tools_off:var,reference__fasta__base:var,reference__rtg:var,reference__genome_context:var,genome_resources__variation__cosmic:var,genome_resources__variation__dbsnp:var,description:var
   id: sentinel_inputs
   inputBinding:
     itemSeparator: ;;
@@ -67,7 +67,7 @@ inputs:
   type:
     items: string
     type: array
-- id: regions__callable
+- id: regions__sample_callable
   type:
     items: File
     type: array
@@ -179,7 +179,7 @@ outputs:
           type: File
         - name: align_bam
           type: File
-        - name: regions__callable
+        - name: regions__sample_callable
           type: File
         - name: config__algorithm__callable_regions
           type: File

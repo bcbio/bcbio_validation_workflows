@@ -1,0 +1,10 @@
+{
+    "baseline": {
+        "class": "File",
+        "path": "grading-summary-NA12878-chr20-baseline.csv"
+    },
+    "comparison": {
+        "class": "File",
+        "path": "grading-summary-NA12878-chr20.csv"
+    }
+}

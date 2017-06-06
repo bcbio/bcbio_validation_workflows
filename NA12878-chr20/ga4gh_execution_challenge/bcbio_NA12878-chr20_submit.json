@@ -1,0 +1,23 @@
+{
+    "config_file": {
+        "class": "File",
+        "path": ".synapseConfig"
+    },
+    "team_name": "",
+    "eval_id": "",
+    "file": [
+        {
+            "class": "File",
+            "path": "grading-summary-NA12878-chr20.csv"
+        },
+        {
+            "class": "File",
+            "path": "multiqc_report.html"
+        },
+        {
+            "class": "File",
+            "path": "NA12878-chr20-sort.bam"
+        }
+    ],
+    "parent_id": ""
+}

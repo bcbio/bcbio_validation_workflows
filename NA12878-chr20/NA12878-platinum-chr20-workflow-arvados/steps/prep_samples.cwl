@@ -1,6 +1,9 @@
 arguments:
 - position: 0
   valueFrom: sentinel_runtime=cores,$(runtime['cores']),ram,$(runtime['ram'])
+- sentinel_parallel=multi-parallel
+- sentinel_outputs=config__algorithm__variant_regions,config__algorithm__variant_regions_merged,config__algorithm__variant_regions_orig,config__algorithm__coverage,config__algorithm__coverage_merged,config__algorithm__coverage_orig,config__algorithm__seq2c_bed_ready
+- sentinel_inputs=prep_samples_rec:record
 baseCommand:
 - bcbio_nextgen.py
 - runfn
@@ -28,30 +31,6 @@ hints:
     specs:
     - https://anaconda.org/bioconda/pythonpy
 inputs:
-- default: multi-parallel
-  id: sentinel_parallel
-  inputBinding:
-    itemSeparator: ;;
-    position: 0
-    prefix: sentinel_parallel=
-    separate: false
-  type: string
-- default: config__algorithm__variant_regions,config__algorithm__variant_regions_merged,config__algorithm__variant_regions_orig,config__algorithm__coverage,config__algorithm__coverage_merged,config__algorithm__coverage_orig,config__algorithm__seq2c_bed_ready
-  id: sentinel_outputs
-  inputBinding:
-    itemSeparator: ;;
-    position: 1
-    prefix: sentinel_outputs=
-    separate: false
-  type: string
-- default: prep_samples_rec:record
-  id: sentinel_inputs
-  inputBinding:
-    itemSeparator: ;;
-    position: 2
-    prefix: sentinel_inputs=
-    separate: false
-  type: string
 - id: prep_samples_rec
   type:
     fields:

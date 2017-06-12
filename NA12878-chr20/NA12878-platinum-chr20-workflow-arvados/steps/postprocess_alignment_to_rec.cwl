@@ -1,6 +1,9 @@
 arguments:
 - position: 0
   valueFrom: sentinel_runtime=cores,$(runtime['cores']),ram,$(runtime['ram'])
+- sentinel_parallel=multi-combined
+- sentinel_outputs=postprocess_alignment_rec:description;reference__fasta__base;config__algorithm__coverage_interval;config__algorithm__recalibrate;config__algorithm__variant_regions;align_bam;config__algorithm__variant_regions_merged;config__algorithm__variant_regions_orig;config__algorithm__coverage;config__algorithm__coverage_merged;config__algorithm__coverage_orig;config__algorithm__seq2c_bed_ready
+- sentinel_inputs=align_bam:var,config__algorithm__coverage_interval:var,config__algorithm__variant_regions:var,config__algorithm__variant_regions_merged:var,config__algorithm__variant_regions_orig:var,config__algorithm__coverage:var,config__algorithm__coverage_merged:var,config__algorithm__coverage_orig:var,config__algorithm__seq2c_bed_ready:var,config__algorithm__recalibrate:var,reference__fasta__base:var,description:var
 baseCommand:
 - bcbio_nextgen.py
 - runfn
@@ -17,30 +20,6 @@ hints:
   outdirMin: 1024
   ramMin: 3072
 inputs:
-- default: multi-combined
-  id: sentinel_parallel
-  inputBinding:
-    itemSeparator: ;;
-    position: 0
-    prefix: sentinel_parallel=
-    separate: false
-  type: string
-- default: postprocess_alignment_rec:description;reference__fasta__base;config__algorithm__coverage_interval;config__algorithm__recalibrate;config__algorithm__variant_regions;align_bam;config__algorithm__variant_regions_merged;config__algorithm__variant_regions_orig;config__algorithm__coverage;config__algorithm__coverage_merged;config__algorithm__coverage_orig;config__algorithm__seq2c_bed_ready
-  id: sentinel_outputs
-  inputBinding:
-    itemSeparator: ;;
-    position: 1
-    prefix: sentinel_outputs=
-    separate: false
-  type: string
-- default: align_bam:var,config__algorithm__coverage_interval:var,config__algorithm__variant_regions:var,config__algorithm__variant_regions_merged:var,config__algorithm__variant_regions_orig:var,config__algorithm__coverage:var,config__algorithm__coverage_merged:var,config__algorithm__coverage_orig:var,config__algorithm__seq2c_bed_ready:var,config__algorithm__recalibrate:var,reference__fasta__base:var,description:var
-  id: sentinel_inputs
-  inputBinding:
-    itemSeparator: ;;
-    position: 2
-    prefix: sentinel_inputs=
-    separate: false
-  type: string
 - id: align_bam
   secondaryFiles:
   - .bai

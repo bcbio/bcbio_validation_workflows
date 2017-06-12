@@ -201,7 +201,7 @@ inputs:
 - id: config__algorithm__tools_on
   type:
     items:
-      items: 'null'
+      items: string
       type: array
     type: array
 - id: config__algorithm__effects

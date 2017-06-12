@@ -1,6 +1,9 @@
 arguments:
 - position: 0
   valueFrom: sentinel_runtime=cores,$(runtime['cores']),ram,$(runtime['ram'])
+- sentinel_parallel=multi-combined
+- sentinel_outputs=qc_rec:description;reference__fasta__base;config__algorithm__coverage_interval;genome_build;config__algorithm__tools_off;config__algorithm__qc;analysis;config__algorithm__tools_on;config__algorithm__variant_regions;align_bam;config__algorithm__variant_regions_merged;config__algorithm__coverage;config__algorithm__coverage_merged
+- sentinel_inputs=align_bam:var,analysis:var,reference__fasta__base:var,genome_build:var,config__algorithm__coverage_interval:var,config__algorithm__tools_on:var,config__algorithm__tools_off:var,config__algorithm__qc:var,config__algorithm__variant_regions:var,config__algorithm__variant_regions_merged:var,config__algorithm__coverage:var,config__algorithm__coverage_merged:var,description:var
 baseCommand:
 - bcbio_nextgen.py
 - runfn
@@ -17,30 +20,6 @@ hints:
   outdirMin: 1024
   ramMin: 3072
 inputs:
-- default: multi-combined
-  id: sentinel_parallel
-  inputBinding:
-    itemSeparator: ;;
-    position: 0
-    prefix: sentinel_parallel=
-    separate: false
-  type: string
-- default: qc_rec:description;reference__fasta__base;config__algorithm__coverage_interval;genome_build;config__algorithm__tools_off;config__algorithm__qc;analysis;config__algorithm__tools_on;config__algorithm__variant_regions;align_bam;config__algorithm__variant_regions_merged;config__algorithm__coverage;config__algorithm__coverage_merged
-  id: sentinel_outputs
-  inputBinding:
-    itemSeparator: ;;
-    position: 1
-    prefix: sentinel_outputs=
-    separate: false
-  type: string
-- default: align_bam:var,analysis:var,reference__fasta__base:var,genome_build:var,config__algorithm__coverage_interval:var,config__algorithm__tools_on:var,config__algorithm__tools_off:var,config__algorithm__qc:var,config__algorithm__variant_regions:var,config__algorithm__variant_regions_merged:var,config__algorithm__coverage:var,config__algorithm__coverage_merged:var,description:var
-  id: sentinel_inputs
-  inputBinding:
-    itemSeparator: ;;
-    position: 2
-    prefix: sentinel_inputs=
-    separate: false
-  type: string
 - id: align_bam
   secondaryFiles:
   - .bai
@@ -66,7 +45,7 @@ inputs:
 - id: config__algorithm__tools_on
   type:
     items:
-      items: 'null'
+      items: string
       type: array
     type: array
 - id: config__algorithm__tools_off
@@ -130,7 +109,7 @@ outputs:
         type: string
       - name: config__algorithm__tools_on
         type:
-          items: 'null'
+          items: string
           type: array
       - name: config__algorithm__variant_regions
         type: File

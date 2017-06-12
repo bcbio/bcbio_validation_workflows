@@ -40,7 +40,7 @@ inputs:
         type: string
       - name: config__algorithm__tools_on
         type:
-          items: 'null'
+          items: string
           type: array
       - name: config__algorithm__variant_regions
         type: File
@@ -113,7 +113,7 @@ outputs:
         type: string
       - name: config__algorithm__tools_on
         type:
-          items: 'null'
+          items: string
           type: array
       - name: config__algorithm__variant_regions
         type: File

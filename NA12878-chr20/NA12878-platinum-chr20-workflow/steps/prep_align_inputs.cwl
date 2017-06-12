@@ -1,6 +1,9 @@
 arguments:
 - position: 0
   valueFrom: sentinel_runtime=cores,$(runtime['cores']),ram,$(runtime['ram'])
+- sentinel_parallel=single-split
+- sentinel_outputs=process_alignment_rec:files;config__algorithm__quality_format;align_split
+- sentinel_inputs=alignment_rec:record
 baseCommand:
 - bcbio_nextgen.py
 - runfn
@@ -29,30 +32,6 @@ hints:
     specs:
     - https://anaconda.org/bioconda/biobambam
 inputs:
-- default: single-split
-  id: sentinel_parallel
-  inputBinding:
-    itemSeparator: ;;
-    position: 0
-    prefix: sentinel_parallel=
-    separate: false
-  type: string
-- default: process_alignment_rec:files;config__algorithm__quality_format;align_split
-  id: sentinel_outputs
-  inputBinding:
-    itemSeparator: ;;
-    position: 1
-    prefix: sentinel_outputs=
-    separate: false
-  type: string
-- default: alignment_rec:record
-  id: sentinel_inputs
-  inputBinding:
-    itemSeparator: ;;
-    position: 2
-    prefix: sentinel_inputs=
-    separate: false
-  type: string
 - id: alignment_rec
   type:
     fields:

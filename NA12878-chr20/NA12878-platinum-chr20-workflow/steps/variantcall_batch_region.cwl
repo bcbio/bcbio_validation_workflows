@@ -1,6 +1,9 @@
 arguments:
 - position: 0
   valueFrom: sentinel_runtime=cores,$(runtime['cores']),ram,$(runtime['ram'])
+- sentinel_parallel=batch-parallel
+- sentinel_outputs=vrn_file_region,region
+- sentinel_inputs=batch_rec:record,region:var
 baseCommand:
 - bcbio_nextgen.py
 - runfn
@@ -32,6 +35,9 @@ hints:
   - package: gatk
     specs:
     - https://anaconda.org/bioconda/gatk
+  - package: gatk4
+    specs:
+    - https://anaconda.org/bioconda/gatk4
   - package: gatk-framework
     specs:
     - https://anaconda.org/bioconda/gatk-framework
@@ -77,30 +83,6 @@ hints:
     specs:
     - https://anaconda.org/bioconda/perl
 inputs:
-- default: batch-parallel
-  id: sentinel_parallel
-  inputBinding:
-    itemSeparator: ;;
-    position: 0
-    prefix: sentinel_parallel=
-    separate: false
-  type: string
-- default: vrn_file_region,region
-  id: sentinel_outputs
-  inputBinding:
-    itemSeparator: ;;
-    position: 1
-    prefix: sentinel_outputs=
-    separate: false
-  type: string
-- default: batch_rec:record,region:var
-  id: sentinel_inputs
-  inputBinding:
-    itemSeparator: ;;
-    position: 2
-    prefix: sentinel_inputs=
-    separate: false
-  type: string
 - id: batch_rec
   type:
     items:
@@ -139,7 +121,7 @@ inputs:
         type: string
       - name: config__algorithm__tools_on
         type:
-          items: 'null'
+          items: string
           type: array
       - name: config__algorithm__variant_regions
         type: File

@@ -3,7 +3,8 @@
 details:
   - algorithm:
       aligner: bwa
-      variantcaller: [freebayes, platypus, samtools]
+      variantcaller: [gatk-haplotype, freebayes, platypus, samtools]
+      tools_on: [gatk4]
       tools_off: [gemini]
       effects: false
     analysis: variant2

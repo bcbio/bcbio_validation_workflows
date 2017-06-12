@@ -1,6 +1,9 @@
 arguments:
 - position: 0
   valueFrom: sentinel_runtime=cores,$(runtime['cores']),ram,$(runtime['ram'])
+- sentinel_parallel=multi-combined
+- sentinel_outputs=prep_samples_rec:description;reference__fasta__base;config__algorithm__variant_regions
+- sentinel_inputs=config__algorithm__variant_regions:var,reference__fasta__base:var,description:var
 baseCommand:
 - bcbio_nextgen.py
 - runfn
@@ -17,30 +20,6 @@ hints:
   outdirMin: 1024
   ramMin: 3072
 inputs:
-- default: multi-combined
-  id: sentinel_parallel
-  inputBinding:
-    itemSeparator: ;;
-    position: 0
-    prefix: sentinel_parallel=
-    separate: false
-  type: string
-- default: prep_samples_rec:description;reference__fasta__base;config__algorithm__variant_regions
-  id: sentinel_outputs
-  inputBinding:
-    itemSeparator: ;;
-    position: 1
-    prefix: sentinel_outputs=
-    separate: false
-  type: string
-- default: config__algorithm__variant_regions:var,reference__fasta__base:var,description:var
-  id: sentinel_inputs
-  inputBinding:
-    itemSeparator: ;;
-    position: 2
-    prefix: sentinel_inputs=
-    separate: false
-  type: string
 - id: config__algorithm__variant_regions
   type:
     items: 'null'

@@ -1,6 +1,9 @@
 arguments:
 - position: 0
   valueFrom: sentinel_runtime=cores,$(runtime['cores']),ram,$(runtime['ram'])
+- sentinel_parallel=multi-parallel
+- sentinel_outputs=qcout_rec:summary__qc;summary__metrics;description;reference__fasta__base;config__algorithm__coverage_interval;genome_build;config__algorithm__tools_off;config__algorithm__qc;analysis;config__algorithm__tools_on;config__algorithm__variant_regions;align_bam;config__algorithm__variant_regions_merged;config__algorithm__coverage;config__algorithm__coverage_merged
+- sentinel_inputs=qc_rec:record
 baseCommand:
 - bcbio_nextgen.py
 - runfn
@@ -49,30 +52,6 @@ hints:
     specs:
     - https://anaconda.org/bioconda/samtools
 inputs:
-- default: multi-parallel
-  id: sentinel_parallel
-  inputBinding:
-    itemSeparator: ;;
-    position: 0
-    prefix: sentinel_parallel=
-    separate: false
-  type: string
-- default: qcout_rec:summary__qc;summary__metrics;description;reference__fasta__base;config__algorithm__coverage_interval;genome_build;config__algorithm__tools_off;config__algorithm__qc;analysis;config__algorithm__tools_on;config__algorithm__variant_regions;align_bam;config__algorithm__variant_regions_merged;config__algorithm__coverage;config__algorithm__coverage_merged
-  id: sentinel_outputs
-  inputBinding:
-    itemSeparator: ;;
-    position: 1
-    prefix: sentinel_outputs=
-    separate: false
-  type: string
-- default: qc_rec:record
-  id: sentinel_inputs
-  inputBinding:
-    itemSeparator: ;;
-    position: 2
-    prefix: sentinel_inputs=
-    separate: false
-  type: string
 - id: qc_rec
   type:
     fields:
@@ -96,7 +75,7 @@ inputs:
       type: string
     - name: config__algorithm__tools_on
       type:
-        items: 'null'
+        items: string
         type: array
     - name: config__algorithm__variant_regions
       type: File
@@ -144,7 +123,7 @@ outputs:
       type: string
     - name: config__algorithm__tools_on
       type:
-        items: 'null'
+        items: string
         type: array
     - name: config__algorithm__variant_regions
       type: File

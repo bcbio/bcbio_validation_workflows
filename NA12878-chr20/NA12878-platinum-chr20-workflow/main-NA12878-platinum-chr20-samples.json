@@ -48,7 +48,9 @@
         ]
     ],
     "config__algorithm__tools_on": [
-        []
+        [
+            "gatk4"
+        ]
     ],
     "config__algorithm__validate": [
         {
@@ -73,6 +75,7 @@
     ],
     "config__algorithm__variantcaller": [
         [
+            "gatk-haplotype",
             "freebayes",
             "platypus",
             "samtools"
@@ -3368,7 +3371,7 @@
         []
     ],
     "rgnames__lane": [
-        "1_2017-05-30_NA12878-platinum-chr20"
+        "1_2017-06-10_NA12878-platinum-chr20"
     ],
     "rgnames__lb": [
         null
@@ -3377,7 +3380,7 @@
         "illumina"
     ],
     "rgnames__pu": [
-        "1_2017-05-30_NA12878-platinum-chr20"
+        "1_2017-06-10_NA12878-platinum-chr20"
     ],
     "rgnames__rg": [
         "NA12878-chr20"

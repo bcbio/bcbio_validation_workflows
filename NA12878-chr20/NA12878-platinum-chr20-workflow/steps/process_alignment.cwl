@@ -1,6 +1,9 @@
 arguments:
 - position: 0
   valueFrom: sentinel_runtime=cores,$(runtime['cores']),ram,$(runtime['ram'])
+- sentinel_parallel=single-parallel
+- sentinel_outputs=work_bam,align_bam,hla__fastq,work_bam_plus__disc,work_bam_plus__sr
+- sentinel_inputs=alignment_rec:record,process_alignment_rec:record
 baseCommand:
 - bcbio_nextgen.py
 - runfn
@@ -61,30 +64,6 @@ hints:
     specs:
     - https://anaconda.org/bioconda/samblaster
 inputs:
-- default: single-parallel
-  id: sentinel_parallel
-  inputBinding:
-    itemSeparator: ;;
-    position: 0
-    prefix: sentinel_parallel=
-    separate: false
-  type: string
-- default: work_bam,align_bam,hla__fastq,work_bam_plus__disc,work_bam_plus__sr
-  id: sentinel_outputs
-  inputBinding:
-    itemSeparator: ;;
-    position: 1
-    prefix: sentinel_outputs=
-    separate: false
-  type: string
-- default: alignment_rec:record,process_alignment_rec:record
-  id: sentinel_inputs
-  inputBinding:
-    itemSeparator: ;;
-    position: 2
-    prefix: sentinel_inputs=
-    separate: false
-  type: string
 - id: alignment_rec
   type:
     fields:

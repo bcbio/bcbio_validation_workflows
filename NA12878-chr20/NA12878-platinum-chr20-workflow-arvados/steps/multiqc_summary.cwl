@@ -1,6 +1,9 @@
 arguments:
 - position: 0
   valueFrom: sentinel_runtime=cores,$(runtime['cores']),ram,$(runtime['ram'])
+- sentinel_parallel=multi-combined
+- sentinel_outputs=summary__multiqc
+- sentinel_inputs=qcout_rec:record
 baseCommand:
 - bcbio_nextgen.py
 - runfn
@@ -25,30 +28,6 @@ hints:
     specs:
     - https://anaconda.org/bioconda/multiqc-bcbio
 inputs:
-- default: multi-combined
-  id: sentinel_parallel
-  inputBinding:
-    itemSeparator: ;;
-    position: 0
-    prefix: sentinel_parallel=
-    separate: false
-  type: string
-- default: summary__multiqc
-  id: sentinel_outputs
-  inputBinding:
-    itemSeparator: ;;
-    position: 1
-    prefix: sentinel_outputs=
-    separate: false
-  type: string
-- default: qcout_rec:record
-  id: sentinel_inputs
-  inputBinding:
-    itemSeparator: ;;
-    position: 2
-    prefix: sentinel_inputs=
-    separate: false
-  type: string
 - id: qcout_rec
   type:
     items:
@@ -79,7 +58,7 @@ inputs:
         type: string
       - name: config__algorithm__tools_on
         type:
-          items: 'null'
+          items: string
           type: array
       - name: config__algorithm__variant_regions
         type: File

@@ -1,68 +1,32 @@
 
 
 
+
 workflow alignment {
-    String description
-    String config__algorithm__align_split_size
-    File reference__fasta__base
-    String rgnames__lb
-    String rgnames__rg
-    String rgnames__lane
-    File reference__bwa__indexes
-    Array[File] files
-    String config__algorithm__aligner
-    String rgnames__pl
-    String config__algorithm__mark_duplicates
-    String rgnames__pu
-    String rgnames__sample
+    AlignmentRec alignment_rec
     
     scatter (process_alignment_rec_local in prep_align_inputs.process_alignment_rec) {
   
       call process_alignment {
-          input: config__algorithm__quality_format=process_alignment_rec_local.config__algorithm__quality_format, 
-            align_split=process_alignment_rec_local.align_split, 
-            files=process_alignment_rec_local.files, 
-            description=description, 
-            config__algorithm__align_split_size=config__algorithm__align_split_size, 
-            reference__fasta__base=reference__fasta__base, 
-            rgnames__lb=rgnames__lb, 
-            rgnames__rg=rgnames__rg, 
-            rgnames__lane=rgnames__lane, 
-            reference__bwa__indexes=reference__bwa__indexes, 
-            config__algorithm__aligner=config__algorithm__aligner, 
-            rgnames__pl=rgnames__pl, 
-            config__algorithm__mark_duplicates=config__algorithm__mark_duplicates, 
-            rgnames__pu=rgnames__pu, 
-            rgnames__sample=rgnames__sample
+          input: alignment_rec=alignment_rec, 
+            process_alignment_rec=process_alignment_rec_local
       }
   
     }
 
 
     call merge_split_alignments {
-        input: work_bam=process_alignment.work_bam, 
-          align_bam_input=process_alignment.align_bam, 
-          work_bam_plus__disc_input=process_alignment.work_bam_plus__disc, 
-          work_bam_plus__sr_input=process_alignment.work_bam_plus__sr, 
-          hla__fastq_input=process_alignment.hla__fastq, 
-          description=description
+        input: alignment_rec=alignment_rec, 
+          work_bam=process_alignment.work_bam, 
+          align_bam_toolinput=process_alignment.align_bam, 
+          work_bam_plus__disc_toolinput=process_alignment.work_bam_plus__disc, 
+          work_bam_plus__sr_toolinput=process_alignment.work_bam_plus__sr, 
+          hla__fastq_toolinput=process_alignment.hla__fastq
     }
 
 
     call prep_align_inputs {
-        input: description=description, 
-          config__algorithm__align_split_size=config__algorithm__align_split_size, 
-          reference__fasta__base=reference__fasta__base, 
-          rgnames__lb=rgnames__lb, 
-          rgnames__rg=rgnames__rg, 
-          rgnames__lane=rgnames__lane, 
-          reference__bwa__indexes=reference__bwa__indexes, 
-          files=files, 
-          config__algorithm__aligner=config__algorithm__aligner, 
-          rgnames__pl=rgnames__pl, 
-          config__algorithm__mark_duplicates=config__algorithm__mark_duplicates, 
-          rgnames__pu=rgnames__pu, 
-          rgnames__sample=rgnames__sample
+        input: alignment_rec=alignment_rec
     }
 
     
@@ -76,43 +40,17 @@ workflow alignment {
 }
 
 task process_alignment {
-    String sentinel_parallel
-    String sentinel_outputs
-    String config__algorithm__quality_format
-    String align_split
-    Array[File] files
-    String description
-    String config__algorithm__align_split_size
-    File reference__fasta__base
-    String rgnames__lb
-    String rgnames__rg
-    String rgnames__lane
-    File reference__bwa__indexes
-    String config__algorithm__aligner
-    String rgnames__pl
-    String config__algorithm__mark_duplicates
-    String rgnames__pu
-    String rgnames__sample
+    AlignmentRec alignment_rec
+    ProcessAlignmentRec process_alignment_rec
 
     command {
         bcbio_nextgen.py runfn process_alignment cwl \
-        sentinel_parallel=${default='single-parallel' sentinel_parallel} \
-        sentinel_outputs=${default='work_bam,align_bam,hla__fastq,work_bam_plus__disc,work_bam_plus__sr' sentinel_outputs} \
-        config__algorithm__quality_format=${config__algorithm__quality_format} \
-        align_split=${align_split} \
-        files=${sep=';;' files} \
-        description=${description} \
-        config__algorithm__align_split_size=${config__algorithm__align_split_size} \
-        reference__fasta__base=${reference__fasta__base} \
-        rgnames__lb=${rgnames__lb} \
-        rgnames__rg=${rgnames__rg} \
-        rgnames__lane=${rgnames__lane} \
-        reference__bwa__indexes=${reference__bwa__indexes} \
-        config__algorithm__aligner=${config__algorithm__aligner} \
-        rgnames__pl=${rgnames__pl} \
-        config__algorithm__mark_duplicates=${config__algorithm__mark_duplicates} \
-        rgnames__pu=${rgnames__pu} \
-        rgnames__sample=${rgnames__sample}
+        sentienl_runtime=cores,8,ram,24576MB \
+        sentinel_parallel=single-parallel \
+        sentinel_outputs=work_bam,align_bam,hla__fastq,work_bam_plus__disc,work_bam_plus__sr \
+        sentinel_inputs=alignment_rec:record,process_alignment_rec:record \
+        ${alignment_rec} \
+        ${process_alignment_rec}
     }
 
     output {
@@ -124,33 +62,34 @@ task process_alignment {
     }
 
     runtime {
-        docker: 'bcbio/bcbio'
+        docker: 'quay.io/bcbio/bcbio-align'
         cpu: '8'
-        memory: '16384 MB'
+        memory: '24576 MB'
+        disks: 'local-disk 4220 HDD'
     }
 }
 
 
 task merge_split_alignments {
-    String sentinel_parallel
-    String sentinel_outputs
+    AlignmentRec alignment_rec
     Array[File] work_bam
-    Array[File] align_bam_input
-    Array[File] work_bam_plus__disc_input
-    Array[File] work_bam_plus__sr_input
-    Array[File] hla__fastq_input
-    String description
+    Array[File] align_bam_toolinput
+    Array[File] work_bam_plus__disc_toolinput
+    Array[File] work_bam_plus__sr_toolinput
+    Array[File] hla__fastq_toolinput
 
     command {
         bcbio_nextgen.py runfn merge_split_alignments cwl \
-        sentinel_parallel=${default='single-merge' sentinel_parallel} \
-        sentinel_outputs=${default='align_bam,work_bam_plus__disc,work_bam_plus__sr,hla__fastq' sentinel_outputs} \
-        work_bam=${sep=';;' work_bam} \
-        align_bam=${sep=';;' align_bam_input} \
-        work_bam_plus__disc=${sep=';;' work_bam_plus__disc_input} \
-        work_bam_plus__sr=${sep=';;' work_bam_plus__sr_input} \
-        hla__fastq=${sep=';;' hla__fastq_input} \
-        description=${description}
+        sentienl_runtime=cores,8,ram,24576MB \
+        sentinel_parallel=single-merge \
+        sentinel_outputs=align_bam,work_bam_plus__disc,work_bam_plus__sr,hla__fastq \
+        sentinel_inputs=alignment_rec:record,work_bam:var,align_bam:var,work_bam_plus__disc:var,work_bam_plus__sr:var,hla__fastq:var \
+        ${alignment_rec} \
+        ${sep=';;' work_bam} \
+        ${sep=';;' align_bam_toolinput} \
+        ${sep=';;' work_bam_plus__disc_toolinput} \
+        ${sep=';;' work_bam_plus__sr_toolinput} \
+        ${sep=';;' hla__fastq_toolinput}
     }
 
     output {
@@ -161,57 +100,35 @@ task merge_split_alignments {
     }
 
     runtime {
-        docker: 'bcbio/bcbio'
+        docker: 'quay.io/bcbio/bcbio-align'
         cpu: '8'
-        memory: '16384 MB'
+        memory: '24576 MB'
+        disks: 'local-disk 8441 HDD'
     }
 }
 
 
 task prep_align_inputs {
-    String sentinel_parallel
-    String sentinel_outputs
-    String description
-    String config__algorithm__align_split_size
-    File reference__fasta__base
-    String rgnames__lb
-    String rgnames__rg
-    String rgnames__lane
-    File reference__bwa__indexes
-    Array[File] files
-    String config__algorithm__aligner
-    String rgnames__pl
-    String config__algorithm__mark_duplicates
-    String rgnames__pu
-    String rgnames__sample
+    AlignmentRec alignment_rec
 
     command {
         bcbio_nextgen.py runfn prep_align_inputs cwl \
-        sentinel_parallel=${default='single-split' sentinel_parallel} \
-        sentinel_outputs=${default='process_alignment_rec' sentinel_outputs} \
-        description=${description} \
-        config__algorithm__align_split_size=${config__algorithm__align_split_size} \
-        reference__fasta__base=${reference__fasta__base} \
-        rgnames__lb=${rgnames__lb} \
-        rgnames__rg=${rgnames__rg} \
-        rgnames__lane=${rgnames__lane} \
-        reference__bwa__indexes=${reference__bwa__indexes} \
-        files=${sep=';;' files} \
-        config__algorithm__aligner=${config__algorithm__aligner} \
-        rgnames__pl=${rgnames__pl} \
-        config__algorithm__mark_duplicates=${config__algorithm__mark_duplicates} \
-        rgnames__pu=${rgnames__pu} \
-        rgnames__sample=${rgnames__sample}
+        sentienl_runtime=cores,1,ram,3072MB \
+        sentinel_parallel=single-split \
+        sentinel_outputs=process_alignment_rec:files;config__algorithm__quality_format;align_split \
+        sentinel_inputs=alignment_rec:record \
+        ${alignment_rec}
     }
 
     output {
-        Array[Object] process_alignment_rec = read_objects('wdl.output.process_alignment_rec.txt')
+        Array[ProcessAlignmentRec] process_alignment_rec = read_struct('wdl.output.process_alignment_rec.txt')
     }
 
     runtime {
-        docker: 'bcbio/bcbio'
-        cpu: '8'
-        memory: '16384 MB'
+        docker: 'quay.io/bcbio/bcbio-align'
+        cpu: '1'
+        memory: '3072 MB'
+        disks: 'local-disk 4220 HDD'
     }
 }
 

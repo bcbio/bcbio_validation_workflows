@@ -36,19 +36,20 @@ the workflow. There is also a work in progress WDL description of the workflow.
 
 ### Running
 
-1. Retrieve the data and CWL description with the
-   [Synapse python client](https://github.com/Sage-Bionetworks/synapsePythonClient#installation):
-
-        synapse get -r syn9725771
-
-2. [Install bcbio-vm](https://github.com/chapmanb/bcbio-nextgen-vm#installation)
-   which has wrapper scripts and distributions of several CWL enabled tools
-   (cwltool, toil, bunny):
+1. [Install bcbio-vm](https://github.com/chapmanb/bcbio-nextgen-vm#installation)
+   which has wrapper scripts and ready to run distributions of several CWL enabled tools
+   (cwltool, toil, bunny) and infrastructure (synapse):
 
         wget https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh
         bash Miniconda-latest-Linux-x86_64.sh -b -p ~/install/bcbio-vm/anaconda
         ~/install/bcbio-vm/anaconda/bin/conda install --yes -c conda-forge -c bioconda bcbio-nextgen-vm
         export PATH=~/install/bcbio-vm/anaconda/bin:$PATH
+
+2. Retrieve the data and CWL description with the
+   [Synapse python client](https://github.com/Sage-Bionetworks/synapsePythonClient#installation):
+
+        synapse get -r syn9725771
+
 
 3. The [NA12878-chr20 directory on GitHub](https://github.com/bcbio/bcbio_validation_workflows/tree/master/NA12878-chr20)
    contains starter shell scripts to run this with different CWL-enabled tools:

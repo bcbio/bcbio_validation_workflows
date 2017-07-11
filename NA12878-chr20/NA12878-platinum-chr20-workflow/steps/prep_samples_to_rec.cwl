@@ -22,7 +22,9 @@ hints:
 inputs:
 - id: config__algorithm__variant_regions
   type:
-    items: 'null'
+    items:
+    - 'null'
+    - string
     type: array
 - id: reference__fasta__base
   type:
@@ -42,7 +44,9 @@ outputs:
       - name: reference__fasta__base
         type: File
       - name: config__algorithm__variant_regions
-        type: 'null'
+        type:
+        - 'null'
+        - string
       name: prep_samples_rec
       type: record
     type: array

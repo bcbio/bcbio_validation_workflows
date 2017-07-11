@@ -2,7 +2,7 @@ arguments:
 - position: 0
   valueFrom: sentinel_runtime=cores,$(runtime['cores']),ram,$(runtime['ram'])
 - sentinel_parallel=batch-single
-- sentinel_outputs=vc_rec:validate__summary;validate__tp;validate__fp;validate__fn;description;vrn_file;config__algorithm__validate;reference__fasta__base;config__algorithm__variantcaller;config__algorithm__coverage_interval;metadata__batch;config__algorithm__validate_regions;genome_build;metadata__phenotype;config__algorithm__tools_off;genome_resources__variation__dbsnp;genome_resources__variation__cosmic;reference__genome_context;analysis;config__algorithm__tools_on;config__algorithm__variant_regions;reference__rtg;align_bam;regions__sample_callable;config__algorithm__callable_regions
+- sentinel_outputs=vc_rec:validate__summary;validate__tp;validate__fp;validate__fn;description;vrn_file;config__algorithm__validate;reference__fasta__base;reference__snpeff;config__algorithm__variantcaller;config__algorithm__coverage_interval;metadata__batch;config__algorithm__validate_regions;genome_build;metadata__phenotype;genome_resources__aliases__human;config__algorithm__tools_off;genome_resources__variation__dbsnp;genome_resources__variation__cosmic;reference__genome_context;analysis;config__algorithm__tools_on;config__algorithm__variant_regions;genome_resources__aliases__ensembl;reference__rtg;genome_resources__aliases__snpeff;align_bam;regions__sample_callable;config__algorithm__callable_regions
 - sentinel_inputs=batch_rec:record,vrn_file:var
 baseCommand:
 - bcbio_nextgen.py
@@ -53,18 +53,27 @@ inputs:
         type: File
       - name: reference__fasta__base
         type: File
+      - name: reference__snpeff
+        type: File
       - name: config__algorithm__variantcaller
         type: string
       - name: config__algorithm__coverage_interval
         type: string
       - name: metadata__batch
-        type: 'null'
+        type:
+        - 'null'
+        - string
       - name: config__algorithm__validate_regions
         type: File
       - name: genome_build
         type: string
       - name: metadata__phenotype
         type: string
+      - name: genome_resources__aliases__human
+        type:
+        - string
+        - 'null'
+        - boolean
       - name: config__algorithm__tools_off
         type:
           items: string
@@ -72,7 +81,9 @@ inputs:
       - name: genome_resources__variation__dbsnp
         type: File
       - name: genome_resources__variation__cosmic
-        type: 'null'
+        type:
+        - 'null'
+        - string
       - name: reference__genome_context
         type:
           items: File
@@ -85,8 +96,12 @@ inputs:
           type: array
       - name: config__algorithm__variant_regions
         type: File
+      - name: genome_resources__aliases__ensembl
+        type: string
       - name: reference__rtg
         type: File
+      - name: genome_resources__aliases__snpeff
+        type: string
       - name: align_bam
         type: File
       - name: regions__sample_callable
@@ -129,18 +144,27 @@ outputs:
         type: File
       - name: reference__fasta__base
         type: File
+      - name: reference__snpeff
+        type: File
       - name: config__algorithm__variantcaller
         type: string
       - name: config__algorithm__coverage_interval
         type: string
       - name: metadata__batch
-        type: 'null'
+        type:
+        - 'null'
+        - string
       - name: config__algorithm__validate_regions
         type: File
       - name: genome_build
         type: string
       - name: metadata__phenotype
         type: string
+      - name: genome_resources__aliases__human
+        type:
+        - string
+        - 'null'
+        - boolean
       - name: config__algorithm__tools_off
         type:
           items: string
@@ -148,7 +172,9 @@ outputs:
       - name: genome_resources__variation__dbsnp
         type: File
       - name: genome_resources__variation__cosmic
-        type: 'null'
+        type:
+        - 'null'
+        - string
       - name: reference__genome_context
         type:
           items: File
@@ -161,8 +187,12 @@ outputs:
           type: array
       - name: config__algorithm__variant_regions
         type: File
+      - name: genome_resources__aliases__ensembl
+        type: string
       - name: reference__rtg
         type: File
+      - name: genome_resources__aliases__snpeff
+        type: string
       - name: align_bam
         type: File
       - name: regions__sample_callable

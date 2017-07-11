@@ -1,0 +1,6 @@
+local:
+  ref: biodata/collections
+  inputs:
+    - biodata/giab/na12878
+resources:
+  default: {cores: 8, memory: 3G, jvm_opts: [-Xms750m, -Xmx3000m]}

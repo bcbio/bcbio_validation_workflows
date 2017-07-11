@@ -35,11 +35,15 @@ inputs:
     - name: description
       type: string
     - name: config__algorithm__align_split_size
-      type: 'null'
+      type:
+      - 'null'
+      - string
     - name: reference__fasta__base
       type: File
     - name: rgnames__lb
-      type: 'null'
+      type:
+      - 'null'
+      - string
     - name: rgnames__rg
       type: string
     - name: rgnames__lane
@@ -55,7 +59,10 @@ inputs:
     - name: rgnames__pl
       type: string
     - name: config__algorithm__mark_duplicates
-      type: string
+      type:
+      - string
+      - 'null'
+      - boolean
     - name: rgnames__pu
       type: string
     - name: rgnames__sample

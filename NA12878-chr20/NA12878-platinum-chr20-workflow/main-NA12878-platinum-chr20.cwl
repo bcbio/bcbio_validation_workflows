@@ -4,9 +4,13 @@ hints: []
 inputs:
 - id: config__algorithm__align_split_size
   type:
-    items: 'null'
+    items:
+    - 'null'
+    - string
     type: array
 - id: config__algorithm__validate
+  secondaryFiles:
+  - .tbi
   type:
     items: File
     type: array
@@ -15,6 +19,8 @@ inputs:
     items: File
     type: array
 - id: genome_resources__variation__lcr
+  secondaryFiles:
+  - .tbi
   type:
     items: File
     type: array
@@ -33,24 +39,32 @@ inputs:
     items: File
     type: array
 - id: genome_resources__variation__train_1000g
+  secondaryFiles:
+  - .tbi
   type:
     items: File
     type: array
 - id: config__algorithm__coverage_interval
   type:
-    items: 'null'
+    items:
+    - 'null'
+    - string
     type: array
 - id: genome_resources__variation__qsignature
   type:
     items: File
     type: array
 - id: genome_resources__variation__train_hapmap
+  secondaryFiles:
+  - .tbi
   type:
     items: File
     type: array
 - id: rgnames__lb
   type:
-    items: 'null'
+    items:
+    - 'null'
+    - string
     type: array
 - id: rgnames__rg
   type:
@@ -58,11 +72,16 @@ inputs:
     type: array
 - id: config__algorithm__realign
   type:
-    items: string
+    items:
+    - string
+    - 'null'
+    - boolean
     type: array
 - id: metadata__batch
   type:
-    items: 'null'
+    items:
+    - 'null'
+    - string
     type: array
 - id: rgnames__lane
   type:
@@ -85,6 +104,8 @@ inputs:
     items: long
     type: array
 - id: files
+  secondaryFiles:
+  - .bai
   type:
     items:
       items: File
@@ -111,6 +132,8 @@ inputs:
     items: string
     type: array
 - id: genome_resources__variation__train_omni
+  secondaryFiles:
+  - .tbi
   type:
     items: File
     type: array
@@ -124,11 +147,16 @@ inputs:
     type: array
 - id: vrn_file
   type:
-    items: 'null'
+    items:
+    - 'null'
+    - string
     type: array
 - id: config__algorithm__recalibrate
   type:
-    items: string
+    items:
+    - string
+    - 'null'
+    - boolean
     type: array
 - id: metadata__phenotype
   type:
@@ -140,7 +168,10 @@ inputs:
     type: array
 - id: genome_resources__aliases__human
   type:
-    items: string
+    items:
+    - string
+    - 'null'
+    - boolean
     type: array
 - id: config__algorithm__tools_off
   type:
@@ -149,21 +180,29 @@ inputs:
       type: array
     type: array
 - id: genome_resources__variation__dbsnp
+  secondaryFiles:
+  - .tbi
   type:
     items: File
     type: array
 - id: config__algorithm__mark_duplicates
   type:
-    items: string
+    items:
+    - string
+    - 'null'
+    - boolean
     type: array
 - id: rgnames__pu
   type:
     items: string
     type: array
 - id: reference__viral
+  secondaryFiles:
+  - .fai
+  - ^.dict
   type:
     items:
-      items: 'null'
+      items: File
       type: array
     type: array
 - id: genome_resources__version
@@ -172,13 +211,17 @@ inputs:
     type: array
 - id: genome_resources__variation__cosmic
   type:
-    items: 'null'
+    items:
+    - 'null'
+    - string
     type: array
 - id: genome_resources__rnaseq__refflat
   type:
     items: File
     type: array
 - id: reference__genome_context
+  secondaryFiles:
+  - .tbi
   type:
     items:
       items: File
@@ -206,11 +249,16 @@ inputs:
     type: array
 - id: config__algorithm__effects
   type:
-    items: string
+    items:
+    - string
+    - 'null'
+    - boolean
     type: array
 - id: config__algorithm__variant_regions
   type:
-    items: 'null'
+    items:
+    - 'null'
+    - string
     type: array
 - id: genome_resources__aliases__ensembl
   type:
@@ -221,6 +269,8 @@ inputs:
     items: File
     type: array
 - id: genome_resources__variation__train_indels
+  secondaryFiles:
+  - .tbi
   type:
     items: File
     type: array
@@ -231,8 +281,8 @@ inputs:
 - id: config__algorithm__archive
   type:
     items:
-      items: 'null'
-      type: array
+    - 'null'
+    - string
     type: array
 outputs:
 - id: align_bam
@@ -490,6 +540,14 @@ steps:
     source: genome_resources__variation__cosmic
   - id: genome_resources__variation__dbsnp
     source: genome_resources__variation__dbsnp
+  - id: genome_resources__aliases__ensembl
+    source: genome_resources__aliases__ensembl
+  - id: genome_resources__aliases__human
+    source: genome_resources__aliases__human
+  - id: genome_resources__aliases__snpeff
+    source: genome_resources__aliases__snpeff
+  - id: reference__snpeff
+    source: reference__snpeff
   - id: description
     source: description
   out:

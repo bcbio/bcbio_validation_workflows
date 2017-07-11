@@ -21,6 +21,8 @@ hints:
   ramMin: 3072
 inputs:
 - id: files
+  secondaryFiles:
+  - .bai
   type:
     items:
       items: File
@@ -28,7 +30,9 @@ inputs:
     type: array
 - id: config__algorithm__align_split_size
   type:
-    items: 'null'
+    items:
+    - 'null'
+    - string
     type: array
 - id: reference__fasta__base
   type:
@@ -56,7 +60,9 @@ inputs:
     type: array
 - id: rgnames__lb
   type:
-    items: 'null'
+    items:
+    - 'null'
+    - string
     type: array
 - id: reference__bwa__indexes
   type:
@@ -68,7 +74,10 @@ inputs:
     type: array
 - id: config__algorithm__mark_duplicates
   type:
-    items: string
+    items:
+    - string
+    - 'null'
+    - boolean
     type: array
 - id: description
   type:
@@ -82,11 +91,15 @@ outputs:
       - name: description
         type: string
       - name: config__algorithm__align_split_size
-        type: 'null'
+        type:
+        - 'null'
+        - string
       - name: reference__fasta__base
         type: File
       - name: rgnames__lb
-        type: 'null'
+        type:
+        - 'null'
+        - string
       - name: rgnames__rg
         type: string
       - name: rgnames__lane
@@ -102,7 +115,10 @@ outputs:
       - name: rgnames__pl
         type: string
       - name: config__algorithm__mark_duplicates
-        type: string
+        type:
+        - string
+        - 'null'
+        - boolean
       - name: rgnames__pu
         type: string
       - name: rgnames__sample

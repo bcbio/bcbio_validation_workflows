@@ -39,7 +39,9 @@ inputs:
     - name: reference__fasta__base
       type: File
     - name: config__algorithm__variant_regions
-      type: 'null'
+      type:
+      - 'null'
+      - string
     name: prep_samples_rec
     type: record
 outputs:

@@ -30,18 +30,27 @@ inputs:
         type: File
       - name: reference__fasta__base
         type: File
+      - name: reference__snpeff
+        type: File
       - name: config__algorithm__variantcaller
         type: string
       - name: config__algorithm__coverage_interval
         type: string
       - name: metadata__batch
-        type: 'null'
+        type:
+        - 'null'
+        - string
       - name: config__algorithm__validate_regions
         type: File
       - name: genome_build
         type: string
       - name: metadata__phenotype
         type: string
+      - name: genome_resources__aliases__human
+        type:
+        - string
+        - 'null'
+        - boolean
       - name: config__algorithm__tools_off
         type:
           items: string
@@ -49,7 +58,9 @@ inputs:
       - name: genome_resources__variation__dbsnp
         type: File
       - name: genome_resources__variation__cosmic
-        type: 'null'
+        type:
+        - 'null'
+        - string
       - name: reference__genome_context
         type:
           items: File
@@ -62,8 +73,12 @@ inputs:
           type: array
       - name: config__algorithm__variant_regions
         type: File
+      - name: genome_resources__aliases__ensembl
+        type: string
       - name: reference__rtg
         type: File
+      - name: genome_resources__aliases__snpeff
+        type: string
       - name: align_bam
         type: File
       - name: regions__sample_callable

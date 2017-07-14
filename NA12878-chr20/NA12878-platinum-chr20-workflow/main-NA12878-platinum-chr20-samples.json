@@ -242,7 +242,17 @@
     "reference__fasta__base": [
         {
             "class": "File",
-            "path": "../biodata/collections/hg38/seq-wf.tar.gz"
+            "path": "../biodata/collections/hg38/seq/hg38.fa",
+            "secondaryFiles": [
+                {
+                    "class": "File",
+                    "path": "../biodata/collections/hg38/seq/hg38.fa.fai"
+                },
+                {
+                    "class": "File",
+                    "path": "../biodata/collections/hg38/seq/hg38.dict"
+                }
+            ]
         }
     ],
     "reference__genome_context": [
@@ -318,7 +328,7 @@
         ]
     ],
     "rgnames__lane": [
-        "1_2017-07-11_NA12878-platinum-chr20"
+        "1_2017-07-13_NA12878-platinum-chr20"
     ],
     "rgnames__lb": [
         null
@@ -327,7 +337,7 @@
         "illumina"
     ],
     "rgnames__pu": [
-        "1_2017-07-11_NA12878-platinum-chr20"
+        "1_2017-07-13_NA12878-platinum-chr20"
     ],
     "rgnames__rg": [
         "NA12878-chr20"

@@ -21,13 +21,7 @@ inputs:
   type:
     items: File
     type: array
-- id: genome_resources__variation__lcr
-  secondaryFiles:
-  - .tbi
-  type:
-    items: File
-    type: array
-- id: reference__snpeff
+- id: reference__snpeff__GRCh38.86
   type:
     items: File
     type: array
@@ -37,31 +31,11 @@ inputs:
       items: string
       type: array
     type: array
-- id: genome_resources__rnaseq__transcripts_mask
-  type:
-    items: File
-    type: array
-- id: genome_resources__variation__train_1000g
-  secondaryFiles:
-  - .tbi
-  type:
-    items: File
-    type: array
 - id: config__algorithm__coverage_interval
   type:
     items:
     - 'null'
     - string
-    type: array
-- id: genome_resources__variation__qsignature
-  type:
-    items: File
-    type: array
-- id: genome_resources__variation__train_hapmap
-  secondaryFiles:
-  - .tbi
-  type:
-    items: File
     type: array
 - id: rgnames__lb
   type:
@@ -72,13 +46,6 @@ inputs:
 - id: rgnames__rg
   type:
     items: string
-    type: array
-- id: config__algorithm__realign
-  type:
-    items:
-    - string
-    - 'null'
-    - boolean
     type: array
 - id: metadata__batch
   type:
@@ -94,11 +61,11 @@ inputs:
   type:
     items: long
     type: array
-- id: genome_resources__variation__sv_repeat
+- id: reference__bwa__indexes
   type:
     items: File
     type: array
-- id: reference__bwa__indexes
+- id: reference__twobit
   type:
     items: File
     type: array
@@ -114,10 +81,6 @@ inputs:
       items: File
       type: array
     type: array
-- id: genome_resources__rnaseq__dexseq
-  type:
-    items: File
-    type: array
 - id: description
   type:
     items: string
@@ -126,19 +89,9 @@ inputs:
   type:
     items: File
     type: array
-- id: genome_resources__rnaseq__transcriptome_index__tophat
-  type:
-    items: string
-    type: array
 - id: config__algorithm__aligner
   type:
     items: string
-    type: array
-- id: genome_resources__variation__train_omni
-  secondaryFiles:
-  - .tbi
-  type:
-    items: File
     type: array
 - id: rgnames__pl
   type:
@@ -147,12 +100,6 @@ inputs:
 - id: genome_build
   type:
     items: string
-    type: array
-- id: vrn_file
-  type:
-    items:
-    - 'null'
-    - string
     type: array
 - id: config__algorithm__recalibrate
   type:
@@ -164,10 +111,6 @@ inputs:
 - id: metadata__phenotype
   type:
     items: string
-    type: array
-- id: genome_resources__rnaseq__transcripts
-  type:
-    items: File
     type: array
 - id: genome_resources__aliases__human
   type:
@@ -199,28 +142,11 @@ inputs:
   type:
     items: string
     type: array
-- id: reference__viral
-  secondaryFiles:
-  - .fai
-  - ^.dict
-  type:
-    items:
-      items: File
-      type: array
-    type: array
-- id: genome_resources__version
-  type:
-    items: long
-    type: array
 - id: genome_resources__variation__cosmic
   type:
     items:
     - 'null'
     - string
-    type: array
-- id: genome_resources__rnaseq__refflat
-  type:
-    items: File
     type: array
 - id: reference__genome_context
   secondaryFiles:
@@ -250,13 +176,6 @@ inputs:
       items: string
       type: array
     type: array
-- id: config__algorithm__effects
-  type:
-    items:
-    - string
-    - 'null'
-    - boolean
-    type: array
 - id: config__algorithm__variant_regions
   type:
     items:
@@ -271,25 +190,13 @@ inputs:
   type:
     items: File
     type: array
-- id: genome_resources__variation__train_indels
-  secondaryFiles:
-  - .tbi
-  type:
-    items: File
-    type: array
 - id: genome_resources__aliases__snpeff
   type:
     items: string
     type: array
-- id: config__algorithm__archive
-  type:
-    items:
-    - 'null'
-    - string
-    type: array
 outputs:
 - id: align_bam
-  outputSource: alignment/align_bam
+  outputSource: postprocess_alignment/align_bam
   type:
     items: File
     type: array
@@ -301,11 +208,30 @@ outputs:
     - 'null'
     type: array
 - id: validate__grading_summary
-  outputSource: summarize_grading_vc/validate__grading_summary
+  outputSource: summarize_vc/validate__grading_summary
   type:
     items:
     - File
     - 'null'
+    type: array
+- id: variants__calls
+  outputSource: summarize_vc/variants__calls
+  type:
+    items:
+      items:
+      - File
+      - 'null'
+      type: array
+    type: array
+- id: variants__gvcf
+  outputSource: summarize_vc/variants__gvcf
+  type:
+    items:
+    - 'null'
+    - items:
+      - File
+      - 'null'
+      type: array
     type: array
 requirements:
 - class: EnvVarRequirement
@@ -390,6 +316,8 @@ steps:
   in:
   - id: align_bam
     source: alignment/align_bam
+  - id: genome_resources__variation__dbsnp
+    source: genome_resources__variation__dbsnp
   - id: config__algorithm__coverage_interval
     source: config__algorithm__coverage_interval
   - id: config__algorithm__variant_regions
@@ -408,6 +336,10 @@ steps:
     source: prep_samples/config__algorithm__seq2c_bed_ready
   - id: config__algorithm__recalibrate
     source: config__algorithm__recalibrate
+  - id: config__algorithm__tools_on
+    source: config__algorithm__tools_on
+  - id: reference__twobit
+    source: reference__twobit
   - id: reference__fasta__base
     source: reference__fasta__base
   - id: description
@@ -431,7 +363,7 @@ steps:
   - id: regions__callable
   - id: regions__sample_callable
   - id: regions__nblock
-  - id: regions__highdepth
+  - id: align_bam
   run: steps/postprocess_alignment.cwl
   scatter:
   - postprocess_alignment_rec
@@ -458,7 +390,7 @@ steps:
 - id: qc_to_rec
   in:
   - id: align_bam
-    source: alignment/align_bam
+    source: postprocess_alignment/align_bam
   - id: analysis
     source: analysis
   - id: reference__fasta__base
@@ -510,7 +442,7 @@ steps:
   - id: genome_build
     source: genome_build
   - id: align_bam
-    source: alignment/align_bam
+    source: postprocess_alignment/align_bam
   - id: config__algorithm__callable_regions
     source: combine_sample_regions/config__algorithm__callable_regions
   - id: metadata__batch
@@ -549,8 +481,8 @@ steps:
     source: genome_resources__aliases__human
   - id: genome_resources__aliases__snpeff
     source: genome_resources__aliases__snpeff
-  - id: reference__snpeff
-    source: reference__snpeff
+  - id: reference__snpeff__GRCh38.86
+    source: reference__snpeff__GRCh38.86
   - id: description
     source: description
   out:
@@ -566,11 +498,13 @@ steps:
   scatter:
   - batch_rec
   scatterMethod: dotproduct
-- id: summarize_grading_vc
+- id: summarize_vc
   in:
   - id: vc_rec
     source: variantcall/vc_rec
   out:
+  - id: variants__calls
+  - id: variants__gvcf
   - id: validate__grading_summary
   - id: validate__grading_plots
-  run: steps/summarize_grading_vc.cwl
+  run: steps/summarize_vc.cwl

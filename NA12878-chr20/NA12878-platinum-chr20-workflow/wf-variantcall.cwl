@@ -12,7 +12,7 @@ inputs:
         type: File
       - name: reference__fasta__base
         type: File
-      - name: reference__snpeff
+      - name: reference__snpeff__GRCh38.86
         type: File
       - name: config__algorithm__variantcaller
         type: string
@@ -100,7 +100,7 @@ outputs:
         type: File
       - name: reference__fasta__base
         type: File
-      - name: reference__snpeff
+      - name: reference__snpeff__GRCh38.86
         type: File
       - name: config__algorithm__variantcaller
         type: string

@@ -3,19 +3,13 @@
         "variant2"
     ],
     "config__algorithm__align_split_size": [
-        null
+        "null"
     ],
     "config__algorithm__aligner": [
         "bwa"
     ],
-    "config__algorithm__archive": [
-        null
-    ],
     "config__algorithm__coverage_interval": [
-        null
-    ],
-    "config__algorithm__effects": [
-        "False"
+        "null"
     ],
     "config__algorithm__mark_duplicates": [
         "True"
@@ -35,9 +29,6 @@
             "variants",
             "picard"
         ]
-    ],
-    "config__algorithm__realign": [
-        "False"
     ],
     "config__algorithm__recalibrate": [
         "False"
@@ -71,7 +62,7 @@
         }
     ],
     "config__algorithm__variant_regions": [
-        null
+        "null"
     ],
     "config__algorithm__variantcaller": [
         [
@@ -110,35 +101,8 @@
     "genome_resources__aliases__snpeff": [
         "GRCh38.86"
     ],
-    "genome_resources__rnaseq__dexseq": [
-        {
-            "class": "File",
-            "path": "../biodata/collections/hg38/rnaseq/ref-transcripts.dexseq.gff3"
-        }
-    ],
-    "genome_resources__rnaseq__refflat": [
-        {
-            "class": "File",
-            "path": "../biodata/collections/hg38/rnaseq/ref-transcripts.refFlat"
-        }
-    ],
-    "genome_resources__rnaseq__transcriptome_index__tophat": [
-        "../rnaseq/tophat/hg38_transcriptome.ver"
-    ],
-    "genome_resources__rnaseq__transcripts": [
-        {
-            "class": "File",
-            "path": "../biodata/collections/hg38/rnaseq/ref-transcripts.gtf"
-        }
-    ],
-    "genome_resources__rnaseq__transcripts_mask": [
-        {
-            "class": "File",
-            "path": "../biodata/collections/hg38/rnaseq/ref-transcripts-mask.gtf"
-        }
-    ],
     "genome_resources__variation__cosmic": [
-        null
+        "null"
     ],
     "genome_resources__variation__dbsnp": [
         {
@@ -152,83 +116,8 @@
             ]
         }
     ],
-    "genome_resources__variation__lcr": [
-        {
-            "class": "File",
-            "path": "../biodata/collections/hg38/coverage/problem_regions/repeats/LCR.bed.gz",
-            "secondaryFiles": [
-                {
-                    "class": "File",
-                    "path": "../biodata/collections/hg38/coverage/problem_regions/repeats/LCR.bed.gz.tbi"
-                }
-            ]
-        }
-    ],
-    "genome_resources__variation__qsignature": [
-        {
-            "class": "File",
-            "path": "../biodata/collections/hg38/variation/qsignature.txt"
-        }
-    ],
-    "genome_resources__variation__sv_repeat": [
-        {
-            "class": "File",
-            "path": "../biodata/collections/hg38/coverage/problem_regions/repeats/sv_repeat_telomere_centromere.bed"
-        }
-    ],
-    "genome_resources__variation__train_1000g": [
-        {
-            "class": "File",
-            "path": "../biodata/collections/hg38/variation/1000G_phase1.snps.high_confidence.vcf.gz",
-            "secondaryFiles": [
-                {
-                    "class": "File",
-                    "path": "../biodata/collections/hg38/variation/1000G_phase1.snps.high_confidence.vcf.gz.tbi"
-                }
-            ]
-        }
-    ],
-    "genome_resources__variation__train_hapmap": [
-        {
-            "class": "File",
-            "path": "../biodata/collections/hg38/variation/hapmap_3.3.vcf.gz",
-            "secondaryFiles": [
-                {
-                    "class": "File",
-                    "path": "../biodata/collections/hg38/variation/hapmap_3.3.vcf.gz.tbi"
-                }
-            ]
-        }
-    ],
-    "genome_resources__variation__train_indels": [
-        {
-            "class": "File",
-            "path": "../biodata/collections/hg38/variation/Mills_and_1000G_gold_standard.indels.vcf.gz",
-            "secondaryFiles": [
-                {
-                    "class": "File",
-                    "path": "../biodata/collections/hg38/variation/Mills_and_1000G_gold_standard.indels.vcf.gz.tbi"
-                }
-            ]
-        }
-    ],
-    "genome_resources__variation__train_omni": [
-        {
-            "class": "File",
-            "path": "../biodata/collections/hg38/variation/1000G_omni2.5.vcf.gz",
-            "secondaryFiles": [
-                {
-                    "class": "File",
-                    "path": "../biodata/collections/hg38/variation/1000G_omni2.5.vcf.gz.tbi"
-                }
-            ]
-        }
-    ],
-    "genome_resources__version": [
-        17
-    ],
     "metadata__batch": [
-        null
+        "null"
     ],
     "metadata__phenotype": [
         ""
@@ -275,77 +164,34 @@
             "path": "../biodata/collections/hg38/rtg--hg38.sdf-wf.tar.gz"
         }
     ],
-    "reference__snpeff": [
+    "reference__snpeff__GRCh38.86": [
         {
             "class": "File",
             "path": "../biodata/collections/hg38/snpeff--GRCh38.86-wf.tar.gz"
         }
     ],
-    "reference__viral": [
-        [
-            {
-                "class": "File",
-                "path": "../biodata/collections/hg38/viral/gdc-viral.dict"
-            },
-            {
-                "class": "File",
-                "path": "../biodata/collections/hg38/viral/gdc-viral.fa",
-                "secondaryFiles": [
-                    {
-                        "class": "File",
-                        "path": "../biodata/collections/hg38/viral/gdc-viral.fa.fai"
-                    },
-                    {
-                        "class": "File",
-                        "path": "../biodata/collections/hg38/viral/gdc-viral.dict"
-                    }
-                ]
-            },
-            {
-                "class": "File",
-                "path": "../biodata/collections/hg38/viral/gdc-viral.fa.amb"
-            },
-            {
-                "class": "File",
-                "path": "../biodata/collections/hg38/viral/gdc-viral.fa.ann"
-            },
-            {
-                "class": "File",
-                "path": "../biodata/collections/hg38/viral/gdc-viral.fa.bwt"
-            },
-            {
-                "class": "File",
-                "path": "../biodata/collections/hg38/viral/gdc-viral.fa.fai"
-            },
-            {
-                "class": "File",
-                "path": "../biodata/collections/hg38/viral/gdc-viral.fa.pac"
-            },
-            {
-                "class": "File",
-                "path": "../biodata/collections/hg38/viral/gdc-viral.fa.sa"
-            }
-        ]
+    "reference__twobit": [
+        {
+            "class": "File",
+            "path": "../biodata/collections/hg38/ucsc/hg38.2bit"
+        }
     ],
     "rgnames__lane": [
-        "1_2017-07-13_NA12878-platinum-chr20"
+        "1_2017-08-24_NA12878-platinum-chr20"
     ],
     "rgnames__lb": [
-        null
+        "null"
     ],
     "rgnames__pl": [
         "illumina"
     ],
     "rgnames__pu": [
-        "1_2017-07-13_NA12878-platinum-chr20"
+        "1_2017-08-24_NA12878-platinum-chr20"
     ],
     "rgnames__rg": [
         "NA12878-chr20"
     ],
     "rgnames__sample": [
         "NA12878-chr20"
-    ],
-    "vrn_file": [
-        null
     ]
 }

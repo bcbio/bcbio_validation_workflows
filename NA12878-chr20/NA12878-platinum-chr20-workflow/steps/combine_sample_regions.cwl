@@ -13,8 +13,8 @@ class: CommandLineTool
 cwlVersion: v1.0
 hints:
 - class: DockerRequirement
-  dockerImageId: quay.io/bcbio/bcbio-align
-  dockerPull: quay.io/bcbio/bcbio-align
+  dockerImageId: quay.io/bcbio/bcbio-vc
+  dockerPull: quay.io/bcbio/bcbio-vc
 - class: ResourceRequirement
   coresMin: 1
   outdirMin: 1024
@@ -27,6 +27,12 @@ hints:
   - package: htslib
     specs:
     - https://anaconda.org/bioconda/htslib
+  - package: gatk4
+    specs:
+    - https://anaconda.org/bioconda/gatk4
+  - package: gatk
+    specs:
+    - https://anaconda.org/bioconda/gatk
 inputs:
 - id: regions__callable
   type:

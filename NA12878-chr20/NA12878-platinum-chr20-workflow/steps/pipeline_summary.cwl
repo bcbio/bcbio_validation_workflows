@@ -13,8 +13,8 @@ class: CommandLineTool
 cwlVersion: v1.0
 hints:
 - class: DockerRequirement
-  dockerImageId: quay.io/bcbio/bcbio-qc
-  dockerPull: quay.io/bcbio/bcbio-qc
+  dockerImageId: quay.io/bcbio/bcbio-vc
+  dockerPull: quay.io/bcbio/bcbio-vc
 - class: ResourceRequirement
   coresMin: 8
   outdirMin: 1024
@@ -51,6 +51,9 @@ hints:
   - package: samtools
     specs:
     - https://anaconda.org/bioconda/samtools
+  - package: preseq
+    specs:
+    - https://anaconda.org/bioconda/preseq
 inputs:
 - id: qc_rec
   type:

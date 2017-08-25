@@ -65,7 +65,6 @@ outputs:
 - id: hla__fastq
   outputSource: merge_split_alignments/hla__fastq
   type:
-  - File
   - 'null'
   - items: File
     type: array

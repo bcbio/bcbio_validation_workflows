@@ -13,8 +13,8 @@ class: CommandLineTool
 cwlVersion: v1.0
 hints:
 - class: DockerRequirement
-  dockerImageId: quay.io/bcbio/bcbio-align
-  dockerPull: quay.io/bcbio/bcbio-align
+  dockerImageId: quay.io/bcbio/bcbio-vc
+  dockerPull: quay.io/bcbio/bcbio-vc
 - class: ResourceRequirement
   coresMin: 8
   outdirMin: 9465
@@ -28,6 +28,9 @@ hints:
   - package: samtools
     specs:
     - https://anaconda.org/bioconda/samtools
+  - package: variantbam
+    specs:
+    - https://anaconda.org/bioconda/variantbam
 inputs:
 - id: alignment_rec
   type:
@@ -70,10 +73,14 @@ inputs:
     name: alignment_rec
     type: record
 - id: work_bam
+  secondaryFiles:
+  - .bai
   type:
     items: File
     type: array
 - id: align_bam_toolinput
+  secondaryFiles:
+  - .bai
   type:
     items: File
     type: array
@@ -96,7 +103,6 @@ inputs:
 - id: hla__fastq_toolinput
   type:
     items:
-    - File
     - 'null'
     - items: File
       type: array
@@ -120,7 +126,6 @@ outputs:
   - 'null'
 - id: hla__fastq
   type:
-  - File
   - 'null'
   - items: File
     type: array

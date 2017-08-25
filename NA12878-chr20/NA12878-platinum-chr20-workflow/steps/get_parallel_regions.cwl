@@ -13,8 +13,8 @@ class: CommandLineTool
 cwlVersion: v1.0
 hints:
 - class: DockerRequirement
-  dockerImageId: quay.io/bcbio/bcbio-base
-  dockerPull: quay.io/bcbio/bcbio-base
+  dockerImageId: quay.io/bcbio/bcbio-vc
+  dockerPull: quay.io/bcbio/bcbio-vc
 - class: ResourceRequirement
   coresMin: 1
   outdirMin: 1024
@@ -30,7 +30,7 @@ inputs:
         type: File
       - name: reference__fasta__base
         type: File
-      - name: reference__snpeff
+      - name: reference__snpeff__GRCh38.86
         type: File
       - name: config__algorithm__variantcaller
         type: string

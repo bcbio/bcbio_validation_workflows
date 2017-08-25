@@ -78,7 +78,7 @@ hints:
     specs:
     - https://anaconda.org/bioconda/r
     version:
-    - 3.2.2
+    - 3.3.2
   - package: perl
     specs:
     - https://anaconda.org/bioconda/perl
@@ -93,7 +93,7 @@ inputs:
         type: File
       - name: reference__fasta__base
         type: File
-      - name: reference__snpeff
+      - name: reference__snpeff__GRCh38.86
         type: File
       - name: config__algorithm__variantcaller
         type: string

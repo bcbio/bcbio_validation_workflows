@@ -93,10 +93,10 @@ inputs:
         type: File
       - name: reference__fasta__base
         type: File
-      - name: reference__snpeff__GRCh38.86
-        type: File
       - name: config__algorithm__variantcaller
         type: string
+      - name: reference__snpeff__GRCh38_86
+        type: File
       - name: config__algorithm__coverage_interval
         type: string
       - name: metadata__batch

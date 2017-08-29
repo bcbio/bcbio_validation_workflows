@@ -164,7 +164,7 @@
             "path": "../biodata/collections/hg38/rtg--hg38.sdf-wf.tar.gz"
         }
     ],
-    "reference__snpeff__GRCh38.86": [
+    "reference__snpeff__GRCh38_86": [
         {
             "class": "File",
             "path": "../biodata/collections/hg38/snpeff--GRCh38.86-wf.tar.gz"
@@ -177,7 +177,7 @@
         }
     ],
     "rgnames__lane": [
-        "1_2017-08-24_NA12878-platinum-chr20"
+        "1_2017-08-29_NA12878-platinum-chr20"
     ],
     "rgnames__lb": [
         "null"
@@ -186,7 +186,7 @@
         "illumina"
     ],
     "rgnames__pu": [
-        "1_2017-08-24_NA12878-platinum-chr20"
+        "1_2017-08-29_NA12878-platinum-chr20"
     ],
     "rgnames__rg": [
         "NA12878-chr20"

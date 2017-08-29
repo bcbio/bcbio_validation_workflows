@@ -21,15 +21,15 @@ inputs:
   type:
     items: File
     type: array
-- id: reference__snpeff__GRCh38.86
-  type:
-    items: File
-    type: array
 - id: config__algorithm__variantcaller
   type:
     items:
       items: string
       type: array
+    type: array
+- id: reference__snpeff__GRCh38_86
+  type:
+    items: File
     type: array
 - id: config__algorithm__coverage_interval
   type:
@@ -481,8 +481,8 @@ steps:
     source: genome_resources__aliases__human
   - id: genome_resources__aliases__snpeff
     source: genome_resources__aliases__snpeff
-  - id: reference__snpeff__GRCh38.86
-    source: reference__snpeff__GRCh38.86
+  - id: reference__snpeff__GRCh38_86
+    source: reference__snpeff__GRCh38_86
   - id: description
     source: description
   out:

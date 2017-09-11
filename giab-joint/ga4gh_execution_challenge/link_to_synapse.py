@@ -1,0 +1,1 @@
+../../NA12878-chr20/ga4gh_execution_challenge/link_to_synapse.py

@@ -1,0 +1,35 @@
+{
+    "config_file": {
+        "class": "File",
+        "path": ".synapseConfig"
+    },
+    "team_name": "",
+    "eval_id": "",
+    "file": [
+        {
+            "class": "File",
+            "path": "grading-summary-gj1.csv"
+        },
+        {
+            "class": "File",
+            "path": "multiqc_report.html"
+        },
+        {
+            "class": "File",
+            "path": "NA12878-gatk-haplotype.vcf.gz"
+        },
+        {
+            "class": "File",
+            "path": "NA24385-gatk-haplotype.vcf.gz"
+        },
+        {
+            "class": "File",
+            "path": "NA24631-gatk-haplotype.vcf.gz"
+        },
+        {
+            "class": "File",
+            "path": "gj1-gatk-haplotype.vcf.gz"
+        }
+    ],
+    "parent_id": ""
+}

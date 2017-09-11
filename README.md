@@ -50,7 +50,6 @@ the workflow. There is also a work in progress WDL description of the workflow.
 
         synapse get -r syn9725771
 
-
 3. The [NA12878-chr20 directory on GitHub](https://github.com/bcbio/bcbio_validation_workflows/tree/master/NA12878-chr20)
    contains starter shell scripts to run this with different CWL-enabled tools:
    [cwltool](https://github.com/common-workflow-language/cwltool),
@@ -58,3 +57,33 @@ the workflow. There is also a work in progress WDL description of the workflow.
    [rabix bunny](https://github.com/rabix/bunny). It can either use a local
    bcbio installation or
    [bcbio Docker containers](https://github.com/bcbio/bcbio_docker).
+
+## Joint calling validation workflow with Genome in a Bottle samples
+
+Run a [GATK4 joint variant calling workflow](https://software.broadinstitute.org/gatk/) using
+three diverse Genome in a Bottle samples from different sequencing technologies:
+
+- NA12878: (Caucasian daughter): [65x NovaSeq TruSeq Nano](https://basespace.illumina.com/datacentral)
+- NA24385 (Ashkenazi Jewish son): [50x HiSeq x10 dataset from 10x genomicss](https://support.10xgenomics.com/de-novo-assembly/datasets)
+- NA24631 (Chinese son) -- [55x Illumina HiSeq 2500 2x250bp](ftp://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/data/ChineseTrio/HG005_NA24631_son/HG005_NA24631_son_HiSeq_300x/README_NIST_Illumina_pairedend_HG005.txt)
+
+This calls each independently using GATK HaplotypeCaller, generating gVCF as input
+to a combined joint callset.
+
+### Running
+
+1. [Install bcbio-vm](https://github.com/chapmanb/bcbio-nextgen-vm#installation) as described above.
+
+2. Retrieve the data and CWL description with the
+   [Synapse python client](https://github.com/Sage-Bionetworks/synapsePythonClient#installation):
+
+        synapse get -r syn10466755
+
+### Resource requirements
+
+- The default CWL using 8 cores and 4Gb of memory per core. You can adjust `bcbio_system.yaml`
+  and regenerate the CWL to fit other systems for testing.
+- Inputs files, including fastq files and genome reference files, are 60Gb.
+- Temporary work directories duing processing can take from 200Gb to 400Gb of disk space,
+  depending on the runner.
+- Output files are 60Gb.

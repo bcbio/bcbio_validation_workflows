@@ -1,0 +1,9 @@
+details:
+ - algorithm:
+     aligner: bwa
+     recalibrate: true
+     variantcaller: gatk-haplotype
+     tools_on: [gatk4, gvcf]
+     tools_off: [gemini]
+   analysis: variant2
+   genome_build: hg38

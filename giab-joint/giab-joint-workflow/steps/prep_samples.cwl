@@ -17,8 +17,9 @@ hints:
   dockerPull: quay.io/bcbio/bcbio-vc
 - class: ResourceRequirement
   coresMin: 1
-  outdirMin: 1024
+  outdirMin: 5714
   ramMin: 3584
+  tmpdirMin: 4690
 - class: SoftwareRequirement
   packages:
   - package: htslib

@@ -18,9 +18,9 @@ inputs:
         type: File
       - name: config__algorithm__coverage_interval
         type: string
-      - name: metadata__phenotype
-        type: string
       - name: metadata__batch
+        type: string
+      - name: metadata__phenotype
         type: string
       - name: config__algorithm__validate_regions
         type: File
@@ -104,9 +104,9 @@ outputs:
         type: File
       - name: config__algorithm__coverage_interval
         type: string
-      - name: metadata__phenotype
-        type: string
       - name: metadata__batch
+        type: string
+      - name: metadata__phenotype
         type: string
       - name: config__algorithm__validate_regions
         type: File

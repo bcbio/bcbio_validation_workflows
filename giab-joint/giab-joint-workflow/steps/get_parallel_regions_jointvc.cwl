@@ -17,8 +17,9 @@ hints:
   dockerPull: quay.io/bcbio/bcbio-vc
 - class: ResourceRequirement
   coresMin: 1
-  outdirMin: 1024
+  outdirMin: 14813
   ramMin: 3584
+  tmpdirMin: 13789
 inputs:
 - id: jointvc_batch_rec
   type:
@@ -54,9 +55,9 @@ inputs:
         type: File
       - name: config__algorithm__coverage_interval
         type: string
-      - name: metadata__phenotype
-        type: string
       - name: metadata__batch
+        type: string
+      - name: metadata__phenotype
         type: string
       - name: config__algorithm__validate_regions
         type: File

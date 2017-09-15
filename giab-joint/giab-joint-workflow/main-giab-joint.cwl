@@ -37,10 +37,6 @@ inputs:
     - 'null'
     - string
     type: array
-- id: metadata__phenotype
-  type:
-    items: string
-    type: array
 - id: rgnames__lb
   type:
     items:
@@ -56,6 +52,10 @@ inputs:
     items: string
     type: array
 - id: rgnames__lane
+  type:
+    items: string
+    type: array
+- id: metadata__phenotype
   type:
     items: string
     type: array

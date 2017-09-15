@@ -17,8 +17,9 @@ hints:
   dockerPull: quay.io/bcbio/bcbio-vc
 - class: ResourceRequirement
   coresMin: 8
-  outdirMin: 1024
+  outdirMin: 26365
   ramMin: 28672
+  tmpdirMin: 25341
 - class: SoftwareRequirement
   packages:
   - package: snpeff
@@ -61,9 +62,9 @@ inputs:
         type: File
       - name: config__algorithm__coverage_interval
         type: string
-      - name: metadata__phenotype
-        type: string
       - name: metadata__batch
+        type: string
+      - name: metadata__phenotype
         type: string
       - name: config__algorithm__validate_regions
         type: File

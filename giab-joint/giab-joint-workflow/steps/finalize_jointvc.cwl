@@ -2,7 +2,7 @@ arguments:
 - position: 0
   valueFrom: sentinel_runtime=cores,$(runtime['cores']),ram,$(runtime['ram'])
 - sentinel_parallel=batch-single
-- sentinel_outputs=jointvc_rec:description;validate__summary;validate__tp;validate__fp;validate__fn;vrn_file;config__algorithm__validate;reference__fasta__base;config__algorithm__variantcaller;reference__snpeff__GRCh38_86;config__algorithm__coverage_interval;metadata__phenotype;metadata__batch;config__algorithm__validate_regions;genome_build;genome_resources__aliases__human;config__algorithm__tools_off;genome_resources__variation__dbsnp;genome_resources__variation__cosmic;reference__genome_context;analysis;config__algorithm__tools_on;config__algorithm__variant_regions;genome_resources__aliases__ensembl;reference__rtg;genome_resources__aliases__snpeff;align_bam;regions__sample_callable;config__algorithm__callable_regions;vrn_file_joint
+- sentinel_outputs=jointvc_rec:description;validate__summary;validate__tp;validate__fp;validate__fn;vrn_file;config__algorithm__validate;reference__fasta__base;config__algorithm__variantcaller;reference__snpeff__GRCh38_86;config__algorithm__coverage_interval;metadata__batch;metadata__phenotype;config__algorithm__validate_regions;genome_build;genome_resources__aliases__human;config__algorithm__tools_off;genome_resources__variation__dbsnp;genome_resources__variation__cosmic;reference__genome_context;analysis;config__algorithm__tools_on;config__algorithm__variant_regions;genome_resources__aliases__ensembl;reference__rtg;genome_resources__aliases__snpeff;align_bam;regions__sample_callable;config__algorithm__callable_regions;vrn_file_joint
 - sentinel_inputs=jointvc_batch_rec:record,vrn_file_joint:var
 baseCommand:
 - bcbio_nextgen.py
@@ -17,8 +17,9 @@ hints:
   dockerPull: quay.io/bcbio/bcbio-vc
 - class: ResourceRequirement
   coresMin: 1
-  outdirMin: 1024
+  outdirMin: 26365
   ramMin: 3584
+  tmpdirMin: 25341
 inputs:
 - id: jointvc_batch_rec
   type:
@@ -54,9 +55,9 @@ inputs:
         type: File
       - name: config__algorithm__coverage_interval
         type: string
-      - name: metadata__phenotype
-        type: string
       - name: metadata__batch
+        type: string
+      - name: metadata__phenotype
         type: string
       - name: config__algorithm__validate_regions
         type: File
@@ -143,9 +144,9 @@ outputs:
         type: File
       - name: config__algorithm__coverage_interval
         type: string
-      - name: metadata__phenotype
-        type: string
       - name: metadata__batch
+        type: string
+      - name: metadata__phenotype
         type: string
       - name: config__algorithm__validate_regions
         type: File

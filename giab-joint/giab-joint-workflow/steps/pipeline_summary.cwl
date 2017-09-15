@@ -17,8 +17,9 @@ hints:
   dockerPull: quay.io/bcbio/bcbio-vc
 - class: ResourceRequirement
   coresMin: 8
-  outdirMin: 1024
+  outdirMin: 28817
   ramMin: 28672
+  tmpdirMin: 27793
 - class: SoftwareRequirement
   packages:
   - package: bcftools

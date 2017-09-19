@@ -454,9 +454,9 @@
         }
     ],
     "rgnames__lane": [
-        "1_2017-09-15_giab-joint",
-        "2_2017-09-15_giab-joint",
-        "3_2017-09-15_giab-joint"
+        "1_2017-09-19_giab-joint",
+        "2_2017-09-19_giab-joint",
+        "3_2017-09-19_giab-joint"
     ],
     "rgnames__lb": [
         "null",
@@ -469,9 +469,9 @@
         "illumina"
     ],
     "rgnames__pu": [
-        "1_2017-09-15_giab-joint",
-        "2_2017-09-15_giab-joint",
-        "3_2017-09-15_giab-joint"
+        "1_2017-09-19_giab-joint",
+        "2_2017-09-19_giab-joint",
+        "3_2017-09-19_giab-joint"
     ],
     "rgnames__rg": [
         "NA12878",

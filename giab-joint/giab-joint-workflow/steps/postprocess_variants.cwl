@@ -17,9 +17,9 @@ hints:
   dockerPull: quay.io/bcbio/bcbio-vc
 - class: ResourceRequirement
   coresMin: 8
-  outdirMin: 26365
+  outdirMin: 49468
   ramMin: 28672
-  tmpdirMin: 25341
+  tmpdirMin: 48444
 - class: SoftwareRequirement
   packages:
   - package: snpeff

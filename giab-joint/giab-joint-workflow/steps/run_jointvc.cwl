@@ -17,9 +17,9 @@ hints:
   dockerPull: quay.io/bcbio/bcbio-vc
 - class: ResourceRequirement
   coresMin: 1
-  outdirMin: 26365
+  outdirMin: 49468
   ramMin: 3584
-  tmpdirMin: 25341
+  tmpdirMin: 48444
 - class: SoftwareRequirement
   packages:
   - package: gatk4

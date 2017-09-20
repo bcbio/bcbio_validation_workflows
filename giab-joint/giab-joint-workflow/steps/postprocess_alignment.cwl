@@ -17,9 +17,9 @@ hints:
   dockerPull: quay.io/bcbio/bcbio-vc
 - class: ResourceRequirement
   coresMin: 8
-  outdirMin: 58084
+  outdirMin: 81187
   ramMin: 28672
-  tmpdirMin: 57060
+  tmpdirMin: 80163
 - class: SoftwareRequirement
   packages:
   - package: sambamba

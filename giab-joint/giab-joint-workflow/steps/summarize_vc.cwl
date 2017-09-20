@@ -17,9 +17,9 @@ hints:
   dockerPull: quay.io/bcbio/bcbio-vc
 - class: ResourceRequirement
   coresMin: 1
-  outdirMin: 14813
+  outdirMin: 49468
   ramMin: 3584
-  tmpdirMin: 13789
+  tmpdirMin: 48444
 inputs:
 - id: jointvc_rec
   type:

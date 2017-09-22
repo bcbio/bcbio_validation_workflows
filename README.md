@@ -64,8 +64,11 @@ Run a [GATK4 joint variant calling workflow](https://software.broadinstitute.org
 three diverse Genome in a Bottle samples from different sequencing technologies:
 
 - NA12878: (Caucasian daughter): [65x NovaSeq TruSeq Nano](https://basespace.illumina.com/datacentral)
-- NA24385 (Ashkenazi Jewish son): [50x HiSeq x10 dataset from 10x genomicss](https://support.10xgenomics.com/de-novo-assembly/datasets)
-- NA24631 (Chinese son) -- [55x Illumina HiSeq 2500 2x250bp](ftp://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/data/ChineseTrio/HG005_NA24631_son/HG005_NA24631_son_HiSeq_300x/README_NIST_Illumina_pairedend_HG005.txt)
+- NA24385 (Ashkenazi Jewish son): [50x HiSeq x10 dataset from 10x genomics](https://support.10xgenomics.com/de-novo-assembly/datasets)
+- NA24631 (Chinese son) -- [55x Illumina HiSeq 2500 2x250bp](http://bit.ly/NA24631-readme)
+
+Ths original whole genome inputs were subset to exome regions and chr20, maintaining
+parallelization and whole genome challenges while trying to avoid long runtimes.
 
 This calls each independently using GATK HaplotypeCaller, generating gVCF as input
 to a combined joint callset.

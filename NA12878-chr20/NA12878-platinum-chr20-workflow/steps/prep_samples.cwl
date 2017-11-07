@@ -17,8 +17,9 @@ hints:
   dockerPull: quay.io/bcbio/bcbio-vc
 - class: ResourceRequirement
   coresMin: 1
-  outdirMin: 1024
+  outdirMin: 7802
   ramMin: 3072
+  tmpdirMin: 6778
 - class: SoftwareRequirement
   packages:
   - package: htslib
@@ -35,6 +36,8 @@ inputs:
   type:
     fields:
     - name: description
+      type: string
+    - name: resources
       type: string
     - name: reference__fasta__base
       type: File

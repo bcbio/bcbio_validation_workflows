@@ -37,6 +37,10 @@ inputs:
     - 'null'
     - string
     type: array
+- id: genome_resources__rnaseq__gene_bed
+  type:
+    items: File
+    type: array
 - id: rgnames__lb
   type:
     items:
@@ -182,6 +186,10 @@ inputs:
     - 'null'
     - string
     type: array
+- id: resources
+  type:
+    items: string
+    type: array
 - id: genome_resources__aliases__ensembl
   type:
     items: string
@@ -197,6 +205,11 @@ inputs:
 outputs:
 - id: align_bam
   outputSource: postprocess_alignment/align_bam
+  type:
+    items: File
+    type: array
+- id: regions__sample_callable
+  outputSource: postprocess_alignment/regions__sample_callable
   type:
     items: File
     type: array
@@ -269,6 +282,8 @@ steps:
     source: config__algorithm__mark_duplicates
   - id: description
     source: description
+  - id: resources
+    source: resources
   out:
   - id: alignment_rec
   run: steps/alignment_to_rec.cwl
@@ -293,6 +308,8 @@ steps:
     source: reference__fasta__base
   - id: description
     source: description
+  - id: resources
+    source: resources
   out:
   - id: prep_samples_rec
   run: steps/prep_samples_to_rec.cwl
@@ -316,8 +333,6 @@ steps:
   in:
   - id: align_bam
     source: alignment/align_bam
-  - id: genome_resources__variation__dbsnp
-    source: genome_resources__variation__dbsnp
   - id: config__algorithm__coverage_interval
     source: config__algorithm__coverage_interval
   - id: config__algorithm__variant_regions
@@ -338,12 +353,18 @@ steps:
     source: config__algorithm__recalibrate
   - id: config__algorithm__tools_on
     source: config__algorithm__tools_on
+  - id: genome_resources__rnaseq__gene_bed
+    source: genome_resources__rnaseq__gene_bed
+  - id: genome_resources__variation__dbsnp
+    source: genome_resources__variation__dbsnp
   - id: reference__twobit
     source: reference__twobit
   - id: reference__fasta__base
     source: reference__fasta__base
   - id: description
     source: description
+  - id: resources
+    source: resources
   out:
   - id: postprocess_alignment_rec
   run: steps/postprocess_alignment_to_rec.cwl
@@ -363,6 +384,13 @@ steps:
   - id: regions__callable
   - id: regions__sample_callable
   - id: regions__nblock
+  - id: depth__variant_regions__regions
+  - id: depth__variant_regions__dist
+  - id: depth__sv_regions__regions
+  - id: depth__sv_regions__dist
+  - id: depth__coverage__regions
+  - id: depth__coverage__dist
+  - id: depth__coverage__thresholds
   - id: align_bam
   run: steps/postprocess_alignment.cwl
   scatter:
@@ -382,6 +410,8 @@ steps:
     source: reference__fasta__base
   - id: description
     source: description
+  - id: resources
+    source: resources
   out:
   - id: config__algorithm__callable_regions
   - id: config__algorithm__non_callable_regions
@@ -405,6 +435,20 @@ steps:
     source: config__algorithm__tools_off
   - id: config__algorithm__qc
     source: config__algorithm__qc
+  - id: depth__variant_regions__regions
+    source: postprocess_alignment/depth__variant_regions__regions
+  - id: depth__variant_regions__dist
+    source: postprocess_alignment/depth__variant_regions__dist
+  - id: depth__sv_regions__regions
+    source: postprocess_alignment/depth__sv_regions__regions
+  - id: depth__sv_regions__dist
+    source: postprocess_alignment/depth__sv_regions__dist
+  - id: depth__coverage__regions
+    source: postprocess_alignment/depth__coverage__regions
+  - id: depth__coverage__dist
+    source: postprocess_alignment/depth__coverage__dist
+  - id: depth__coverage__thresholds
+    source: postprocess_alignment/depth__coverage__thresholds
   - id: config__algorithm__variant_regions
     source: postprocess_alignment/config__algorithm__variant_regions
   - id: config__algorithm__variant_regions_merged
@@ -415,6 +459,8 @@ steps:
     source: postprocess_alignment/config__algorithm__coverage_merged
   - id: description
     source: description
+  - id: resources
+    source: resources
   out:
   - id: qc_rec
   run: steps/qc_to_rec.cwl
@@ -467,6 +513,8 @@ steps:
     source: config__algorithm__tools_off
   - id: reference__fasta__base
     source: reference__fasta__base
+  - id: reference__twobit
+    source: reference__twobit
   - id: reference__rtg
     source: reference__rtg
   - id: reference__genome_context
@@ -485,6 +533,8 @@ steps:
     source: reference__snpeff__GRCh38_86
   - id: description
     source: description
+  - id: resources
+    source: resources
   out:
   - id: batch_rec
   run: steps/batch_for_variantcall.cwl

@@ -17,8 +17,9 @@ hints:
   dockerPull: quay.io/bcbio/bcbio-vc
 - class: ResourceRequirement
   coresMin: 1
-  outdirMin: 1024
+  outdirMin: 22238
   ramMin: 3072
+  tmpdirMin: 21214
 inputs:
 - id: vc_rec
   type:
@@ -43,6 +44,8 @@ inputs:
           - 'null'
         - name: description
           type: string
+        - name: resources
+          type: string
         - name: vrn_file
           type: File
         - name: config__algorithm__validate
@@ -59,6 +62,8 @@ inputs:
           type:
           - 'null'
           - string
+        - name: reference__twobit
+          type: File
         - name: config__algorithm__validate_regions
           type: File
         - name: genome_build

@@ -101,6 +101,12 @@
     "genome_resources__aliases__snpeff": [
         "GRCh38.86"
     ],
+    "genome_resources__rnaseq__gene_bed": [
+        {
+            "class": "File",
+            "path": "../biodata/collections/hg38/rnaseq/ref-transcripts.bed"
+        }
+    ],
     "genome_resources__variation__cosmic": [
         "null"
     ],
@@ -176,8 +182,11 @@
             "path": "../biodata/collections/hg38/ucsc/hg38.2bit"
         }
     ],
+    "resources": [
+        "{}"
+    ],
     "rgnames__lane": [
-        "1_2017-08-29_NA12878-platinum-chr20"
+        "NA12878-chr20"
     ],
     "rgnames__lb": [
         "null"
@@ -186,7 +195,7 @@
         "illumina"
     ],
     "rgnames__pu": [
-        "1_2017-08-29_NA12878-platinum-chr20"
+        "NA12878-chr20"
     ],
     "rgnames__rg": [
         "NA12878-chr20"

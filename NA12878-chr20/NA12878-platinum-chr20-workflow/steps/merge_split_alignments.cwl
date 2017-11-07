@@ -17,9 +17,9 @@ hints:
   dockerPull: quay.io/bcbio/bcbio-vc
 - class: ResourceRequirement
   coresMin: 8
-  outdirMin: 9465
+  outdirMin: 31895
   ramMin: 24576
-  tmpdirMin: 8441
+  tmpdirMin: 30871
 - class: SoftwareRequirement
   packages:
   - package: biobambam
@@ -36,6 +36,8 @@ inputs:
   type:
     fields:
     - name: description
+      type: string
+    - name: resources
       type: string
     - name: config__algorithm__align_split_size
       type:

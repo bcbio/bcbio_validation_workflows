@@ -2,8 +2,8 @@ arguments:
 - position: 0
   valueFrom: sentinel_runtime=cores,$(runtime['cores']),ram,$(runtime['ram'])
 - sentinel_parallel=multi-combined
-- sentinel_outputs=prep_samples_rec:description;reference__fasta__base;config__algorithm__variant_regions
-- sentinel_inputs=config__algorithm__variant_regions:var,reference__fasta__base:var,description:var
+- sentinel_outputs=prep_samples_rec:description;resources;reference__fasta__base;config__algorithm__variant_regions
+- sentinel_inputs=config__algorithm__variant_regions:var,reference__fasta__base:var,description:var,resources:var
 baseCommand:
 - bcbio_nextgen.py
 - runfn
@@ -17,8 +17,9 @@ hints:
   dockerPull: quay.io/bcbio/bcbio-vc
 - class: ResourceRequirement
   coresMin: 1
-  outdirMin: 1024
+  outdirMin: 7802
   ramMin: 3072
+  tmpdirMin: 6778
 inputs:
 - id: config__algorithm__variant_regions
   type:
@@ -37,12 +38,18 @@ inputs:
   type:
     items: string
     type: array
+- id: resources
+  type:
+    items: string
+    type: array
 outputs:
 - id: prep_samples_rec
   type:
     items:
       fields:
       - name: description
+        type: string
+      - name: resources
         type: string
       - name: reference__fasta__base
         type: File

@@ -2,8 +2,8 @@ arguments:
 - position: 0
   valueFrom: sentinel_runtime=cores,$(runtime['cores']),ram,$(runtime['ram'])
 - sentinel_parallel=batch-parallel
-- sentinel_outputs=vrn_file_region,region
-- sentinel_inputs=batch_rec:record,region:var
+- sentinel_outputs=vrn_file_region,region_block
+- sentinel_inputs=batch_rec:record,region_block:var
 baseCommand:
 - bcbio_nextgen.py
 - runfn
@@ -16,9 +16,10 @@ hints:
   dockerImageId: quay.io/bcbio/bcbio-vc
   dockerPull: quay.io/bcbio/bcbio-vc
 - class: ResourceRequirement
-  coresMin: 1
-  outdirMin: 1024
-  ramMin: 3072
+  coresMin: 8
+  outdirMin: 22238
+  ramMin: 24576
+  tmpdirMin: 21214
 - class: SoftwareRequirement
   packages:
   - package: bcftools
@@ -31,7 +32,7 @@ hints:
     specs:
     - https://anaconda.org/bioconda/freebayes
     version:
-    - 1.1.0
+    - 1.1.0.46
   - package: gatk
     specs:
     - https://anaconda.org/bioconda/gatk
@@ -56,6 +57,9 @@ hints:
   - package: samtools
     specs:
     - https://anaconda.org/bioconda/samtools
+  - package: strelka
+    specs:
+    - https://anaconda.org/bioconda/strelka
   - package: vardict
     specs:
     - https://anaconda.org/bioconda/vardict
@@ -78,7 +82,7 @@ hints:
     specs:
     - https://anaconda.org/bioconda/r
     version:
-    - 3.3.2
+    - 3.4.1
   - package: perl
     specs:
     - https://anaconda.org/bioconda/perl
@@ -88,6 +92,8 @@ inputs:
     items:
       fields:
       - name: description
+        type: string
+      - name: resources
         type: string
       - name: config__algorithm__validate
         type: File
@@ -103,6 +109,8 @@ inputs:
         type:
         - 'null'
         - string
+      - name: reference__twobit
+        type: File
       - name: config__algorithm__validate_regions
         type: File
       - name: genome_build
@@ -151,15 +159,19 @@ inputs:
       name: batch_rec
       type: record
     type: array
-- id: region_toolinput
-  type: string
+- id: region_block_toolinput
+  type:
+    items: string
+    type: array
 outputs:
 - id: vrn_file_region
   secondaryFiles:
   - .tbi
   type: File
-- id: region
-  type: string
+- id: region_block
+  type:
+    items: string
+    type: array
 requirements:
 - class: InlineJavascriptRequirement
 - class: InitialWorkDirRequirement

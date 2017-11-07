@@ -17,8 +17,9 @@ hints:
   dockerPull: quay.io/bcbio/bcbio-vc
 - class: ResourceRequirement
   coresMin: 1
-  outdirMin: 1024
+  outdirMin: 12023
   ramMin: 3072
+  tmpdirMin: 10999
 - class: SoftwareRequirement
   packages:
   - package: multiqc
@@ -39,6 +40,8 @@ inputs:
       - name: summary__metrics
         type: string
       - name: description
+        type: string
+      - name: resources
         type: string
       - name: reference__fasta__base
         type: File
@@ -71,6 +74,30 @@ inputs:
         - File
         - 'null'
       - name: config__algorithm__coverage_merged
+        type:
+        - File
+        - 'null'
+      - name: depth__variant_regions__regions
+        type: File
+      - name: depth__variant_regions__dist
+        type: File
+      - name: depth__sv_regions__regions
+        type:
+        - File
+        - 'null'
+      - name: depth__sv_regions__dist
+        type:
+        - File
+        - 'null'
+      - name: depth__coverage__regions
+        type:
+        - File
+        - 'null'
+      - name: depth__coverage__dist
+        type:
+        - File
+        - 'null'
+      - name: depth__coverage__thresholds
         type:
         - File
         - 'null'

@@ -37,6 +37,8 @@ inputs:
     fields:
     - name: description
       type: string
+    - name: resources
+      type: string
     - name: config__algorithm__align_split_size
       type:
       - 'null'

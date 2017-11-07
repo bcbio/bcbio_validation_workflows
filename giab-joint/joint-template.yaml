@@ -1,8 +1,12 @@
+#resources:
+#  sentieon:
+#    keyfile: /mnt/work/bcbio/license/Harvard_Chapman_eval.lic
 details:
  - algorithm:
      aligner: bwa
      recalibrate: true
-     variantcaller: gatk-haplotype
+     #variantcaller: [gatk-haplotype, strelka2, haplotyper]
+     variantcaller: [gatk-haplotype, strelka2]
      tools_on: [gatk4, gvcf]
      tools_off: [gemini]
    analysis: variant2

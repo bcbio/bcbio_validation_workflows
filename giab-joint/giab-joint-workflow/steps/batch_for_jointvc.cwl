@@ -2,7 +2,7 @@ arguments:
 - position: 0
   valueFrom: sentinel_runtime=cores,$(runtime['cores']),ram,$(runtime['ram'])
 - sentinel_parallel=multi-batch
-- sentinel_outputs=jointvc_batch_rec:description;validate__summary;validate__tp;validate__fp;validate__fn;vrn_file;config__algorithm__validate;reference__fasta__base;config__algorithm__variantcaller;reference__snpeff__GRCh38_86;config__algorithm__coverage_interval;metadata__batch;metadata__phenotype;config__algorithm__validate_regions;genome_build;genome_resources__aliases__human;config__algorithm__tools_off;genome_resources__variation__dbsnp;genome_resources__variation__cosmic;reference__genome_context;analysis;config__algorithm__tools_on;config__algorithm__variant_regions;genome_resources__aliases__ensembl;reference__rtg;genome_resources__aliases__snpeff;align_bam;regions__sample_callable;config__algorithm__callable_regions
+- sentinel_outputs=jointvc_batch_rec:description;resources;validate__summary;validate__tp;validate__fp;validate__fn;vrn_file;config__algorithm__validate;reference__fasta__base;config__algorithm__variantcaller;reference__snpeff__GRCh38_86;config__algorithm__coverage_interval;metadata__batch;metadata__phenotype;reference__twobit;config__algorithm__validate_regions;genome_build;genome_resources__aliases__human;config__algorithm__tools_off;genome_resources__variation__dbsnp;genome_resources__variation__cosmic;reference__genome_context;analysis;config__algorithm__tools_on;config__algorithm__variant_regions;genome_resources__aliases__ensembl;reference__rtg;genome_resources__aliases__snpeff;align_bam;regions__sample_callable;config__algorithm__callable_regions
 - sentinel_inputs=vc_rec:record
 baseCommand:
 - bcbio_nextgen.py
@@ -17,9 +17,9 @@ hints:
   dockerPull: quay.io/bcbio/bcbio-vc
 - class: ResourceRequirement
   coresMin: 1
-  outdirMin: 49468
+  outdirMin: 50619
   ramMin: 3584
-  tmpdirMin: 48444
+  tmpdirMin: 49595
 inputs:
 - id: vc_rec
   type:
@@ -44,6 +44,8 @@ inputs:
           - 'null'
         - name: description
           type: string
+        - name: resources
+          type: string
         - name: vrn_file
           type: File
         - name: config__algorithm__validate
@@ -60,6 +62,8 @@ inputs:
           type: string
         - name: metadata__phenotype
           type: string
+        - name: reference__twobit
+          type: File
         - name: config__algorithm__validate_regions
           type: File
         - name: genome_build
@@ -115,6 +119,8 @@ outputs:
         fields:
         - name: description
           type: string
+        - name: resources
+          type: string
         - name: validate__summary
           type:
           - File
@@ -147,6 +153,8 @@ outputs:
           type: string
         - name: metadata__phenotype
           type: string
+        - name: reference__twobit
+          type: File
         - name: config__algorithm__validate_regions
           type: File
         - name: genome_build

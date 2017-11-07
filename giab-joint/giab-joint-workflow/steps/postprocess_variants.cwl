@@ -16,10 +16,10 @@ hints:
   dockerImageId: quay.io/bcbio/bcbio-vc
   dockerPull: quay.io/bcbio/bcbio-vc
 - class: ResourceRequirement
-  coresMin: 8
-  outdirMin: 49468
-  ramMin: 28672
-  tmpdirMin: 48444
+  coresMin: 16
+  outdirMin: 50619
+  ramMin: 57344
+  tmpdirMin: 49595
 - class: SoftwareRequirement
   packages:
   - package: snpeff
@@ -33,6 +33,8 @@ inputs:
     items:
       fields:
       - name: description
+        type: string
+      - name: resources
         type: string
       - name: validate__summary
         type:
@@ -66,6 +68,8 @@ inputs:
         type: string
       - name: metadata__phenotype
         type: string
+      - name: reference__twobit
+        type: File
       - name: config__algorithm__validate_regions
         type: File
       - name: genome_build

@@ -166,13 +166,16 @@
     ],
     "config__algorithm__variantcaller": [
         [
-            "gatk-haplotype"
+            "gatk-haplotype",
+            "strelka2"
         ],
         [
-            "gatk-haplotype"
+            "gatk-haplotype",
+            "strelka2"
         ],
         [
-            "gatk-haplotype"
+            "gatk-haplotype",
+            "strelka2"
         ]
     ],
     "description": [
@@ -267,6 +270,20 @@
         "GRCh38.86",
         "GRCh38.86",
         "GRCh38.86"
+    ],
+    "genome_resources__rnaseq__gene_bed": [
+        {
+            "class": "File",
+            "path": "../biodata/collections/hg38/rnaseq/ref-transcripts.bed"
+        },
+        {
+            "class": "File",
+            "path": "../biodata/collections/hg38/rnaseq/ref-transcripts.bed"
+        },
+        {
+            "class": "File",
+            "path": "../biodata/collections/hg38/rnaseq/ref-transcripts.bed"
+        }
     ],
     "genome_resources__variation__cosmic": [
         "null",
@@ -453,10 +470,15 @@
             "path": "../biodata/collections/hg38/ucsc/hg38.2bit"
         }
     ],
+    "resources": [
+        "{}",
+        "{}",
+        "{}"
+    ],
     "rgnames__lane": [
-        "1_2017-09-20_giab-joint",
-        "2_2017-09-20_giab-joint",
-        "3_2017-09-20_giab-joint"
+        "NA12878",
+        "NA24631",
+        "NA24385"
     ],
     "rgnames__lb": [
         "null",
@@ -469,9 +491,9 @@
         "illumina"
     ],
     "rgnames__pu": [
-        "1_2017-09-20_giab-joint",
-        "2_2017-09-20_giab-joint",
-        "3_2017-09-20_giab-joint"
+        "NA12878",
+        "NA24631",
+        "NA24385"
     ],
     "rgnames__rg": [
         "NA12878",

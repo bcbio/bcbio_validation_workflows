@@ -8,6 +8,8 @@ inputs:
       fields:
       - name: description
         type: string
+      - name: resources
+        type: string
       - name: config__algorithm__validate
         type: File
       - name: reference__fasta__base
@@ -22,6 +24,8 @@ inputs:
         type: string
       - name: metadata__phenotype
         type: string
+      - name: reference__twobit
+        type: File
       - name: config__algorithm__validate_regions
         type: File
       - name: genome_build
@@ -92,6 +96,8 @@ outputs:
         - 'null'
       - name: description
         type: string
+      - name: resources
+        type: string
       - name: vrn_file
         type: File
       - name: config__algorithm__validate
@@ -108,6 +114,8 @@ outputs:
         type: string
       - name: metadata__phenotype
         type: string
+      - name: reference__twobit
+        type: File
       - name: config__algorithm__validate_regions
         type: File
       - name: genome_build
@@ -167,27 +175,27 @@ steps:
   - id: batch_rec
     source: batch_rec
   out:
-  - id: region
+  - id: region_block
   run: steps/get_parallel_regions.cwl
 - id: variantcall_batch_region
   in:
   - id: batch_rec
     source: batch_rec
-  - id: region_toolinput
-    source: get_parallel_regions/region
+  - id: region_block_toolinput
+    source: get_parallel_regions/region_block
   out:
   - id: vrn_file_region
-  - id: region
+  - id: region_block
   run: steps/variantcall_batch_region.cwl
   scatter:
-  - region_toolinput
+  - region_block_toolinput
   scatterMethod: dotproduct
 - id: concat_batch_variantcalls
   in:
   - id: batch_rec
     source: batch_rec
-  - id: region
-    source: variantcall_batch_region/region
+  - id: region_block
+    source: variantcall_batch_region/region_block
   - id: vrn_file_region
     source: variantcall_batch_region/vrn_file_region
   out:

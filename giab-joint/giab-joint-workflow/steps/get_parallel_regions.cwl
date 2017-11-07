@@ -2,7 +2,7 @@ arguments:
 - position: 0
   valueFrom: sentinel_runtime=cores,$(runtime['cores']),ram,$(runtime['ram'])
 - sentinel_parallel=batch-split
-- sentinel_outputs=region
+- sentinel_outputs=region_block
 - sentinel_inputs=batch_rec:record
 baseCommand:
 - bcbio_nextgen.py
@@ -17,15 +17,17 @@ hints:
   dockerPull: quay.io/bcbio/bcbio-vc
 - class: ResourceRequirement
   coresMin: 1
-  outdirMin: 49468
+  outdirMin: 50619
   ramMin: 3584
-  tmpdirMin: 48444
+  tmpdirMin: 49595
 inputs:
 - id: batch_rec
   type:
     items:
       fields:
       - name: description
+        type: string
+      - name: resources
         type: string
       - name: config__algorithm__validate
         type: File
@@ -41,6 +43,8 @@ inputs:
         type: string
       - name: metadata__phenotype
         type: string
+      - name: reference__twobit
+        type: File
       - name: config__algorithm__validate_regions
         type: File
       - name: genome_build
@@ -88,9 +92,11 @@ inputs:
       type: record
     type: array
 outputs:
-- id: region
+- id: region_block
   type:
-    items: string
+    items:
+      items: string
+      type: array
     type: array
 requirements:
 - class: InlineJavascriptRequirement

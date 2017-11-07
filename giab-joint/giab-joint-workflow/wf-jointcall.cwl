@@ -8,6 +8,8 @@ inputs:
       fields:
       - name: description
         type: string
+      - name: resources
+        type: string
       - name: validate__summary
         type:
         - File
@@ -40,6 +42,8 @@ inputs:
         type: string
       - name: metadata__phenotype
         type: string
+      - name: reference__twobit
+        type: File
       - name: config__algorithm__validate_regions
         type: File
       - name: genome_build
@@ -94,6 +98,8 @@ outputs:
       fields:
       - name: description
         type: string
+      - name: resources
+        type: string
       - name: validate__summary
         type:
         - File
@@ -126,6 +132,8 @@ outputs:
         type: string
       - name: metadata__phenotype
         type: string
+      - name: reference__twobit
+        type: File
       - name: config__algorithm__validate_regions
         type: File
       - name: genome_build

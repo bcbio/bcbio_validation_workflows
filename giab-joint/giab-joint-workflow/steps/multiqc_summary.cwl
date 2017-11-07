@@ -41,6 +41,8 @@ inputs:
         type: string
       - name: description
         type: string
+      - name: resources
+        type: string
       - name: reference__fasta__base
         type: File
       - name: config__algorithm__coverage_interval
@@ -72,6 +74,30 @@ inputs:
       - name: config__algorithm__variant_regions_merged
         type: File
       - name: config__algorithm__coverage_merged
+        type:
+        - File
+        - 'null'
+      - name: depth__variant_regions__regions
+        type: File
+      - name: depth__variant_regions__dist
+        type: File
+      - name: depth__sv_regions__regions
+        type:
+        - File
+        - 'null'
+      - name: depth__sv_regions__dist
+        type:
+        - File
+        - 'null'
+      - name: depth__coverage__regions
+        type:
+        - File
+        - 'null'
+      - name: depth__coverage__dist
+        type:
+        - File
+        - 'null'
+      - name: depth__coverage__thresholds
         type:
         - File
         - 'null'

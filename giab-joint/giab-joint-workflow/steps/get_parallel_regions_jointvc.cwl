@@ -17,15 +17,17 @@ hints:
   dockerPull: quay.io/bcbio/bcbio-vc
 - class: ResourceRequirement
   coresMin: 1
-  outdirMin: 49468
+  outdirMin: 50619
   ramMin: 3584
-  tmpdirMin: 48444
+  tmpdirMin: 49595
 inputs:
 - id: jointvc_batch_rec
   type:
     items:
       fields:
       - name: description
+        type: string
+      - name: resources
         type: string
       - name: validate__summary
         type:
@@ -59,6 +61,8 @@ inputs:
         type: string
       - name: metadata__phenotype
         type: string
+      - name: reference__twobit
+        type: File
       - name: config__algorithm__validate_regions
         type: File
       - name: genome_build

@@ -3,7 +3,7 @@ arguments:
   valueFrom: sentinel_runtime=cores,$(runtime['cores']),ram,$(runtime['ram'])
 - sentinel_parallel=batch-merge
 - sentinel_outputs=vrn_file
-- sentinel_inputs=batch_rec:record,region:var,vrn_file_region:var
+- sentinel_inputs=batch_rec:record,region_block:var,vrn_file_region:var
 baseCommand:
 - bcbio_nextgen.py
 - runfn
@@ -17,9 +17,9 @@ hints:
   dockerPull: quay.io/bcbio/bcbio-vc
 - class: ResourceRequirement
   coresMin: 1
-  outdirMin: 49468
+  outdirMin: 50619
   ramMin: 3584
-  tmpdirMin: 48444
+  tmpdirMin: 49595
 - class: SoftwareRequirement
   packages:
   - package: bcftools
@@ -38,6 +38,8 @@ inputs:
       fields:
       - name: description
         type: string
+      - name: resources
+        type: string
       - name: config__algorithm__validate
         type: File
       - name: reference__fasta__base
@@ -52,6 +54,8 @@ inputs:
         type: string
       - name: metadata__phenotype
         type: string
+      - name: reference__twobit
+        type: File
       - name: config__algorithm__validate_regions
         type: File
       - name: genome_build
@@ -98,9 +102,11 @@ inputs:
       name: batch_rec
       type: record
     type: array
-- id: region
+- id: region_block
   type:
-    items: string
+    items:
+      items: string
+      type: array
     type: array
 - id: vrn_file_region
   secondaryFiles:

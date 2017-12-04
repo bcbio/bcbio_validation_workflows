@@ -1,0 +1,10 @@
+dnanexus:
+  project: CGR_Dragen_Benchmark
+  ref:
+    project: DREAM-challenge
+    folder: /DREAM-data/bcbio-giab-joint/biodata/collections
+  inputs:
+    - /Inputs/biodata/giab
+    - /Inputs/biodata/regions
+resources:
+  default: {cores: 8, memory: 3500M, jvm_opts: [-Xms1g, -Xmx3500m]}

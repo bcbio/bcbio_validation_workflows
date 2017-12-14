@@ -1,0 +1,11 @@
+dnanexus:
+  project: CGR_Dragen_Benchmark
+  ref:
+    project: bcbio_resources
+    folder: /reference_genomes
+  inputs:
+    - /Inputs/biodata/giab
+    - /Inputs/biodata/regions
+    - /outputs/giab/dragen-hg38
+resources:
+  default: {cores: 16, memory: 3500M, jvm_opts: [-Xms1g, -Xmx3500m]}

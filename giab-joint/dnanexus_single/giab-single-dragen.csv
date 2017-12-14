@@ -1,0 +1,2 @@
+samplename,description,batch,variant_regions,coverage,validate,validate_regions,aligner,bam_clean
+NA12878.bam,NA12878-DRAGEN,gj2,Exome-AZ_V2_pluschr20-hg38.bed,Exome-AZ_V2_pluschr20-hg38.bed,hg38/validation/giab-NA12878/truth_small_variants.vcf.gz,hg38/validation/giab-NA12878/truth_regions.bed,false,remove_extracontigs

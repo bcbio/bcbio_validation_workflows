@@ -90,3 +90,19 @@ to a combined joint callset.
 - Temporary work directories duing processing can take from 200Gb to 400Gb of disk space,
   depending on the runner.
 - Output files are 60Gb.
+
+## Synthetic Diploid CHM and Genome in a Bottle
+
+This validation expands on the Genome in a Bottle datasets to include 
+[a synthetic diploid input](https://gatkforums.broadinstitute.org/gatk/discussion/10912/what-is-truth-or-how-an-accident-of-nature-can-illuminate-our-path)
+derived from two haploid cell lines from Complete Hydatidiform Moles (CHM). 
+This truth set uses PacBio sequencing and is orthogonal to the Genome in a
+Bottle Truth sets, helping identify short read and Illumina specific bias in those
+inputs.
+
+We subset the [initial read input from ERA596361](ftp://ftp.sra.ebi.ac.uk/vol1/ERA596/ERA596361/bam/CHM1_CHM13_2.bam)
+to exome regions and chromosome 20. The truth set is prepared from
+the [version 0.2 20161018 tarball](https://github.com/lh3/CHM-eval/releases/download/v0.2/CHM-evalkit-20161018.tar)
+by removing polyA10 regions and regions within 10bp of problematic PacBio indels
+(1bp and >50bp) using the `prep_chm_truth.py` script. The inputs are in the same 
+synapse project as the Genome in a Bottle joint calling validation above.

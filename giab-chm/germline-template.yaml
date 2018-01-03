@@ -1,0 +1,10 @@
+details:
+ - algorithm:
+     aligner: minimap2
+     align_split_size: false
+     nomap_split_targets: 40
+     variantcaller: [gatk-haplotype, strelka2, freebayes, deepvariant]
+     tools_on: [gatk4]
+     tools_off: [gemini]
+   analysis: variant2
+   genome_build: hg38

@@ -1,0 +1,358 @@
+{
+    "analysis": [
+        "variant2",
+        "variant2"
+    ],
+    "config__algorithm__align_split_size": [
+        "False",
+        "False"
+    ],
+    "config__algorithm__aligner": [
+        "minimap2",
+        "minimap2"
+    ],
+    "config__algorithm__bam_clean": [
+        "False",
+        "False"
+    ],
+    "config__algorithm__coverage": [
+        {
+            "class": "File",
+            "path": "../biodata/regions/Exome-AZ_V2_pluschr20-hg38.bed"
+        },
+        {
+            "class": "File",
+            "path": "../biodata/regions/Exome-AZ_V2_pluschr20-hg38.bed"
+        }
+    ],
+    "config__algorithm__coverage_interval": [
+        "null",
+        "null"
+    ],
+    "config__algorithm__mark_duplicates": [
+        "True",
+        "True"
+    ],
+    "config__algorithm__nomap_split_size": [
+        250,
+        250
+    ],
+    "config__algorithm__nomap_split_targets": [
+        40,
+        40
+    ],
+    "config__algorithm__qc": [
+        [
+            "fastqc",
+            "samtools",
+            "qsignature",
+            "coverage",
+            "variants",
+            "picard"
+        ],
+        [
+            "fastqc",
+            "samtools",
+            "qsignature",
+            "coverage",
+            "variants",
+            "picard"
+        ]
+    ],
+    "config__algorithm__recalibrate": [
+        "False",
+        "False"
+    ],
+    "config__algorithm__tools_off": [
+        [
+            "gemini"
+        ],
+        [
+            "gemini"
+        ]
+    ],
+    "config__algorithm__tools_on": [
+        [
+            "gatk4"
+        ],
+        [
+            "gatk4"
+        ]
+    ],
+    "config__algorithm__validate": [
+        {
+            "class": "File",
+            "path": "../biodata/collections/hg38/validation/giab-NA12878/truth_small_variants.vcf.gz",
+            "secondaryFiles": [
+                {
+                    "class": "File",
+                    "path": "../biodata/collections/hg38/validation/giab-NA12878/truth_small_variants.vcf.gz.tbi"
+                }
+            ]
+        },
+        {
+            "class": "File",
+            "path": "/mnt/work/cwl/bcbio_validation_workflows/giab-chm/chm/chm-hg38.vcf.gz",
+            "secondaryFiles": [
+                {
+                    "class": "File",
+                    "path": "/mnt/work/cwl/bcbio_validation_workflows/giab-chm/chm/chm-hg38.vcf.gz.tbi"
+                }
+            ]
+        }
+    ],
+    "config__algorithm__validate_regions": [
+        {
+            "class": "File",
+            "path": "../biodata/collections/hg38/validation/giab-NA12878/truth_regions.bed"
+        },
+        {
+            "class": "File",
+            "path": "/mnt/work/cwl/bcbio_validation_workflows/giab-chm/chm/chm-hg38-regions.bed"
+        }
+    ],
+    "config__algorithm__variant_regions": [
+        {
+            "class": "File",
+            "path": "../biodata/regions/Exome-AZ_V2_pluschr20-hg38.bed"
+        },
+        {
+            "class": "File",
+            "path": "../biodata/regions/Exome-AZ_V2_pluschr20-hg38.bed"
+        }
+    ],
+    "config__algorithm__variantcaller": [
+        [
+            "gatk-haplotype",
+            "strelka2",
+            "freebayes",
+            "deepvariant"
+        ],
+        [
+            "gatk-haplotype",
+            "strelka2",
+            "freebayes",
+            "deepvariant"
+        ]
+    ],
+    "description": [
+        "NA12878",
+        "CHM1_CHM13"
+    ],
+    "files": [
+        [
+            {
+                "class": "File",
+                "path": "../biodata/giab/na12878/NA12878_R1.fq.gz",
+                "secondaryFiles": [
+                    {
+                        "class": "File",
+                        "path": "../biodata/giab/na12878/NA12878_R1.fq.gz.gbi"
+                    }
+                ]
+            },
+            {
+                "class": "File",
+                "path": "../biodata/giab/na12878/NA12878_R2.fq.gz",
+                "secondaryFiles": [
+                    {
+                        "class": "File",
+                        "path": "../biodata/giab/na12878/NA12878_R2.fq.gz.gbi"
+                    }
+                ]
+            }
+        ],
+        [
+            {
+                "class": "File",
+                "path": "/mnt/work/cwl/bcbio_validation_workflows/giab-chm/chm/CHM1_CHM13_R1.fq.gz"
+            },
+            {
+                "class": "File",
+                "path": "/mnt/work/cwl/bcbio_validation_workflows/giab-chm/chm/CHM1_CHM13_R2.fq.gz"
+            }
+        ]
+    ],
+    "genome_build": [
+        "hg38",
+        "hg38"
+    ],
+    "genome_resources__aliases__ensembl": [
+        "homo_sapiens_vep_87_GRCh38",
+        "homo_sapiens_vep_87_GRCh38"
+    ],
+    "genome_resources__aliases__human": [
+        "True",
+        "True"
+    ],
+    "genome_resources__aliases__snpeff": [
+        "GRCh38.86",
+        "GRCh38.86"
+    ],
+    "genome_resources__rnaseq__gene_bed": [
+        {
+            "class": "File",
+            "path": "../biodata/collections/hg38/rnaseq/ref-transcripts.bed"
+        },
+        {
+            "class": "File",
+            "path": "../biodata/collections/hg38/rnaseq/ref-transcripts.bed"
+        }
+    ],
+    "genome_resources__variation__cosmic": [
+        "null",
+        "null"
+    ],
+    "genome_resources__variation__dbsnp": [
+        {
+            "class": "File",
+            "path": "../biodata/collections/hg38/variation/dbsnp-147.vcf.gz",
+            "secondaryFiles": [
+                {
+                    "class": "File",
+                    "path": "../biodata/collections/hg38/variation/dbsnp-147.vcf.gz.tbi"
+                }
+            ]
+        },
+        {
+            "class": "File",
+            "path": "../biodata/collections/hg38/variation/dbsnp-147.vcf.gz",
+            "secondaryFiles": [
+                {
+                    "class": "File",
+                    "path": "../biodata/collections/hg38/variation/dbsnp-147.vcf.gz.tbi"
+                }
+            ]
+        }
+    ],
+    "metadata__batch": [
+        "null",
+        "null"
+    ],
+    "metadata__phenotype": [
+        "",
+        ""
+    ],
+    "reference__fasta__base": [
+        {
+            "class": "File",
+            "path": "../biodata/collections/hg38/seq/hg38.fa",
+            "secondaryFiles": [
+                {
+                    "class": "File",
+                    "path": "../biodata/collections/hg38/seq/hg38.fa.fai"
+                },
+                {
+                    "class": "File",
+                    "path": "../biodata/collections/hg38/seq/hg38.dict"
+                }
+            ]
+        },
+        {
+            "class": "File",
+            "path": "../biodata/collections/hg38/seq/hg38.fa",
+            "secondaryFiles": [
+                {
+                    "class": "File",
+                    "path": "../biodata/collections/hg38/seq/hg38.fa.fai"
+                },
+                {
+                    "class": "File",
+                    "path": "../biodata/collections/hg38/seq/hg38.dict"
+                }
+            ]
+        }
+    ],
+    "reference__genome_context": [
+        [
+            {
+                "class": "File",
+                "path": "../biodata/collections/hg38/coverage/problem_regions/repeats/LCR.bed.gz",
+                "secondaryFiles": [
+                    {
+                        "class": "File",
+                        "path": "../biodata/collections/hg38/coverage/problem_regions/repeats/LCR.bed.gz.tbi"
+                    }
+                ]
+            }
+        ],
+        [
+            {
+                "class": "File",
+                "path": "../biodata/collections/hg38/coverage/problem_regions/repeats/LCR.bed.gz",
+                "secondaryFiles": [
+                    {
+                        "class": "File",
+                        "path": "../biodata/collections/hg38/coverage/problem_regions/repeats/LCR.bed.gz.tbi"
+                    }
+                ]
+            }
+        ]
+    ],
+    "reference__minimap2__indexes": [
+        [],
+        []
+    ],
+    "reference__rtg": [
+        {
+            "class": "File",
+            "path": "../biodata/collections/hg38/rtg--hg38.sdf-wf.tar.gz"
+        },
+        {
+            "class": "File",
+            "path": "../biodata/collections/hg38/rtg--hg38.sdf-wf.tar.gz"
+        }
+    ],
+    "reference__snpeff__GRCh38_86": [
+        {
+            "class": "File",
+            "path": "../biodata/collections/hg38/snpeff--GRCh38.86-wf.tar.gz"
+        },
+        {
+            "class": "File",
+            "path": "../biodata/collections/hg38/snpeff--GRCh38.86-wf.tar.gz"
+        }
+    ],
+    "reference__twobit": [
+        {
+            "class": "File",
+            "path": "../biodata/collections/hg38/ucsc/hg38.2bit"
+        },
+        {
+            "class": "File",
+            "path": "../biodata/collections/hg38/ucsc/hg38.2bit"
+        }
+    ],
+    "resources": [
+        "{}",
+        "{}"
+    ],
+    "rgnames__lane": [
+        "NA12878",
+        "CHM1_CHM13"
+    ],
+    "rgnames__lb": [
+        "null",
+        "null"
+    ],
+    "rgnames__pl": [
+        "illumina",
+        "illumina"
+    ],
+    "rgnames__pu": [
+        "NA12878",
+        "CHM1_CHM13"
+    ],
+    "rgnames__rg": [
+        "NA12878",
+        "CHM1_CHM13"
+    ],
+    "rgnames__sample": [
+        "NA12878",
+        "CHM1_CHM13"
+    ],
+    "vrn_file": [
+        "null",
+        "null"
+    ]
+}

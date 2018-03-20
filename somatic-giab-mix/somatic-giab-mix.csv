@@ -1,0 +1,3 @@
+samplename,description,batch,phenotype,variant_regions,coverage,validate,validate_regions
+NA12878-NA24385-tumor_R1.fq.gz;NA12878-NA24385-tumor_R2.fq.gz,giabmix-tumor,gm1,tumor,Exome-AZ_V2_pluschr20-GRCh37.bed,Exome-AZ_V2_pluschr20-GRCh37.bed,GRCh37/validation/giab-NA12878-NA24385-somatic/truth_small_variants.vcf.gz,GRCh37/validation/giab-NA12878-NA24385-somatic/truth_regions.bed
+NA24385-normal_R1.fq.gz;NA24385-normal_R2.fq.gz,giabmix-normal,gm1,normal,Exome-AZ_V2_pluschr20-GRCh37.bed,Exome-AZ_V2_pluschr20-GRCh37.bed,,

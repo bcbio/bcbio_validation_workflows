@@ -80,11 +80,14 @@ The data for this run is self-contained within synapse:
 
 ### Workflows in progress
 
-- pgp -- Variant, HLA and structural variant calling on [Personal Genome
+- `NA24385-sv` -- Structural variant calling on Genome in a Bottle NA24385 (HG002) Ashkenazi
+  sample, compared against [the v0.5.0 combined validation set](ftp://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/data/AshkenazimTrio/analysis/NIST_UnionSVs_12122017/).
+
+- `pgp` -- Variant, HLA and structural variant calling on [Personal Genome
   Project](http://www.personalgenomes.org/us) genomes using the [Arvados public
   cloud](https://workbench.su92l.arvadosapi.com/).
 
-- SGDP-recall-CGC -- Germline recalling on the
+- `SGDP-recall-CGC` -- Germline recalling on the
   [Cancer Genomics Cloud](http://www.cancergenomicscloud.org/) using the public
   [Simons Genome Diversity Project Dataset](https://www.simonsfoundation.org/life-sciences/simons-genome-diversity-project-dataset/).
 

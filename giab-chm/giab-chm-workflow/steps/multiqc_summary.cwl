@@ -19,11 +19,11 @@ hints:
   dockerPull: quay.io/bcbio/bcbio-vc
 - class: ResourceRequirement
   coresMin: 1
-  outdirMin: 21374
-  ramMin: 3584
-  tmpdirMin: 10175
+  outdirMin: 39412
+  ramMin: 3840
+  tmpdirMin: 19194
 - class: dx:InputResourceRequirement
-  indirMin: 3127
+  indirMin: 1
 - class: SoftwareRequirement
   packages:
   - package: multiqc
@@ -47,20 +47,8 @@ inputs:
         - 'null'
       - name: description
         type: string
-      - name: resources
-        type: string
-      - name: reference__fasta__base
-        type: File
-      - name: config__algorithm__coverage_interval
-        type:
-        - string
-        - 'null'
       - name: genome_build
         type: string
-      - name: config__algorithm__coverage
-        type:
-        - File
-        - 'null'
       - name: config__algorithm__tools_off
         type:
           items: string
@@ -69,56 +57,14 @@ inputs:
         type:
           items: string
           type: array
-      - name: analysis
-        type: string
       - name: config__algorithm__tools_on
         type:
-          items: string
+        - 'null'
+        - string
+        - items:
+          - 'null'
+          - string
           type: array
-      - name: config__algorithm__variant_regions
-        type:
-        - File
-        - 'null'
-      - name: align_bam
-        type:
-        - File
-        - 'null'
-      - name: config__algorithm__variant_regions_merged
-        type:
-        - File
-        - 'null'
-      - name: config__algorithm__coverage_merged
-        type:
-        - File
-        - 'null'
-      - name: depth__variant_regions__regions
-        type:
-        - File
-        - 'null'
-      - name: depth__variant_regions__dist
-        type:
-        - File
-        - 'null'
-      - name: depth__sv_regions__regions
-        type:
-        - File
-        - 'null'
-      - name: depth__sv_regions__dist
-        type:
-        - File
-        - 'null'
-      - name: depth__coverage__regions
-        type:
-        - File
-        - 'null'
-      - name: depth__coverage__dist
-        type:
-        - File
-        - 'null'
-      - name: depth__coverage__thresholds
-        type:
-        - File
-        - 'null'
       name: qcout_rec
       type: record
     type: array

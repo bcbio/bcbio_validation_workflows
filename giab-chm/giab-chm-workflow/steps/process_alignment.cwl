@@ -5,7 +5,7 @@ arguments:
 - position: 0
   valueFrom: sentinel_runtime=cores,$(runtime['cores']),ram,$(runtime['ram'])
 - sentinel_parallel=single-single
-- sentinel_outputs=work_bam,align_bam,hla__fastq,work_bam_plus__disc,work_bam_plus__sr
+- sentinel_outputs=work_bam,align_bam,hla__fastq
 - sentinel_inputs=alignment_rec:record,process_alignment_rec:record
 baseCommand:
 - bcbio_nextgen.py
@@ -20,11 +20,11 @@ hints:
   dockerPull: quay.io/bcbio/bcbio-vc
 - class: ResourceRequirement
   coresMin: 16
-  outdirMin: 21374
-  ramMin: 57344
-  tmpdirMin: 10175
+  outdirMin: 39412
+  ramMin: 61440
+  tmpdirMin: 19194
 - class: dx:InputResourceRequirement
-  indirMin: 23463
+  indirMin: 41501
 - class: SoftwareRequirement
   packages:
   - package: bwa
@@ -53,6 +53,11 @@ hints:
   - package: samtools
     specs:
     - https://anaconda.org/bioconda/samtools
+  - package: pysam>
+    specs:
+    - https://anaconda.org/bioconda/pysam>
+    version:
+    - 0.13.0
   - package: sambamba
     specs:
     - https://anaconda.org/bioconda/sambamba
@@ -68,9 +73,6 @@ hints:
   - package: seqtk
     specs:
     - https://anaconda.org/bioconda/seqtk
-  - package: samblaster
-    specs:
-    - https://anaconda.org/bioconda/samblaster
   - package: variantbam
     specs:
     - https://anaconda.org/bioconda/variantbam
@@ -88,7 +90,18 @@ inputs:
       - string
       - 'null'
       - boolean
-    - name: reference__minimap2__indexes
+    - name: files
+      type:
+        items: File
+        type: array
+    - name: config__algorithm__trim_reads
+      type:
+      - string
+      - 'null'
+      - boolean
+    - name: reference__fasta__base
+      type: File
+    - name: config__algorithm__adapters
       type:
       - 'null'
       - string
@@ -96,8 +109,6 @@ inputs:
         - 'null'
         - string
         type: array
-    - name: reference__fasta__base
-      type: File
     - name: rgnames__lb
       type:
       - 'null'
@@ -111,12 +122,16 @@ inputs:
       - string
       - 'null'
       - boolean
-    - name: files
-      type:
-        items: File
-        type: array
     - name: config__algorithm__aligner
       type: string
+    - name: reference__minimap2__indexes
+      type:
+      - 'null'
+      - string
+      - items:
+        - 'null'
+        - string
+        type: array
     - name: rgnames__pl
       type: string
     - name: config__algorithm__mark_duplicates
@@ -168,18 +183,6 @@ outputs:
   - 'null'
   - items: File
     type: array
-- id: work_bam_plus__disc
-  secondaryFiles:
-  - .bai
-  type:
-  - File
-  - 'null'
-- id: work_bam_plus__sr
-  secondaryFiles:
-  - .bai
-  type:
-  - File
-  - 'null'
 requirements:
 - class: InlineJavascriptRequirement
 - class: InitialWorkDirRequirement

@@ -19,18 +19,18 @@ hints:
   dockerPull: quay.io/bcbio/bcbio-vc
 - class: ResourceRequirement
   coresMin: 16
-  outdirMin: 6111
-  ramMin: 57344
-  tmpdirMin: 2544
+  outdirMin: 10621
+  ramMin: 61440
+  tmpdirMin: 4799
 - class: dx:InputResourceRequirement
-  indirMin: 9942
+  indirMin: 13863
 - class: SoftwareRequirement
   packages:
   - package: snpeff
     specs:
     - https://anaconda.org/bioconda/snpeff
     version:
-    - 4.3i
+    - 4.3.1t
 inputs:
 - id: batch_rec
   type:
@@ -40,8 +40,6 @@ inputs:
         type: string
       - name: resources
         type: string
-      - name: config__algorithm__validate
-        type: File
       - name: reference__fasta__base
         type: File
       - name: config__algorithm__variantcaller
@@ -52,13 +50,21 @@ inputs:
         type:
         - string
         - 'null'
+      - name: genome_resources__variation__encode_blacklist
+        type:
+        - 'null'
+        - string
       - name: metadata__batch
         type:
         - 'null'
         - string
+      - name: genome_resources__variation__lcr
+        type: File
       - name: metadata__phenotype
         type: string
       - name: reference__twobit
+        type: File
+      - name: config__algorithm__validate
         type: File
       - name: config__algorithm__validate_regions
         type: File
@@ -79,6 +85,8 @@ inputs:
           type: array
       - name: genome_resources__variation__dbsnp
         type: File
+      - name: genome_resources__variation__polyx
+        type: File
       - name: genome_resources__variation__cosmic
         type:
         - 'null'
@@ -91,14 +99,28 @@ inputs:
         type: string
       - name: config__algorithm__tools_on
         type:
-          items: string
+        - 'null'
+        - string
+        - items:
+          - 'null'
+          - string
           type: array
+      - name: config__algorithm__effects
+        type: string
       - name: config__algorithm__variant_regions
         type:
         - File
         - 'null'
       - name: genome_resources__aliases__ensembl
         type: string
+      - name: config__algorithm__exclude_regions
+        type:
+        - 'null'
+        - string
+        - items:
+          - 'null'
+          - string
+          type: array
       - name: reference__rtg
         type: File
       - name: genome_resources__aliases__snpeff

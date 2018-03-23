@@ -4,7 +4,7 @@ arguments:
 - position: 0
   valueFrom: sentinel_runtime=cores,$(runtime['cores']),ram,$(runtime['ram'])
 - sentinel_parallel=multi-combined
-- sentinel_outputs=variants__calls,variants__gvcf,validate__grading_summary,validate__grading_plots
+- sentinel_outputs=variants__calls,variants__gvcf,variants__samples,validate__grading_summary,validate__grading_plots
 - sentinel_inputs=vc_rec:record
 baseCommand:
 - bcbio_nextgen.py
@@ -19,17 +19,22 @@ hints:
   dockerPull: quay.io/bcbio/bcbio-vc
 - class: ResourceRequirement
   coresMin: 1
-  outdirMin: 6111
-  ramMin: 3584
-  tmpdirMin: 2544
+  outdirMin: 10621
+  ramMin: 3840
+  tmpdirMin: 4799
 - class: dx:InputResourceRequirement
-  indirMin: 9942
+  indirMin: 3262
 inputs:
 - id: vc_rec
   type:
     items:
       items:
         fields:
+        - name: batch_samples
+          type:
+          - 'null'
+          - items: string
+            type: array
         - name: validate__summary
           type:
           - File
@@ -52,14 +57,10 @@ inputs:
           type: string
         - name: vrn_file
           type: File
-        - name: config__algorithm__validate
-          type: File
         - name: reference__fasta__base
           type: File
         - name: config__algorithm__variantcaller
           type: string
-        - name: reference__snpeff__GRCh38_86
-          type: File
         - name: config__algorithm__coverage_interval
           type:
           - string
@@ -70,7 +71,7 @@ inputs:
           - string
         - name: metadata__phenotype
           type: string
-        - name: reference__twobit
+        - name: config__algorithm__validate
           type: File
         - name: config__algorithm__validate_regions
           type: File
@@ -85,12 +86,6 @@ inputs:
           type:
             items: string
             type: array
-        - name: genome_resources__variation__dbsnp
-          type: File
-        - name: genome_resources__variation__cosmic
-          type:
-          - 'null'
-          - string
         - name: reference__genome_context
           type:
             items: File
@@ -99,22 +94,30 @@ inputs:
           type: string
         - name: config__algorithm__tools_on
           type:
-            items: string
+          - 'null'
+          - string
+          - items:
+            - 'null'
+            - string
             type: array
+        - name: config__algorithm__effects
+          type: string
         - name: config__algorithm__variant_regions
           type:
           - File
           - 'null'
         - name: genome_resources__aliases__ensembl
           type: string
-        - name: reference__rtg
-          type: File
+        - name: config__algorithm__exclude_regions
+          type:
+          - 'null'
+          - string
+          - items:
+            - 'null'
+            - string
+            type: array
         - name: genome_resources__aliases__snpeff
           type: string
-        - name: align_bam
-          type:
-          - File
-          - 'null'
         - name: regions__sample_callable
           type:
           - File
@@ -141,6 +144,16 @@ outputs:
     - items:
       - File
       - 'null'
+      type: array
+    type: array
+- id: variants__samples
+  type:
+    items:
+      items:
+        items:
+        - File
+        - 'null'
+        type: array
       type: array
     type: array
 - id: validate__grading_summary

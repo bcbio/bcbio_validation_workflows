@@ -5,7 +5,7 @@ arguments:
 - position: 0
   valueFrom: sentinel_runtime=cores,$(runtime['cores']),ram,$(runtime['ram'])
 - sentinel_parallel=multi-parallel
-- sentinel_outputs=config__algorithm__coverage_interval,config__algorithm__variant_regions,config__algorithm__variant_regions_merged,config__algorithm__variant_regions_orig,config__algorithm__coverage,config__algorithm__coverage_merged,config__algorithm__coverage_orig,config__algorithm__seq2c_bed_ready,regions__callable,regions__sample_callable,regions__nblock,depth__variant_regions__regions,depth__variant_regions__dist,depth__sv_regions__regions,depth__sv_regions__dist,depth__coverage__regions,depth__coverage__dist,depth__coverage__thresholds,align_bam
+- sentinel_outputs=config__algorithm__coverage_interval,config__algorithm__variant_regions,config__algorithm__variant_regions_merged,config__algorithm__variant_regions_orig,config__algorithm__coverage,config__algorithm__coverage_merged,config__algorithm__coverage_orig,config__algorithm__seq2c_bed_ready,regions__callable,regions__sample_callable,regions__nblock,depth__samtools__stats,depth__samtools__idxstats,depth__variant_regions__regions,depth__variant_regions__dist,depth__sv_regions__regions,depth__sv_regions__dist,depth__coverage__regions,depth__coverage__dist,depth__coverage__thresholds,align_bam
 - sentinel_inputs=postprocess_alignment_rec:record
 baseCommand:
 - bcbio_nextgen.py
@@ -20,11 +20,11 @@ hints:
   dockerPull: quay.io/bcbio/bcbio-vc
 - class: ResourceRequirement
   coresMin: 16
-  outdirMin: 31549
-  ramMin: 57344
-  tmpdirMin: 15263
+  outdirMin: 58606
+  ramMin: 61440
+  tmpdirMin: 28791
 - class: dx:InputResourceRequirement
-  indirMin: 7243
+  indirMin: 11163
 - class: SoftwareRequirement
   packages:
   - package: sambamba
@@ -68,6 +68,12 @@ inputs:
       - string
     - name: genome_resources__rnaseq__gene_bed
       type: File
+    - name: genome_resources__variation__encode_blacklist
+      type:
+      - 'null'
+      - string
+    - name: genome_resources__variation__lcr
+      type: File
     - name: reference__twobit
       type: File
     - name: config__algorithm__recalibrate
@@ -81,14 +87,28 @@ inputs:
       - 'null'
     - name: genome_resources__variation__dbsnp
       type: File
+    - name: genome_resources__variation__polyx
+      type: File
     - name: config__algorithm__tools_on
       type:
-        items: string
+      - 'null'
+      - string
+      - items:
+        - 'null'
+        - string
         type: array
     - name: config__algorithm__variant_regions
       type:
       - File
       - 'null'
+    - name: config__algorithm__exclude_regions
+      type:
+      - 'null'
+      - string
+      - items:
+        - 'null'
+        - string
+        type: array
     - name: align_bam
       type:
       - File
@@ -157,6 +177,14 @@ outputs:
   - File
   - 'null'
 - id: regions__nblock
+  type:
+  - File
+  - 'null'
+- id: depth__samtools__stats
+  type:
+  - File
+  - 'null'
+- id: depth__samtools__idxstats
   type:
   - File
   - 'null'

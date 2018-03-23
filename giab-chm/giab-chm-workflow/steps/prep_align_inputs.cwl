@@ -19,11 +19,11 @@ hints:
   dockerPull: quay.io/bcbio/bcbio-vc
 - class: ResourceRequirement
   coresMin: 16
-  outdirMin: 16286
-  ramMin: 57344
-  tmpdirMin: 7631
+  outdirMin: 29815
+  ramMin: 61440
+  tmpdirMin: 14396
 - class: dx:InputResourceRequirement
-  indirMin: 13288
+  indirMin: 22307
 - class: SoftwareRequirement
   packages:
   - package: grabix
@@ -35,6 +35,11 @@ hints:
   - package: biobambam
     specs:
     - https://anaconda.org/bioconda/biobambam
+  - package: atropos;env
+    specs:
+    - https://anaconda.org/bioconda/atropos;env
+    version:
+    - python3
 inputs:
 - id: alignment_rec
   type:
@@ -48,7 +53,18 @@ inputs:
       - string
       - 'null'
       - boolean
-    - name: reference__minimap2__indexes
+    - name: files
+      type:
+        items: File
+        type: array
+    - name: config__algorithm__trim_reads
+      type:
+      - string
+      - 'null'
+      - boolean
+    - name: reference__fasta__base
+      type: File
+    - name: config__algorithm__adapters
       type:
       - 'null'
       - string
@@ -56,8 +72,6 @@ inputs:
         - 'null'
         - string
         type: array
-    - name: reference__fasta__base
-      type: File
     - name: rgnames__lb
       type:
       - 'null'
@@ -71,12 +85,16 @@ inputs:
       - string
       - 'null'
       - boolean
-    - name: files
-      type:
-        items: File
-        type: array
     - name: config__algorithm__aligner
       type: string
+    - name: reference__minimap2__indexes
+      type:
+      - 'null'
+      - string
+      - items:
+        - 'null'
+        - string
+        type: array
     - name: rgnames__pl
       type: string
     - name: config__algorithm__mark_duplicates

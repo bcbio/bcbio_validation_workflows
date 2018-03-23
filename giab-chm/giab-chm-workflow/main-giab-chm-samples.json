@@ -3,6 +3,10 @@
         "variant2",
         "variant2"
     ],
+    "config__algorithm__adapters": [
+        [],
+        []
+    ],
     "config__algorithm__align_split_size": [
         "False",
         "False"
@@ -29,6 +33,14 @@
         "null",
         "null"
     ],
+    "config__algorithm__effects": [
+        "snpeff",
+        "snpeff"
+    ],
+    "config__algorithm__exclude_regions": [
+        [],
+        []
+    ],
     "config__algorithm__mark_duplicates": [
         "True",
         "True"
@@ -38,8 +50,8 @@
         250
     ],
     "config__algorithm__nomap_split_targets": [
-        40,
-        40
+        20,
+        20
     ],
     "config__algorithm__qc": [
         [
@@ -48,7 +60,8 @@
             "qsignature",
             "coverage",
             "variants",
-            "picard"
+            "picard",
+            "peddy"
         ],
         [
             "fastqc",
@@ -56,7 +69,8 @@
             "qsignature",
             "coverage",
             "variants",
-            "picard"
+            "picard",
+            "peddy"
         ]
     ],
     "config__algorithm__recalibrate": [
@@ -72,12 +86,12 @@
         ]
     ],
     "config__algorithm__tools_on": [
-        [
-            "gatk4"
-        ],
-        [
-            "gatk4"
-        ]
+        [],
+        []
+    ],
+    "config__algorithm__trim_reads": [
+        "False",
+        "False"
     ],
     "config__algorithm__validate": [
         {
@@ -165,11 +179,23 @@
         [
             {
                 "class": "File",
-                "path": "../biodata/chm/CHM1_CHM13_R1.fq.gz"
+                "path": "../biodata/chm/CHM1_CHM13_R1.fq.gz",
+                "secondaryFiles": [
+                    {
+                        "class": "File",
+                        "path": "../biodata/chm/CHM1_CHM13_R1.fq.gz.gbi"
+                    }
+                ]
             },
             {
                 "class": "File",
-                "path": "../biodata/chm/CHM1_CHM13_R2.fq.gz"
+                "path": "../biodata/chm/CHM1_CHM13_R2.fq.gz",
+                "secondaryFiles": [
+                    {
+                        "class": "File",
+                        "path": "../biodata/chm/CHM1_CHM13_R2.fq.gz.gbi"
+                    }
+                ]
             }
         ]
     ],
@@ -178,8 +204,8 @@
         "hg38"
     ],
     "genome_resources__aliases__ensembl": [
-        "homo_sapiens_vep_87_GRCh38",
-        "homo_sapiens_vep_87_GRCh38"
+        "homo_sapiens_merged_vep_91_GRCh38",
+        "homo_sapiens_merged_vep_91_GRCh38"
     ],
     "genome_resources__aliases__human": [
         "True",
@@ -206,21 +232,69 @@
     "genome_resources__variation__dbsnp": [
         {
             "class": "File",
-            "path": "../biodata/collections/hg38/variation/dbsnp-147.vcf.gz",
+            "path": "../biodata/collections/hg38/variation/dbsnp-150.vcf.gz",
             "secondaryFiles": [
                 {
                     "class": "File",
-                    "path": "../biodata/collections/hg38/variation/dbsnp-147.vcf.gz.tbi"
+                    "path": "../biodata/collections/hg38/variation/dbsnp-150.vcf.gz.tbi"
                 }
             ]
         },
         {
             "class": "File",
-            "path": "../biodata/collections/hg38/variation/dbsnp-147.vcf.gz",
+            "path": "../biodata/collections/hg38/variation/dbsnp-150.vcf.gz",
             "secondaryFiles": [
                 {
                     "class": "File",
-                    "path": "../biodata/collections/hg38/variation/dbsnp-147.vcf.gz.tbi"
+                    "path": "../biodata/collections/hg38/variation/dbsnp-150.vcf.gz.tbi"
+                }
+            ]
+        }
+    ],
+    "genome_resources__variation__encode_blacklist": [
+        "null",
+        "null"
+    ],
+    "genome_resources__variation__lcr": [
+        {
+            "class": "File",
+            "path": "../biodata/collections/hg38/coverage/problem_regions/repeats/LCR.bed.gz",
+            "secondaryFiles": [
+                {
+                    "class": "File",
+                    "path": "../biodata/collections/hg38/coverage/problem_regions/repeats/LCR.bed.gz.tbi"
+                }
+            ]
+        },
+        {
+            "class": "File",
+            "path": "../biodata/collections/hg38/coverage/problem_regions/repeats/LCR.bed.gz",
+            "secondaryFiles": [
+                {
+                    "class": "File",
+                    "path": "../biodata/collections/hg38/coverage/problem_regions/repeats/LCR.bed.gz.tbi"
+                }
+            ]
+        }
+    ],
+    "genome_resources__variation__polyx": [
+        {
+            "class": "File",
+            "path": "../biodata/collections/hg38/coverage/problem_regions/repeats/polyx.bed.gz",
+            "secondaryFiles": [
+                {
+                    "class": "File",
+                    "path": "../biodata/collections/hg38/coverage/problem_regions/repeats/polyx.bed.gz.tbi"
+                }
+            ]
+        },
+        {
+            "class": "File",
+            "path": "../biodata/collections/hg38/coverage/problem_regions/repeats/polyx.bed.gz",
+            "secondaryFiles": [
+                {
+                    "class": "File",
+                    "path": "../biodata/collections/hg38/coverage/problem_regions/repeats/polyx.bed.gz.tbi"
                 }
             ]
         }
@@ -274,6 +348,16 @@
                         "path": "../biodata/collections/hg38/coverage/problem_regions/repeats/LCR.bed.gz.tbi"
                     }
                 ]
+            },
+            {
+                "class": "File",
+                "path": "../biodata/collections/hg38/coverage/problem_regions/repeats/polyx.bed.gz",
+                "secondaryFiles": [
+                    {
+                        "class": "File",
+                        "path": "../biodata/collections/hg38/coverage/problem_regions/repeats/polyx.bed.gz.tbi"
+                    }
+                ]
             }
         ],
         [
@@ -284,6 +368,16 @@
                     {
                         "class": "File",
                         "path": "../biodata/collections/hg38/coverage/problem_regions/repeats/LCR.bed.gz.tbi"
+                    }
+                ]
+            },
+            {
+                "class": "File",
+                "path": "../biodata/collections/hg38/coverage/problem_regions/repeats/polyx.bed.gz",
+                "secondaryFiles": [
+                    {
+                        "class": "File",
+                        "path": "../biodata/collections/hg38/coverage/problem_regions/repeats/polyx.bed.gz.tbi"
                     }
                 ]
             }

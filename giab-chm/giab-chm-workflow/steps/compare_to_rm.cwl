@@ -4,7 +4,7 @@ arguments:
 - position: 0
   valueFrom: sentinel_runtime=cores,$(runtime['cores']),ram,$(runtime['ram'])
 - sentinel_parallel=batch-single
-- sentinel_outputs=vc_rec:validate__summary;validate__tp;validate__fp;validate__fn;description;resources;vrn_file;config__algorithm__validate;reference__fasta__base;config__algorithm__variantcaller;reference__snpeff__GRCh38_86;config__algorithm__coverage_interval;metadata__batch;metadata__phenotype;reference__twobit;config__algorithm__validate_regions;genome_build;genome_resources__aliases__human;config__algorithm__tools_off;genome_resources__variation__dbsnp;genome_resources__variation__cosmic;reference__genome_context;analysis;config__algorithm__tools_on;config__algorithm__variant_regions;genome_resources__aliases__ensembl;reference__rtg;genome_resources__aliases__snpeff;align_bam;regions__sample_callable;config__algorithm__callable_regions
+- sentinel_outputs=vc_rec:batch_samples;validate__summary;validate__tp;validate__fp;validate__fn;description;resources;vrn_file;reference__fasta__base;config__algorithm__variantcaller;config__algorithm__coverage_interval;metadata__batch;metadata__phenotype;config__algorithm__validate;config__algorithm__validate_regions;genome_build;genome_resources__aliases__human;config__algorithm__tools_off;reference__genome_context;analysis;config__algorithm__tools_on;config__algorithm__effects;config__algorithm__variant_regions;genome_resources__aliases__ensembl;config__algorithm__exclude_regions;genome_resources__aliases__snpeff;regions__sample_callable;config__algorithm__callable_regions
 - sentinel_inputs=batch_rec:record,vrn_file:var
 baseCommand:
 - bcbio_nextgen.py
@@ -19,11 +19,11 @@ hints:
   dockerPull: quay.io/bcbio/bcbio-vc
 - class: ResourceRequirement
   coresMin: 16
-  outdirMin: 16286
-  ramMin: 57344
-  tmpdirMin: 7631
+  outdirMin: 29815
+  ramMin: 61440
+  tmpdirMin: 14396
 - class: dx:InputResourceRequirement
-  indirMin: 9942
+  indirMin: 13863
 - class: SoftwareRequirement
   packages:
   - package: bcftools
@@ -56,8 +56,6 @@ inputs:
         type: string
       - name: resources
         type: string
-      - name: config__algorithm__validate
-        type: File
       - name: reference__fasta__base
         type: File
       - name: config__algorithm__variantcaller
@@ -68,13 +66,21 @@ inputs:
         type:
         - string
         - 'null'
+      - name: genome_resources__variation__encode_blacklist
+        type:
+        - 'null'
+        - string
       - name: metadata__batch
         type:
         - 'null'
         - string
+      - name: genome_resources__variation__lcr
+        type: File
       - name: metadata__phenotype
         type: string
       - name: reference__twobit
+        type: File
+      - name: config__algorithm__validate
         type: File
       - name: config__algorithm__validate_regions
         type: File
@@ -95,6 +101,8 @@ inputs:
           type: array
       - name: genome_resources__variation__dbsnp
         type: File
+      - name: genome_resources__variation__polyx
+        type: File
       - name: genome_resources__variation__cosmic
         type:
         - 'null'
@@ -107,14 +115,28 @@ inputs:
         type: string
       - name: config__algorithm__tools_on
         type:
-          items: string
+        - 'null'
+        - string
+        - items:
+          - 'null'
+          - string
           type: array
+      - name: config__algorithm__effects
+        type: string
       - name: config__algorithm__variant_regions
         type:
         - File
         - 'null'
       - name: genome_resources__aliases__ensembl
         type: string
+      - name: config__algorithm__exclude_regions
+        type:
+        - 'null'
+        - string
+        - items:
+          - 'null'
+          - string
+          type: array
       - name: reference__rtg
         type: File
       - name: genome_resources__aliases__snpeff
@@ -141,6 +163,11 @@ outputs:
   type:
     items:
       fields:
+      - name: batch_samples
+        type:
+        - 'null'
+        - items: string
+          type: array
       - name: validate__summary
         type:
         - File
@@ -163,14 +190,10 @@ outputs:
         type: string
       - name: vrn_file
         type: File
-      - name: config__algorithm__validate
-        type: File
       - name: reference__fasta__base
         type: File
       - name: config__algorithm__variantcaller
         type: string
-      - name: reference__snpeff__GRCh38_86
-        type: File
       - name: config__algorithm__coverage_interval
         type:
         - string
@@ -181,7 +204,7 @@ outputs:
         - string
       - name: metadata__phenotype
         type: string
-      - name: reference__twobit
+      - name: config__algorithm__validate
         type: File
       - name: config__algorithm__validate_regions
         type: File
@@ -196,12 +219,6 @@ outputs:
         type:
           items: string
           type: array
-      - name: genome_resources__variation__dbsnp
-        type: File
-      - name: genome_resources__variation__cosmic
-        type:
-        - 'null'
-        - string
       - name: reference__genome_context
         type:
           items: File
@@ -210,22 +227,30 @@ outputs:
         type: string
       - name: config__algorithm__tools_on
         type:
-          items: string
+        - 'null'
+        - string
+        - items:
+          - 'null'
+          - string
           type: array
+      - name: config__algorithm__effects
+        type: string
       - name: config__algorithm__variant_regions
         type:
         - File
         - 'null'
       - name: genome_resources__aliases__ensembl
         type: string
-      - name: reference__rtg
-        type: File
+      - name: config__algorithm__exclude_regions
+        type:
+        - 'null'
+        - string
+        - items:
+          - 'null'
+          - string
+          type: array
       - name: genome_resources__aliases__snpeff
         type: string
-      - name: align_bam
-        type:
-        - File
-        - 'null'
       - name: regions__sample_callable
         type:
         - File

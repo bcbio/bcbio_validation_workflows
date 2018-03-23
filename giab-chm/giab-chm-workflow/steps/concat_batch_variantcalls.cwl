@@ -20,11 +20,11 @@ hints:
   dockerPull: quay.io/bcbio/bcbio-vc
 - class: ResourceRequirement
   coresMin: 1
-  outdirMin: 16286
-  ramMin: 3584
-  tmpdirMin: 7631
+  outdirMin: 29815
+  ramMin: 3840
+  tmpdirMin: 14396
 - class: dx:InputResourceRequirement
-  indirMin: 9942
+  indirMin: 13863
 - class: SoftwareRequirement
   packages:
   - package: bcftools
@@ -46,8 +46,6 @@ inputs:
         type: string
       - name: resources
         type: string
-      - name: config__algorithm__validate
-        type: File
       - name: reference__fasta__base
         type: File
       - name: config__algorithm__variantcaller
@@ -58,13 +56,21 @@ inputs:
         type:
         - string
         - 'null'
+      - name: genome_resources__variation__encode_blacklist
+        type:
+        - 'null'
+        - string
       - name: metadata__batch
         type:
         - 'null'
         - string
+      - name: genome_resources__variation__lcr
+        type: File
       - name: metadata__phenotype
         type: string
       - name: reference__twobit
+        type: File
+      - name: config__algorithm__validate
         type: File
       - name: config__algorithm__validate_regions
         type: File
@@ -85,6 +91,8 @@ inputs:
           type: array
       - name: genome_resources__variation__dbsnp
         type: File
+      - name: genome_resources__variation__polyx
+        type: File
       - name: genome_resources__variation__cosmic
         type:
         - 'null'
@@ -97,14 +105,28 @@ inputs:
         type: string
       - name: config__algorithm__tools_on
         type:
-          items: string
+        - 'null'
+        - string
+        - items:
+          - 'null'
+          - string
           type: array
+      - name: config__algorithm__effects
+        type: string
       - name: config__algorithm__variant_regions
         type:
         - File
         - 'null'
       - name: genome_resources__aliases__ensembl
         type: string
+      - name: config__algorithm__exclude_regions
+        type:
+        - 'null'
+        - string
+        - items:
+          - 'null'
+          - string
+          type: array
       - name: reference__rtg
         type: File
       - name: genome_resources__aliases__snpeff

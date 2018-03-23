@@ -14,7 +14,18 @@ inputs:
       - string
       - 'null'
       - boolean
-    - name: reference__minimap2__indexes
+    - name: files
+      type:
+        items: File
+        type: array
+    - name: config__algorithm__trim_reads
+      type:
+      - string
+      - 'null'
+      - boolean
+    - name: reference__fasta__base
+      type: File
+    - name: config__algorithm__adapters
       type:
       - 'null'
       - string
@@ -22,8 +33,6 @@ inputs:
         - 'null'
         - string
         type: array
-    - name: reference__fasta__base
-      type: File
     - name: rgnames__lb
       type:
       - 'null'
@@ -37,12 +46,16 @@ inputs:
       - string
       - 'null'
       - boolean
-    - name: files
-      type:
-        items: File
-        type: array
     - name: config__algorithm__aligner
       type: string
+    - name: reference__minimap2__indexes
+      type:
+      - 'null'
+      - string
+      - items:
+        - 'null'
+        - string
+        type: array
     - name: rgnames__pl
       type: string
     - name: config__algorithm__mark_duplicates
@@ -72,20 +85,6 @@ outputs:
   - 'null'
   - items: File
     type: array
-- id: work_bam_plus__disc
-  outputSource: process_alignment/work_bam_plus__disc
-  secondaryFiles:
-  - .bai
-  type:
-  - File
-  - 'null'
-- id: work_bam_plus__sr
-  outputSource: process_alignment/work_bam_plus__sr
-  secondaryFiles:
-  - .bai
-  type:
-  - File
-  - 'null'
 requirements:
 - class: EnvVarRequirement
   envDef:
@@ -111,6 +110,4 @@ steps:
   - id: work_bam
   - id: align_bam
   - id: hla__fastq
-  - id: work_bam_plus__disc
-  - id: work_bam_plus__sr
   run: steps/process_alignment.cwl

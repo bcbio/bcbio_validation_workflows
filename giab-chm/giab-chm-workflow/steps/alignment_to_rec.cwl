@@ -4,8 +4,8 @@ arguments:
 - position: 0
   valueFrom: sentinel_runtime=cores,$(runtime['cores']),ram,$(runtime['ram'])
 - sentinel_parallel=multi-combined
-- sentinel_outputs=alignment_rec:description;resources;config__algorithm__align_split_size;reference__minimap2__indexes;reference__fasta__base;rgnames__lb;rgnames__rg;rgnames__lane;config__algorithm__bam_clean;files;config__algorithm__aligner;rgnames__pl;config__algorithm__mark_duplicates;rgnames__pu;analysis;rgnames__sample
-- sentinel_inputs=files:var,analysis:var,config__algorithm__align_split_size:var,reference__fasta__base:var,rgnames__pl:var,rgnames__sample:var,rgnames__pu:var,rgnames__lane:var,rgnames__rg:var,rgnames__lb:var,reference__minimap2__indexes:var,config__algorithm__aligner:var,config__algorithm__bam_clean:var,config__algorithm__mark_duplicates:var,description:var,resources:var
+- sentinel_outputs=alignment_rec:description;resources;config__algorithm__align_split_size;files;config__algorithm__trim_reads;reference__fasta__base;config__algorithm__adapters;rgnames__lb;rgnames__rg;rgnames__lane;config__algorithm__bam_clean;config__algorithm__aligner;reference__minimap2__indexes;rgnames__pl;config__algorithm__mark_duplicates;rgnames__pu;analysis;rgnames__sample
+- sentinel_inputs=files:var,analysis:var,config__algorithm__align_split_size:var,reference__fasta__base:var,rgnames__pl:var,rgnames__sample:var,rgnames__pu:var,rgnames__lane:var,rgnames__rg:var,rgnames__lb:var,reference__minimap2__indexes:var,config__algorithm__aligner:var,config__algorithm__trim_reads:var,config__algorithm__adapters:var,config__algorithm__bam_clean:var,config__algorithm__mark_duplicates:var,description:var,resources:var
 baseCommand:
 - bcbio_nextgen.py
 - runfn
@@ -19,13 +19,15 @@ hints:
   dockerPull: quay.io/bcbio/bcbio-vc
 - class: ResourceRequirement
   coresMin: 1
-  outdirMin: 16286
-  ramMin: 3584
-  tmpdirMin: 7631
+  outdirMin: 29815
+  ramMin: 3840
+  tmpdirMin: 14396
 - class: dx:InputResourceRequirement
-  indirMin: 13288
+  indirMin: 0
 inputs:
 - id: files
+  secondaryFiles:
+  - .gbi
   type:
     items:
       items: File
@@ -89,6 +91,23 @@ inputs:
   type:
     items: string
     type: array
+- id: config__algorithm__trim_reads
+  type:
+    items:
+    - string
+    - 'null'
+    - boolean
+    type: array
+- id: config__algorithm__adapters
+  type:
+    items:
+    - 'null'
+    - string
+    - items:
+      - 'null'
+      - string
+      type: array
+    type: array
 - id: config__algorithm__bam_clean
   type:
     items:
@@ -125,7 +144,18 @@ outputs:
         - string
         - 'null'
         - boolean
-      - name: reference__minimap2__indexes
+      - name: files
+        type:
+          items: File
+          type: array
+      - name: config__algorithm__trim_reads
+        type:
+        - string
+        - 'null'
+        - boolean
+      - name: reference__fasta__base
+        type: File
+      - name: config__algorithm__adapters
         type:
         - 'null'
         - string
@@ -133,8 +163,6 @@ outputs:
           - 'null'
           - string
           type: array
-      - name: reference__fasta__base
-        type: File
       - name: rgnames__lb
         type:
         - 'null'
@@ -148,12 +176,16 @@ outputs:
         - string
         - 'null'
         - boolean
-      - name: files
-        type:
-          items: File
-          type: array
       - name: config__algorithm__aligner
         type: string
+      - name: reference__minimap2__indexes
+        type:
+        - 'null'
+        - string
+        - items:
+          - 'null'
+          - string
+          type: array
       - name: rgnames__pl
         type: string
       - name: config__algorithm__mark_duplicates

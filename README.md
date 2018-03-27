@@ -111,11 +111,13 @@ or it's included with a bcbio-vm installation.
 Download requires a free account on [Synapse](https://www.synapse.org) to obtain
 access. First login to Synapse with your credentials:
 
-    syanpse login
+    syanpse login --remember-me
 
 and you can retrieve the full biodata folder with sample data for multiple
 validations with:
 
+    mkdir biodata
+    cd biodata
     synapse get -r syn10468187
 
 or use the `download_data.sh` shell script link in each validation to get only

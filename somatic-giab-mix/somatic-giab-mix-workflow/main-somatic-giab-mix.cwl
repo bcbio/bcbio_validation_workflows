@@ -207,10 +207,10 @@ inputs:
     items: File
     type: array
 - id: genome_resources__variation__cosmic
+  secondaryFiles:
+  - .tbi
   type:
-    items:
-    - 'null'
-    - string
+    items: File
     type: array
 - id: reference__genome_context
   secondaryFiles:

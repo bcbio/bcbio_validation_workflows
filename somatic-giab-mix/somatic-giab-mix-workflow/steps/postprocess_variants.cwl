@@ -23,7 +23,7 @@ hints:
   ramMin: 61440
   tmpdirMin: 6926
 - class: dx:InputResourceRequirement
-  indirMin: 12695
+  indirMin: 12715
 - class: SoftwareRequirement
   packages:
   - package: snpeff
@@ -94,9 +94,7 @@ inputs:
       - name: genome_resources__variation__polyx
         type: File
       - name: genome_resources__variation__cosmic
-        type:
-        - 'null'
-        - string
+        type: File
       - name: reference__genome_context
         type:
           items: File

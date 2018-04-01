@@ -155,10 +155,10 @@ inputs:
       type: array
     type: array
 - id: genome_resources__variation__cosmic
+  secondaryFiles:
+  - .tbi
   type:
-    items:
-    - 'null'
-    - string
+    items: File
     type: array
 - id: genome_resources__variation__dbsnp
   secondaryFiles:
@@ -275,9 +275,7 @@ outputs:
         - name: genome_resources__variation__polyx
           type: File
         - name: genome_resources__variation__cosmic
-          type:
-          - 'null'
-          - string
+          type: File
         - name: reference__genome_context
           type:
             items: File

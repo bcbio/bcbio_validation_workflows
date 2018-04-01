@@ -24,7 +24,7 @@ hints:
   ramMin: 3840
   tmpdirMin: 20777
 - class: dx:InputResourceRequirement
-  indirMin: 12695
+  indirMin: 12715
 - class: SoftwareRequirement
   packages:
   - package: bcftools
@@ -100,9 +100,7 @@ inputs:
       - name: genome_resources__variation__polyx
         type: File
       - name: genome_resources__variation__cosmic
-        type:
-        - 'null'
-        - string
+        type: File
       - name: reference__genome_context
         type:
           items: File

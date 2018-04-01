@@ -64,9 +64,7 @@ inputs:
       - name: genome_resources__variation__polyx
         type: File
       - name: genome_resources__variation__cosmic
-        type:
-        - 'null'
-        - string
+        type: File
       - name: reference__genome_context
         type:
           items: File

@@ -185,8 +185,26 @@
         }
     ],
     "genome_resources__variation__cosmic": [
-        "null",
-        "null"
+        {
+            "class": "File",
+            "path": "../biodata/collections/GRCh37/variation/cosmic.vcf.gz",
+            "secondaryFiles": [
+                {
+                    "class": "File",
+                    "path": "../biodata/collections/GRCh37/variation/cosmic.vcf.gz.tbi"
+                }
+            ]
+        },
+        {
+            "class": "File",
+            "path": "../biodata/collections/GRCh37/variation/cosmic.vcf.gz",
+            "secondaryFiles": [
+                {
+                    "class": "File",
+                    "path": "../biodata/collections/GRCh37/variation/cosmic.vcf.gz.tbi"
+                }
+            ]
+        }
     ],
     "genome_resources__variation__dbsnp": [
         {

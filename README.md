@@ -54,6 +54,11 @@ positive and long runtime issues in different calling methods.
 The dataset is subset to chr20 and exome regions, similar to the `giab-joint`
 and `giab-chm` examples above.
 
+## Germline structural variant calling
+
+`NA24385-sv` -- Structural variant calling on Genome in a Bottle NA24385 (HG002) Ashkenazi
+sample, compared against [the v0.5.0 combined validation set](ftp://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/data/AshkenazimTrio/analysis/NIST_UnionSVs_12122017/). Uses the [50x HiSeq x10 dataset from 10x genomics](https://support.10xgenomics.com/de-novo-assembly/datasets) from the `giab` validations, subset to chr20 and exome regions.
+
 ### NA12878 chromosome 20 for GA4GH-DREAM tool execution challenge
 
 `NA12878-chr20` -- A germline variant calling workflow running a single chromosome subset of the
@@ -79,9 +84,6 @@ The data for this run is self-contained within synapse:
         synapse get -r syn9725771
 
 ### Workflows in progress
-
-- `NA24385-sv` -- Structural variant calling on Genome in a Bottle NA24385 (HG002) Ashkenazi
-  sample, compared against [the v0.5.0 combined validation set](ftp://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/data/AshkenazimTrio/analysis/NIST_UnionSVs_12122017/).
 
 - `pgp` -- Variant, HLA and structural variant calling on [Personal Genome
   Project](http://www.personalgenomes.org/us) genomes using the [Arvados public

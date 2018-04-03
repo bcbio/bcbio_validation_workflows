@@ -1,0 +1,222 @@
+{
+    "analysis": [
+        "variant2"
+    ],
+    "config__algorithm__adapters": [
+        []
+    ],
+    "config__algorithm__align_split_size": [
+        "False"
+    ],
+    "config__algorithm__aligner": [
+        "minimap2"
+    ],
+    "config__algorithm__bam_clean": [
+        "False"
+    ],
+    "config__algorithm__coverage": [
+        {
+            "class": "File",
+            "path": "../biodata/regions/Exome-AZ_V2_pluschr20-GRCh37.bed"
+        }
+    ],
+    "config__algorithm__coverage_interval": [
+        "null"
+    ],
+    "config__algorithm__exclude_regions": [
+        []
+    ],
+    "config__algorithm__mark_duplicates": [
+        "True"
+    ],
+    "config__algorithm__nomap_split_size": [
+        250
+    ],
+    "config__algorithm__nomap_split_targets": [
+        200
+    ],
+    "config__algorithm__qc": [
+        [
+            "fastqc",
+            "samtools",
+            "qsignature",
+            "coverage",
+            "variants",
+            "picard",
+            "peddy"
+        ]
+    ],
+    "config__algorithm__recalibrate": [
+        "False"
+    ],
+    "config__algorithm__svcaller": [
+        [
+            "manta",
+            "lumpy",
+            "cnvkit"
+        ]
+    ],
+    "config__algorithm__svvalidate": [
+        {
+            "class": "File",
+            "path": "../biodata/collections/GRCh37/validation/giab-NA24385/truth_sv.vcf.gz",
+            "secondaryFiles": [
+                {
+                    "class": "File",
+                    "path": "../biodata/collections/GRCh37/validation/giab-NA24385/truth_sv.vcf.gz.tbi"
+                }
+            ]
+        }
+    ],
+    "config__algorithm__tools_off": [
+        []
+    ],
+    "config__algorithm__tools_on": [
+        []
+    ],
+    "config__algorithm__trim_reads": [
+        "False"
+    ],
+    "config__algorithm__variant_regions": [
+        {
+            "class": "File",
+            "path": "../biodata/regions/Exome-AZ_V2_pluschr20-GRCh37.bed"
+        }
+    ],
+    "description": [
+        "NA24385"
+    ],
+    "files": [
+        [
+            {
+                "class": "File",
+                "path": "../biodata/giab/na24385/NA24385_R1.fq.gz",
+                "secondaryFiles": [
+                    {
+                        "class": "File",
+                        "path": "../biodata/giab/na24385/NA24385_R1.fq.gz.gbi"
+                    }
+                ]
+            },
+            {
+                "class": "File",
+                "path": "../biodata/giab/na24385/NA24385_R2.fq.gz",
+                "secondaryFiles": [
+                    {
+                        "class": "File",
+                        "path": "../biodata/giab/na24385/NA24385_R2.fq.gz.gbi"
+                    }
+                ]
+            }
+        ]
+    ],
+    "genome_build": [
+        "GRCh37"
+    ],
+    "genome_resources__rnaseq__gene_bed": [
+        {
+            "class": "File",
+            "path": "../biodata/collections/GRCh37/rnaseq/ref-transcripts.bed"
+        }
+    ],
+    "genome_resources__variation__dbsnp": [
+        {
+            "class": "File",
+            "path": "../biodata/collections/GRCh37/variation/dbsnp-150.vcf.gz",
+            "secondaryFiles": [
+                {
+                    "class": "File",
+                    "path": "../biodata/collections/GRCh37/variation/dbsnp-150.vcf.gz.tbi"
+                }
+            ]
+        }
+    ],
+    "genome_resources__variation__encode_blacklist": [
+        {
+            "class": "File",
+            "path": "../biodata/collections/GRCh37/coverage/problem_regions/ENCODE/wgEncodeDacMapabilityConsensusExcludable.bed.gz",
+            "secondaryFiles": [
+                {
+                    "class": "File",
+                    "path": "../biodata/collections/GRCh37/coverage/problem_regions/ENCODE/wgEncodeDacMapabilityConsensusExcludable.bed.gz.tbi"
+                }
+            ]
+        }
+    ],
+    "genome_resources__variation__lcr": [
+        {
+            "class": "File",
+            "path": "../biodata/collections/GRCh37/coverage/problem_regions/repeats/LCR.bed.gz",
+            "secondaryFiles": [
+                {
+                    "class": "File",
+                    "path": "../biodata/collections/GRCh37/coverage/problem_regions/repeats/LCR.bed.gz.tbi"
+                }
+            ]
+        }
+    ],
+    "genome_resources__variation__polyx": [
+        {
+            "class": "File",
+            "path": "../biodata/collections/GRCh37/coverage/problem_regions/repeats/polyx.bed.gz",
+            "secondaryFiles": [
+                {
+                    "class": "File",
+                    "path": "../biodata/collections/GRCh37/coverage/problem_regions/repeats/polyx.bed.gz.tbi"
+                }
+            ]
+        }
+    ],
+    "metadata__batch": [
+        "null"
+    ],
+    "metadata__phenotype": [
+        ""
+    ],
+    "reference__fasta__base": [
+        {
+            "class": "File",
+            "path": "../biodata/collections/GRCh37/seq/GRCh37.fa",
+            "secondaryFiles": [
+                {
+                    "class": "File",
+                    "path": "../biodata/collections/GRCh37/seq/GRCh37.fa.fai"
+                },
+                {
+                    "class": "File",
+                    "path": "../biodata/collections/GRCh37/seq/GRCh37.dict"
+                }
+            ]
+        }
+    ],
+    "reference__minimap2__indexes": [
+        []
+    ],
+    "reference__twobit": [
+        {
+            "class": "File",
+            "path": "../biodata/collections/GRCh37/ucsc/GRCh37.2bit"
+        }
+    ],
+    "resources": [
+        "{}"
+    ],
+    "rgnames__lane": [
+        "NA24385"
+    ],
+    "rgnames__lb": [
+        "null"
+    ],
+    "rgnames__pl": [
+        "illumina"
+    ],
+    "rgnames__pu": [
+        "NA24385"
+    ],
+    "rgnames__rg": [
+        "NA24385"
+    ],
+    "rgnames__sample": [
+        "NA24385"
+    ]
+}

@@ -54,7 +54,7 @@ positive and long runtime issues in different calling methods.
 The dataset is subset to chr20 and exome regions, similar to the `giab-joint`
 and `giab-chm` examples above.
 
-## Germline structural variant calling
+### Germline structural variant calling
 
 `NA24385-sv` -- Structural variant calling on Genome in a Bottle NA24385 (HG002) Ashkenazi
 sample, compared against [the v0.5.0 combined validation set](ftp://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/data/AshkenazimTrio/analysis/NIST_UnionSVs_12122017/). Uses the [50x HiSeq x10 dataset from 10x genomics](https://support.10xgenomics.com/de-novo-assembly/datasets) from the `giab` validations, subset to chr20 and exome regions.
@@ -95,6 +95,26 @@ The data for this run is self-contained within synapse:
 
 ## General instructions
 
+### Install bcbio-vm
+
+Each validation contains a ready to run Common Workflow Language description of
+the workflow, along with a description of samples pointing to local files from
+the downloaded biodata directory. If you're an experienced user of an analysis
+platform this is all you need to run an analysis.
+
+If you'd like to explore more or are not sure where to get started, bcbio-vm
+contains wrappers and automated tools to help with regenerating CWL from input
+YAML files and running CWL on muliple plaforms. The [bcbio CWL
+documentation](http://bcbio-nextgen.readthedocs.io/en/latest/contents/cwl.html)
+contains details about installing and running on each platform, but in brief,
+[Install bcbio-vm](https://github.com/chapmanb/bcbio-nextgen-vm#installation)
+with:
+
+    wget https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh
+    bash Miniconda-latest-Linux-x86_64.sh -b -p ~/install/bcbio-vm/anaconda
+    ~/install/bcbio-vm/anaconda/bin/conda install --yes -c conda-forge -c bioconda bcbio-nextgen-vm
+    export PATH=~/install/bcbio-vm/anaconda/bin:$PATH
+
 ### Retrieving data
 
 The [GA4GH-DREAM Workflow Execution
@@ -115,35 +135,15 @@ access. First login to Synapse with your credentials:
 
     syanpse login --remember-me
 
-and you can retrieve the full biodata folder with sample data for multiple
-validations with:
+Then use the `download_data.sh` shell script link in each validation project to
+get only the data for that run. If you prefer, you can also retrieve the full
+biodata folder with sample data for multiple validations with:
 
     mkdir biodata
     cd biodata
     synapse get -r syn10468187
 
-or use the `download_data.sh` shell script link in each validation to get only
-the data for that run.
-
 ### Running
-
-Each validation contains a ready to run Common Workflow Language description of
-the workflow, along with a description of samples pointing to local files from
-the downloaded biodata directory. If you're an experienced user of an analysis
-platform this is all you need to run an analysis.
-
-If you'd like to explore more or are not sure where to get started, bcbio-vm
-contains wrappers and automated tools to help with regenerating CWL from input
-YAML files and running this CWL on different plaforms. The [bcbio CWL
-documentation](http://bcbio-nextgen.readthedocs.io/en/latest/contents/cwl.html)
-contains details about installing and running on each platform, but in brief,
-[Install bcbio-vm](https://github.com/chapmanb/bcbio-nextgen-vm#installation)
-with:
-
-    wget https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh
-    bash Miniconda-latest-Linux-x86_64.sh -b -p ~/install/bcbio-vm/anaconda
-    ~/install/bcbio-vm/anaconda/bin/conda install --yes -c conda-forge -c bioconda bcbio-nextgen-vm
-    export PATH=~/install/bcbio-vm/anaconda/bin:$PATH
 
 The individual tool run directories contains starter shell scripts for different
 CWL-enabled tools like [Toil](https://github.com/BD2KGenomics/toil) or and

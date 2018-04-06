@@ -115,6 +115,20 @@ with:
     ~/install/bcbio-vm/anaconda/bin/conda install --yes -c conda-forge -c bioconda bcbio-nextgen-vm
     export PATH=~/install/bcbio-vm/anaconda/bin:$PATH
 
+### Optionally, install bcbio
+
+If you're able to use Docker, then the bcbio-vm wrappers are all you need to
+install as the CWL workflows will download Docker container with the bcbio code and
+third party tools. Genome and other input data is retrieved separately in the next step
+so is also not required. If you're on an HPC or other system without Docker you can also run CWL
+workflows with an externally installed bcbio. Use the [bcbio automated
+installation](https://bcbio-nextgen.readthedocs.io/en/latest/contents/installation.html#automated)
+which will install the tools via bioconda:
+
+    wget https://raw.github.com/bcbio/bcbio-nextgen/master/scripts/bcbio_nextgen_install.py
+    python bcbio_nextgen_install.py ~/install/bcbio --tooldir=~/install/bcbio --nodata --isolate
+    export PATH=~/install/bcbio/bin:$PATH
+
 ### Retrieving data
 
 The [GA4GH-DREAM Workflow Execution

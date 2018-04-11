@@ -85,6 +85,20 @@ outputs:
   - 'null'
   - items: File
     type: array
+- id: work_bam_plus__disc
+  outputSource: process_alignment/work_bam_plus__disc
+  secondaryFiles:
+  - .bai
+  type:
+  - File
+  - 'null'
+- id: work_bam_plus__sr
+  outputSource: process_alignment/work_bam_plus__sr
+  secondaryFiles:
+  - .bai
+  type:
+  - File
+  - 'null'
 requirements:
 - class: EnvVarRequirement
   envDef:
@@ -110,4 +124,6 @@ steps:
   - id: work_bam
   - id: align_bam
   - id: hla__fastq
+  - id: work_bam_plus__disc
+  - id: work_bam_plus__sr
   run: steps/process_alignment.cwl

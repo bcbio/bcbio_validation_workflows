@@ -32,11 +32,9 @@ Bottle Truth sets, helping identify short read and Illumina specific bias in tho
 inputs.
 
 We subset the [initial read input from ERA596361](ftp://ftp.sra.ebi.ac.uk/vol1/ERA596/ERA596361/bam/CHM1_CHM13_2.bam)
-to exome regions and chromosome 20. The truth set is prepared from
-the [version 0.2 20161018 tarball](https://github.com/lh3/CHM-eval/releases/download/v0.2/CHM-evalkit-20161018.tar)
-by removing polyA10 regions and regions within 10bp of problematic PacBio indels
-(1bp and >50bp) using the `prep_chm_truth.py` script. The inputs are in the same
-synapse project as the Genome in a Bottle joint calling validation above.
+to exome regions and chromosome 20. Truth set variants (`full.38.vcf.gz`)
+and confidence regions (`full.38.bed.gz`) are from the
+[version 0.5 20180222 tarball](https://github.com/lh3/CHM-eval/releases/download/v0.5/CHM-evalkit-20180222.tar).
 
 ### Somatic Genome in a Bottle mixture
 

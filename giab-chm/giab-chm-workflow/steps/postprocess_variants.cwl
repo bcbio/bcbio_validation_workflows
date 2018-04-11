@@ -23,7 +23,7 @@ hints:
   ramMin: 61440
   tmpdirMin: 4799
 - class: dx:InputResourceRequirement
-  indirMin: 13863
+  indirMin: 13850
 - class: SoftwareRequirement
   packages:
   - package: snpeff

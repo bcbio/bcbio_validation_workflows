@@ -122,7 +122,13 @@
         },
         {
             "class": "File",
-            "path": "../biodata/chm/chm-hg38-regions.bed"
+            "path": "../biodata/chm/chm-hg38-regions.bed.gz",
+            "secondaryFiles": [
+                {
+                    "class": "File",
+                    "path": "../biodata/chm/chm-hg38-regions.bed.gz.tbi"
+                }
+            ]
         }
     ],
     "config__algorithm__variant_regions": [

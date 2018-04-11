@@ -381,6 +381,8 @@ steps:
   out:
   - id: align_bam
   - id: hla__fastq
+  - id: work_bam_plus__disc
+  - id: work_bam_plus__sr
   run: wf-alignment.cwl
   scatter:
   - alignment_rec

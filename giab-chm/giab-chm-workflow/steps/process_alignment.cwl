@@ -5,7 +5,7 @@ arguments:
 - position: 0
   valueFrom: sentinel_runtime=cores,$(runtime['cores']),ram,$(runtime['ram'])
 - sentinel_parallel=single-single
-- sentinel_outputs=work_bam,align_bam,hla__fastq
+- sentinel_outputs=work_bam,align_bam,hla__fastq,work_bam_plus__disc,work_bam_plus__sr
 - sentinel_inputs=alignment_rec:record,process_alignment_rec:record
 baseCommand:
 - bcbio_nextgen.py
@@ -73,6 +73,9 @@ hints:
   - package: seqtk
     specs:
     - https://anaconda.org/bioconda/seqtk
+  - package: samblaster
+    specs:
+    - https://anaconda.org/bioconda/samblaster
   - package: variantbam
     specs:
     - https://anaconda.org/bioconda/variantbam
@@ -183,6 +186,18 @@ outputs:
   - 'null'
   - items: File
     type: array
+- id: work_bam_plus__disc
+  secondaryFiles:
+  - .bai
+  type:
+  - File
+  - 'null'
+- id: work_bam_plus__sr
+  secondaryFiles:
+  - .bai
+  type:
+  - File
+  - 'null'
 requirements:
 - class: InlineJavascriptRequirement
 - class: InitialWorkDirRequirement

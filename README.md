@@ -83,13 +83,35 @@ The data for this run is self-contained within synapse:
 
 ### Workflows in progress
 
-- `pgp` -- Variant, HLA and structural variant calling on [Personal Genome
+#### Personal genome project
+
+`pgp` -- Variant, HLA and structural variant calling on [Personal Genome
   Project](http://www.personalgenomes.org/us) genomes using the [Arvados public
   cloud](https://workbench.su92l.arvadosapi.com/).
 
-- `SGDP-recall-CGC` -- Germline recalling on the
-  [Cancer Genomics Cloud](http://www.cancergenomicscloud.org/) using the public
-  [Simons Genome Diversity Project Dataset](https://www.simonsfoundation.org/life-sciences/simons-genome-diversity-project-dataset/).
+#### Somatic low frequency variants
+
+`somatic-lowfreq` -- Low frequency variant detection assessment comprised of inputs from
+the [smcounter2 low frequency variant caller](https://www.biorxiv.org/content/early/2018/03/14/281659)
+and [Pisces tumor only variant caller](https://www.biorxiv.org/content/early/2018/03/30/291641) papers:
+
+- N13532 --  0.5% low frequency SNPs and indels using a NA12878/NA24385
+  mixture of Genome in a Bottle Samples. Truth set and input data URLs available
+  in [smcounter2's suppplemental material](https://www.biorxiv.org/content/early/2018/03/14/281659).
+- M0253 -- detection of ~0.5% low frequency SNPs from a mixture of
+  Horizon Dx’s Tru-Q 7 reference standard with cancer specific mutations.
+  Truth set and input data URLs available
+  in [smcounter2's suppplemental material](https://www.biorxiv.org/content/early/2018/03/14/281659).
+- RAS-panel -- FFPE sample inputs with validated mutations in KRAS, from
+  the [PISCES supplementation material](https://basespace.illumina.com/projects/36152117)
+- NA12878-dilution -- 8% dillution of NA12878 with NA12877 from the
+  [PISCES supplementation material](https://basespace.illumina.com/projects/36152117)
+
+#### Simons Genome Diversity project
+
+`SGDP-recall-CGC` -- Germline recalling on the
+[Cancer Genomics Cloud](http://www.cancergenomicscloud.org/) using the public
+[Simons Genome Diversity Project Dataset](https://www.simonsfoundation.org/life-sciences/simons-genome-diversity-project-dataset/).
 
 ## General instructions
 

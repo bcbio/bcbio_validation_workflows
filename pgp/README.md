@@ -85,12 +85,83 @@ the [Personal Genome Projects GET-Evidence report on 23andMe variants](https://c
 
 This demonstrates how to run a more complex workflow analysis on a cleaned BAM
 file. We'll use a [bcbio](http://bcb.io/) [Common Workflow
-Language](http://www.commonwl.org/) decription to run HLA typing with 
+Language (CWL)](http://www.commonwl.org/) decription to run HLA typing with
 [OptiType](https://github.com/FRED-2/OptiType) and structural variant calling with
 [Manta](https://github.com/Illumina/manta), [Lumpy](https://github.com/arq5x/lumpy-sv)
 and [CNVkit](http://cnvkit.readthedocs.io/en/stable/). This provides additional variant
 calls and information not present in the small variant VCFs generated as part of
 the Personal Genome Project analysis.
+
+The [Arvados](https://arvados.org/) platform that hosts the PGP data is a full
+analysis environment running on top of
+[Amazon Web Services](https://aws.amazon.com/).
+bcbio [integrates with Arvados](http://bcbio-nextgen.readthedocs.io/en/latest/contents/cwl.html#running-bcbio-cwl-on-arvados)
+providing the ability to run additional analyses on any participant example.
+
+To run, we first define a configuration file that points to the
+[PGP portable input BAMs](https://workbench.su92l.arvadosapi.com/collections/su92l-4zz18-ihm3wrgyuwcmsx1)
+and [reference genomes and associated indices and supporting files](https://workbench.su92l.arvadosapi.com/collections/su92l-4zz18-3p00f79y4p535ia).
+This enables bcbio to do direct lookups of files present in these Arvados Keep
+collections:
+```
+arvados:
+  reference: su92l-4zz18-3p00f79y4p535ia
+  input: [su92l-4zz18-ihm3wrgyuwcmsx1]
+resources:
+  default: {cores: 16, memory: 3500M, jvm_opts: [-Xms1g, -Xmx3500m]}
+```
+Next we define a second YAML file with the analyses we want to run. This
+references the input participant BAM file with raw sequence reads. It
+specifies we want to align with bwa; call variants with GATK4 HaplotypeCaller;
+call structural variants with Manta, Lumpy and CNVkit; and call HLAs with
+OptiType. Finally it provides some tweaks to improve performance on higher depth
+whole genome data for alignment and variant calling:
+```
+  - files: huD57BBF.bam
+    description: huD57BBF
+    analysis: variant
+    genome_build: hg38
+    algorithm:
+      aligner: bwa
+      variantcaller: gatk-haplotype
+      svcaller: [manta, lumpy, cnvkit]
+      hlacaller: optitype
+      align_split_size: false
+      nomap_split_targets: 20
+      exclude_regions: [altcontigs, polyx]
+```
+With these two files in place we can launch this full whole genome workflow on
+the Arvados PGP platform. First you reference your
+[API token](https://workbench.su92l.arvadosapi.com/current_token)
+which allows you to login and launch analyses remotely:
+```
+export ARVADOS_API_TOKEN=your_api_token
+export ARVADOS_API_HOST=su92l.arvadosapi.com
+```
+We submit the analysis job with two
+[bcbio-vm](https://github.com/bcbio/bcbio-nextgen-vm) commands.
+First generate a portable Common Workflow Language (CWL) description of the
+analysis we want to run, retrieving identifiers of needed input files on
+the Arvados platform:
+
+    bcbio_vm.py cwl --systemconfig bcbio_system-arvados.yaml pgp_sv_hla.yaml
+
+Finally, submit the prepared CWL job into the
+[PGP_example_analyses](https://workbench.su92l.arvadosapi.com/projects/su92l-j7d0g-eoibug3nrwg8ysj)
+project:
+
+    bcbio_vm.py cwlrun arvados pgp_sv_hla-workflow -- --project-uuid su92l-j7d0g-eoibug3nrwg8ysj
+
+This launches a distributed analysis job running over multiple cloud AWS
+machines, retrieving input data from Keep and analysis programs from pre-built
+[Docker containers](https://github.com/bcbio/bcbio_docker). The job itself takes
+over 24 hours to run.
+
+The outputs of this process are HLA and structural variant calls for the
+participant, providing insight into additional variation not present in the
+automated PGP variant calls. We will link to a successful output on Arvados PGP
+and highlight HLA and interesting structural variant calls. Runs are currently
+in progress.
 
 ### Suggested data access improvements
 

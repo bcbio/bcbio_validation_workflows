@@ -1,0 +1,14 @@
+---
+details:
+  - files: huD57BBF.bam
+    description: huD57BBF
+    analysis: variant
+    genome_build: hg38
+    algorithm:
+      aligner: bwa
+      variantcaller: gatk-haplotype
+      svcaller: [manta, lumpy, cnvkit]
+      hlacaller: optitype
+      align_split_size: false
+      nomap_split_targets: 20
+      exclude_regions: [altcontigs, polyx]

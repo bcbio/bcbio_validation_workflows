@@ -10,27 +10,34 @@ is to:
   VCFs.
 - Download and extract interesting variant information from the VCF.
 - Setup and run an HLA and structural variant calling analysis on the
-  participant BAM read data.
+  participant BAM read data and interpret the results.
+
+See the [associated slides](https://github.com/chapmanb/bcbb/blob/master/talks/pgp_analysis/pgp_analysis.pdf)
+for additional background and materials.
 
 ### Identify a participant to work on
 
-Identify participants to analyze using the [PGP untap](https://github.com/abeconnelly/untap)
-SQLite database, hosted on [the Veritas public PGP
+We identify participants to analyze using the [PGP untap](https://github.com/abeconnelly/untap)
+SQLite database, hosted on [the Curoverse Research public PGP
 server](https://collections.su92l.arvadosapi.com/c=2210f7ee07fc1c8b926e5db28eff9635-3284/_/html/index.html?disposition=inline).
 We developed queries based on [an initial analysis of PGP participants](https://github.com/swzCuroverse/PGPGraphics).
+The Personal Genome Project has a number of [heterogeneous datasets for participants](https://github.com/PGPHarvard/data-summary), all organized and freely available.
 
-Query SQLite database to find sample of interest:
+We identify a participant by querying a pre-built SQLite database of sample information. 
+We're ideally looking for a participant with recent high depth Illumina sequencing from
+[Veritas Genetics](https://www.veritasgenetics.com/) and with contributed
+health and ancestry data:
 
     wget https://collections.su92l.arvadosapi.com/c=su92l-4zz18-2w3rfqxc5zkhfhd/t=t6rn146cw51wzi7s66dteicjsk0k57p4mj5cpapnsc94q8bfg/_/arv-stage/untap.db
     python scripts/extract_veritas_pgp.py untap.db
 
-We identify participant [huD57BBF](https://my.pgp-hms.org/profile/huD57BBF) as
-a candidate for additional analysis:
+We identify participant [huD57BBF](https://my.pgp-hms.org/profile/huD57BBF)
+for additional analysis:
 
     huD57BBF 53Gb No demographics [u'Family Tree DNA', u'Veritas Genetics', u'23andMe']
 
-In addition to the data in the Personal Genome Project, this participant, James
-Vick has contributed [microbiome data at Open Humans](https://www.openhumans.org/member/jameslvick/).
+In addition to the data in the Personal Genome Project, this participant
+has contributed [microbiome data at Open Humans](https://www.openhumans.org/member/jameslvick/).
 
 ### Find BAM and VCF files in Arvados collections
 
@@ -80,6 +87,8 @@ this corresponds to double [APOE-4/APOE-4
 alleles](https://www.snpedia.com/index.php/Gs216). This genotype contributes to increased
 risk for Alzheimer's and heart disease. The results match the output from
 the [Personal Genome Projects GET-Evidence report on 23andMe variants](https://collections.su92l.arvadosapi.com/collections/ae064afa8f4c83d9386da907d741b385+2096/get-evidence-report.html).
+While this is an exploratory genetic analysis, it provides an interesting link with the
+[participant's self reported high cholestorol](https://my.pgp-hms.org/profile/huD57BBF).
 
 ### Structural variant and HLA calls
 
@@ -157,13 +166,59 @@ machines, retrieving input data from Keep and analysis programs from pre-built
 [Docker containers](https://github.com/bcbio/bcbio_docker). The job itself takes
 over 24 hours to run.
 
+### Structural variant and HLA calls
+
 The outputs of this process are HLA and structural variant calls for the
 participant, providing insight into additional variation not present in the
-automated PGP variant calls. We will link to a successful output on Arvados PGP
-and highlight HLA and interesting structural variant calls. Runs are currently
-in progress.
+automated PGP variant calls. The [output from the workflow run](https://workbench.su92l.arvadosapi.com/container_requests/su92l-xvhdp-sxye9jeaadta8e0) contains the calls, and we'll highlight
+some interesting outputs with a light post-analysis.
+
+The HLA calling did not extract a lot of HLA specific reads from the original
+sequencing output, but was able to output initial calls for
+the predicted [HLA class 1 (A, B, C)](https://en.wikipedia.org/wiki/Human_leukocyte_antigen) types:
+```
+HLA-A*11:01;HLA-A*24:02
+HLA-B*27:05;HLA-B*55:01
+HLA-C*07:02;HLA-C*07:02
+```
+If you have interest in your HLAs for ancestry, immunity, donor matching or
+other purposes, we recommend exploring more through
+[Root](http://rootdeep.com/).
+
+Larger structural variants in this participant principally lie in non-gene
+regions, but we identified an interesting example to look at in depth. A
+~3000bp deletion on chromosome 19 was called consistently by all three variant
+callers: Manta, Lumpy and CNVkit:
+```
+chr19   50827242        MantaDEL:67020:0:1:0:0:0        T       <DEL>   658.0
+PASS
+END=50830636;SVTYPE=DEL;SVLEN=-3394;CIPOS=0,2;CIEND=0,2;HOMLEN=2;HOMSEQ=GG;ANN=<DEL>|bidirectional_gene_fusion|HIGH|AC011523.2&KLK15|ENSG00000267968&ENSG00000174562|gene_variant|ENSG00000174562|||n.50830636_50827243del||||||
+GT:FT:GQ:PL:PR:SR       0/1:PASS:504:708,0,501:18,16:23,12
+
+chr19   50827243        2487    N       <DEL>   584.5   PASS
+SVTYPE=DEL;SVLEN=-3393;END=50830636;STRANDS=+-:15;IMPRECISE;CIPOS=-21,282;CIEND=-294,14;CIPOS95=-1,80;CIEND95=-83,1;SU=15;PE=15;SR=0;AC=1;AN=2;ANN=<DEL>|bidirectional_gene_fusion|HIGH|AC011523.2&KLK15|ENSG00000267968&ENSG00000174562|gene_variant|ENSG00000174562|||n.50830636_50827244del||||||
+GT:GQ:SQ:GL:DP:RO:AO:QR:QA:RS:AS:ASC:RP:AP:AB
+0/1:200:584.5:-60,-2,-22:68:40:27:39:26:21:7:3:18:15:0.4
+
+chr19   50827156        .       N       <DEL>   .       .
+IMPRECISE;SVTYPE=DEL;END=50830654;SVLEN=-3498;FOLD_CHA
+NGE=0.489652;FOLD_CHANGE_LOG=-1.030170;PROBES=14;ANN=<DEL>|bidirectional_gene_fusion|HIGH|AC011523.2&KLK15|ENSG00000267968&ENSG00000174562|gene_variant|ENSG00000174562|||n.50830654_50827157del||||||
+GT:GQ   0/1:14
+```
+The methods aren't able to identify the precise endpoints of the event, but
+the predicted deletion effect is a disruption in the exonic coding regions of
+the gene [KLK15](https://en.wikipedia.org/wiki/KLK15) ([more detailed gene report](http://genome.ucsc.edu/cgi-bin/hgGene?hgg_gene=uc061bta.1&hgg_prot=ENST00000326856.8&hgg_chrom=chr19&hgg_start=50825304&hgg_end=50837213&hgg_type=knownGene&db=hg38&hgsid=666328145_Pll7eUGz7aOzaVInu8XRbhaCoubl)), with potential
+fusion with an overlapping small RNA, [AC011523.2](http://useast.ensembl.org/Homo_sapiens/Gene/Summary?db=core;g=ENSG00000267968;r=19:50830530-50851089;t=ENST00000598079). [Viewing the region in the UCSC genome browser](http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&lastVirtModeType=default&lastVirtModeExtraState=&virtModeType=default&virtMode=0&nonVirtPosition=&position=chr19%3A50826281%2D50831529&hgsid=666328145_Pll7eUGz7aOzaVInu8XRbhaCoubl)
+is a good way to visualize the potential change caused by deletion.
+
+While this is a fully exploratory analysis, KLK15 has an interesting link with
+the participant's report of a thyroid nodule and biopsy. KLK15 has been proposed
+as a marker for prostate cancer, and the [tissue specific expression profile
+from GTEx](https://www.gtexportal.org/home/gene/ENSG00000174562.9) indicates
+it is as prevalent in Thyroid tissue as Prostate. This correlation provides no
+evidence of mechanism but is a useful connection for future analysis.
 
 ### Suggested data access improvements
 
-- Many samples do not have associated demongraphic information in the untap
+- Many samples do not have associated demographic information in the untap
   database. That would help to select diverse participants.

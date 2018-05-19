@@ -80,12 +80,12 @@
         250
     ],
     "config__algorithm__nomap_split_targets": [
-        200,
-        200,
-        200,
-        200,
-        200,
-        200
+        20,
+        20,
+        20,
+        20,
+        20,
+        20
     ],
     "config__algorithm__qc": [
         [

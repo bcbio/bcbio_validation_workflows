@@ -95,6 +95,11 @@ The data for this run is self-contained within synapse:
 the [smcounter2 low frequency variant caller](https://www.biorxiv.org/content/early/2018/03/14/281659)
 and [Pisces tumor only variant caller](https://www.biorxiv.org/content/early/2018/03/30/291641) papers:
 
+- RAS-panel (`pisces-ras`) -- Tumor-only FFPE sample inputs with validated mutations in KRAS/NRAS, from
+  the [PISCES supplementation material](https://basespace.illumina.com/projects/36152117).
+  This contains 319 samples with single mutations
+- NA12878-dilution (`pisces-titr`) -- Tumor-only low frequency (8%, 12%, 16%) dilutions of NA12878 
+  and NA12877 from the [PISCES supplementation material](https://basespace.illumina.com/projects/36152117)
 - N13532 --  0.5% low frequency SNPs and indels using a NA12878/NA24385
   mixture of Genome in a Bottle Samples. Truth set and input data URLs available
   in [smcounter2's suppplemental material](https://www.biorxiv.org/content/early/2018/03/14/281659).
@@ -102,10 +107,6 @@ and [Pisces tumor only variant caller](https://www.biorxiv.org/content/early/201
   Horizon Dx’s Tru-Q 7 reference standard with cancer specific mutations.
   Truth set and input data URLs available
   in [smcounter2's suppplemental material](https://www.biorxiv.org/content/early/2018/03/14/281659).
-- RAS-panel -- FFPE sample inputs with validated mutations in KRAS, from
-  the [PISCES supplementation material](https://basespace.illumina.com/projects/36152117)
-- NA12878-dilution -- 8% dillution of NA12878 with NA12877 from the
-  [PISCES supplementation material](https://basespace.illumina.com/projects/36152117)
 
 #### Simons Genome Diversity project
 

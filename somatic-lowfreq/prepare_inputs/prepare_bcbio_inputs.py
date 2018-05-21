@@ -10,7 +10,7 @@ import yaml
 base = {"analysis": "variant", "genome_build": "GRCh37",
         "algorithm": {
             "aligner": "minimap2",
-            "variantcaller": ["vardict", "freebayes", "mutect2"],
+            "variantcaller": ["vardict", "freebayes"],
         }}
 
 def write_sample_yaml(out, fname):

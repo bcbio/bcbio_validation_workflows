@@ -7,7 +7,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 12pct-NA12877
   files: pisces/inputs/12pct-NA12877-r1_S23.bam
@@ -20,7 +19,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 12pct-NA12878
   files: pisces/inputs/12pct-NA12878-r1_S20.bam
@@ -33,7 +31,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 16pct-NA12877
   files: pisces/inputs/16pct-NA12877-r1_S10.bam
@@ -46,7 +43,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 16pct-NA12878
   files: pisces/inputs/16pct-NA12878-r1_S19.bam
@@ -59,7 +55,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 8pct-NA12877
   files: pisces/inputs/8pct-NA12877-r1_S24.bam
@@ -72,7 +67,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 8pct-NA12878
   files: pisces/inputs/8pct-NA12878-r1_S21.bam

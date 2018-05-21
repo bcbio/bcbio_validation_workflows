@@ -7,7 +7,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 0KPF6
   files: pisces/inputs/0KPF6_S1.bam
@@ -20,7 +19,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 0VOHV
   files: pisces/inputs/0VOHV_S1.bam
@@ -33,7 +31,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 12PCJ
   files: pisces/inputs/12PCJ_S1.bam
@@ -46,7 +43,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 1SUX9
   files: pisces/inputs/1SUX9_S1.bam
@@ -59,7 +55,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 1UTJY
   files: pisces/inputs/1UTJY_S1.bam
@@ -72,7 +67,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 1WHCZ
   files: pisces/inputs/1WHCZ_S1.bam
@@ -85,7 +79,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 2BECZ
   files: pisces/inputs/2BECZ_S1.bam
@@ -98,7 +91,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 2CV50
   files: pisces/inputs/2CV50_S1.bam
@@ -111,7 +103,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 2CWXG
   files: pisces/inputs/2CWXG_S1.bam
@@ -124,7 +115,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 2D9PP
   files: pisces/inputs/2D9PP_S1.bam
@@ -137,7 +127,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 2IXXS
   files: pisces/inputs/2IXXS_S1.bam
@@ -150,7 +139,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 2TK3B
   files: pisces/inputs/2TK3B_S1.bam
@@ -163,7 +151,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 2VKFW
   files: pisces/inputs/2VKFW_S1.bam
@@ -176,7 +163,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 31BBX
   files: pisces/inputs/31BBX_S1.bam
@@ -189,7 +175,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 31DLO
   files: pisces/inputs/31DLO_S1.bam
@@ -202,7 +187,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 3BGW1
   files: pisces/inputs/3BGW1_S1.bam
@@ -215,7 +199,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 3PLHZ
   files: pisces/inputs/3PLHZ_S1.bam
@@ -228,7 +211,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 3PZIX
   files: pisces/inputs/3PZIX_S1.bam
@@ -241,7 +223,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 3SCDX
   files: pisces/inputs/3SCDX_S1.bam
@@ -254,7 +235,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 42LYK
   files: pisces/inputs/42LYK_S1.bam
@@ -267,7 +247,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 4756F
   files: pisces/inputs/4756F_S1.bam
@@ -280,7 +259,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 4AD1D
   files: pisces/inputs/4AD1D_S1.bam
@@ -293,7 +271,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 4ALAJ
   files: pisces/inputs/4ALAJ_S1.bam
@@ -306,7 +283,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 4DV5E
   files: pisces/inputs/4DV5E_S1.bam
@@ -319,7 +295,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 4QE6D
   files: pisces/inputs/4QE6D_S1.bam
@@ -332,7 +307,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 4REM9
   files: pisces/inputs/4REM9_S1.bam
@@ -345,7 +319,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 4YYAC
   files: pisces/inputs/4YYAC_S1.bam
@@ -358,7 +331,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 500PC
   files: pisces/inputs/500PC_S1.bam
@@ -371,7 +343,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 5AUYI
   files: pisces/inputs/5AUYI_S1.bam
@@ -384,7 +355,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 5GGVJ
   files: pisces/inputs/5GGVJ_S1.bam
@@ -397,7 +367,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 5JIAA
   files: pisces/inputs/5JIAA_S1.bam
@@ -410,7 +379,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 5ZBPG
   files: pisces/inputs/5ZBPG_S1.bam
@@ -423,7 +391,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 61BUF
   files: pisces/inputs/61BUF_S1.bam
@@ -436,7 +403,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 63QRY
   files: pisces/inputs/63QRY_S1.bam
@@ -449,7 +415,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 66S89
   files: pisces/inputs/66S89_S1.bam
@@ -462,7 +427,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 6EQ00
   files: pisces/inputs/6EQ00_S1.bam
@@ -475,7 +439,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 6IM9R
   files: pisces/inputs/6IM9R_S1.bam
@@ -488,7 +451,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 6N7E3
   files: pisces/inputs/6N7E3_S1.bam
@@ -501,7 +463,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 70Q4G
   files: pisces/inputs/70Q4G_S1.bam
@@ -514,7 +475,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 75CX0
   files: pisces/inputs/75CX0_S1.bam
@@ -527,7 +487,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 7HSM4
   files: pisces/inputs/7HSM4_S1.bam
@@ -540,7 +499,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 7JU3R
   files: pisces/inputs/7JU3R_S1.bam
@@ -553,7 +511,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 8RDO1
   files: pisces/inputs/8RDO1_S1.bam
@@ -566,7 +523,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 8SXRS
   files: pisces/inputs/8SXRS_S1.bam
@@ -579,7 +535,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 8UQSH
   files: pisces/inputs/8UQSH_S1.bam
@@ -592,7 +547,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 8YVHX
   files: pisces/inputs/8YVHX_S1.bam
@@ -605,7 +559,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 97BPN
   files: pisces/inputs/97BPN_S1.bam
@@ -618,7 +571,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 9JILV
   files: pisces/inputs/9JILV_S1.bam
@@ -631,7 +583,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 9LH9I
   files: pisces/inputs/9LH9I_S1.bam
@@ -644,7 +595,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: 9PUQH
   files: pisces/inputs/9PUQH_S1.bam
@@ -657,7 +607,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: A3MFO
   files: pisces/inputs/A3MFO_S1.bam
@@ -670,7 +619,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: A8AYW
   files: pisces/inputs/A8AYW_S1.bam
@@ -683,7 +631,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: AAF5G
   files: pisces/inputs/AAF5G_S1.bam
@@ -696,7 +643,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: AELLC
   files: pisces/inputs/AELLC_S1.bam
@@ -709,7 +655,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: AGQ18
   files: pisces/inputs/AGQ18_S1.bam
@@ -722,7 +667,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: AHCP5
   files: pisces/inputs/AHCP5_S1.bam
@@ -735,7 +679,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: AHZX5
   files: pisces/inputs/AHZX5_S1.bam
@@ -748,7 +691,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: AIMIS
   files: pisces/inputs/AIMIS_S1.bam
@@ -761,7 +703,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: ALQSF
   files: pisces/inputs/ALQSF_S1.bam
@@ -774,7 +715,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: AUIZQ
   files: pisces/inputs/AUIZQ_S1.bam
@@ -787,7 +727,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: AZBJQ
   files: pisces/inputs/AZBJQ_S1.bam
@@ -800,7 +739,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: AZEMK
   files: pisces/inputs/AZEMK_S1.bam
@@ -813,7 +751,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: B6AWY
   files: pisces/inputs/B6AWY_S1.bam
@@ -826,7 +763,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: B7PXS
   files: pisces/inputs/B7PXS_S1.bam
@@ -839,7 +775,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: BB6JF
   files: pisces/inputs/BB6JF_S1.bam
@@ -852,7 +787,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: BP1MB
   files: pisces/inputs/BP1MB_S1.bam
@@ -865,7 +799,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: BSEJA
   files: pisces/inputs/BSEJA_S1.bam
@@ -878,7 +811,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: BTEE4
   files: pisces/inputs/BTEE4_S1.bam
@@ -891,7 +823,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: BTKDV
   files: pisces/inputs/BTKDV_S1.bam
@@ -904,7 +835,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: BXRDD
   files: pisces/inputs/BXRDD_S1.bam
@@ -917,7 +847,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: C2TAB
   files: pisces/inputs/C2TAB_S1.bam
@@ -930,7 +859,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: C5BYL
   files: pisces/inputs/C5BYL_S1.bam
@@ -943,7 +871,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: CBESX
   files: pisces/inputs/CBESX_S1.bam
@@ -956,7 +883,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: CLLGA
   files: pisces/inputs/CLLGA_S1.bam
@@ -969,7 +895,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: CNRDH
   files: pisces/inputs/CNRDH_S1.bam
@@ -982,7 +907,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: CTJ3L
   files: pisces/inputs/CTJ3L_S1.bam
@@ -995,7 +919,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: CUE8X
   files: pisces/inputs/CUE8X_S1.bam
@@ -1008,7 +931,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: D1BSB
   files: pisces/inputs/D1BSB_S1.bam
@@ -1021,7 +943,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: D2UOW
   files: pisces/inputs/D2UOW_S1.bam
@@ -1034,7 +955,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: D73SB
   files: pisces/inputs/D73SB_S1.bam
@@ -1047,7 +967,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: DAQEP
   files: pisces/inputs/DAQEP_S1.bam
@@ -1060,7 +979,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: DCVU6
   files: pisces/inputs/DCVU6_S1.bam
@@ -1073,7 +991,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: DDQEU
   files: pisces/inputs/DDQEU_S1.bam
@@ -1086,7 +1003,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: DEQXQ
   files: pisces/inputs/DEQXQ_S1.bam
@@ -1099,7 +1015,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: DFN00
   files: pisces/inputs/DFN00_S1.bam
@@ -1112,7 +1027,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: DFNEU
   files: pisces/inputs/DFNEU_S1.bam
@@ -1125,7 +1039,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: DHCD4
   files: pisces/inputs/DHCD4_S1.bam
@@ -1138,7 +1051,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: DHNGF
   files: pisces/inputs/DHNGF_S1.bam
@@ -1151,7 +1063,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: DLNZ8
   files: pisces/inputs/DLNZ8_S1.bam
@@ -1164,7 +1075,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: DLSJ6
   files: pisces/inputs/DLSJ6_S1.bam
@@ -1177,7 +1087,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: DOKRO
   files: pisces/inputs/DOKRO_S1.bam
@@ -1190,7 +1099,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: DRWLA
   files: pisces/inputs/DRWLA_S1.bam
@@ -1203,7 +1111,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: DUHR9
   files: pisces/inputs/DUHR9_S1.bam
@@ -1216,7 +1123,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: DYUBB
   files: pisces/inputs/DYUBB_S1.bam
@@ -1229,7 +1135,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: DZTWP
   files: pisces/inputs/DZTWP_S1.bam
@@ -1242,7 +1147,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: EGZYX
   files: pisces/inputs/EGZYX_S1.bam
@@ -1255,7 +1159,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: EH4KN
   files: pisces/inputs/EH4KN_S1.bam
@@ -1268,7 +1171,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: EI1AI
   files: pisces/inputs/EI1AI_S1.bam
@@ -1281,7 +1183,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: EK8SK
   files: pisces/inputs/EK8SK_S1.bam
@@ -1294,7 +1195,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: ELCWN
   files: pisces/inputs/ELCWN_S1.bam
@@ -1307,7 +1207,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: EP3TZ
   files: pisces/inputs/EP3TZ_S1.bam
@@ -1320,7 +1219,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: ERQWW
   files: pisces/inputs/ERQWW_S1.bam
@@ -1333,7 +1231,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: ETEDW
   files: pisces/inputs/ETEDW_S1.bam
@@ -1346,7 +1243,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: ETZLK
   files: pisces/inputs/ETZLK_S1.bam
@@ -1359,7 +1255,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: FCXNU
   files: pisces/inputs/FCXNU_S1.bam
@@ -1372,7 +1267,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: FE7FM
   files: pisces/inputs/FE7FM_S1.bam
@@ -1385,7 +1279,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: FEJNN
   files: pisces/inputs/FEJNN_S1.bam
@@ -1398,7 +1291,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: FF07Q
   files: pisces/inputs/FF07Q_S1.bam
@@ -1411,7 +1303,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: FIJRQ
   files: pisces/inputs/FIJRQ_S1.bam
@@ -1424,7 +1315,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: FKE6I
   files: pisces/inputs/FKE6I_S1.bam
@@ -1437,7 +1327,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: FLIRM
   files: pisces/inputs/FLIRM_S1.bam
@@ -1450,7 +1339,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: FMUFX
   files: pisces/inputs/FMUFX_S1.bam
@@ -1463,7 +1351,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: FRTHY
   files: pisces/inputs/FRTHY_S1.bam
@@ -1476,7 +1363,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: FXIZ3
   files: pisces/inputs/FXIZ3_S1.bam
@@ -1489,7 +1375,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: FXMWZ
   files: pisces/inputs/FXMWZ_S1.bam
@@ -1502,7 +1387,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: G2YSN
   files: pisces/inputs/G2YSN_S1.bam
@@ -1515,7 +1399,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: GCEZ2
   files: pisces/inputs/GCEZ2_S1.bam
@@ -1528,7 +1411,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: GCIQ8
   files: pisces/inputs/GCIQ8_S1.bam
@@ -1541,7 +1423,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: GCLWO
   files: pisces/inputs/GCLWO_S1.bam
@@ -1554,7 +1435,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: GD63A
   files: pisces/inputs/GD63A_S1.bam
@@ -1567,7 +1447,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: GET6U
   files: pisces/inputs/GET6U_S1.bam
@@ -1580,7 +1459,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: GHQ7C
   files: pisces/inputs/GHQ7C_S1.bam
@@ -1593,7 +1471,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: GNPLH
   files: pisces/inputs/GNPLH_S1.bam
@@ -1606,7 +1483,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: GOFIQ
   files: pisces/inputs/GOFIQ_S1.bam
@@ -1619,7 +1495,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: GSL7L
   files: pisces/inputs/GSL7L_S1.bam
@@ -1632,7 +1507,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: GTDEE
   files: pisces/inputs/GTDEE_S1.bam
@@ -1645,7 +1519,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: GWCW6
   files: pisces/inputs/GWCW6_S1.bam
@@ -1658,7 +1531,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: H2OIY
   files: pisces/inputs/H2OIY_S1.bam
@@ -1671,7 +1543,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: HBSKD
   files: pisces/inputs/HBSKD_S1.bam
@@ -1684,7 +1555,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: HESOB
   files: pisces/inputs/HESOB_S1.bam
@@ -1697,7 +1567,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: HGTNT
   files: pisces/inputs/HGTNT_S1.bam
@@ -1710,7 +1579,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: HK1DR
   files: pisces/inputs/HK1DR_S1.bam
@@ -1723,7 +1591,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: HKZX2
   files: pisces/inputs/HKZX2_S1.bam
@@ -1736,7 +1603,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: HYGRA
   files: pisces/inputs/HYGRA_S1.bam
@@ -1749,7 +1615,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: I2KFQ
   files: pisces/inputs/I2KFQ_S1.bam
@@ -1762,7 +1627,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: I4MLL
   files: pisces/inputs/I4MLL_S1.bam
@@ -1775,7 +1639,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: IBMMU
   files: pisces/inputs/IBMMU_S1.bam
@@ -1788,7 +1651,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: ICRFG
   files: pisces/inputs/ICRFG_S1.bam
@@ -1801,7 +1663,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: IEIZP
   files: pisces/inputs/IEIZP_S1.bam
@@ -1814,7 +1675,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: IHH1B
   files: pisces/inputs/IHH1B_S1.bam
@@ -1827,7 +1687,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: IIGRV
   files: pisces/inputs/IIGRV_S1.bam
@@ -1840,7 +1699,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: IRAAH
   files: pisces/inputs/IRAAH_S1.bam
@@ -1853,7 +1711,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: ISOZW
   files: pisces/inputs/ISOZW_S1.bam
@@ -1866,7 +1723,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: ISPOB
   files: pisces/inputs/ISPOB_S1.bam
@@ -1879,7 +1735,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: ITXQA
   files: pisces/inputs/ITXQA_S1.bam
@@ -1892,7 +1747,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: IW9DU
   files: pisces/inputs/IW9DU_S1.bam
@@ -1905,7 +1759,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: IZAJT
   files: pisces/inputs/IZAJT_S1.bam
@@ -1918,7 +1771,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: J6CAS
   files: pisces/inputs/J6CAS_S1.bam
@@ -1931,7 +1783,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: J6LQS
   files: pisces/inputs/J6LQS_S1.bam
@@ -1944,7 +1795,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: JFKNB
   files: pisces/inputs/JFKNB_S1.bam
@@ -1957,7 +1807,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: JFWOF
   files: pisces/inputs/JFWOF_S1.bam
@@ -1970,7 +1819,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: JGZ9N
   files: pisces/inputs/JGZ9N_S1.bam
@@ -1983,7 +1831,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: JHPDI
   files: pisces/inputs/JHPDI_S1.bam
@@ -1996,7 +1843,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: JJIFF
   files: pisces/inputs/JJIFF_S1.bam
@@ -2009,7 +1855,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: JO03Y
   files: pisces/inputs/JO03Y_S1.bam
@@ -2022,7 +1867,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: JQ0SX
   files: pisces/inputs/JQ0SX_S1.bam
@@ -2035,7 +1879,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: K2CEA
   files: pisces/inputs/K2CEA_S1.bam
@@ -2048,7 +1891,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: K3XUB
   files: pisces/inputs/K3XUB_S1.bam
@@ -2061,7 +1903,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: K6HYD
   files: pisces/inputs/K6HYD_S1.bam
@@ -2074,7 +1915,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: KBMPD
   files: pisces/inputs/KBMPD_S1.bam
@@ -2087,7 +1927,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: KCFLC
   files: pisces/inputs/KCFLC_S1.bam
@@ -2100,7 +1939,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: KE2SG
   files: pisces/inputs/KE2SG_S1.bam
@@ -2113,7 +1951,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: KKWYJ
   files: pisces/inputs/KKWYJ_S1.bam
@@ -2126,7 +1963,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: KSOQ0
   files: pisces/inputs/KSOQ0_S1.bam
@@ -2139,7 +1975,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: KSUER
   files: pisces/inputs/KSUER_S1.bam
@@ -2152,7 +1987,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: KYQZ4
   files: pisces/inputs/KYQZ4_S1.bam
@@ -2165,7 +1999,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: L3SYF
   files: pisces/inputs/L3SYF_S1.bam
@@ -2178,7 +2011,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: L6H1D
   files: pisces/inputs/L6H1D_S1.bam
@@ -2191,7 +2023,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: L94FL
   files: pisces/inputs/L94FL_S1.bam
@@ -2204,7 +2035,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: LADTM
   files: pisces/inputs/LADTM_S1.bam
@@ -2217,7 +2047,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: LB9GX
   files: pisces/inputs/LB9GX_S1.bam
@@ -2230,7 +2059,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: LC2ZW
   files: pisces/inputs/LC2ZW_S1.bam
@@ -2243,7 +2071,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: LEOKP
   files: pisces/inputs/LEOKP_S1.bam
@@ -2256,7 +2083,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: LFZ2U
   files: pisces/inputs/LFZ2U_S1.bam
@@ -2269,7 +2095,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: LIW8C
   files: pisces/inputs/LIW8C_S1.bam
@@ -2282,7 +2107,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: LIYEF
   files: pisces/inputs/LIYEF_S1.bam
@@ -2295,7 +2119,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: LJBS6
   files: pisces/inputs/LJBS6_S1.bam
@@ -2308,7 +2131,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: LMWAI
   files: pisces/inputs/LMWAI_S1.bam
@@ -2321,7 +2143,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: LMXMX
   files: pisces/inputs/LMXMX_S1.bam
@@ -2334,7 +2155,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: LNBSB
   files: pisces/inputs/LNBSB_S1.bam
@@ -2347,7 +2167,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: LXFOY
   files: pisces/inputs/LXFOY_S1.bam
@@ -2360,7 +2179,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: LZSRO
   files: pisces/inputs/LZSRO_S1.bam
@@ -2373,7 +2191,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: M1VWW
   files: pisces/inputs/M1VWW_S1.bam
@@ -2386,7 +2203,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: M3X6X
   files: pisces/inputs/M3X6X_S1.bam
@@ -2399,7 +2215,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: M4GQ6
   files: pisces/inputs/M4GQ6_S1.bam
@@ -2412,7 +2227,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: M8GE9
   files: pisces/inputs/M8GE9_S1.bam
@@ -2425,7 +2239,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: MEXHA
   files: pisces/inputs/MEXHA_S1.bam
@@ -2438,7 +2251,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: MG2IO
   files: pisces/inputs/MG2IO_S1.bam
@@ -2451,7 +2263,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: MJ1CG
   files: pisces/inputs/MJ1CG_S1.bam
@@ -2464,7 +2275,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: MKK7C
   files: pisces/inputs/MKK7C_S1.bam
@@ -2477,7 +2287,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: MKKKC
   files: pisces/inputs/MKKKC_S1.bam
@@ -2490,7 +2299,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: MVLAR
   files: pisces/inputs/MVLAR_S1.bam
@@ -2503,7 +2311,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: MWG0R
   files: pisces/inputs/MWG0R_S1.bam
@@ -2516,7 +2323,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: N9WKT
   files: pisces/inputs/N9WKT_S1.bam
@@ -2529,7 +2335,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: NEJ8Y
   files: pisces/inputs/NEJ8Y_S1.bam
@@ -2542,7 +2347,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: NFSLT
   files: pisces/inputs/NFSLT_S1.bam
@@ -2555,7 +2359,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: NGPYL
   files: pisces/inputs/NGPYL_S1.bam
@@ -2568,7 +2371,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: NM7FI
   files: pisces/inputs/NM7FI_S1.bam
@@ -2581,7 +2383,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: NP0RM
   files: pisces/inputs/NP0RM_S1.bam
@@ -2594,7 +2395,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: NV6E3
   files: pisces/inputs/NV6E3_S1.bam
@@ -2607,7 +2407,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: O39KC
   files: pisces/inputs/O39KC_S1.bam
@@ -2620,7 +2419,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: OD13U
   files: pisces/inputs/OD13U_S1.bam
@@ -2633,7 +2431,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: OFP3I
   files: pisces/inputs/OFP3I_S1.bam
@@ -2646,7 +2443,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: OGOSR
   files: pisces/inputs/OGOSR_S1.bam
@@ -2659,7 +2455,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: OJRVM
   files: pisces/inputs/OJRVM_S1.bam
@@ -2672,7 +2467,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: ORFON
   files: pisces/inputs/ORFON_S1.bam
@@ -2685,7 +2479,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: OTIDR
   files: pisces/inputs/OTIDR_S1.bam
@@ -2698,7 +2491,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: P5OV2
   files: pisces/inputs/P5OV2_S1.bam
@@ -2711,7 +2503,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: PBYZ5
   files: pisces/inputs/PBYZ5_S1.bam
@@ -2724,7 +2515,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: PDQTM
   files: pisces/inputs/PDQTM_S1.bam
@@ -2737,7 +2527,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: PJ0Y9
   files: pisces/inputs/PJ0Y9_S1.bam
@@ -2750,7 +2539,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: PJLKS
   files: pisces/inputs/PJLKS_S1.bam
@@ -2763,7 +2551,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: PLOLR
   files: pisces/inputs/PLOLR_S1.bam
@@ -2776,7 +2563,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: PLQ53
   files: pisces/inputs/PLQ53_S1.bam
@@ -2789,7 +2575,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: POWGB
   files: pisces/inputs/POWGB_S1.bam
@@ -2802,7 +2587,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: PPNJY
   files: pisces/inputs/PPNJY_S1.bam
@@ -2815,7 +2599,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: PPPBW
   files: pisces/inputs/PPPBW_S1.bam
@@ -2828,7 +2611,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: PRVXL
   files: pisces/inputs/PRVXL_S1.bam
@@ -2841,7 +2623,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: PS3GX
   files: pisces/inputs/PS3GX_S1.bam
@@ -2854,7 +2635,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: PSENM
   files: pisces/inputs/PSENM_S1.bam
@@ -2867,7 +2647,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: PU5JA
   files: pisces/inputs/PU5JA_S1.bam
@@ -2880,7 +2659,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: PYUX0
   files: pisces/inputs/PYUX0_S1.bam
@@ -2893,7 +2671,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: PZNSO
   files: pisces/inputs/PZNSO_S1.bam
@@ -2906,7 +2683,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: Q4CL1
   files: pisces/inputs/Q4CL1_S1.bam
@@ -2919,7 +2695,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: Q55ML
   files: pisces/inputs/Q55ML_S1.bam
@@ -2932,7 +2707,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: Q5ZP3
   files: pisces/inputs/Q5ZP3_S1.bam
@@ -2945,7 +2719,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: Q9JJY
   files: pisces/inputs/Q9JJY_S1.bam
@@ -2958,7 +2731,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: QJWKD
   files: pisces/inputs/QJWKD_S1.bam
@@ -2971,7 +2743,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: QKPFE
   files: pisces/inputs/QKPFE_S1.bam
@@ -2984,7 +2755,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: QOJKO
   files: pisces/inputs/QOJKO_S1.bam
@@ -2997,7 +2767,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: QS6EK
   files: pisces/inputs/QS6EK_S1.bam
@@ -3010,7 +2779,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: QWDNB
   files: pisces/inputs/QWDNB_S1.bam
@@ -3023,7 +2791,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: R6IXP
   files: pisces/inputs/R6IXP_S1.bam
@@ -3036,7 +2803,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: R9ZMF
   files: pisces/inputs/R9ZMF_S1.bam
@@ -3049,7 +2815,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: RAJMH
   files: pisces/inputs/RAJMH_S1.bam
@@ -3062,7 +2827,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: RAS16
   files: pisces/inputs/RAS16_S1.bam
@@ -3075,7 +2839,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: RF4FS
   files: pisces/inputs/RF4FS_S1.bam
@@ -3088,7 +2851,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: RN6C6
   files: pisces/inputs/RN6C6_S1.bam
@@ -3101,7 +2863,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: RNPQI
   files: pisces/inputs/RNPQI_S1.bam
@@ -3114,7 +2875,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: RTPHP
   files: pisces/inputs/RTPHP_S1.bam
@@ -3127,7 +2887,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: RZPYW
   files: pisces/inputs/RZPYW_S1.bam
@@ -3140,7 +2899,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: S4UIO
   files: pisces/inputs/S4UIO_S1.bam
@@ -3153,7 +2911,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: SCEQT
   files: pisces/inputs/SCEQT_S1.bam
@@ -3166,7 +2923,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: SHVHU
   files: pisces/inputs/SHVHU_S1.bam
@@ -3179,7 +2935,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: SPFUJ
   files: pisces/inputs/SPFUJ_S1.bam
@@ -3192,7 +2947,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: SRHFZ
   files: pisces/inputs/SRHFZ_S1.bam
@@ -3205,7 +2959,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: ST3L8
   files: pisces/inputs/ST3L8_S1.bam
@@ -3218,7 +2971,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: SWTAN
   files: pisces/inputs/SWTAN_S1.bam
@@ -3231,7 +2983,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: SX9AZ
   files: pisces/inputs/SX9AZ_S1.bam
@@ -3244,7 +2995,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: SXECF
   files: pisces/inputs/SXECF_S1.bam
@@ -3257,7 +3007,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: T1HQO
   files: pisces/inputs/T1HQO_S1.bam
@@ -3270,7 +3019,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: T3IPI
   files: pisces/inputs/T3IPI_S1.bam
@@ -3283,7 +3031,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: TGGZJ
   files: pisces/inputs/TGGZJ_S1.bam
@@ -3296,7 +3043,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: TGWAW
   files: pisces/inputs/TGWAW_S1.bam
@@ -3309,7 +3055,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: TIYTI
   files: pisces/inputs/TIYTI_S1.bam
@@ -3322,7 +3067,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: TLKHJ
   files: pisces/inputs/TLKHJ_S1.bam
@@ -3335,7 +3079,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: TOLHO
   files: pisces/inputs/TOLHO_S1.bam
@@ -3348,7 +3091,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: TT5UW
   files: pisces/inputs/TT5UW_S1.bam
@@ -3361,7 +3103,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: TVQTU
   files: pisces/inputs/TVQTU_S1.bam
@@ -3374,7 +3115,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: TYOII
   files: pisces/inputs/TYOII_S1.bam
@@ -3387,7 +3127,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: U0HIV
   files: pisces/inputs/U0HIV_S1.bam
@@ -3400,7 +3139,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: U20Q3
   files: pisces/inputs/U20Q3_S1.bam
@@ -3413,7 +3151,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: U2UZK
   files: pisces/inputs/U2UZK_S1.bam
@@ -3426,7 +3163,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: U3R41
   files: pisces/inputs/U3R41_S1.bam
@@ -3439,7 +3175,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: U4QY1
   files: pisces/inputs/U4QY1_S1.bam
@@ -3452,7 +3187,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: U6MKG
   files: pisces/inputs/U6MKG_S1.bam
@@ -3465,7 +3199,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: UG6GM
   files: pisces/inputs/UG6GM_S1.bam
@@ -3478,7 +3211,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: UKHIK
   files: pisces/inputs/UKHIK_S1.bam
@@ -3491,7 +3223,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: UNZXV
   files: pisces/inputs/UNZXV_S1.bam
@@ -3504,7 +3235,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: UQITY
   files: pisces/inputs/UQITY_S1.bam
@@ -3517,7 +3247,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: UQLYU
   files: pisces/inputs/UQLYU_S1.bam
@@ -3530,7 +3259,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: USSRM
   files: pisces/inputs/USSRM_S1.bam
@@ -3543,7 +3271,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: UVOAD
   files: pisces/inputs/UVOAD_S1.bam
@@ -3556,7 +3283,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: V5GIP
   files: pisces/inputs/V5GIP_S1.bam
@@ -3569,7 +3295,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: VB6O4
   files: pisces/inputs/VB6O4_S1.bam
@@ -3582,7 +3307,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: VEXAE
   files: pisces/inputs/VEXAE_S1.bam
@@ -3595,7 +3319,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: VHSWP
   files: pisces/inputs/VHSWP_S1.bam
@@ -3608,7 +3331,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: VHWLV
   files: pisces/inputs/VHWLV_S1.bam
@@ -3621,7 +3343,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: VUDSR
   files: pisces/inputs/VUDSR_S1.bam
@@ -3634,7 +3355,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: VWKGG
   files: pisces/inputs/VWKGG_S1.bam
@@ -3647,7 +3367,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: W8BOP
   files: pisces/inputs/W8BOP_S1.bam
@@ -3660,7 +3379,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: W9ZVD
   files: pisces/inputs/W9ZVD_S1.bam
@@ -3673,7 +3391,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: WBVRO
   files: pisces/inputs/WBVRO_S1.bam
@@ -3686,7 +3403,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: WCZQH
   files: pisces/inputs/WCZQH_S1.bam
@@ -3699,7 +3415,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: WG4YB
   files: pisces/inputs/WG4YB_S1.bam
@@ -3712,7 +3427,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: WHUQU
   files: pisces/inputs/WHUQU_S1.bam
@@ -3725,7 +3439,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: WKD5D
   files: pisces/inputs/WKD5D_S1.bam
@@ -3738,7 +3451,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: WM0AG
   files: pisces/inputs/WM0AG_S1.bam
@@ -3751,7 +3463,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: WSEHL
   files: pisces/inputs/WSEHL_S1.bam
@@ -3764,7 +3475,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: WWHYN
   files: pisces/inputs/WWHYN_S1.bam
@@ -3777,7 +3487,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: WWLFW
   files: pisces/inputs/WWLFW_S1.bam
@@ -3790,7 +3499,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: XCJ77
   files: pisces/inputs/XCJ77_S1.bam
@@ -3803,7 +3511,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: XDTTP
   files: pisces/inputs/XDTTP_S1.bam
@@ -3816,7 +3523,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: XG88M
   files: pisces/inputs/XG88M_S1.bam
@@ -3829,7 +3535,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: XN16L
   files: pisces/inputs/XN16L_S1.bam
@@ -3842,7 +3547,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: XNEWS
   files: pisces/inputs/XNEWS_S1.bam
@@ -3855,7 +3559,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: XOIZ9
   files: pisces/inputs/XOIZ9_S1.bam
@@ -3868,7 +3571,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: XTHWT
   files: pisces/inputs/XTHWT_S1.bam
@@ -3881,7 +3583,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: XXA9A
   files: pisces/inputs/XXA9A_S1.bam
@@ -3894,7 +3595,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: YBCUD
   files: pisces/inputs/YBCUD_S1.bam
@@ -3907,7 +3607,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: YDZEF
   files: pisces/inputs/YDZEF_S1.bam
@@ -3920,7 +3619,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: YELFL
   files: pisces/inputs/YELFL_S1.bam
@@ -3933,7 +3631,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: YHNGQ
   files: pisces/inputs/YHNGQ_S1.bam
@@ -3946,7 +3643,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: YJWR3
   files: pisces/inputs/YJWR3_S1.bam
@@ -3959,7 +3655,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: YKQSH
   files: pisces/inputs/YKQSH_S1.bam
@@ -3972,7 +3667,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: YOWCK
   files: pisces/inputs/YOWCK_S1.bam
@@ -3985,7 +3679,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: YSTPU
   files: pisces/inputs/YSTPU_S1.bam
@@ -3998,7 +3691,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: YTUFK
   files: pisces/inputs/YTUFK_S1.bam
@@ -4011,7 +3703,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: YWLNJ
   files: pisces/inputs/YWLNJ_S1.bam
@@ -4024,7 +3715,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: Z2GX0
   files: pisces/inputs/Z2GX0_S1.bam
@@ -4037,7 +3727,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: Z3X4O
   files: pisces/inputs/Z3X4O_S1.bam
@@ -4050,7 +3739,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: Z62ZS
   files: pisces/inputs/Z62ZS_S1.bam
@@ -4063,7 +3751,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: Z662O
   files: pisces/inputs/Z662O_S1.bam
@@ -4076,7 +3763,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: ZETSO
   files: pisces/inputs/ZETSO_S1.bam
@@ -4089,7 +3775,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: ZHPJP
   files: pisces/inputs/ZHPJP_S1.bam
@@ -4102,7 +3787,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: ZIQDV
   files: pisces/inputs/ZIQDV_S1.bam
@@ -4115,7 +3799,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: ZRNMF
   files: pisces/inputs/ZRNMF_S1.bam
@@ -4128,7 +3811,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: ZTLIT
   files: pisces/inputs/ZTLIT_S1.bam
@@ -4141,7 +3823,6 @@ details:
     variantcaller:
     - vardict
     - freebayes
-    - mutect2
   analysis: variant
   description: ZZIHB
   files: pisces/inputs/ZZIHB_S1.bam

@@ -22,3 +22,7 @@ mkdir -p biodata/giab/na12878
 cd biodata/giab/na12878
 synapse get -r syn11831606
 cd $ORIG_DIR
+# cleanup synapse files
+cd biodata
+find . -name "SYNAPSE_METADATA_MANIFEST.tsv" -exec rm -f {} \;
+cd $ORIG_DIR

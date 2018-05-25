@@ -20,7 +20,7 @@ hints:
 - class: ResourceRequirement
   coresMin: 1
   outdirMin: 1250
-  ramMin: 3840
+  ramMin: 3584
   tmpdirMin: 113
 - class: dx:InputResourceRequirement
   indirMin: 0
@@ -57,11 +57,7 @@ inputs:
 - id: config__algorithm__tools_off
   type:
     items:
-    - 'null'
-    - string
-    - items:
-      - 'null'
-      - string
+      items: string
       type: array
     type: array
 - id: genome_build
@@ -205,11 +201,7 @@ outputs:
         type: string
       - name: config__algorithm__tools_off
         type:
-        - 'null'
-        - string
-        - items:
-          - 'null'
-          - string
+          items: string
           type: array
       - name: config__algorithm__qc
         type:

@@ -10,8 +10,13 @@ import yaml
 base = {"analysis": "variant", "genome_build": "GRCh37",
         "algorithm": {
             "aligner": "minimap2",
-            "variantcaller": ["vardict", "freebayes"],
-        }}
+            "variantcaller": ["vardict", "freebayes", "pisces"],
+            "validate_method": "rtg-squash-ploidy",
+            "tools_off": ["gemini", "tumoronly-prioritization"],
+            "effects": False,
+            "min_allele_fraction": 1
+        },
+        "metadata": {"phenotype": "tumor"}}
 
 def write_sample_yaml(out, fname):
     with open(fname, "w") as out_handle:
@@ -27,6 +32,7 @@ def prepare_titration():
         cur["algorithm"]["variant_regions"] = "pisces/regions/Intervals_TSAVP_Titr.bed"
         cur["algorithm"]["validate_regions"] = "pisces/regions/Intervals_TSAVP_Titr.bed"
         cur["algorithm"]["validate"] = "pisces/truth/NA1287_78Titr.vcf.gz"
+        cur["metadata"]["validate_batch"] = "titration"
         out.append(cur)
     return write_sample_yaml(out, "pisces-titr.yaml")
 
@@ -41,6 +47,7 @@ def prepare_ras():
             cur["algorithm"]["variant_regions"] = "pisces/regions/KRASandNRASinterval2.bed"
             cur["algorithm"]["validate_regions"] = "pisces/regions/KRASandNRASinterval2.bed"
             cur["algorithm"]["validate"] = "pisces/truth/%s_truth.vcf.gz" % name
+            cur["metadata"]["validate_combine"] = "ras"
             assert os.path.exists(cur["algorithm"]["validate"]), cur["algorithm"]["validate"]
             out.append(cur)
     return write_sample_yaml(out, "pisces-ras.yaml")

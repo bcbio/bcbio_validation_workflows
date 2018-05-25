@@ -20,7 +20,7 @@ hints:
 - class: ResourceRequirement
   coresMin: 1
   outdirMin: 1507
-  ramMin: 3840
+  ramMin: 3584
   tmpdirMin: 242
 - class: dx:InputResourceRequirement
   indirMin: 1
@@ -51,11 +51,7 @@ inputs:
         type: string
       - name: config__algorithm__tools_off
         type:
-        - 'null'
-        - string
-        - items:
-          - 'null'
-          - string
+          items: string
           type: array
       - name: config__algorithm__qc
         type:

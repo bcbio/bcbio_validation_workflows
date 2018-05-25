@@ -18,9 +18,9 @@ hints:
   dockerImageId: quay.io/bcbio/bcbio-vc
   dockerPull: quay.io/bcbio/bcbio-vc
 - class: ResourceRequirement
-  coresMin: 16
+  coresMin: 8
   outdirMin: 1250
-  ramMin: 61440
+  ramMin: 28672
   tmpdirMin: 113
 - class: dx:InputResourceRequirement
   indirMin: 3159

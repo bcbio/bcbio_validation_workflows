@@ -48,12 +48,12 @@
         "null"
     ],
     "config__algorithm__effects": [
-        "snpeff",
-        "snpeff",
-        "snpeff",
-        "snpeff",
-        "snpeff",
-        "snpeff"
+        "False",
+        "False",
+        "False",
+        "False",
+        "False",
+        "False"
     ],
     "config__algorithm__exclude_regions": [
         [],
@@ -95,7 +95,8 @@
             "picard",
             "qsignature",
             "variants",
-            "peddy"
+            "peddy",
+            "viral"
         ],
         [
             "fastqc",
@@ -104,7 +105,8 @@
             "picard",
             "qsignature",
             "variants",
-            "peddy"
+            "peddy",
+            "viral"
         ],
         [
             "fastqc",
@@ -113,7 +115,8 @@
             "picard",
             "qsignature",
             "variants",
-            "peddy"
+            "peddy",
+            "viral"
         ],
         [
             "fastqc",
@@ -122,7 +125,8 @@
             "picard",
             "qsignature",
             "variants",
-            "peddy"
+            "peddy",
+            "viral"
         ],
         [
             "fastqc",
@@ -131,7 +135,8 @@
             "picard",
             "qsignature",
             "variants",
-            "peddy"
+            "peddy",
+            "viral"
         ],
         [
             "fastqc",
@@ -140,7 +145,8 @@
             "picard",
             "qsignature",
             "variants",
-            "peddy"
+            "peddy",
+            "viral"
         ]
     ],
     "config__algorithm__recalibrate": [
@@ -152,12 +158,30 @@
         "False"
     ],
     "config__algorithm__tools_off": [
-        [],
-        [],
-        [],
-        [],
-        [],
-        []
+        [
+            "gemini",
+            "tumoronly-prioritization"
+        ],
+        [
+            "gemini",
+            "tumoronly-prioritization"
+        ],
+        [
+            "gemini",
+            "tumoronly-prioritization"
+        ],
+        [
+            "gemini",
+            "tumoronly-prioritization"
+        ],
+        [
+            "gemini",
+            "tumoronly-prioritization"
+        ],
+        [
+            "gemini",
+            "tumoronly-prioritization"
+        ]
     ],
     "config__algorithm__tools_on": [
         [],
@@ -292,27 +316,33 @@
     "config__algorithm__variantcaller": [
         [
             "vardict",
-            "freebayes"
+            "freebayes",
+            "pisces"
         ],
         [
             "vardict",
-            "freebayes"
+            "freebayes",
+            "pisces"
         ],
         [
             "vardict",
-            "freebayes"
+            "freebayes",
+            "pisces"
         ],
         [
             "vardict",
-            "freebayes"
+            "freebayes",
+            "pisces"
         ],
         [
             "vardict",
-            "freebayes"
+            "freebayes",
+            "pisces"
         ],
         [
             "vardict",
-            "freebayes"
+            "freebayes",
+            "pisces"
         ]
     ],
     "description": [
@@ -898,12 +928,12 @@
         "null"
     ],
     "metadata__phenotype": [
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
+        "tumor",
+        "tumor",
+        "tumor",
+        "tumor",
+        "tumor",
+        "tumor"
     ],
     "reference__fasta__base": [
         {

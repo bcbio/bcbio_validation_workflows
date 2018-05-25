@@ -3,4 +3,4 @@ local:
   inputs:
     - biodata
 resources:
-  default: {cores: 16, memory: 3750M, jvm_opts: [-Xms750m, -Xmx3750m]}
+  default: {cores: 8, memory: 3500M, jvm_opts: [-Xms750m, -Xmx3500m]}

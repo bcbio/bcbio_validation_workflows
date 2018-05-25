@@ -20,7 +20,7 @@ hints:
 - class: ResourceRequirement
   coresMin: 1
   outdirMin: 1325
-  ramMin: 3840
+  ramMin: 3584
   tmpdirMin: 151
 - class: dx:InputResourceRequirement
   indirMin: 0
@@ -81,7 +81,10 @@ inputs:
     type: array
 - id: config__algorithm__effects
   type:
-    items: string
+    items:
+    - string
+    - 'null'
+    - boolean
     type: array
 - id: config__algorithm__exclude_regions
   type:
@@ -122,11 +125,7 @@ inputs:
 - id: config__algorithm__tools_off
   type:
     items:
-    - 'null'
-    - string
-    - items:
-      - 'null'
-      - string
+      items: string
       type: array
     type: array
 - id: reference__fasta__base
@@ -272,11 +271,7 @@ outputs:
           - boolean
         - name: config__algorithm__tools_off
           type:
-          - 'null'
-          - string
-          - items:
-            - 'null'
-            - string
+            items: string
             type: array
         - name: genome_resources__variation__dbsnp
           type: File
@@ -299,7 +294,10 @@ outputs:
             - string
             type: array
         - name: config__algorithm__effects
-          type: string
+          type:
+          - string
+          - 'null'
+          - boolean
         - name: config__algorithm__variant_regions
           type:
           - File

@@ -21,7 +21,7 @@ hints:
 - class: ResourceRequirement
   coresMin: 1
   outdirMin: 1099
-  ramMin: 3840
+  ramMin: 3584
   tmpdirMin: 38
 - class: dx:InputResourceRequirement
   indirMin: 3008

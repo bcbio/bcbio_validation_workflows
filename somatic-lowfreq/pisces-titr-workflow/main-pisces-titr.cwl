@@ -188,11 +188,7 @@ inputs:
 - id: config__algorithm__tools_off
   type:
     items:
-    - 'null'
-    - string
-    - items:
-      - 'null'
-      - string
+      items: string
       type: array
     type: array
 - id: genome_resources__variation__dbsnp
@@ -254,7 +250,10 @@ inputs:
     type: array
 - id: config__algorithm__effects
   type:
-    items: string
+    items:
+    - string
+    - 'null'
+    - boolean
     type: array
 - id: config__algorithm__variant_regions
   type:

@@ -3,7 +3,7 @@
 import sys
 
 for line in sys.stdin:
-    if line.startswith("@"):
+    if line.startswith("@") and line.find(":Z:") > 0:
         parts = line.strip().split()
         umi = [x for x in parts[1:] if x.startswith("mi:")][0].split(":")[-1]
         base, read_num = parts[0].split("/")

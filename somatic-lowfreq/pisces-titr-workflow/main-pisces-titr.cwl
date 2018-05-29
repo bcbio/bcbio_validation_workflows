@@ -335,6 +335,11 @@ outputs:
     - File
     - 'null'
     type: array
+- id: rgnames__sample_out
+  outputSource: rgnames__sample
+  type:
+    items: string
+    type: array
 requirements:
 - class: EnvVarRequirement
   envDef:

@@ -9,8 +9,6 @@ inputs:
     - string
     type: array
 - id: files
-  secondaryFiles:
-  - .bai
   type:
     items:
       items: File
@@ -139,7 +137,9 @@ inputs:
     type: array
 - id: config__algorithm__validate_regions
   type:
-    items: File
+    items:
+    - 'null'
+    - string
     type: array
 - id: config__algorithm__aligner
   type:
@@ -250,14 +250,13 @@ inputs:
     type: array
 - id: config__algorithm__effects
   type:
-    items:
-    - string
-    - 'null'
-    - boolean
+    items: string
     type: array
 - id: config__algorithm__variant_regions
   type:
-    items: File
+    items:
+    - 'null'
+    - string
     type: array
 - id: genome_resources__aliases__ensembl
   type:
@@ -297,6 +296,13 @@ outputs:
     type: array
 - id: regions__sample_callable
   outputSource: postprocess_alignment/regions__sample_callable
+  type:
+    items:
+    - File
+    - 'null'
+    type: array
+- id: umi_bam
+  outputSource: alignment/umi_bam
   type:
     items:
     - File
@@ -398,6 +404,7 @@ steps:
   - id: work_bam_plus__disc
   - id: work_bam_plus__sr
   - id: hla__fastq
+  - id: umi_bam
   run: wf-alignment.cwl
   scatter:
   - alignment_rec

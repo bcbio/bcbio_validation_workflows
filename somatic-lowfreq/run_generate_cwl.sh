@@ -3,7 +3,7 @@ set -eu -o pipefail
 
 PNAME=pisces-ras
 
-for PNAME in pisces-titr pisces-ras
+for PNAME in pisces-titr pisces-ras smcounter2-umi
 do
 	CWD=`pwd`
 	rm -rf $PNAME-workflow

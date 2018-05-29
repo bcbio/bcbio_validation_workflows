@@ -91,8 +91,9 @@ The data for this run is self-contained within synapse:
 
 #### Somatic low frequency variants
 
-`somatic-lowfreq` -- Low frequency variant detection assessment comprised of inputs from
-the [smcounter2 low frequency variant caller](https://www.biorxiv.org/content/early/2018/03/14/281659)
+`somatic-lowfreq` -- Low frequency variant detection assessment with more difficult features: tumor-only,
+FFPE and UMI tagged. Inputs datasets are from
+the [smcounter2 low frequency UMI-based variant caller](https://www.biorxiv.org/content/early/2018/03/14/281659)
 and [Pisces tumor only variant caller](https://www.biorxiv.org/content/early/2018/03/30/291641) papers:
 
 - RAS-panel (`pisces-ras`) -- Tumor-only FFPE sample inputs with validated mutations in KRAS/NRAS, from
@@ -100,11 +101,13 @@ and [Pisces tumor only variant caller](https://www.biorxiv.org/content/early/201
   This contains 319 samples with single mutations
 - NA12878-dilution (`pisces-titr`) -- Tumor-only low frequency (8%, 12%, 16%) dilutions of NA12878 
   and NA12877 from the [PISCES supplementation material](https://basespace.illumina.com/projects/36152117)
-- N13532 --  0.5% low frequency SNPs and indels using a NA12878/NA24385
-  mixture of Genome in a Bottle Samples. Truth set and input data URLs available
+- N13532 (`smcounter2-umi`) -- ~4000x UMI tagged 228-gene panel with 0.5% low frequency SNPs
+  and indels from  a NA12878/NA24385 mixture of Genome in a Bottle Samples. Truth set and input data URLs available
   in [smcounter2's suppplemental material](https://www.biorxiv.org/content/early/2018/03/14/281659).
-- M0253 -- detection of ~0.5% low frequency SNPs from a mixture of
-  Horizon Dx’s Tru-Q 7 reference standard with cancer specific mutations.
+- N0261 (`smcounter2-umi`) --  ~3500x UMI tagged 0.5% low frequency variants with an emphasis
+  on 269 heterozygous indels, using the same NA12878/NA24385 mixture as N13532.
+- M0253 (`smcounter2-umi`) -- ~5000x [QIAseq Actionable Solid Tumor Panel](https://www.qiagen.com/us/shop/sample-technologies/dna/genomic-dna/qiaseq-targeted-dna-panels/?catno=DHS-101Z) with UMIs for detection of ~0.5% low frequency
+  SNPs from a mixture of Horizon Dx’s Tru-Q 7 reference standard with cancer specific mutations.
   Truth set and input data URLs available
   in [smcounter2's suppplemental material](https://www.biorxiv.org/content/early/2018/03/14/281659).
 

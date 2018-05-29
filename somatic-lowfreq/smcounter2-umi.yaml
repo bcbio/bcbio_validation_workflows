@@ -1,0 +1,58 @@
+details:
+- algorithm:
+    aligner: minimap2
+    min_allele_fraction: 0.25
+    tools_off:
+    - gemini
+    umi_type: fastq_name
+    validate: biodata/smcounter2/truth/smcounter2-M0253-truth.vcf.gz
+    #variant_regions: biodata/smcounter2/regions/
+    variantcaller:
+    - vardict
+    - freebayes
+    - pisces
+  analysis: variant
+  description: M0253
+  files: [biodata/smcounter2/inputs/smcounter2-M0253_R1.fq.gz, biodata/smcounter2/inputs/smcounter2-M0253_R2.fq.gz]
+  genome_build: GRCh37
+  metadata:
+    phenotype: tumor
+    validate_batch: sm2
+- algorithm:
+    aligner: minimap2
+    min_allele_fraction: 0.25
+    tools_off:
+    - gemini
+    umi_type: fastq_name
+    validate: biodata/smcounter2/truth/smcounter2-N0261-truth.vcf.gz
+    #variant_regions: biodata/smcounter2/regions/
+    variantcaller:
+    - vardict
+    - freebayes
+    - pisces
+  analysis: variant
+  description: N0261
+  files: [biodata/smcounter2/inputs/smcounter2-N0261_R1.fq.gz, biodata/smcounter2/inputs/smcounter2-N0261_R2.fq.gz]
+  genome_build: GRCh37
+  metadata:
+    phenotype: tumor
+    validate_batch: sm2
+- algorithm:
+    aligner: minimap2
+    min_allele_fraction: 0.25
+    tools_off:
+    - gemini
+    umi_type: fastq_name
+    validate: biodata/smcounter2/truth/smcounter2-N13532-truth.vcf.gz
+    #variant_regions: biodata/smcounter2/regions/
+    variantcaller:
+    - vardict
+    - freebayes
+    - pisces
+  analysis: variant
+  description: N13532
+  files: [biodata/smcounter2/inputs/smcounter2-N13532_R1.fq.gz, biodata/smcounter2/inputs/smcounter2-N13532_R2.fq.gz]
+  genome_build: GRCh37
+  metadata:
+    phenotype: tumor
+    validate_batch: sm2

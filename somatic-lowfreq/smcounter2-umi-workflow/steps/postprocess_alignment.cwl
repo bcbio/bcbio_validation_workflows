@@ -24,7 +24,7 @@ hints:
   ramMin: 28672
   tmpdirMin: 31218
 - class: dx:InputResourceRequirement
-  indirMin: 10957
+  indirMin: 10958
 - class: SoftwareRequirement
   packages:
   - package: sambamba

@@ -23,7 +23,7 @@ hints:
   ramMin: 3584
   tmpdirMin: 20812
 - class: dx:InputResourceRequirement
-  indirMin: 12728
+  indirMin: 12729
 inputs:
 - id: batch_rec
   type:

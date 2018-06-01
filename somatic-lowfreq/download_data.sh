@@ -7,6 +7,9 @@ mkdir -p biodata/pisces
 cd biodata/pisces
 synapse get -r syn12255556
 cd $ORIG_DIR
+mkdir -p biodata/smcounter2
+cd biodata/smcounter2
+synapse get -r syn12333650
 # GRCh37
 mkdir -p biodata/collections/GRCh37
 cd biodata/collections/GRCh37

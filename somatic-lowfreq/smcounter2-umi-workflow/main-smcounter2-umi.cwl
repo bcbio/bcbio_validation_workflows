@@ -254,9 +254,7 @@ inputs:
     type: array
 - id: config__algorithm__variant_regions
   type:
-    items:
-    - 'null'
-    - string
+    items: File
     type: array
 - id: genome_resources__aliases__ensembl
   type:

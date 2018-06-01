@@ -153,9 +153,18 @@
         "null"
     ],
     "config__algorithm__variant_regions": [
-        "null",
-        "null",
-        "null"
+        {
+            "class": "File",
+            "path": "../biodata/smcounter2/regions/M0253.bed"
+        },
+        {
+            "class": "File",
+            "path": "../biodata/smcounter2/regions/N0261.bed"
+        },
+        {
+            "class": "File",
+            "path": "../biodata/smcounter2/regions/N13532.bed"
+        }
     ],
     "config__algorithm__variantcaller": [
         [

@@ -6,7 +6,7 @@ details:
     - gemini
     umi_type: fastq_name
     validate: biodata/smcounter2/truth/smcounter2-M0253-truth.vcf.gz
-    #variant_regions: biodata/smcounter2/regions/
+    variant_regions: biodata/smcounter2/regions/M0253.bed
     variantcaller:
     - vardict
     - freebayes
@@ -25,7 +25,7 @@ details:
     - gemini
     umi_type: fastq_name
     validate: biodata/smcounter2/truth/smcounter2-N0261-truth.vcf.gz
-    #variant_regions: biodata/smcounter2/regions/
+    variant_regions: biodata/smcounter2/regions/N0261.bed
     variantcaller:
     - vardict
     - freebayes
@@ -44,7 +44,7 @@ details:
     - gemini
     umi_type: fastq_name
     validate: biodata/smcounter2/truth/smcounter2-N13532-truth.vcf.gz
-    #variant_regions: biodata/smcounter2/regions/
+    variant_regions: biodata/smcounter2/regions/N13532.bed
     variantcaller:
     - vardict
     - freebayes

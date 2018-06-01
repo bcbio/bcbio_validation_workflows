@@ -27,9 +27,7 @@ hints:
 inputs:
 - id: config__algorithm__variant_regions
   type:
-    items:
-    - 'null'
-    - string
+    items: File
     type: array
 - id: reference__fasta__base
   secondaryFiles:
@@ -58,9 +56,7 @@ outputs:
       - name: reference__fasta__base
         type: File
       - name: config__algorithm__variant_regions
-        type:
-        - 'null'
-        - string
+        type: File
       name: prep_samples_rec
       type: record
     type: array

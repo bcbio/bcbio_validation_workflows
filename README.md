@@ -171,7 +171,7 @@ or it's included with a bcbio-vm installation.
 Download requires a free account on [Synapse](https://www.synapse.org) to obtain
 access. First login to Synapse with your credentials:
 
-    syanpse login --remember-me
+    synapse login --remember-me
 
 Then use the `download_data.sh` shell script link in each validation project to
 get only the data for that run. If you prefer, you can also retrieve the full

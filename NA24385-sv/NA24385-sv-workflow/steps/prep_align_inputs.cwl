@@ -6,6 +6,7 @@ arguments:
 - sentinel_parallel=single-single
 - sentinel_outputs=process_alignment_rec:files;config__algorithm__quality_format;align_split
 - sentinel_inputs=alignment_rec:record
+- run_number=0
 baseCommand:
 - bcbio_nextgen.py
 - runfn
@@ -20,7 +21,7 @@ hints:
 - class: ResourceRequirement
   coresMin: 8
   outdirMin: 20957
-  ramMin: 30720
+  ramMin: 28672
   tmpdirMin: 9967
 - class: dx:InputResourceRequirement
   indirMin: 16297
@@ -40,6 +41,17 @@ hints:
     - https://anaconda.org/bioconda/atropos;env
     version:
     - python3
+  - package: optitype
+    specs:
+    - https://anaconda.org/bioconda/optitype
+  - package: razers3
+    specs:
+    - https://anaconda.org/bioconda/razers3
+    version:
+    - 3.5.0
+  - package: coincbc
+    specs:
+    - https://anaconda.org/bioconda/coincbc
 inputs:
 - id: alignment_rec
   type:

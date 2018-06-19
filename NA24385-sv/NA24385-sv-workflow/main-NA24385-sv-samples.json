@@ -33,16 +33,17 @@
         250
     ],
     "config__algorithm__nomap_split_targets": [
-        200
+        20
     ],
     "config__algorithm__qc": [
         [
             "fastqc",
             "samtools",
-            "qsignature",
             "coverage",
-            "variants",
             "picard",
+            "qsignature",
+            "variants",
+            "contamination",
             "peddy"
         ]
     ],
@@ -112,6 +113,9 @@
     ],
     "genome_build": [
         "GRCh37"
+    ],
+    "genome_resources__aliases__snpeff": [
+        "GRCh37.75"
     ],
     "genome_resources__rnaseq__gene_bed": [
         {
@@ -191,6 +195,12 @@
     ],
     "reference__minimap2__indexes": [
         []
+    ],
+    "reference__snpeff__GRCh37_75": [
+        {
+            "class": "File",
+            "path": "../biodata/collections/GRCh37/snpeff--GRCh37.75-wf.tar.gz"
+        }
     ],
     "reference__twobit": [
         {

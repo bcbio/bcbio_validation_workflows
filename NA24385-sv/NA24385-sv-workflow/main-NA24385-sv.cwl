@@ -31,6 +31,10 @@ inputs:
   type:
     items: File
     type: array
+- id: metadata__phenotype
+  type:
+    items: string
+    type: array
 - id: resources
   type:
     items: string
@@ -93,13 +97,13 @@ inputs:
   type:
     items: File
     type: array
-- id: metadata__phenotype
-  type:
-    items: string
-    type: array
 - id: config__algorithm__nomap_split_targets
   type:
     items: long
+    type: array
+- id: reference__snpeff__GRCh37_75
+  type:
+    items: File
     type: array
 - id: reference__twobit
   type:
@@ -230,7 +234,16 @@ inputs:
       - string
       type: array
     type: array
+- id: genome_resources__aliases__snpeff
+  type:
+    items: string
+    type: array
 outputs:
+- id: rgnames__sample_out
+  outputSource: prep_samples/rgnames__sample
+  type:
+    items: string
+    type: array
 - id: align_bam
   outputSource: postprocess_alignment/align_bam
   type:
@@ -334,6 +347,8 @@ steps:
   in:
   - id: config__algorithm__coverage
     source: config__algorithm__coverage
+  - id: rgnames__sample
+    source: rgnames__sample
   - id: config__algorithm__variant_regions
     source: config__algorithm__variant_regions
   - id: reference__fasta__base
@@ -350,6 +365,7 @@ steps:
   - id: prep_samples_rec
     source: prep_samples_to_rec/prep_samples_rec
   out:
+  - id: rgnames__sample
   - id: config__algorithm__variant_regions
   - id: config__algorithm__variant_regions_merged
   - id: config__algorithm__variant_regions_orig
@@ -535,6 +551,10 @@ steps:
     source: config__algorithm__svvalidate
   - id: regions__sample_callable
     source: postprocess_alignment/regions__sample_callable
+  - id: genome_resources__aliases__snpeff
+    source: genome_resources__aliases__snpeff
+  - id: reference__snpeff__GRCh37_75
+    source: reference__snpeff__GRCh37_75
   - id: sv_coverage_rec
     source: normalize_sv_coverage/sv_coverage_rec
   out:

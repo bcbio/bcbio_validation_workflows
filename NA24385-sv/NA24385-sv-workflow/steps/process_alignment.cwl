@@ -7,6 +7,7 @@ arguments:
 - sentinel_parallel=single-single
 - sentinel_outputs=work_bam,align_bam,hla__fastq,work_bam_plus__disc,work_bam_plus__sr
 - sentinel_inputs=alignment_rec:record,process_alignment_rec:record
+- run_number=0
 baseCommand:
 - bcbio_nextgen.py
 - runfn
@@ -21,7 +22,7 @@ hints:
 - class: ResourceRequirement
   coresMin: 8
   outdirMin: 27601
-  ramMin: 30720
+  ramMin: 28672
   tmpdirMin: 13289
 - class: dx:InputResourceRequirement
   indirMin: 29585

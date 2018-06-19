@@ -6,6 +6,7 @@ arguments:
 - sentinel_parallel=multi-combined
 - sentinel_outputs=sv__calls,svvalidate__grading_summary,svvalidate__grading_plots
 - sentinel_inputs=sv_rec:record
+- run_number=0
 baseCommand:
 - bcbio_nextgen.py
 - runfn
@@ -20,7 +21,7 @@ hints:
 - class: ResourceRequirement
   coresMin: 1
   outdirMin: 14312
-  ramMin: 3840
+  ramMin: 3584
   tmpdirMin: 6644
 - class: dx:InputResourceRequirement
   indirMin: 3085
@@ -68,14 +69,8 @@ inputs:
             type: array
         - name: config__algorithm__svvalidate
           type: File
-        - name: work_bam_plus__disc
-          type:
-          - File
-          - 'null'
-        - name: work_bam_plus__sr
-          type:
-          - File
-          - 'null'
+        - name: genome_resources__aliases__snpeff
+          type: string
         - name: regions__sample_callable
           type:
           - File
@@ -110,6 +105,8 @@ inputs:
           - 'null'
         - name: reference__fasta__base
           type: File
+        - name: metadata__phenotype
+          type: string
         - name: config__algorithm__svcaller
           type: string
         - name: config__algorithm__coverage_interval
@@ -126,8 +123,6 @@ inputs:
           - string
         - name: genome_resources__variation__lcr
           type: File
-        - name: metadata__phenotype
-          type: string
         - name: genome_resources__variation__polyx
           type: File
         - name: config__algorithm__variant_regions
@@ -142,10 +137,6 @@ inputs:
             - 'null'
             - string
             type: array
-        - name: align_bam
-          type:
-          - File
-          - 'null'
         - name: config__algorithm__variant_regions_merged
           type:
           - File

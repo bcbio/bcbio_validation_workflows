@@ -7,6 +7,7 @@ arguments:
 - sentinel_parallel=multi-parallel
 - sentinel_outputs=config__algorithm__coverage_interval,config__algorithm__variant_regions,config__algorithm__variant_regions_merged,config__algorithm__variant_regions_orig,config__algorithm__coverage,config__algorithm__coverage_merged,config__algorithm__coverage_orig,config__algorithm__seq2c_bed_ready,regions__callable,regions__sample_callable,regions__nblock,depth__samtools__stats,depth__samtools__idxstats,depth__variant_regions__regions,depth__variant_regions__dist,depth__sv_regions__regions,depth__sv_regions__dist,depth__coverage__regions,depth__coverage__dist,depth__coverage__thresholds,align_bam
 - sentinel_inputs=postprocess_alignment_rec:record
+- run_number=0
 baseCommand:
 - bcbio_nextgen.py
 - runfn
@@ -21,7 +22,7 @@ hints:
 - class: ResourceRequirement
   coresMin: 8
   outdirMin: 40890
-  ramMin: 30720
+  ramMin: 28672
   tmpdirMin: 19933
 - class: dx:InputResourceRequirement
   indirMin: 10970

@@ -1,11 +1,13 @@
 $namespaces:
+  arv: http://arvados.org/cwl#
   dx: https://www.dnanexus.com/cwl#
 arguments:
 - position: 0
   valueFrom: sentinel_runtime=cores,$(runtime['cores']),ram,$(runtime['ram'])
 - sentinel_parallel=batch-single
-- sentinel_outputs=sv_rec:sv__variantcaller;sv__vrn_file;svvalidate__summary;resources;description;genome_build;config__algorithm__tools_off;analysis;config__algorithm__tools_on;config__algorithm__svvalidate;work_bam_plus__disc;work_bam_plus__sr;regions__sample_callable;depth__bins__normalized;depth__bins__background;depth__bins__target;depth__bins__antitarget;regions__bins__target;regions__bins__antitarget;regions__bins__group;reference__fasta__base;config__algorithm__svcaller;config__algorithm__coverage_interval;genome_resources__rnaseq__gene_bed;genome_resources__variation__encode_blacklist;metadata__batch;genome_resources__variation__lcr;metadata__phenotype;genome_resources__variation__polyx;config__algorithm__variant_regions;config__algorithm__exclude_regions;align_bam;config__algorithm__variant_regions_merged;depth__variant_regions__regions;config__algorithm__callable_regions
+- sentinel_outputs=sv_rec:sv__variantcaller;sv__vrn_file;svvalidate__summary;resources;description;genome_build;config__algorithm__tools_off;analysis;config__algorithm__tools_on;config__algorithm__svvalidate;genome_resources__aliases__snpeff;regions__sample_callable;depth__bins__normalized;depth__bins__background;depth__bins__target;depth__bins__antitarget;regions__bins__target;regions__bins__antitarget;regions__bins__group;reference__fasta__base;metadata__phenotype;config__algorithm__svcaller;config__algorithm__coverage_interval;genome_resources__rnaseq__gene_bed;genome_resources__variation__encode_blacklist;metadata__batch;genome_resources__variation__lcr;genome_resources__variation__polyx;config__algorithm__variant_regions;config__algorithm__exclude_regions;config__algorithm__variant_regions_merged;depth__variant_regions__regions;config__algorithm__callable_regions
 - sentinel_inputs=sv_batch_rec:record
+- run_number=0
 baseCommand:
 - bcbio_nextgen.py
 - runfn
@@ -20,10 +22,10 @@ hints:
 - class: ResourceRequirement
   coresMin: 8
   outdirMin: 27601
-  ramMin: 30720
+  ramMin: 28672
   tmpdirMin: 13289
 - class: dx:InputResourceRequirement
-  indirMin: 3085
+  indirMin: 3717
 - class: SoftwareRequirement
   packages:
   - package: bedtools
@@ -67,6 +69,9 @@ hints:
   - package: simple_sv_annotation
     specs:
     - https://anaconda.org/bioconda/simple_sv_annotation
+  - package: survivor
+    specs:
+    - https://anaconda.org/bioconda/survivor
   - package: svtools
     specs:
     - https://anaconda.org/bioconda/svtools
@@ -81,6 +86,8 @@ hints:
   - package: vawk
     specs:
     - https://anaconda.org/bioconda/vawk
+- class: arv:RuntimeConstraints
+  keep_cache: 4096
 inputs:
 - id: sv_batch_rec
   type:
@@ -90,6 +97,8 @@ inputs:
         type: string
       - name: description
         type: string
+      - name: reference__snpeff__GRCh37_75
+        type: File
       - name: genome_build
         type: string
       - name: config__algorithm__tools_off
@@ -112,6 +121,8 @@ inputs:
           type: array
       - name: config__algorithm__svvalidate
         type: File
+      - name: genome_resources__aliases__snpeff
+        type: string
       - name: work_bam_plus__disc
         type:
         - File
@@ -154,6 +165,8 @@ inputs:
         - 'null'
       - name: reference__fasta__base
         type: File
+      - name: metadata__phenotype
+        type: string
       - name: config__algorithm__svcaller
         type: string
       - name: config__algorithm__coverage_interval
@@ -170,8 +183,6 @@ inputs:
         - string
       - name: genome_resources__variation__lcr
         type: File
-      - name: metadata__phenotype
-        type: string
       - name: genome_resources__variation__polyx
         type: File
       - name: config__algorithm__variant_regions
@@ -246,14 +257,8 @@ outputs:
           type: array
       - name: config__algorithm__svvalidate
         type: File
-      - name: work_bam_plus__disc
-        type:
-        - File
-        - 'null'
-      - name: work_bam_plus__sr
-        type:
-        - File
-        - 'null'
+      - name: genome_resources__aliases__snpeff
+        type: string
       - name: regions__sample_callable
         type:
         - File
@@ -288,6 +293,8 @@ outputs:
         - 'null'
       - name: reference__fasta__base
         type: File
+      - name: metadata__phenotype
+        type: string
       - name: config__algorithm__svcaller
         type: string
       - name: config__algorithm__coverage_interval
@@ -304,8 +311,6 @@ outputs:
         - string
       - name: genome_resources__variation__lcr
         type: File
-      - name: metadata__phenotype
-        type: string
       - name: genome_resources__variation__polyx
         type: File
       - name: config__algorithm__variant_regions
@@ -320,10 +325,6 @@ outputs:
           - 'null'
           - string
           type: array
-      - name: align_bam
-        type:
-        - File
-        - 'null'
       - name: config__algorithm__variant_regions_merged
         type:
         - File

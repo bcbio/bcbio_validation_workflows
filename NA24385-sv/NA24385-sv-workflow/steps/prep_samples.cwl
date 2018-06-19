@@ -4,8 +4,9 @@ arguments:
 - position: 0
   valueFrom: sentinel_runtime=cores,$(runtime['cores']),ram,$(runtime['ram'])
 - sentinel_parallel=multi-parallel
-- sentinel_outputs=config__algorithm__variant_regions,config__algorithm__variant_regions_merged,config__algorithm__variant_regions_orig,config__algorithm__coverage,config__algorithm__coverage_merged,config__algorithm__coverage_orig,config__algorithm__seq2c_bed_ready
+- sentinel_outputs=rgnames__sample,config__algorithm__variant_regions,config__algorithm__variant_regions_merged,config__algorithm__variant_regions_orig,config__algorithm__coverage,config__algorithm__coverage_merged,config__algorithm__coverage_orig,config__algorithm__seq2c_bed_ready
 - sentinel_inputs=prep_samples_rec:record
+- run_number=0
 baseCommand:
 - bcbio_nextgen.py
 - runfn
@@ -20,7 +21,7 @@ hints:
 - class: ResourceRequirement
   coresMin: 1
   outdirMin: 7668
-  ramMin: 3840
+  ramMin: 3584
   tmpdirMin: 3322
 - class: dx:InputResourceRequirement
   indirMin: 3021
@@ -47,11 +48,15 @@ inputs:
       type: File
     - name: config__algorithm__coverage
       type: File
+    - name: rgnames__sample
+      type: string
     - name: config__algorithm__variant_regions
       type: File
     name: prep_samples_rec
     type: record
 outputs:
+- id: rgnames__sample
+  type: string
 - id: config__algorithm__variant_regions
   type:
   - File

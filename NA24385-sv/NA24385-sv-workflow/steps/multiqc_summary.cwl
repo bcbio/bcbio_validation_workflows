@@ -6,6 +6,7 @@ arguments:
 - sentinel_parallel=multi-combined
 - sentinel_outputs=summary__multiqc
 - sentinel_inputs=qcout_rec:record
+- run_number=0
 baseCommand:
 - bcbio_nextgen.py
 - runfn
@@ -20,7 +21,7 @@ hints:
 - class: ResourceRequirement
   coresMin: 1
   outdirMin: 27601
-  ramMin: 3840
+  ramMin: 3584
   tmpdirMin: 13289
 - class: dx:InputResourceRequirement
   indirMin: 1

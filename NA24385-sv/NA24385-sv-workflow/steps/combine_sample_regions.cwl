@@ -7,6 +7,7 @@ arguments:
 - sentinel_parallel=multi-combined
 - sentinel_outputs=config__algorithm__callable_regions,config__algorithm__non_callable_regions,config__algorithm__callable_count
 - sentinel_inputs=regions__callable:var,regions__nblock:var,metadata__batch:var,config__algorithm__nomap_split_size:var,config__algorithm__nomap_split_targets:var,reference__fasta__base:var,resources:var,description:var
+- run_number=0
 baseCommand:
 - bcbio_nextgen.py
 - runfn
@@ -21,7 +22,7 @@ hints:
 - class: ResourceRequirement
   coresMin: 1
   outdirMin: 7668
-  ramMin: 3840
+  ramMin: 3584
   tmpdirMin: 3322
 - class: dx:InputResourceRequirement
   indirMin: 3008

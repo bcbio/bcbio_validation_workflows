@@ -4,8 +4,9 @@ arguments:
 - position: 0
   valueFrom: sentinel_runtime=cores,$(runtime['cores']),ram,$(runtime['ram'])
 - sentinel_parallel=multi-combined
-- sentinel_outputs=sv_bin_rec:regions__bins__target;regions__bins__antitarget;regions__bins__group;resources;description;reference__fasta__base;config__algorithm__svcaller;config__algorithm__coverage_interval;genome_resources__rnaseq__gene_bed;genome_resources__variation__encode_blacklist;metadata__batch;genome_resources__variation__lcr;metadata__phenotype;genome_resources__variation__polyx;config__algorithm__variant_regions;config__algorithm__exclude_regions;align_bam;config__algorithm__variant_regions_merged;depth__variant_regions__regions;config__algorithm__callable_regions
+- sentinel_outputs=sv_bin_rec:regions__bins__target;regions__bins__antitarget;regions__bins__group;resources;description;reference__fasta__base;metadata__phenotype;config__algorithm__svcaller;config__algorithm__coverage_interval;genome_resources__rnaseq__gene_bed;genome_resources__variation__encode_blacklist;metadata__batch;genome_resources__variation__lcr;genome_resources__variation__polyx;config__algorithm__variant_regions;config__algorithm__exclude_regions;align_bam;config__algorithm__variant_regions_merged;depth__variant_regions__regions;config__algorithm__callable_regions
 - sentinel_inputs=align_bam:var,reference__fasta__base:var,metadata__batch:var,metadata__phenotype:var,config__algorithm__callable_regions:var,config__algorithm__coverage_interval:var,config__algorithm__exclude_regions:var,config__algorithm__variant_regions:var,config__algorithm__variant_regions_merged:var,config__algorithm__svcaller:var,depth__variant_regions__regions:var,genome_resources__variation__lcr:var,genome_resources__variation__polyx:var,genome_resources__variation__encode_blacklist:var,genome_resources__rnaseq__gene_bed:var,resources:var,description:var
+- run_number=0
 baseCommand:
 - bcbio_nextgen.py
 - runfn
@@ -20,7 +21,7 @@ hints:
 - class: ResourceRequirement
   coresMin: 1
   outdirMin: 20957
-  ramMin: 3840
+  ramMin: 3584
   tmpdirMin: 9967
 - class: dx:InputResourceRequirement
   indirMin: 3024
@@ -155,6 +156,8 @@ outputs:
         type: string
       - name: reference__fasta__base
         type: File
+      - name: metadata__phenotype
+        type: string
       - name: config__algorithm__svcaller
         type:
           items: string
@@ -173,8 +176,6 @@ outputs:
         - string
       - name: genome_resources__variation__lcr
         type: File
-      - name: metadata__phenotype
-        type: string
       - name: genome_resources__variation__polyx
         type: File
       - name: config__algorithm__variant_regions

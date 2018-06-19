@@ -4,4 +4,4 @@ local:
     - biodata/regions
     - biodata/giab/na24385
 resources:
-  default: {cores: 8, memory: 3750M, jvm_opts: [-Xms750m, -Xmx3750m]}
+  default: {cores: 8, memory: 3500M, jvm_opts: [-Xms750m, -Xmx3500m]}

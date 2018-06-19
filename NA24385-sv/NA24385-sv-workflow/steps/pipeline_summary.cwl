@@ -7,6 +7,7 @@ arguments:
 - sentinel_parallel=multi-parallel
 - sentinel_outputs=qcout_rec:summary__qc;summary__metrics;description;genome_build;config__algorithm__tools_off;config__algorithm__qc;config__algorithm__tools_on
 - sentinel_inputs=qc_rec:record
+- run_number=0
 baseCommand:
 - bcbio_nextgen.py
 - runfn
@@ -21,7 +22,7 @@ hints:
 - class: ResourceRequirement
   coresMin: 8
   outdirMin: 27601
-  ramMin: 30720
+  ramMin: 28672
   tmpdirMin: 13289
 - class: dx:InputResourceRequirement
   indirMin: 3021
@@ -69,6 +70,9 @@ hints:
   - package: peddy
     specs:
     - https://anaconda.org/bioconda/peddy
+  - package: verifybamid2
+    specs:
+    - https://anaconda.org/bioconda/verifybamid2
 - class: arv:RuntimeConstraints
   keep_cache: 4096
 inputs:

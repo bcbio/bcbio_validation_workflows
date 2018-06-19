@@ -4,8 +4,9 @@ arguments:
 - position: 0
   valueFrom: sentinel_runtime=cores,$(runtime['cores']),ram,$(runtime['ram'])
 - sentinel_parallel=multi-combined
-- sentinel_outputs=sv_coverage_rec:depth__bins__normalized;depth__bins__background;resources;description;depth__bins__target;depth__bins__antitarget;regions__bins__target;regions__bins__antitarget;regions__bins__group;reference__fasta__base;config__algorithm__svcaller;config__algorithm__coverage_interval;genome_resources__rnaseq__gene_bed;genome_resources__variation__encode_blacklist;metadata__batch;genome_resources__variation__lcr;metadata__phenotype;genome_resources__variation__polyx;config__algorithm__variant_regions;config__algorithm__exclude_regions;align_bam;config__algorithm__variant_regions_merged;depth__variant_regions__regions;config__algorithm__callable_regions
+- sentinel_outputs=sv_coverage_rec:depth__bins__normalized;depth__bins__background;resources;description;depth__bins__target;depth__bins__antitarget;regions__bins__target;regions__bins__antitarget;regions__bins__group;reference__fasta__base;metadata__phenotype;config__algorithm__svcaller;config__algorithm__coverage_interval;genome_resources__rnaseq__gene_bed;genome_resources__variation__encode_blacklist;metadata__batch;genome_resources__variation__lcr;genome_resources__variation__polyx;config__algorithm__variant_regions;config__algorithm__exclude_regions;align_bam;config__algorithm__variant_regions_merged;depth__variant_regions__regions;config__algorithm__callable_regions
 - sentinel_inputs=sv_rawcoverage_rec:record
+- run_number=0
 baseCommand:
 - bcbio_nextgen.py
 - runfn
@@ -20,7 +21,7 @@ hints:
 - class: ResourceRequirement
   coresMin: 8
   outdirMin: 20957
-  ramMin: 30720
+  ramMin: 28672
   tmpdirMin: 9967
 - class: dx:InputResourceRequirement
   indirMin: 3030
@@ -60,6 +61,8 @@ inputs:
         - 'null'
       - name: reference__fasta__base
         type: File
+      - name: metadata__phenotype
+        type: string
       - name: config__algorithm__svcaller
         type:
           items: string
@@ -78,8 +81,6 @@ inputs:
         - string
       - name: genome_resources__variation__lcr
         type: File
-      - name: metadata__phenotype
-        type: string
       - name: genome_resources__variation__polyx
         type: File
       - name: config__algorithm__variant_regions
@@ -150,6 +151,8 @@ outputs:
         - 'null'
       - name: reference__fasta__base
         type: File
+      - name: metadata__phenotype
+        type: string
       - name: config__algorithm__svcaller
         type:
           items: string
@@ -168,8 +171,6 @@ outputs:
         - string
       - name: genome_resources__variation__lcr
         type: File
-      - name: metadata__phenotype
-        type: string
       - name: genome_resources__variation__polyx
         type: File
       - name: config__algorithm__variant_regions

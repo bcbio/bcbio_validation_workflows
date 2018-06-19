@@ -10,6 +10,8 @@ inputs:
         type: string
       - name: description
         type: string
+      - name: reference__snpeff__GRCh37_75
+        type: File
       - name: genome_build
         type: string
       - name: config__algorithm__tools_off
@@ -32,6 +34,8 @@ inputs:
           type: array
       - name: config__algorithm__svvalidate
         type: File
+      - name: genome_resources__aliases__snpeff
+        type: string
       - name: work_bam_plus__disc
         type:
         - File
@@ -74,6 +78,8 @@ inputs:
         - 'null'
       - name: reference__fasta__base
         type: File
+      - name: metadata__phenotype
+        type: string
       - name: config__algorithm__svcaller
         type: string
       - name: config__algorithm__coverage_interval
@@ -90,8 +96,6 @@ inputs:
         - string
       - name: genome_resources__variation__lcr
         type: File
-      - name: metadata__phenotype
-        type: string
       - name: genome_resources__variation__polyx
         type: File
       - name: config__algorithm__variant_regions
@@ -167,14 +171,8 @@ outputs:
           type: array
       - name: config__algorithm__svvalidate
         type: File
-      - name: work_bam_plus__disc
-        type:
-        - File
-        - 'null'
-      - name: work_bam_plus__sr
-        type:
-        - File
-        - 'null'
+      - name: genome_resources__aliases__snpeff
+        type: string
       - name: regions__sample_callable
         type:
         - File
@@ -209,6 +207,8 @@ outputs:
         - 'null'
       - name: reference__fasta__base
         type: File
+      - name: metadata__phenotype
+        type: string
       - name: config__algorithm__svcaller
         type: string
       - name: config__algorithm__coverage_interval
@@ -225,8 +225,6 @@ outputs:
         - string
       - name: genome_resources__variation__lcr
         type: File
-      - name: metadata__phenotype
-        type: string
       - name: genome_resources__variation__polyx
         type: File
       - name: config__algorithm__variant_regions
@@ -241,10 +239,6 @@ outputs:
           - 'null'
           - string
           type: array
-      - name: align_bam
-        type:
-        - File
-        - 'null'
       - name: config__algorithm__variant_regions_merged
         type:
         - File

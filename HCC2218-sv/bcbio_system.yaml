@@ -1,0 +1,6 @@
+local:
+  ref: biodata/collections
+  inputs:
+    - biodata/HCC2218
+resources:
+  default: {cores: 8, memory: 3500M, jvm_opts: [-Xms750m, -Xmx3500m]}

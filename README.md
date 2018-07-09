@@ -52,10 +52,38 @@ positive and long runtime issues in different calling methods.
 The dataset is subset to chr20 and exome regions, similar to the `giab-joint`
 and `giab-chm` examples above.
 
+### Somatic low frequency variants
+
+`somatic-lowfreq` -- Low frequency variant detection assessment with more difficult features: tumor-only,
+FFPE and UMI tagged. Inputs datasets are from
+the [smcounter2 low frequency UMI-based variant caller](https://www.biorxiv.org/content/early/2018/03/14/281659)
+and [Pisces tumor only variant caller](https://www.biorxiv.org/content/early/2018/03/30/291641) papers:
+
+- RAS-panel (`pisces-ras`) -- Tumor-only FFPE sample inputs with validated mutations in KRAS/NRAS, from
+  the [PISCES supplementation material](https://basespace.illumina.com/projects/36152117).
+  This contains 319 samples with single mutations
+- NA12878-dilution (`pisces-titr`) -- Tumor-only low frequency (8%, 12%, 16%) dilutions of NA12878 
+  and NA12877 from the [PISCES supplementation material](https://basespace.illumina.com/projects/36152117)
+- N13532 (`smcounter2-umi`) -- ~4000x UMI tagged 228-gene panel with 0.5% low frequency SNPs
+  and indels from  a NA12878/NA24385 mixture of Genome in a Bottle Samples. Truth set and input data URLs available
+  in [smcounter2's suppplemental material](https://www.biorxiv.org/content/early/2018/03/14/281659).
+- N0261 (`smcounter2-umi`) --  ~3500x UMI tagged 0.5% low frequency variants with an emphasis
+  on 269 heterozygous indels, using the same NA12878/NA24385 mixture as N13532.
+- M0253 (`smcounter2-umi`) -- ~5000x [QIAseq Actionable Solid Tumor Panel](https://www.qiagen.com/us/shop/sample-technologies/dna/genomic-dna/qiaseq-targeted-dna-panels/?catno=DHS-101Z) with UMIs for detection of ~0.5% low frequency
+  SNPs from a mixture of Horizon Dx’s Tru-Q 7 reference standard with cancer specific mutations.
+  Truth set and input data URLs available
+  in [smcounter2's suppplemental material](https://www.biorxiv.org/content/early/2018/03/14/281659).
+
 ### Germline structural variant calling
 
 `NA24385-sv` -- Structural variant calling on Genome in a Bottle NA24385 (HG002) Ashkenazi
 sample, compared against [the v0.5.0 combined validation set](ftp://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/data/AshkenazimTrio/analysis/NIST_UnionSVs_12122017/). Uses the [50x HiSeq x10 dataset from 10x genomics](https://support.10xgenomics.com/de-novo-assembly/datasets) from the `giab` validations, subset to chr20 and exome regions.
+
+### Somatic structural variant calling
+
+`HCC2218-sv` -- Somatic structural variant calling on exome sequencing from a breast carcinoma cell line.
+The truth set and tumor and normal BAM files are from validations done with
+[Illumina's Canvas CNV caller](https://github.com/Illumina/Canvas#demo-tumor-normal-enrichment-workflow).
 
 ### NA12878 chromosome 20 for GA4GH-DREAM tool execution challenge
 
@@ -88,28 +116,6 @@ The data for this run is self-contained within synapse:
 `pgp` -- Variant, HLA and structural variant calling on [Personal Genome
   Project](http://www.personalgenomes.org/us) genomes using the [Arvados public
   cloud](https://workbench.su92l.arvadosapi.com/).
-
-#### Somatic low frequency variants
-
-`somatic-lowfreq` -- Low frequency variant detection assessment with more difficult features: tumor-only,
-FFPE and UMI tagged. Inputs datasets are from
-the [smcounter2 low frequency UMI-based variant caller](https://www.biorxiv.org/content/early/2018/03/14/281659)
-and [Pisces tumor only variant caller](https://www.biorxiv.org/content/early/2018/03/30/291641) papers:
-
-- RAS-panel (`pisces-ras`) -- Tumor-only FFPE sample inputs with validated mutations in KRAS/NRAS, from
-  the [PISCES supplementation material](https://basespace.illumina.com/projects/36152117).
-  This contains 319 samples with single mutations
-- NA12878-dilution (`pisces-titr`) -- Tumor-only low frequency (8%, 12%, 16%) dilutions of NA12878 
-  and NA12877 from the [PISCES supplementation material](https://basespace.illumina.com/projects/36152117)
-- N13532 (`smcounter2-umi`) -- ~4000x UMI tagged 228-gene panel with 0.5% low frequency SNPs
-  and indels from  a NA12878/NA24385 mixture of Genome in a Bottle Samples. Truth set and input data URLs available
-  in [smcounter2's suppplemental material](https://www.biorxiv.org/content/early/2018/03/14/281659).
-- N0261 (`smcounter2-umi`) --  ~3500x UMI tagged 0.5% low frequency variants with an emphasis
-  on 269 heterozygous indels, using the same NA12878/NA24385 mixture as N13532.
-- M0253 (`smcounter2-umi`) -- ~5000x [QIAseq Actionable Solid Tumor Panel](https://www.qiagen.com/us/shop/sample-technologies/dna/genomic-dna/qiaseq-targeted-dna-panels/?catno=DHS-101Z) with UMIs for detection of ~0.5% low frequency
-  SNPs from a mixture of Horizon Dx’s Tru-Q 7 reference standard with cancer specific mutations.
-  Truth set and input data URLs available
-  in [smcounter2's suppplemental material](https://www.biorxiv.org/content/early/2018/03/14/281659).
 
 #### Simons Genome Diversity project
 

@@ -1,0 +1,33 @@
+# Somatic deletion/duplication for HCC2218 breast cancer cell lines
+# https://github.com/Illumina/Canvas#demo-tumor-normal-enrichment-workflow 
+---
+details:
+  - files: HCC2218BL_S1.bam
+    description: HCC2218BL
+    metadata:
+      batch: HCC2218
+      phenotype: normal
+    analysis: variant2
+    genome_build: GRCh37
+    algorithm:
+      aligner: bwa
+      variantcaller: 
+        germline: [gatk-haplotype]
+        somatic: [vardict]
+      svcaller: [cnvkit, seq2c, manta, delly, lumpy, wham, titancna]
+      variant_regions: NexteraRapidCapture_Exome_TargetedRegions_v1.2Used.bed.gz
+  - files: HCC2218C_S1.bam
+    description: HCC2218C
+    metadata:
+      batch: HCC2218
+      phenotype: tumor
+    analysis: variant2
+    genome_build: GRCh37
+    algorithm:
+      aligner: bwa
+      variantcaller: 
+        germline: [gatk-haplotype]
+        somatic: [vardict]
+      svcaller: [cnvkit, seq2c, manta, delly, lumpy, wham, titancna]
+      svvalidate: HCC2218Truth-clean-prep.vcf.gz
+      variant_regions: NexteraRapidCapture_Exome_TargetedRegions_v1.2Used.bed.gz

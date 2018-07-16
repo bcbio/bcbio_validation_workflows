@@ -14,8 +14,8 @@ details:
       variantcaller: 
         germline: [gatk-haplotype]
         somatic: [vardict]
-      svcaller: [cnvkit, seq2c, manta, delly, lumpy, wham, titancna]
-      variant_regions: NexteraRapidCapture_Exome_TargetedRegions_v1.2Used.bed.gz
+      svcaller: [cnvkit, manta, delly, lumpy, wham, titancna]
+      variant_regions: NexteraRapidCapture_Exome_TargetedRegions_v1.2Used.bed
   - files: HCC2218C_S1.bam
     description: HCC2218C
     metadata:
@@ -28,6 +28,6 @@ details:
       variantcaller: 
         germline: [gatk-haplotype]
         somatic: [vardict]
-      svcaller: [cnvkit, seq2c, manta, delly, lumpy, wham, titancna]
+      svcaller: [cnvkit, manta, delly, lumpy, wham, titancna]
       svvalidate: HCC2218Truth-clean-prep.vcf.gz
-      variant_regions: NexteraRapidCapture_Exome_TargetedRegions_v1.2Used.bed.gz
+      variant_regions: NexteraRapidCapture_Exome_TargetedRegions_v1.2Used.bed

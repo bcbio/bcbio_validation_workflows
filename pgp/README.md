@@ -13,7 +13,10 @@ is to:
   participant BAM read data and interpret the results.
 
 See the [associated slides](https://github.com/chapmanb/bcbb/blob/master/talks/pgp_analysis/pgp_analysis.pdf)
-for additional background and materials.
+for additional background and materials, and the [full analysis on the PGP
+Arvados server](https://workbench.su92l.arvadosapi.com/container_requests/su92l-xvhdp-iprauko4kegv1kz) for a finalized workflow. 
+The [PGP Workshop 1.0 resources document](http://bit.ly/pgp-resources-1) also
+has additional information for [participants at the first PGP Hackathon](https://pgp.med.harvard.edu/events/pgp-hackathon-1-0).
 
 ### Identify a participant to work on
 
@@ -43,10 +46,12 @@ has contributed [microbiome data at Open Humans](https://www.openhumans.org/memb
 
 BAM, VCF and 23andMe data identified on PGP participant IDs are available
 as [Arvados data
-collections](https://workbench.su92l.arvadosapi.com/projects/su92l-j7d0g-nsjiqjm7jne7zgr?#Data_collections):
+collections](https://workbench.su92l.arvadosapi.com/projects/su92l-j7d0g-nsjiqjm7jne7zgr#Data_collections):
 
-- Per participant [portable ready to use VCFs](https://workbench.su92l.arvadosapi.com/collections/su92l-4zz18-2rwb81xy8f1eh42)
+- Per participant [portable ready to use VCFs from Illumina sequencing](https://workbench.su92l.arvadosapi.com/collections/su92l-4zz18-2rwb81xy8f1eh42)
+- Per participant [portable ready to use BAMs from Illumina sequencing](https://workbench.su92l.arvadosapi.com/collections/su92l-4zz18-ihm3wrgyuwcmsx1)
 - Per participant [raw BAM files of reads](https://workbench.su92l.arvadosapi.com/collections/su92l-4zz18-1rqqi0kpkfmfite)
+- Per participant [portable VCFs from Complete Genomics sequencing](https://workbench.su92l.arvadosapi.com/collections/su92l-4zz18-w2zftaupwwu9gke)
 
 ### Download and check interesting variants
 

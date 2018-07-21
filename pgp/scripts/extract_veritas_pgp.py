@@ -10,7 +10,10 @@ import sys
 import pandas as pd
 import sqlite3
 
-import arvados
+try:
+    import arvados
+except ImportError:
+    arvados = None
 
 def main(sqlite_db):
     # Query for recent Veritas sequenced samples
@@ -26,10 +29,13 @@ def main(sqlite_db):
     df.drop_duplicates(inplace=True)
     print(df.describe())
 
-    # Load files in Arvados BAM collection
-    api = arvados.api(host="su92l.arvadosapi.com", token="42yz0fp9s19djsgkae33khevpzq4or1ile5o7khofzw388lvfl")
-    cr = arvados.CollectionReader("su92l-4zz18-1rqqi0kpkfmfite", api)
-    bam_coll = [(x.name, x.size()) for x in cr.all_files()]
+    # Load files in Arvados BAM collection, if arvados client installed
+    if arvados:
+        api = arvados.api(host="su92l.arvadosapi.com", token="42yz0fp9s19djsgkae33khevpzq4or1ile5o7khofzw388lvfl")
+        cr = arvados.CollectionReader("su92l-4zz18-1rqqi0kpkfmfite", api)
+        bam_coll = [(x.name, x.size()) for x in cr.all_files()]
+    else:
+        bam_coll = None
 
     # Find recent samples with more than 1 data type, emphasizing diverse samples
     # Require higher depth coverage > 50Gb
@@ -37,8 +43,7 @@ def main(sqlite_db):
         query = ("SELECT data_type, date FROM uploaded_data WHERE human_id='%s'" % sample)
         df = pd.read_sql_query(query, conn)
         if len(df.data_type.unique()) > 1:
-            bam_size = find_bam_size(sample, bam_coll)
-
+            bam_size = find_bam_size(sample, bam_coll) if bam_coll else 100
             if bam_size > 50:
                 query = ("SELECT * from demographics WHERE human_id='%s'"% sample)
                 dfd = pd.read_sql_query(query, conn)

@@ -36,6 +36,14 @@ to exome regions and chromosome 20. Truth set variants (`full.38.vcf.gz`)
 and confidence regions (`full.38.bed.gz`) are from the
 [version 0.5 20180222 tarball](https://github.com/lh3/CHM-eval/releases/download/v0.5/CHM-evalkit-20180222.tar).
 
+### Germline Genome in a Bottle exomes
+
+Genome in a Bottle exome samples for variant calling:
+
+- NA12878 exome -- [From Illumina Basespace Public datasets](https://basespace.illumina.com/projects/55723668/about), 200x NovaSeq S2 using the Illumina TruSeq DNA Library Prep for Enrichment with IDT xGen Exome Research Panel v1.0, trimmed to 2x101 for analysis.
+- NA24385 exome -- from Oslo University Hospital's contribution to the Genome in a Bottle Project: [150x Illumina HiSeq 2500 with 150bp paired-end reads, Agilent SureSelect Human All Exon V5 kit](ftp://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/data/ChineseTrio/analysis/OsloUniversityHospital_Exome_GATK_jointVC_11242015/README.txt)
+- NA24631 exome -- also from Oslo University Hospital's GiaB contribution, 100x Illumina HiSeq 2500 sequencing.
+
 ### Somatic Genome in a Bottle mixture
 
 `somatic-giab-mix` -- Somatic tumor/normal variant calling on [a sequenced

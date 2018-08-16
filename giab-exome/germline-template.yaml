@@ -1,0 +1,9 @@
+details:
+ - analysis: variant2
+   genome_build: hg38
+   algorithm:
+     aligner: bwa
+     variantcaller: gatk-haplotype
+     tools_on: [gvcf]
+   metadata:
+     validate_batch: giab

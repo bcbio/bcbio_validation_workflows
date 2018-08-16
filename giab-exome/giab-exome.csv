@@ -1,0 +1,4 @@
+filename,description,validate,validate_regions,variant_regions
+NA12878-xGen-exome_R1.fq.gz;NA12878-xGen-exome_R2.fq.gz,NA12878,hg38/validation/giab-NA12878/truth_small_variants.vcf.gz,hg38/validation/giab-NA12878/truth_regions.bed,Exome-IDT-xGen-hg38.bed
+NA24385-Oslo-exome_R1.fq.gz;NA24385-Oslo-exome_R2.fq.gz,NA24385,hg38/validation/giab-NA24385/truth_small_variants.vcf.gz,hg38/validation/giab-NA24385/truth_regions.bed,Exome-Agilent-SureSelect-v05-hg38.bed
+NA24631-Oslo-exome_R1.fq.gz;NA24631-Oslo-exome_R2.fq.gz,NA24631,hg38/validation/giab-NA24631/truth_small_variants.vcf.gz,hg38/validation/giab-NA24631/truth_regions.bed,Exome-Agilent-SureSelect-v05-hg38.bed

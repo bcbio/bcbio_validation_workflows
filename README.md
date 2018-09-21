@@ -209,3 +209,8 @@ You can adjust `bcbio_system.yaml`in each directory to fit a pipeline run
 to your current system. This includes options for changing cores, memory usage
 and locations of input files. After changing, use `run_generate_cwl.sh` to
 create a new CWL matching your input specifications.
+
+## License
+
+All CWL workflows, scripts and documentation are freely available for all uses
+under the [MIT license](https://opensource.org/licenses/MIT).

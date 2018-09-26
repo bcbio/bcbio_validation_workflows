@@ -1,0 +1,5 @@
+arvados:
+  ref: qr1hi-4zz18-k3cpvj60bvqbr2a
+  inputs: [qr1hi-4zz18-685wngk7zrynqad]
+resources:
+  default: {cores: 16, memory: 3000M, jvm_opts: [-Xms750m, -Xmx3000m]}

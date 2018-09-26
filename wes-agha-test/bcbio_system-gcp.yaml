@@ -1,0 +1,7 @@
+gs:
+  input_type: http
+  ref: gs://bcbiodata/collections
+  inputs:
+    - gs://bcbiodata/wes_agha_test
+resources:
+  default: {cores: 16, memory: 3000M, jvm_opts: [-Xms750m, -Xmx3000m]}

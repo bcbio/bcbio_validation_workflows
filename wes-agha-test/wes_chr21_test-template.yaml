@@ -1,0 +1,37 @@
+details:
+  - analysis: variant2
+    genome_build: GRCh37
+    algorithm:
+      # Alignment parameters
+      aligner: bwa
+      recalibrate: false
+      realign: false
+      mark_duplicates: true
+      remove_lcr: false
+
+      # Poly-G filtering
+      trim_reads: atropos
+      adapters: polyx
+
+      # ad hoc downsampling. Set to 100 for challenging samples
+      maxcov_downsample: false
+
+      # Variant calling, 2-out-of-3. All callers handle InDels
+      variantcaller:
+        germline: [vardict, strelka2, gatk-haplotype]
+        somatic: [vardict, strelka2, mutect2] 
+      ensemble:
+        numpass: 2
+
+      # Limit to validation regions to speed things up
+      variant_regions: Exome-Agilent_V6_chr21.bed
+
+      # Structural variation. No point in using Manta for this test data
+      svcaller: [cnvkit]
+
+      # Extras
+      tools_on: [gatk4, break-point-inspector, noalt_calling]
+      tools_off: [gemini]
+      vcfanno: [gemini]
+upload:
+  dir: ../final

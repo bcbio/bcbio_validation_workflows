@@ -1,0 +1,5 @@
+samplename,description,batch,phenotype,family_id,individual_id,validate,validate_regions
+NA12878-ready_exome21.bam,NA12878_chr21,wes,tumor,silico_mix,silico_mix,wes-ensemble-annotated_exome_chr21_noAnnot_somatic.vcf.gz,Exome-Agilent_V6_chr21.bed
+NA24385-ready_exome21.bam,NA24385_chr21,wes,normal,silico_mix,silico_mix,,
+
+

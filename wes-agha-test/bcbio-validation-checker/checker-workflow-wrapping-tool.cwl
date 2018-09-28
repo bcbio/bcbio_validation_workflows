@@ -2,8 +2,6 @@ cwlVersion: v1.0
 class: Workflow
 
 inputs:
-- id: baseline:
-  type: File
 - id: comparison:
   type: File
 - id: config__algorithm__align_split_size

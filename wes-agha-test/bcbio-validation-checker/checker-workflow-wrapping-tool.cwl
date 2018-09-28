@@ -2,7 +2,7 @@ cwlVersion: v1.0
 class: Workflow
 
 inputs:
-- id: comparison:
+- id: comparison
   type: File
 - id: config__algorithm__align_split_size
   type:

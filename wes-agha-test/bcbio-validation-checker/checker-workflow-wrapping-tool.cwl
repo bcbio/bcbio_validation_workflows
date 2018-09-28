@@ -654,7 +654,7 @@ type: array
 outputs:
   workflow_output_file:
     type: File
-    outputSource: checker/results_file
+    outputSource: checker/output
 
 steps:
   agha:

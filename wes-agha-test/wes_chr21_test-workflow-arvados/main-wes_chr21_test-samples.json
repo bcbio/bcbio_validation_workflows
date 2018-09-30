@@ -1,4 +1,9 @@
 {
+    "expected_validation": 
+        {
+            "class": "File",
+    	    "path": "keep:ab084ae556de9cb3e6786fba2d6fdc60+83/grading-summary-combined-expected.csv"
+        },
     "analysis": [
         "variant2",
         "variant2"

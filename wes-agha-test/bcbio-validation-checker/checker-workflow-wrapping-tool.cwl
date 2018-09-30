@@ -2,7 +2,7 @@ cwlVersion: v1.0
 class: Workflow
 
 inputs:
-- id: comparison
+- id: expected_validation
   type: File
 - id: config__algorithm__align_split_size
   type:
@@ -721,10 +721,10 @@ steps:
       genome_resources__variation__train_indels: genome_resources__variation__train_indels
       genome_resources__aliases__snpeff: genome_resources__aliases__snpeff
       rgnames__pu: rgnames__pu
-    out: [FILL_THIS_IN]
+    out: [validate__grading_summary]
   checker:
     run: wes-agha-test/bcbio-validation-checker/Dockstore.cwl
     in:
-      baseline: agha/FILL_THIS_IN
-      comparison: comparison
-    out: [output]
+      baseline: agha/validate__grading_summary
+      comparison: expected_validation
+    out: [output, log]

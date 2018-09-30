@@ -1,4 +1,5 @@
 {
+    "expected_validation": "https://raw.githubusercontent.com/bcbio/bcbio_validation_workflows/master/wes-agha-test/bcbio-validation-checker/grading-summary-combined-expected.csv",
     "analysis": [
         "variant2",
         "variant2"

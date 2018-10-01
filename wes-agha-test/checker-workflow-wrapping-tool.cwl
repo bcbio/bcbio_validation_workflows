@@ -347,7 +347,7 @@ outputs:
 
 steps:
   agha:
-    run: ../wes_chr21_test-workflow-gcp/main-wes_chr21_test.cwl
+    run: wes_chr21_test-workflow-gcp/main-wes_chr21_test.cwl
     in:
       config__algorithm__align_split_size: config__algorithm__align_split_size
       files: files
@@ -412,7 +412,7 @@ steps:
       rgnames__pu: rgnames__pu
     out: [validate__grading_summary]
   checker:
-    run: ../bcbio-validation-checker/Dockstore.cwl
+    run: bcbio-validation-checker/Dockstore.cwl
     in:
       baseline: agha/validate__grading_summary
       comparison: expected_validation

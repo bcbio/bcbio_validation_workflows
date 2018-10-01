@@ -83,8 +83,6 @@ hints:
   - package: vardict-java
     specs:
     - https://anaconda.org/bioconda/vardict-java
-    version:
-    - 1.5.1
   - package: varscan
     specs:
     - https://anaconda.org/bioconda/varscan

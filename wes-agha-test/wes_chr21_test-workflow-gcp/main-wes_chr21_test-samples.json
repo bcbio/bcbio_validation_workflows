@@ -1,8 +1,8 @@
 {
-    "expected_validation": 
+    "expected_validation":
         {
             "class": "File",
-    	    "path": "https://raw.githubusercontent.com/bcbio/bcbio_validation_workflows/master/wes-agha-test/bcbio-validation-checker/grading-summary-combined-expected.csv"
+            "path": "https://raw.githubusercontent.com/bcbio/bcbio_validation_workflows/master/wes-agha-test/bcbio-validation-checker/grading-summary-combined-expected.csv"
         },
     "analysis": [
         "variant2",
@@ -131,11 +131,11 @@
     "config__algorithm__validate": [
         {
             "class": "File",
-            "path": "https://storage.googleapis.com/bcbiodata/wes_agha_test/wes-ensemble-annotated_exome_chr21_noAnnot_somatic.vcf.gz",
+            "path": "gs://bcbiodata/wes_agha_test/wes-ensemble-annotated_exome_chr21_noAnnot_somatic.vcf.gz",
             "secondaryFiles": [
                 {
                     "class": "File",
-                    "path": "https://storage.googleapis.com/bcbiodata/wes_agha_test/wes-ensemble-annotated_exome_chr21_noAnnot_somatic.vcf.gz.tbi"
+                    "path": "gs://bcbiodata/wes_agha_test/wes-ensemble-annotated_exome_chr21_noAnnot_somatic.vcf.gz.tbi"
                 }
             ]
         },
@@ -144,18 +144,18 @@
     "config__algorithm__validate_regions": [
         {
             "class": "File",
-            "path": "https://storage.googleapis.com/bcbiodata/wes_agha_test/Exome-Agilent_V6_chr21.bed"
+            "path": "gs://bcbiodata/wes_agha_test/Exome-Agilent_V6_chr21.bed"
         },
         null
     ],
     "config__algorithm__variant_regions": [
         {
             "class": "File",
-            "path": "https://storage.googleapis.com/bcbiodata/wes_agha_test/Exome-Agilent_V6_chr21.bed"
+            "path": "gs://bcbiodata/wes_agha_test/Exome-Agilent_V6_chr21.bed"
         },
         {
             "class": "File",
-            "path": "https://storage.googleapis.com/bcbiodata/wes_agha_test/Exome-Agilent_V6_chr21.bed"
+            "path": "gs://bcbiodata/wes_agha_test/Exome-Agilent_V6_chr21.bed"
         }
     ],
     "config__algorithm__variantcaller": [
@@ -188,11 +188,11 @@
         [
             {
                 "class": "File",
-                "path": "https://storage.googleapis.com/bcbiodata/wes_agha_test/NA12878-ready_exome21.bam",
+                "path": "gs://bcbiodata/wes_agha_test/NA12878-ready_exome21.bam",
                 "secondaryFiles": [
                     {
                         "class": "File",
-                        "path": "https://storage.googleapis.com/bcbiodata/wes_agha_test/NA12878-ready_exome21.bam.bai"
+                        "path": "gs://bcbiodata/wes_agha_test/NA12878-ready_exome21.bam.bai"
                     }
                 ]
             }
@@ -200,11 +200,11 @@
         [
             {
                 "class": "File",
-                "path": "https://storage.googleapis.com/bcbiodata/wes_agha_test/NA24385-ready_exome21.bam",
+                "path": "gs://bcbiodata/wes_agha_test/NA24385-ready_exome21.bam",
                 "secondaryFiles": [
                     {
                         "class": "File",
-                        "path": "https://storage.googleapis.com/bcbiodata/wes_agha_test/NA24385-ready_exome21.bam.bai"
+                        "path": "gs://bcbiodata/wes_agha_test/NA24385-ready_exome21.bam.bai"
                     }
                 ]
             }
@@ -229,31 +229,31 @@
     "genome_resources__rnaseq__gene_bed": [
         {
             "class": "File",
-            "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/rnaseq/ref-transcripts.bed"
+            "path": "gs://bcbiodata/collections/GRCh37/rnaseq/ref-transcripts.bed"
         },
         {
             "class": "File",
-            "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/rnaseq/ref-transcripts.bed"
+            "path": "gs://bcbiodata/collections/GRCh37/rnaseq/ref-transcripts.bed"
         }
     ],
     "genome_resources__variation__1000g": [
         {
             "class": "File",
-            "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/variation/1000g.vcf.gz",
+            "path": "gs://bcbiodata/collections/GRCh37/variation/1000g.vcf.gz",
             "secondaryFiles": [
                 {
                     "class": "File",
-                    "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/variation/1000g.vcf.gz.tbi"
+                    "path": "gs://bcbiodata/collections/GRCh37/variation/1000g.vcf.gz.tbi"
                 }
             ]
         },
         {
             "class": "File",
-            "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/variation/1000g.vcf.gz",
+            "path": "gs://bcbiodata/collections/GRCh37/variation/1000g.vcf.gz",
             "secondaryFiles": [
                 {
                     "class": "File",
-                    "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/variation/1000g.vcf.gz.tbi"
+                    "path": "gs://bcbiodata/collections/GRCh37/variation/1000g.vcf.gz.tbi"
                 }
             ]
         }
@@ -261,21 +261,21 @@
     "genome_resources__variation__clinvar": [
         {
             "class": "File",
-            "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/variation/clinvar.vcf.gz",
+            "path": "gs://bcbiodata/collections/GRCh37/variation/clinvar.vcf.gz",
             "secondaryFiles": [
                 {
                     "class": "File",
-                    "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/variation/clinvar.vcf.gz.tbi"
+                    "path": "gs://bcbiodata/collections/GRCh37/variation/clinvar.vcf.gz.tbi"
                 }
             ]
         },
         {
             "class": "File",
-            "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/variation/clinvar.vcf.gz",
+            "path": "gs://bcbiodata/collections/GRCh37/variation/clinvar.vcf.gz",
             "secondaryFiles": [
                 {
                     "class": "File",
-                    "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/variation/clinvar.vcf.gz.tbi"
+                    "path": "gs://bcbiodata/collections/GRCh37/variation/clinvar.vcf.gz.tbi"
                 }
             ]
         }
@@ -283,21 +283,21 @@
     "genome_resources__variation__cosmic": [
         {
             "class": "File",
-            "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/variation/cosmic.vcf.gz",
+            "path": "gs://bcbiodata/collections/GRCh37/variation/cosmic.vcf.gz",
             "secondaryFiles": [
                 {
                     "class": "File",
-                    "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/variation/cosmic.vcf.gz.tbi"
+                    "path": "gs://bcbiodata/collections/GRCh37/variation/cosmic.vcf.gz.tbi"
                 }
             ]
         },
         {
             "class": "File",
-            "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/variation/cosmic.vcf.gz",
+            "path": "gs://bcbiodata/collections/GRCh37/variation/cosmic.vcf.gz",
             "secondaryFiles": [
                 {
                     "class": "File",
-                    "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/variation/cosmic.vcf.gz.tbi"
+                    "path": "gs://bcbiodata/collections/GRCh37/variation/cosmic.vcf.gz.tbi"
                 }
             ]
         }
@@ -305,21 +305,21 @@
     "genome_resources__variation__dbsnp": [
         {
             "class": "File",
-            "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/variation/dbsnp-151.vcf.gz",
+            "path": "gs://bcbiodata/collections/GRCh37/variation/dbsnp-151.vcf.gz",
             "secondaryFiles": [
                 {
                     "class": "File",
-                    "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/variation/dbsnp-151.vcf.gz.tbi"
+                    "path": "gs://bcbiodata/collections/GRCh37/variation/dbsnp-151.vcf.gz.tbi"
                 }
             ]
         },
         {
             "class": "File",
-            "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/variation/dbsnp-151.vcf.gz",
+            "path": "gs://bcbiodata/collections/GRCh37/variation/dbsnp-151.vcf.gz",
             "secondaryFiles": [
                 {
                     "class": "File",
-                    "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/variation/dbsnp-151.vcf.gz.tbi"
+                    "path": "gs://bcbiodata/collections/GRCh37/variation/dbsnp-151.vcf.gz.tbi"
                 }
             ]
         }
@@ -327,21 +327,21 @@
     "genome_resources__variation__encode_blacklist": [
         {
             "class": "File",
-            "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/ENCODE/wgEncodeDacMapabilityConsensusExcludable.bed.gz",
+            "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/ENCODE/wgEncodeDacMapabilityConsensusExcludable.bed.gz",
             "secondaryFiles": [
                 {
                     "class": "File",
-                    "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/ENCODE/wgEncodeDacMapabilityConsensusExcludable.bed.gz.tbi"
+                    "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/ENCODE/wgEncodeDacMapabilityConsensusExcludable.bed.gz.tbi"
                 }
             ]
         },
         {
             "class": "File",
-            "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/ENCODE/wgEncodeDacMapabilityConsensusExcludable.bed.gz",
+            "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/ENCODE/wgEncodeDacMapabilityConsensusExcludable.bed.gz",
             "secondaryFiles": [
                 {
                     "class": "File",
-                    "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/ENCODE/wgEncodeDacMapabilityConsensusExcludable.bed.gz.tbi"
+                    "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/ENCODE/wgEncodeDacMapabilityConsensusExcludable.bed.gz.tbi"
                 }
             ]
         }
@@ -349,21 +349,21 @@
     "genome_resources__variation__esp": [
         {
             "class": "File",
-            "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/variation/esp.vcf.gz",
+            "path": "gs://bcbiodata/collections/GRCh37/variation/esp.vcf.gz",
             "secondaryFiles": [
                 {
                     "class": "File",
-                    "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/variation/esp.vcf.gz.tbi"
+                    "path": "gs://bcbiodata/collections/GRCh37/variation/esp.vcf.gz.tbi"
                 }
             ]
         },
         {
             "class": "File",
-            "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/variation/esp.vcf.gz",
+            "path": "gs://bcbiodata/collections/GRCh37/variation/esp.vcf.gz",
             "secondaryFiles": [
                 {
                     "class": "File",
-                    "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/variation/esp.vcf.gz.tbi"
+                    "path": "gs://bcbiodata/collections/GRCh37/variation/esp.vcf.gz.tbi"
                 }
             ]
         }
@@ -371,21 +371,21 @@
     "genome_resources__variation__exac": [
         {
             "class": "File",
-            "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/variation/exac.vcf.gz",
+            "path": "gs://bcbiodata/collections/GRCh37/variation/exac.vcf.gz",
             "secondaryFiles": [
                 {
                     "class": "File",
-                    "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/variation/exac.vcf.gz.tbi"
+                    "path": "gs://bcbiodata/collections/GRCh37/variation/exac.vcf.gz.tbi"
                 }
             ]
         },
         {
             "class": "File",
-            "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/variation/exac.vcf.gz",
+            "path": "gs://bcbiodata/collections/GRCh37/variation/exac.vcf.gz",
             "secondaryFiles": [
                 {
                     "class": "File",
-                    "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/variation/exac.vcf.gz.tbi"
+                    "path": "gs://bcbiodata/collections/GRCh37/variation/exac.vcf.gz.tbi"
                 }
             ]
         }
@@ -393,21 +393,21 @@
     "genome_resources__variation__lcr": [
         {
             "class": "File",
-            "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/repeats/LCR.bed.gz",
+            "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/repeats/LCR.bed.gz",
             "secondaryFiles": [
                 {
                     "class": "File",
-                    "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/repeats/LCR.bed.gz.tbi"
+                    "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/repeats/LCR.bed.gz.tbi"
                 }
             ]
         },
         {
             "class": "File",
-            "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/repeats/LCR.bed.gz",
+            "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/repeats/LCR.bed.gz",
             "secondaryFiles": [
                 {
                     "class": "File",
-                    "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/repeats/LCR.bed.gz.tbi"
+                    "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/repeats/LCR.bed.gz.tbi"
                 }
             ]
         }
@@ -415,21 +415,21 @@
     "genome_resources__variation__polyx": [
         {
             "class": "File",
-            "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/repeats/polyx.bed.gz",
+            "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/repeats/polyx.bed.gz",
             "secondaryFiles": [
                 {
                     "class": "File",
-                    "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/repeats/polyx.bed.gz.tbi"
+                    "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/repeats/polyx.bed.gz.tbi"
                 }
             ]
         },
         {
             "class": "File",
-            "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/repeats/polyx.bed.gz",
+            "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/repeats/polyx.bed.gz",
             "secondaryFiles": [
                 {
                     "class": "File",
-                    "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/repeats/polyx.bed.gz.tbi"
+                    "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/repeats/polyx.bed.gz.tbi"
                 }
             ]
         }
@@ -437,21 +437,21 @@
     "genome_resources__variation__train_hapmap": [
         {
             "class": "File",
-            "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/variation/hapmap_3.3.vcf.gz",
+            "path": "gs://bcbiodata/collections/GRCh37/variation/hapmap_3.3.vcf.gz",
             "secondaryFiles": [
                 {
                     "class": "File",
-                    "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/variation/hapmap_3.3.vcf.gz.tbi"
+                    "path": "gs://bcbiodata/collections/GRCh37/variation/hapmap_3.3.vcf.gz.tbi"
                 }
             ]
         },
         {
             "class": "File",
-            "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/variation/hapmap_3.3.vcf.gz",
+            "path": "gs://bcbiodata/collections/GRCh37/variation/hapmap_3.3.vcf.gz",
             "secondaryFiles": [
                 {
                     "class": "File",
-                    "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/variation/hapmap_3.3.vcf.gz.tbi"
+                    "path": "gs://bcbiodata/collections/GRCh37/variation/hapmap_3.3.vcf.gz.tbi"
                 }
             ]
         }
@@ -459,21 +459,21 @@
     "genome_resources__variation__train_indels": [
         {
             "class": "File",
-            "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/variation/Mills_and_1000G_gold_standard.indels.vcf.gz",
+            "path": "gs://bcbiodata/collections/GRCh37/variation/Mills_and_1000G_gold_standard.indels.vcf.gz",
             "secondaryFiles": [
                 {
                     "class": "File",
-                    "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/variation/Mills_and_1000G_gold_standard.indels.vcf.gz.tbi"
+                    "path": "gs://bcbiodata/collections/GRCh37/variation/Mills_and_1000G_gold_standard.indels.vcf.gz.tbi"
                 }
             ]
         },
         {
             "class": "File",
-            "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/variation/Mills_and_1000G_gold_standard.indels.vcf.gz",
+            "path": "gs://bcbiodata/collections/GRCh37/variation/Mills_and_1000G_gold_standard.indels.vcf.gz",
             "secondaryFiles": [
                 {
                     "class": "File",
-                    "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/variation/Mills_and_1000G_gold_standard.indels.vcf.gz.tbi"
+                    "path": "gs://bcbiodata/collections/GRCh37/variation/Mills_and_1000G_gold_standard.indels.vcf.gz.tbi"
                 }
             ]
         }
@@ -489,45 +489,45 @@
     "reference__bwa__indexes": [
         {
             "class": "File",
-            "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/bwa/GRCh37.fa.amb",
+            "path": "gs://bcbiodata/collections/GRCh37/bwa/GRCh37.fa.amb",
             "secondaryFiles": [
                 {
                     "class": "File",
-                    "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/bwa/GRCh37.fa.ann"
+                    "path": "gs://bcbiodata/collections/GRCh37/bwa/GRCh37.fa.ann"
                 },
                 {
                     "class": "File",
-                    "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/bwa/GRCh37.fa.bwt"
+                    "path": "gs://bcbiodata/collections/GRCh37/bwa/GRCh37.fa.bwt"
                 },
                 {
                     "class": "File",
-                    "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/bwa/GRCh37.fa.pac"
+                    "path": "gs://bcbiodata/collections/GRCh37/bwa/GRCh37.fa.pac"
                 },
                 {
                     "class": "File",
-                    "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/bwa/GRCh37.fa.sa"
+                    "path": "gs://bcbiodata/collections/GRCh37/bwa/GRCh37.fa.sa"
                 }
             ]
         },
         {
             "class": "File",
-            "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/bwa/GRCh37.fa.amb",
+            "path": "gs://bcbiodata/collections/GRCh37/bwa/GRCh37.fa.amb",
             "secondaryFiles": [
                 {
                     "class": "File",
-                    "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/bwa/GRCh37.fa.ann"
+                    "path": "gs://bcbiodata/collections/GRCh37/bwa/GRCh37.fa.ann"
                 },
                 {
                     "class": "File",
-                    "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/bwa/GRCh37.fa.bwt"
+                    "path": "gs://bcbiodata/collections/GRCh37/bwa/GRCh37.fa.bwt"
                 },
                 {
                     "class": "File",
-                    "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/bwa/GRCh37.fa.pac"
+                    "path": "gs://bcbiodata/collections/GRCh37/bwa/GRCh37.fa.pac"
                 },
                 {
                     "class": "File",
-                    "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/bwa/GRCh37.fa.sa"
+                    "path": "gs://bcbiodata/collections/GRCh37/bwa/GRCh37.fa.sa"
                 }
             ]
         }
@@ -535,29 +535,29 @@
     "reference__fasta__base": [
         {
             "class": "File",
-            "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/seq/GRCh37.fa",
+            "path": "gs://bcbiodata/collections/GRCh37/seq/GRCh37.fa",
             "secondaryFiles": [
                 {
                     "class": "File",
-                    "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/seq/GRCh37.fa.fai"
+                    "path": "gs://bcbiodata/collections/GRCh37/seq/GRCh37.fa.fai"
                 },
                 {
                     "class": "File",
-                    "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/seq/GRCh37.dict"
+                    "path": "gs://bcbiodata/collections/GRCh37/seq/GRCh37.dict"
                 }
             ]
         },
         {
             "class": "File",
-            "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/seq/GRCh37.fa",
+            "path": "gs://bcbiodata/collections/GRCh37/seq/GRCh37.fa",
             "secondaryFiles": [
                 {
                     "class": "File",
-                    "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/seq/GRCh37.fa.fai"
+                    "path": "gs://bcbiodata/collections/GRCh37/seq/GRCh37.fa.fai"
                 },
                 {
                     "class": "File",
-                    "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/seq/GRCh37.dict"
+                    "path": "gs://bcbiodata/collections/GRCh37/seq/GRCh37.dict"
                 }
             ]
         }
@@ -566,171 +566,171 @@
         [
             {
                 "class": "File",
-                "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/repeats/LCR.bed.gz",
+                "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/repeats/LCR.bed.gz",
                 "secondaryFiles": [
                     {
                         "class": "File",
-                        "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/repeats/LCR.bed.gz.tbi"
+                        "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/repeats/LCR.bed.gz.tbi"
                     }
                 ]
             },
             {
                 "class": "File",
-                "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/bad_promoter.bed.gz",
+                "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/bad_promoter.bed.gz",
                 "secondaryFiles": [
                     {
                         "class": "File",
-                        "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/bad_promoter.bed.gz.tbi"
+                        "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/bad_promoter.bed.gz.tbi"
                     }
                 ]
             },
             {
                 "class": "File",
-                "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc15.bed.gz",
+                "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc15.bed.gz",
                 "secondaryFiles": [
                     {
                         "class": "File",
-                        "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc15.bed.gz.tbi"
+                        "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc15.bed.gz.tbi"
                     }
                 ]
             },
             {
                 "class": "File",
-                "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc15to20.bed.gz",
+                "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc15to20.bed.gz",
                 "secondaryFiles": [
                     {
                         "class": "File",
-                        "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc15to20.bed.gz.tbi"
+                        "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc15to20.bed.gz.tbi"
                     }
                 ]
             },
             {
                 "class": "File",
-                "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc20to25.bed.gz",
+                "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc20to25.bed.gz",
                 "secondaryFiles": [
                     {
                         "class": "File",
-                        "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc20to25.bed.gz.tbi"
+                        "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc20to25.bed.gz.tbi"
                     }
                 ]
             },
             {
                 "class": "File",
-                "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc25to30.bed.gz",
+                "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc25to30.bed.gz",
                 "secondaryFiles": [
                     {
                         "class": "File",
-                        "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc25to30.bed.gz.tbi"
+                        "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc25to30.bed.gz.tbi"
                     }
                 ]
             },
             {
                 "class": "File",
-                "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc65to70.bed.gz",
+                "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc65to70.bed.gz",
                 "secondaryFiles": [
                     {
                         "class": "File",
-                        "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc65to70.bed.gz.tbi"
+                        "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc65to70.bed.gz.tbi"
                     }
                 ]
             },
             {
                 "class": "File",
-                "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc70to75.bed.gz",
+                "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc70to75.bed.gz",
                 "secondaryFiles": [
                     {
                         "class": "File",
-                        "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc70to75.bed.gz.tbi"
+                        "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc70to75.bed.gz.tbi"
                     }
                 ]
             },
             {
                 "class": "File",
-                "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc75to80.bed.gz",
+                "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc75to80.bed.gz",
                 "secondaryFiles": [
                     {
                         "class": "File",
-                        "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc75to80.bed.gz.tbi"
+                        "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc75to80.bed.gz.tbi"
                     }
                 ]
             },
             {
                 "class": "File",
-                "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc80to85.bed.gz",
+                "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc80to85.bed.gz",
                 "secondaryFiles": [
                     {
                         "class": "File",
-                        "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc80to85.bed.gz.tbi"
+                        "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc80to85.bed.gz.tbi"
                     }
                 ]
             },
             {
                 "class": "File",
-                "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc85.bed.gz",
+                "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc85.bed.gz",
                 "secondaryFiles": [
                     {
                         "class": "File",
-                        "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc85.bed.gz.tbi"
+                        "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc85.bed.gz.tbi"
                     }
                 ]
             },
             {
                 "class": "File",
-                "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/heng_um75-hs37d5.bed.gz",
+                "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/heng_um75-hs37d5.bed.gz",
                 "secondaryFiles": [
                     {
                         "class": "File",
-                        "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/heng_um75-hs37d5.bed.gz.tbi"
+                        "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/heng_um75-hs37d5.bed.gz.tbi"
                     }
                 ]
             },
             {
                 "class": "File",
-                "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/low_complexity_51to200bp.bed.gz",
+                "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/low_complexity_51to200bp.bed.gz",
                 "secondaryFiles": [
                     {
                         "class": "File",
-                        "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/low_complexity_51to200bp.bed.gz.tbi"
+                        "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/low_complexity_51to200bp.bed.gz.tbi"
                     }
                 ]
             },
             {
                 "class": "File",
-                "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/low_complexity_gt200bp.bed.gz",
+                "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/low_complexity_gt200bp.bed.gz",
                 "secondaryFiles": [
                     {
                         "class": "File",
-                        "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/low_complexity_gt200bp.bed.gz.tbi"
+                        "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/low_complexity_gt200bp.bed.gz.tbi"
                     }
                 ]
             },
             {
                 "class": "File",
-                "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/repeats/polyx.bed.gz",
+                "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/repeats/polyx.bed.gz",
                 "secondaryFiles": [
                     {
                         "class": "File",
-                        "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/repeats/polyx.bed.gz.tbi"
+                        "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/repeats/polyx.bed.gz.tbi"
                     }
                 ]
             },
             {
                 "class": "File",
-                "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/self_chain.bed.gz",
+                "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/self_chain.bed.gz",
                 "secondaryFiles": [
                     {
                         "class": "File",
-                        "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/self_chain.bed.gz.tbi"
+                        "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/self_chain.bed.gz.tbi"
                     }
                 ]
             },
             {
                 "class": "File",
-                "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/ENCODE/wgEncodeDacMapabilityConsensusExcludable.bed.gz",
+                "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/ENCODE/wgEncodeDacMapabilityConsensusExcludable.bed.gz",
                 "secondaryFiles": [
                     {
                         "class": "File",
-                        "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/ENCODE/wgEncodeDacMapabilityConsensusExcludable.bed.gz.tbi"
+                        "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/ENCODE/wgEncodeDacMapabilityConsensusExcludable.bed.gz.tbi"
                     }
                 ]
             }
@@ -738,171 +738,171 @@
         [
             {
                 "class": "File",
-                "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/repeats/LCR.bed.gz",
+                "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/repeats/LCR.bed.gz",
                 "secondaryFiles": [
                     {
                         "class": "File",
-                        "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/repeats/LCR.bed.gz.tbi"
+                        "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/repeats/LCR.bed.gz.tbi"
                     }
                 ]
             },
             {
                 "class": "File",
-                "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/bad_promoter.bed.gz",
+                "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/bad_promoter.bed.gz",
                 "secondaryFiles": [
                     {
                         "class": "File",
-                        "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/bad_promoter.bed.gz.tbi"
+                        "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/bad_promoter.bed.gz.tbi"
                     }
                 ]
             },
             {
                 "class": "File",
-                "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc15.bed.gz",
+                "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc15.bed.gz",
                 "secondaryFiles": [
                     {
                         "class": "File",
-                        "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc15.bed.gz.tbi"
+                        "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc15.bed.gz.tbi"
                     }
                 ]
             },
             {
                 "class": "File",
-                "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc15to20.bed.gz",
+                "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc15to20.bed.gz",
                 "secondaryFiles": [
                     {
                         "class": "File",
-                        "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc15to20.bed.gz.tbi"
+                        "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc15to20.bed.gz.tbi"
                     }
                 ]
             },
             {
                 "class": "File",
-                "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc20to25.bed.gz",
+                "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc20to25.bed.gz",
                 "secondaryFiles": [
                     {
                         "class": "File",
-                        "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc20to25.bed.gz.tbi"
+                        "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc20to25.bed.gz.tbi"
                     }
                 ]
             },
             {
                 "class": "File",
-                "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc25to30.bed.gz",
+                "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc25to30.bed.gz",
                 "secondaryFiles": [
                     {
                         "class": "File",
-                        "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc25to30.bed.gz.tbi"
+                        "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc25to30.bed.gz.tbi"
                     }
                 ]
             },
             {
                 "class": "File",
-                "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc65to70.bed.gz",
+                "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc65to70.bed.gz",
                 "secondaryFiles": [
                     {
                         "class": "File",
-                        "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc65to70.bed.gz.tbi"
+                        "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc65to70.bed.gz.tbi"
                     }
                 ]
             },
             {
                 "class": "File",
-                "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc70to75.bed.gz",
+                "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc70to75.bed.gz",
                 "secondaryFiles": [
                     {
                         "class": "File",
-                        "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc70to75.bed.gz.tbi"
+                        "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc70to75.bed.gz.tbi"
                     }
                 ]
             },
             {
                 "class": "File",
-                "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc75to80.bed.gz",
+                "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc75to80.bed.gz",
                 "secondaryFiles": [
                     {
                         "class": "File",
-                        "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc75to80.bed.gz.tbi"
+                        "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc75to80.bed.gz.tbi"
                     }
                 ]
             },
             {
                 "class": "File",
-                "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc80to85.bed.gz",
+                "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc80to85.bed.gz",
                 "secondaryFiles": [
                     {
                         "class": "File",
-                        "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc80to85.bed.gz.tbi"
+                        "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc80to85.bed.gz.tbi"
                     }
                 ]
             },
             {
                 "class": "File",
-                "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc85.bed.gz",
+                "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc85.bed.gz",
                 "secondaryFiles": [
                     {
                         "class": "File",
-                        "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc85.bed.gz.tbi"
+                        "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/gc85.bed.gz.tbi"
                     }
                 ]
             },
             {
                 "class": "File",
-                "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/heng_um75-hs37d5.bed.gz",
+                "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/heng_um75-hs37d5.bed.gz",
                 "secondaryFiles": [
                     {
                         "class": "File",
-                        "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/heng_um75-hs37d5.bed.gz.tbi"
+                        "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/heng_um75-hs37d5.bed.gz.tbi"
                     }
                 ]
             },
             {
                 "class": "File",
-                "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/low_complexity_51to200bp.bed.gz",
+                "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/low_complexity_51to200bp.bed.gz",
                 "secondaryFiles": [
                     {
                         "class": "File",
-                        "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/low_complexity_51to200bp.bed.gz.tbi"
+                        "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/low_complexity_51to200bp.bed.gz.tbi"
                     }
                 ]
             },
             {
                 "class": "File",
-                "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/low_complexity_gt200bp.bed.gz",
+                "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/low_complexity_gt200bp.bed.gz",
                 "secondaryFiles": [
                     {
                         "class": "File",
-                        "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/low_complexity_gt200bp.bed.gz.tbi"
+                        "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/low_complexity_gt200bp.bed.gz.tbi"
                     }
                 ]
             },
             {
                 "class": "File",
-                "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/repeats/polyx.bed.gz",
+                "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/repeats/polyx.bed.gz",
                 "secondaryFiles": [
                     {
                         "class": "File",
-                        "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/repeats/polyx.bed.gz.tbi"
+                        "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/repeats/polyx.bed.gz.tbi"
                     }
                 ]
             },
             {
                 "class": "File",
-                "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/self_chain.bed.gz",
+                "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/self_chain.bed.gz",
                 "secondaryFiles": [
                     {
                         "class": "File",
-                        "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/self_chain.bed.gz.tbi"
+                        "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/GA4GH/self_chain.bed.gz.tbi"
                     }
                 ]
             },
             {
                 "class": "File",
-                "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/ENCODE/wgEncodeDacMapabilityConsensusExcludable.bed.gz",
+                "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/ENCODE/wgEncodeDacMapabilityConsensusExcludable.bed.gz",
                 "secondaryFiles": [
                     {
                         "class": "File",
-                        "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/coverage/problem_regions/ENCODE/wgEncodeDacMapabilityConsensusExcludable.bed.gz.tbi"
+                        "path": "gs://bcbiodata/collections/GRCh37/coverage/problem_regions/ENCODE/wgEncodeDacMapabilityConsensusExcludable.bed.gz.tbi"
                     }
                 ]
             }
@@ -911,41 +911,41 @@
     "reference__rtg": [
         {
             "class": "File",
-            "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/rtg--GRCh37.sdf-wf.tar.gz"
+            "path": "gs://bcbiodata/collections/GRCh37/rtg--GRCh37.sdf-wf.tar.gz"
         },
         {
             "class": "File",
-            "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/rtg--GRCh37.sdf-wf.tar.gz"
+            "path": "gs://bcbiodata/collections/GRCh37/rtg--GRCh37.sdf-wf.tar.gz"
         }
     ],
     "reference__snpeff__GRCh37_75": [
         {
             "class": "File",
-            "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/snpeff--GRCh37.75-wf.tar.gz"
+            "path": "gs://bcbiodata/collections/GRCh37/snpeff--GRCh37.75-wf.tar.gz"
         },
         {
             "class": "File",
-            "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/snpeff--GRCh37.75-wf.tar.gz"
+            "path": "gs://bcbiodata/collections/GRCh37/snpeff--GRCh37.75-wf.tar.gz"
         }
     ],
     "reference__twobit": [
         {
             "class": "File",
-            "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/ucsc/GRCh37.2bit"
+            "path": "gs://bcbiodata/collections/GRCh37/ucsc/GRCh37.2bit"
         },
         {
             "class": "File",
-            "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/ucsc/GRCh37.2bit"
+            "path": "gs://bcbiodata/collections/GRCh37/ucsc/GRCh37.2bit"
         }
     ],
     "reference__versions": [
         {
             "class": "File",
-            "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/versions.csv"
+            "path": "gs://bcbiodata/collections/GRCh37/versions.csv"
         },
         {
             "class": "File",
-            "path": "https://storage.googleapis.com/bcbiodata/collections/GRCh37/versions.csv"
+            "path": "gs://bcbiodata/collections/GRCh37/versions.csv"
         }
     ],
     "resources": [

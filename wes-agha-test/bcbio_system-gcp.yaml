@@ -1,5 +1,5 @@
 gs:
-  input_type: http
+  #input_type: http
   ref: gs://bcbiodata/collections
   inputs:
     - gs://bcbiodata/wes_agha_test

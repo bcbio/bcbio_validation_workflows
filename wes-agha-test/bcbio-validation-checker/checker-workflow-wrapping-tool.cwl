@@ -1,3 +1,5 @@
+#!/usr/bin/env cwl-runner
+
 cwlVersion: v1.0
 class: Workflow
 
@@ -333,7 +335,7 @@ inputs:
 - id: rgnames__pu
   type:
     items: string
-type: array
+    type: array
 - id: config__algorithm__trim_reads
   type:
     items: string

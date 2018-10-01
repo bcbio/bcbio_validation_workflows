@@ -354,11 +354,7 @@ outputs:
     type: array
 - id: validate__grading_summary
   outputSource: summarize_vc/validate__grading_summary
-  type:
-    items:
-    - File
-    - 'null'
-    type: array
+  type: File
 - id: variants__calls
   outputSource: summarize_vc/variants__calls
   type:

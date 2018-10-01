@@ -191,11 +191,7 @@ outputs:
       type: array
     type: array
 - id: validate__grading_summary
-  type:
-    items:
-    - File
-    - 'null'
-    type: array
+  type: File
 - id: validate__grading_plots
   type:
     items:

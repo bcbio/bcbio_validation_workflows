@@ -414,6 +414,6 @@ steps:
   checker:
     run: bcbio-validation-checker/Dockstore.cwl
     in:
-      baseline: agha/validate__grading_summary
-      comparison: expected_validation
+      baseline: expected_validation
+      comparison: agha/validate__grading_summary
     out: [output, log]

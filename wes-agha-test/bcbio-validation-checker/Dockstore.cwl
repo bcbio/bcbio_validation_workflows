@@ -17,7 +17,12 @@ inputs:
       position: 1
 
   comparison:
-    type: File
+    type:
+    - File
+    - items:
+      - File
+      - 'null'
+      type: array
     inputBinding:
       position: 2
 

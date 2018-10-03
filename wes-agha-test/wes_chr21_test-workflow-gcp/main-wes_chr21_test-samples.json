@@ -2,7 +2,7 @@
     "expected_validation":
         {
             "class": "File",
-            "path": "https://raw.githubusercontent.com/bcbio/bcbio_validation_workflows/master/wes-agha-test/bcbio-validation-checker/grading-summary-combined-expected.csv"
+            "path": "gs://bcbiodata/wes_agha_test/grading-summary-combined-expected.csv"
         },
     "analysis": [
         "variant2",

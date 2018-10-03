@@ -18,8 +18,7 @@ inputs:
 
   comparison:
     type:
-    - File
-    - items:
+      items:
       - File
       - 'null'
       type: array

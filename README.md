@@ -81,6 +81,10 @@ and [Pisces tumor only variant caller](https://www.biorxiv.org/content/early/201
   SNPs from a mixture of Horizon Dx’s Tru-Q 7 reference standard with cancer specific mutations.
   Truth set and input data URLs available
   in [smcounter2's suppplemental material](https://academic.oup.com/bioinformatics/article/35/8/1299/5091498).
+  ```
+  wget -c ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR752/000/SRR7526730/SRR7526730_1.fastq.gz
+  wget -c ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR752/000/SRR7526730/SRR7526730_2.fastq.gz
+  ```
 
 ### Germline structural variant calling
 

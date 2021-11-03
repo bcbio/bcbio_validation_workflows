@@ -69,7 +69,7 @@ and [Pisces tumor only variant caller](https://www.biorxiv.org/content/early/201
 
 - RAS-panel (`pisces-ras`) -- Tumor-only FFPE sample inputs with validated mutations in KRAS/NRAS, from
   the [PISCES supplementation material](https://basespace.illumina.com/projects/36152117).
-  This contains 319 samples with single mutations. *Not awailable as of 2021/11*
+  This contains 319 samples with single mutations. *Not available as of 2021/11*
 - NA12878-dilution (`pisces-titr`) -- Tumor-only low frequency (8%, 12%, 16%) dilutions of NA12878 
   and NA12877 from the [PISCES supplementation material](https://basespace.illumina.com/projects/36152117)
 - N13532 (`smcounter2-umi`) -- ~4000x UMI tagged 228-gene panel with 0.5% low frequency SNPs
